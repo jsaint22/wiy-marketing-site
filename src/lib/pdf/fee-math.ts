@@ -58,7 +58,7 @@ export function projectFees(
 
   for (let y = 1; y <= years; y++) {
     const aumFee = portfolioValue * 0.01;
-    // WIY fee: based on initial assessment, escalated 3% per year
+    // WIY fee: based on initial assessment, adjusted annually based on net worth growth
     const wiyFee = baseWiyFee * Math.pow(1 + wiyEscalation, y - 1);
 
     cumulativeAum += aumFee;

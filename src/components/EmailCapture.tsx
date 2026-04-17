@@ -34,7 +34,7 @@ export default function EmailCapture() {
     } catch {
       setStatus("error");
       setMessage(
-        "Something went wrong. Email josh@wealthinyourself.com and he'll send it manually."
+        "Something went wrong. Email josh@wealthinyourself.com and we'll send it manually."
       );
     }
   }

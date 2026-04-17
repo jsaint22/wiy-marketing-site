@@ -100,7 +100,7 @@ export default function VsAumPage() {
       <section className="bg-white py-10 sm:py-16 lg:py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-secondary font-semibold text-sm uppercase tracking-wider mb-4">
-            WIY vs. AUM
+            Wealth In Yourself vs. AUM
           </p>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary leading-tight">
             AUM fees cost you $1&nbsp;million over 20&nbsp;years. Flat fees don&apos;t.
