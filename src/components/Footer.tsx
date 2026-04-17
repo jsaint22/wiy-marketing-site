@@ -86,12 +86,12 @@ export default function Footer() {
           </p>
           <div className="mt-4 flex flex-wrap gap-4 text-xs text-white/50">
             <a
-              href="https://wealthinyourself.com/form-adv-part-2a/"
+              href="https://adviserinfo.sec.gov/firm/summary/322123"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-white/70 transition-colors"
             >
-              Form ADV Part 2A
+              Form ADV &amp; firm disclosures on SEC.gov
             </a>
             <a
               href="https://wealthinyourself.com/form-crs/"
