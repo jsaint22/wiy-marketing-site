@@ -6,15 +6,15 @@ import SectionHeading from "@/components/SectionHeading";
 export const metadata: Metadata = {
   title: "About Joshua St. Laurent",
   description:
-    "Joshua St. Laurent, CFP, CFT, left the brokerage world to build a flat-fee fiduciary firm that serves clients first. Learn why he founded Wealth In Yourself and the standards behind it.",
+    "Joshua St. Laurent, CFP, CFT, left the brokerage world to build a flat-fee fiduciary firm that serves clients first. Learn about the founding of Wealth In Yourself and the standards behind it.",
 };
 
 const credentials = [
+  { label: "MS", detail: "Financial Life Planning, Golden Gate University" },
   { label: "CFP\u00AE", detail: "Certified Financial Planner" },
   { label: "CFT\u2122", detail: "Certified Financial Therapist" },
   { label: "APFC\u00AE", detail: "Accredited Personal Financial Coach" },
   { label: "ACC", detail: "Associate Certified Coach" },
-  { label: "MS", detail: "Financial Life Planning, Golden Gate University" },
   { label: "EA", detail: "Enrolled Agent (in progress)" },
 ];
 
@@ -52,7 +52,7 @@ export default function AboutPage() {
                 Joshua St. Laurent
               </h1>
               <p className="mt-2 text-xl text-neutral-dark/70 font-medium">
-                CFP&reg; &middot; CFT&trade; &middot; APFC&reg; &middot; ACC &middot; MS &middot; Founder
+                MS &middot; CFP&reg; &middot; CFT&trade; &middot; APFC&reg; &middot; ACC &middot; Founder
               </p>
               <p className="mt-6 text-lg text-neutral-dark/70 leading-relaxed max-w-xl">
                 I built Wealth In Yourself because the advisory industry is

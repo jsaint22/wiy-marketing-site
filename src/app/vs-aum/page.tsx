@@ -3,7 +3,7 @@ import Link from "next/link";
 import CTASection from "@/components/CTASection";
 
 export const metadata: Metadata = {
-  title: "WIY vs AUM Advisors — The Math Most Advisors Won't Show You",
+  title: "Wealth In Yourself vs AUM Advisors — The Math Most Advisors Won't Show You",
   description:
     "AUM fees cost you $1M+ over 20 years. See the side-by-side comparison between a traditional 1% AUM advisor and Wealth In Yourself's flat-fee model.",
 };
@@ -47,7 +47,7 @@ const comparisonRows = [
   {
     label: "Client portal experience",
     aum: "Usually a third-party aggregator",
-    wiy: "Custom-built WIY portal",
+    wiy: "Custom-built Wealth In Yourself portal",
   },
   {
     label: "Transparent pricing published online",
@@ -242,8 +242,8 @@ export default function VsAumPage() {
           </div>
 
           <p className="mt-6 text-center text-xs text-neutral-dark/50 max-w-2xl mx-auto">
-            Illustrative calculation. Assumes 7% annual portfolio growth, 3% annual
-            fee reassessment based on net worth increase. Actual results vary.
+            Illustrative calculation. Assumes 7% annual portfolio growth with fee adjusted
+            annually based on net worth growth. Actual results vary.
           </p>
         </div>
       </section>
@@ -258,7 +258,7 @@ export default function VsAumPage() {
             <p>
               The AUM model was invented in the 1980s as a compromise &mdash; better
               than commission-only, but still tied to the asset. The problem: if your
-              advisor earns more when your account grows, he has an incentive to keep
+              advisor earns more when your account grows, they have an incentive to keep
               assets in the account.
             </p>
             <p>
@@ -276,7 +276,7 @@ export default function VsAumPage() {
 
       {/* CTA */}
       <CTASection
-        headline="See what your fee would actually be at WIY."
+        headline="See what your fee would actually be at Wealth In Yourself."
         subtext="Open the calculator and compare. No login, no email required."
         buttonText="Open the Calculator"
         buttonHref="/pricing#calculator"

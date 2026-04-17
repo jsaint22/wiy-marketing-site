@@ -146,7 +146,7 @@ export default function FeeCalculator({ standalone = false }: { standalone?: boo
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="rounded-xl border-2 border-success/30 bg-success/5 p-4">
                   <p className="text-xs font-semibold text-success uppercase tracking-wider">
-                    With WIY (Flat Fee)
+                    With Wealth In Yourself (Flat Fee)
                   </p>
                   <p className="text-2xl font-bold text-success mt-1">
                     {formatCurrency(wiyTotal)}
@@ -185,7 +185,7 @@ export default function FeeCalculator({ standalone = false }: { standalone?: boo
                 <span className="font-semibold text-warning">{formatCurrency(aumMonthly)}</span>
               </div>
               <div>
-                <span className="text-neutral-dark/60">Your WIY fee: </span>
+                <span className="text-neutral-dark/60">Your flat fee: </span>
                 <span className="font-semibold text-success">{formatCurrency(monthly)}</span>
               </div>
             </div>

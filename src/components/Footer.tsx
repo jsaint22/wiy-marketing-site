@@ -17,7 +17,7 @@ const footerLinks = {
   Learn: [
     { href: "/blog", label: "Blog" },
     { href: "/case-studies", label: "Case Studies" },
-    { href: "/vs-aum", label: "WIY vs. AUM" },
+    { href: "/vs-aum", label: "Flat Fee vs. AUM" },
     { href: "/calculator", label: "Fee Calculator" },
   ],
 };

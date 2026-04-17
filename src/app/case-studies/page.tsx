@@ -4,9 +4,9 @@ import CTASection from "@/components/CTASection";
 import SectionHeading from "@/components/SectionHeading";
 
 export const metadata: Metadata = {
-  title: "Case Studies | WIY — Flat-Fee Fiduciary Financial Planning",
+  title: "Case Studies | Wealth In Yourself — Flat-Fee Fiduciary Financial Planning",
   description:
-    "Anonymized case studies showing how WIY approaches complex financial planning situations — from tech exits and real estate portfolios to FIRE planning.",
+    "Anonymized case studies showing how Wealth In Yourself approaches complex financial planning situations — from tech exits and real estate portfolios to FIRE planning.",
 };
 
 const caseStudies = [
@@ -217,7 +217,7 @@ export default function CaseStudiesPage() {
               href="/vs-aum"
               className="px-8 py-3.5 border-2 border-primary text-primary font-semibold rounded-lg hover:bg-primary/5 transition-colors"
             >
-              Compare WIY vs. AUM
+              Compare Wealth In Yourself vs. AUM
             </Link>
           </div>
         </div>

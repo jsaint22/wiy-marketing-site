@@ -302,7 +302,7 @@ export default function PricingPage() {
             How does this compare to a 1% AUM advisor?
           </h2>
           <p className="mt-3 text-neutral-dark/70">
-            At $5M, a typical AUM advisor costs $50K/year. WIY costs $21K. Over 20 years, that gap becomes $580K+.
+            At $5M, a typical AUM advisor costs $50K/year. Wealth In Yourself costs $21K. Over 20 years, that gap becomes $580K+.
           </p>
           <Link href="/vs-aum" className="inline-block mt-6 px-8 py-3.5 bg-primary text-white font-semibold rounded-lg hover:bg-primary/90 transition-colors">
             See the full comparison &rarr;

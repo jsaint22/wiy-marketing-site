@@ -77,8 +77,8 @@ const partners = [
 const pressFeatures = [
   {
     name: "Forbes",
-    title: "Forbes Finance Council",
-    href: "https://councils.forbes.com/profile/Joshua-St-Laurent-Wealth-In-Yourself-LLC/a3e46f14-c5ee-4e33-b5e9-0f5c8e6bd2ef",
+    title: "Featured Contributor",
+    href: "https://www.forbes.com", // TODO: Josh to supply actual Forbes article URL
   },
   {
     name: "MarketWatch",
@@ -109,7 +109,7 @@ export default function HomePage() {
                 Flat-Fee Fiduciary Advisory
               </p>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary leading-tight">
-                A financial advisor who&apos;s actually building what he&apos;s teaching you to build.
+                The advisor who builds what he&apos;s helping you build.
               </h1>
               <p className="mt-6 text-lg text-neutral-dark/70 leading-relaxed max-w-xl">
                 Flat-fee fiduciary planning for entrepreneurs and real estate
@@ -198,13 +198,30 @@ export default function HomePage() {
               where fiduciary isn&apos;t a hat you put on when it&apos;s
               convenient. Where the fee doesn&apos;t grow just because your
               account did. Where the person sitting across from you is actually
-              doing what he&apos;s telling you to do &mdash; building businesses,
-              owning real estate, designing his own life, not just managing yours.
+              doing what they&apos;re telling you to do &mdash; building businesses,
+              owning real estate, designing their own life, not just managing yours.
             </p>
             <p className="text-primary font-semibold">
               That&apos;s Wealth In Yourself. That&apos;s why it exists.
             </p>
           </div>
+        </div>
+      </section>
+
+      {/* Mid-Funnel CTA */}
+      <section className="bg-neutral-bg py-8 sm:py-10">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-neutral-dark/70 text-lg">
+            Not ready to book a call? Read Josh&apos;s most popular essay.
+          </p>
+          <a
+            href="https://joshstlaurent.com/writing/the-hat-trick-nobody-talks-about"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block mt-4 px-8 py-3.5 border-2 border-primary text-primary font-semibold rounded-lg hover:bg-primary/5 transition-colors"
+          >
+            Read &ldquo;The Hat Trick Nobody Talks About&rdquo;
+          </a>
         </div>
       </section>
 
@@ -251,7 +268,7 @@ export default function HomePage() {
       <section className="bg-white py-10 sm:py-14">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
-            eyebrow="Your WIY Experience"
+            eyebrow="Your Wealth In Yourself Experience"
             title="Most advisors send PDFs. We built you a portal."
             subtitle="Here's what you get access to on Day 1."
           />
@@ -416,7 +433,7 @@ export default function HomePage() {
           <SectionHeading
             eyebrow="Your Team Under One Fee"
             title="You don't coordinate the team. We do."
-            subtitle="The WIY flat fee gives you access to a full Virtual Family Office — without institutional minimums, additional fees, or coordination headaches. Here's who's in your corner from Day 1."
+            subtitle="The Wealth In Yourself flat fee gives you access to a full Virtual Family Office — without institutional minimums, additional fees, or coordination headaches. Here's who's in your corner from Day 1."
           />
           <div className="mt-10 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
             {partners.map((partner) => (
@@ -424,15 +441,18 @@ export default function HomePage() {
                 key={partner.name}
                 className="bg-white rounded-xl p-5 border border-neutral-bg hover:border-secondary/20 hover:shadow-sm transition-all"
               >
-                <div className="h-10 flex items-center mb-3">
+                <div className="h-10 flex items-center justify-center mb-2">
                   <Image
                     src={partner.logo}
                     alt={partner.name}
                     width={120}
                     height={40}
-                    className="h-8 w-auto object-contain"
+                    className="max-h-10 w-auto object-contain"
                   />
                 </div>
+                <p className="text-xs font-semibold text-primary text-center mb-2">
+                  {partner.name}
+                </p>
                 <p className="text-xs text-neutral-dark/60 leading-relaxed">
                   {partner.description}
                 </p>
@@ -440,7 +460,7 @@ export default function HomePage() {
             ))}
           </div>
           <p className="mt-6 text-center text-xs text-neutral-dark/50 max-w-2xl mx-auto">
-            Services coordinated through WIY. You pay the partner directly only
+            Services coordinated through Wealth In Yourself. You pay the partner directly only
             when their service is actively engaged. No additional advisory fees.
           </p>
         </div>

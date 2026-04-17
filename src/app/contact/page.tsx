@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Book a free 15-minute intro call with Joshua St. Laurent, CFP. No pitch, no pressure — just a conversation about your financial life and whether WIY is the right fit.",
+    "Book a free 15-minute intro call with Joshua St. Laurent, CFP. No pitch, no pressure — just a conversation about your financial life and whether Wealth In Yourself is the right fit.",
 };
 
 export default function ContactPage() {
@@ -41,7 +41,7 @@ export default function ContactPage() {
                   We&rsquo;ll cover what&rsquo;s working in your current
                   situation and what isn&rsquo;t. You&rsquo;ll ask questions.
                   We&rsquo;ll ask questions. By the end, we&rsquo;ll both know
-                  whether WIY is the right fit.
+                  whether Wealth In Yourself is the right fit.
                 </p>
                 <p>
                   If it&rsquo;s not, that&rsquo;s fine. You&rsquo;ll still

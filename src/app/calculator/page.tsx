@@ -6,7 +6,7 @@ import CTASection from "@/components/CTASection";
 export const metadata: Metadata = {
   title: "Fee Calculator",
   description:
-    "See exactly what you would pay with WIY's declining flat-fee model — and how it compares to a traditional 1% AUM advisor over 30 years.",
+    "See exactly what you would pay with the Wealth In Yourself declining flat-fee model — and how it compares to a traditional 1% AUM advisor over 30 years.",
 };
 
 export default function CalculatorPage() {
@@ -40,7 +40,7 @@ export default function CalculatorPage() {
           </h2>
           <div className="mt-6 space-y-4 text-neutral-dark/80 text-lg leading-relaxed">
             <p>
-              WIY uses a declining percentage model. The rate you pay drops as
+              Wealth In Yourself uses a declining percentage model. The rate you pay drops as
               your net worth grows. Your first $1M is charged at 1.00%. The next
               $2M at 0.35%. The next $7M at 0.20%. And everything above $10M at
               0.10%. Your primary residence is excluded from the calculation.
