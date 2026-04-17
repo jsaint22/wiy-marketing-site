@@ -87,7 +87,7 @@ const faqs = [
   {
     question: "Do you charge for the intro call?",
     answer:
-      "No. The 15-minute intro call is free. No pitch. No pressure. We use it to understand your situation and determine if we're the right fit. If we're not, we'll tell you.",
+      "No. Your initial 15-minute intro call is free, and if we\u2019re a mutual fit, we\u2019ll schedule a 45-minute Strategy & Vision meeting that\u2019s also at no cost. You get a full hour with us to decide whether this is the right partnership \u2014 no pressure, no hidden fees, no strings.",
   },
   {
     question: "How does this compare to a typical AUM advisor?",
@@ -237,7 +237,7 @@ export default function PricingPage() {
       </section>
 
       {/* Interactive Calculator */}
-      <section className="bg-neutral-bg py-10 sm:py-14">
+      <section id="calculator" className="bg-neutral-bg py-10 sm:py-14 scroll-mt-24">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="Calculator"

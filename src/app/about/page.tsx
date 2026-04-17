@@ -41,7 +41,7 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-white py-10 sm:py-14 lg:py-16">
+      <section className="bg-white py-6 sm:py-10 lg:py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             <div>
@@ -52,7 +52,7 @@ export default function AboutPage() {
                 Joshua St. Laurent
               </h1>
               <p className="mt-2 text-xl text-neutral-dark/70 font-medium">
-                CFP&reg; &middot; CFT&trade; &middot; APFC&reg; &middot; Founder
+                CFP&reg; &middot; CFT&trade; &middot; APFC&reg; &middot; ACC &middot; MS &middot; Founder
               </p>
               <p className="mt-6 text-lg text-neutral-dark/70 leading-relaxed max-w-xl">
                 I built Wealth In Yourself because the advisory industry is
@@ -60,13 +60,13 @@ export default function AboutPage() {
                 people sitting across the table. I decided to fix that.
               </p>
             </div>
-            <div className="relative">
-              <div className="aspect-[4/5] rounded-2xl bg-neutral-bg overflow-hidden">
+            <div className="relative max-w-sm mx-auto lg:mx-0">
+              <div className="aspect-[3/4] rounded-2xl bg-neutral-bg overflow-hidden">
                 <Image
                   src="/team/josh-headshot-v2.jpg"
                   alt="Joshua St. Laurent, CFP, CFT — Founder of Wealth In Yourself"
-                  width={600}
-                  height={750}
+                  width={420}
+                  height={560}
                   className="w-full h-full object-cover"
                   priority
                 />
@@ -197,14 +197,15 @@ export default function AboutPage() {
               I&apos;m building two advisory firms — Wealth In Yourself, for
               entrepreneurs and real estate investors, and Top Shelf Private
               Wealth, built exclusively for professional hockey players. I live
-              in Zephyr Cove, Nevada with my wife Amanda and our son Cole. Our
+              in Lake Tahoe, Nevada with my wife Amanda and our son Cole. Our
               daughter is due September 2026.
             </p>
             <p>
               I also own Lake Tahoe Motorcycle Rentals and CA Homes In The
-              Pines — because I believe advisors who help clients build wealth
-              should be building it themselves, not just managing other
-              people&apos;s money.
+              Pines — a luxury short-term rental business creating world-class
+              vacation experiences in the Sierra Nevada. I believe advisors
+              who help clients build wealth should be building it themselves,
+              not just managing other people&apos;s money.
             </p>
           </div>
         </div>

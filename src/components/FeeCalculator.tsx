@@ -40,7 +40,9 @@ function formatCurrency(value: number): string {
 function formatNetWorth(value: number): string {
   if (value >= 1_000_000) {
     const m = value / 1_000_000;
-    return m % 1 === 0 ? `$${m}M` : `$${m.toFixed(1)}M`;
+    if (Number.isInteger(m)) return `$${m}M`;
+    const s = m.toFixed(2).replace(/0+$/, "").replace(/\.$/, "");
+    return `$${s}M`;
   }
   return formatCurrency(value);
 }
@@ -85,16 +87,16 @@ export default function FeeCalculator({ standalone = false }: { standalone?: boo
           </div>
           <input
             type="range"
-            min={250_000}
-            max={25_000_000}
+            min={500_000}
+            max={35_000_000}
             step={50_000}
             value={netWorth}
             onChange={(e) => setNetWorth(Number(e.target.value))}
             className="w-full h-2 bg-neutral-bg rounded-lg appearance-none cursor-pointer accent-primary"
           />
           <div className="flex justify-between text-xs text-neutral-dark/50 mt-1">
-            <span>$250K</span>
-            <span>$25M</span>
+            <span>$500K</span>
+            <span>$35M</span>
           </div>
         </div>
 

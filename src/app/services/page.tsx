@@ -59,10 +59,10 @@ const services = [
     icon: "M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18",
   },
   {
-    title: "Cross-Border Planning",
+    title: "Charitable Giving & Philanthropy Coordination",
     description:
-      "US-Canada tax coordination, treaty optimization, and multi-jurisdiction compliance. Relevant for clients with cross-border income, assets, or family ties.",
-    icon: "M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418",
+      "Donor-advised funds, charitable remainder trusts, QCDs, and strategic giving. We help you maximize impact and minimize tax liability so your generosity goes further.",
+    icon: "M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z",
   },
 ];
 
@@ -70,7 +70,7 @@ const faqs = [
   {
     question: "Do I need all of these services?",
     answer:
-      "No. Every client gets a different combination based on their situation. We figure out what matters during the intro call and build your plan around that. You're not paying for services you don't use.",
+      "Not every client needs every service every year. Some clients use all of them \u2014 typically business owners with complex estate and tax situations. Others use fewer \u2014 FIRE-track clients may focus heavily on tax-efficient withdrawal planning and investment strategy. Your flat fee covers the full scope regardless; we use what you need, when you need it, and don\u2019t charge extra when your needs grow.",
   },
   {
     question: "How is this different from what my CPA does?",
@@ -112,7 +112,7 @@ const faqs = [
 export default function ServicesPage() {
   return (
     <main>
-      {/* Hero */}
+      {/* Hero + Services Grid (consolidated) */}
       <section className="bg-neutral-bg py-10 sm:py-14">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-secondary font-semibold text-sm uppercase tracking-wider mb-3">
@@ -124,6 +124,13 @@ export default function ServicesPage() {
           <p className="mt-6 text-lg text-neutral-dark/70 max-w-2xl mx-auto">
             Every service is included in your flat fee. No add-ons. No surprise
             charges. Just real planning built around your life.
+          </p>
+          <p className="mt-4 text-base text-neutral-dark/60 max-w-2xl mx-auto">
+            Under our Virtual Family Office model, these services work together
+            as one coordinated system — your tax strategy informs your investment
+            plan, your estate plan reflects your business structure, and your
+            insurance coverage fills the gaps. Nothing falls through the cracks
+            because nothing operates in a silo.
           </p>
         </div>
       </section>

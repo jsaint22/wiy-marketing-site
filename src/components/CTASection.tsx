@@ -12,10 +12,17 @@ export default function CTASection({
   headline = "Ready to stop overpaying and start designing your life?",
   subtext = "Book a 15-minute intro call. No pitch. No pressure. Just a conversation about what matters to you.",
   buttonText = "Book Your Intro Call",
-  buttonHref = "/contact",
+  buttonHref = "https://links.wealthinyourself.com/widget/bookings/wiy-15-min-call",
   variant = "primary",
 }: CTASectionProps) {
   const isPrimary = variant === "primary";
+  const isExternal = buttonHref.startsWith("http");
+
+  const linkClasses = `inline-block mt-8 px-8 py-3.5 font-semibold rounded-lg transition-colors ${
+    isPrimary
+      ? "bg-secondary text-primary hover:bg-secondary/90"
+      : "bg-primary text-white hover:bg-primary/90"
+  }`;
 
   return (
     <section
@@ -38,16 +45,20 @@ export default function CTASection({
         >
           {subtext}
         </p>
-        <Link
-          href={buttonHref}
-          className={`inline-block mt-8 px-8 py-3.5 font-semibold rounded-lg transition-colors ${
-            isPrimary
-              ? "bg-secondary text-primary hover:bg-secondary/90"
-              : "bg-primary text-white hover:bg-primary/90"
-          }`}
-        >
-          {buttonText}
-        </Link>
+        {isExternal ? (
+          <a
+            href={buttonHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={linkClasses}
+          >
+            {buttonText}
+          </a>
+        ) : (
+          <Link href={buttonHref} className={linkClasses}>
+            {buttonText}
+          </Link>
+        )}
       </div>
     </section>
   );

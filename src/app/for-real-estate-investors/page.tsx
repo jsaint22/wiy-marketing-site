@@ -85,7 +85,7 @@ const faqs = [
   {
     question: "Do you work with investors who only have a few properties?",
     answer:
-      "Yes. Whether you have two rentals or twenty, the planning needs are real. Entity structure, depreciation strategy, and portfolio integration matter at every scale. Most of our real estate clients have between 3 and 15 properties, but we work with investors at all levels.",
+      "Yes. Whether you have two rentals or twenty, the planning needs are real. Entity structure, depreciation strategy, and portfolio integration matter at every scale. Most of our real estate clients have between 3 and 100 properties, but we work with investors at all levels.",
   },
 ];
 

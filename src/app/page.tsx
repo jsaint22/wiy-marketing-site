@@ -31,7 +31,7 @@ export default function HomePage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-white py-10 sm:py-16 lg:py-20">
+      <section className="bg-white py-6 sm:py-10 lg:py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             <div>
@@ -48,14 +48,16 @@ export default function HomePage() {
                 fiduciary, and build a plan around the life you actually want.
               </p>
               <div className="mt-8 flex flex-col sm:flex-row gap-4">
-                <Link
-                  href="/contact"
+                <a
+                  href="https://links.wealthinyourself.com/widget/bookings/wiy-15-min-call"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="px-8 py-3.5 bg-primary text-white font-semibold rounded-lg hover:bg-primary/90 transition-colors text-center"
                 >
                   Book Your Intro Call
-                </Link>
+                </a>
                 <Link
-                  href="/calculator"
+                  href="/pricing#calculator"
                   className="px-8 py-3.5 border-2 border-primary text-primary font-semibold rounded-lg hover:bg-primary/5 transition-colors text-center"
                 >
                   See What You&apos;d Pay
@@ -105,10 +107,10 @@ export default function HomePage() {
             ].map((item) => (
               <div
                 key={item.title}
-                className="bg-white rounded-xl p-6 border border-neutral-bg transition-colors duration-200 hover:bg-primary hover:text-white hover:border-primary group cursor-default"
+                className="bg-white rounded-xl p-6 border border-neutral-bg"
               >
-                <h3 className="text-lg font-bold text-primary group-hover:text-white transition-colors duration-200">{item.title}</h3>
-                <p className="mt-2 text-sm text-neutral-dark/70 leading-relaxed group-hover:text-white/80 transition-colors duration-200">
+                <h3 className="text-lg font-bold text-primary">{item.title}</h3>
+                <p className="mt-2 text-sm text-neutral-dark/70 leading-relaxed">
                   {item.desc}
                 </p>
               </div>

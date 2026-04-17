@@ -39,6 +39,12 @@ const painPoints = [
       "This is the FIRE killer nobody talks about enough. ACA optimization, health sharing ministries, and planning for the gap years.",
     icon: "M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z",
   },
+  {
+    title: "Geographic Arbitrage Planning",
+    description:
+      "State income tax, cost of living, property tax differences, and international relocation. Where you live changes everything about your FIRE number. We model the scenarios so you pick the right one.",
+    icon: "M15 10.5a3 3 0 11-6 0 3 3 0 016 0z M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z",
+  },
 ];
 
 const howWeWork = [

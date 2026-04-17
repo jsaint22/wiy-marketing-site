@@ -28,7 +28,7 @@ export default function Navigation() {
               alt="Wealth In Yourself"
               width={220}
               height={48}
-              className="h-10 sm:h-12 w-auto"
+              className="h-12 sm:h-[52px] w-auto"
               priority
             />
           </Link>
@@ -48,12 +48,14 @@ export default function Navigation() {
                 {link.label}
               </Link>
             ))}
-            <Link
-              href="/contact"
+            <a
+              href="https://links.wealthinyourself.com/widget/bookings/wiy-15-min-call"
+              target="_blank"
+              rel="noopener noreferrer"
               className="ml-4 px-5 py-2.5 bg-primary text-white text-sm font-semibold rounded-lg hover:bg-primary/90 transition-colors"
             >
               Book a Call
-            </Link>
+            </a>
           </div>
 
           {/* Mobile hamburger */}
@@ -92,13 +94,15 @@ export default function Navigation() {
                   {link.label}
                 </Link>
               ))}
-              <Link
-                href="/contact"
+              <a
+                href="https://links.wealthinyourself.com/widget/bookings/wiy-15-min-call"
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => setMobileOpen(false)}
                 className="mt-2 mx-3 px-5 py-2.5 bg-primary text-white text-center text-sm font-semibold rounded-lg"
               >
                 Book a Call
-              </Link>
+              </a>
             </div>
           </div>
         )}
