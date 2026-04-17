@@ -1,0 +1,4 @@
+- [WIY Brand Colors](project_brand.md) — Primary #1B3A4B, Secondary #C9A449, fonts Playfair+Inter
+- [Voice Guidelines](reference_voice.md) — Voice doc location and key rules for WIY content
+- [Fee Model](project_fees.md) — Declining percentage flat fee model tiers
+- [Compliance Requirements](project_compliance.md) — Required disclosures and restrictions
