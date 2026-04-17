@@ -211,20 +211,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* As Seen In */}
-      <section className="bg-white py-8 sm:py-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-sm text-neutral-dark/50 uppercase tracking-wider font-semibold mb-6">
-            As seen in
-          </p>
-          <div className="flex items-center justify-center gap-8 sm:gap-16 text-2xl font-bold text-primary/30">
-            <span>Forbes</span>
-            <span>MarketWatch</span>
-            <span>Advisorpedia</span>
-          </div>
-        </div>
-      </section>
-
       <CTASection
         headline="Looking for an advisor who lives the work, not just sells it?"
         subtext="Book a 15-minute intro call. No pitch. No pressure. Just a conversation about what matters to you."

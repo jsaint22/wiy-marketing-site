@@ -13,7 +13,7 @@ const services = [
   {
     title: "Life Planning",
     description:
-      "Your plan starts with what you want your life to look like. We use financial therapy techniques and values-based coaching to build a financial structure that supports your ideal life. Not a cookie-cutter retirement projection.",
+      "Your plan starts with what you want your life to look like — not a retirement date. We use financial therapy and values-based coaching to build a financial structure around the life you actually want.",
     icon: "M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z",
   },
   {
@@ -119,18 +119,14 @@ export default function ServicesPage() {
             What We Do
           </p>
           <h1 className="text-4xl sm:text-5xl font-bold text-primary">
-            Financial planning that covers the whole picture.
+            Nine services. One fee. Zero silos.
           </h1>
           <p className="mt-6 text-lg text-neutral-dark/70 max-w-2xl mx-auto">
-            Every service is included in your flat fee. No add-ons. No surprise
-            charges. Just real planning built around your life.
-          </p>
-          <p className="mt-4 text-base text-neutral-dark/60 max-w-2xl mx-auto">
-            Under our Virtual Family Office model, these services work together
-            as one coordinated system — your tax strategy informs your investment
-            plan, your estate plan reflects your business structure, and your
-            insurance coverage fills the gaps. Nothing falls through the cracks
-            because nothing operates in a silo.
+            Every service below is included in your flat fee. No add-ons. No
+            surprise invoices. Your tax strategy informs your investment plan.
+            Your estate plan reflects your business structure. Your insurance
+            coverage fills the gaps. Nothing operates in a silo because
+            everything is coordinated by one team.
           </p>
         </div>
       </section>
@@ -140,8 +136,8 @@ export default function ServicesPage() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="Services"
-            title="Everything a family office delivers. Without the family office minimums."
-            subtitle="Each engagement is tailored to your situation. Here's what we bring to the table."
+            title="Everything a family office delivers. Without the eight-figure minimums."
+            subtitle="Here&apos;s what your flat fee covers. Every service. Every client. No tiers."
           />
 
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

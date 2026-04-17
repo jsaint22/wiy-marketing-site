@@ -18,6 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/for-real-estate-investors",
     "/for-fire-followers",
     "/case-studies",
+    "/vs-aum",
     "/blog",
   ];
 

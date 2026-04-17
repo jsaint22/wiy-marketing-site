@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Link from "next/link";
 import SectionHeading from "@/components/SectionHeading";
 import FeeCalculator from "@/components/FeeCalculator";
 import FAQSection from "@/components/FAQSection";
@@ -291,6 +292,21 @@ export default function PricingPage() {
           <p className="mt-8 text-center text-neutral-dark/60 text-sm">
             No tiers. No packages. Every client gets full access to every service.
           </p>
+        </div>
+      </section>
+
+      {/* vs AUM Link */}
+      <section className="bg-neutral-bg py-10 sm:py-14">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-2xl sm:text-3xl font-bold text-primary">
+            How does this compare to a 1% AUM advisor?
+          </h2>
+          <p className="mt-3 text-neutral-dark/70">
+            At $5M, a typical AUM advisor costs $50K/year. WIY costs $21K. Over 20 years, that gap becomes $580K+.
+          </p>
+          <Link href="/vs-aum" className="inline-block mt-6 px-8 py-3.5 bg-primary text-white font-semibold rounded-lg hover:bg-primary/90 transition-colors">
+            See the full comparison &rarr;
+          </Link>
         </div>
       </section>
 

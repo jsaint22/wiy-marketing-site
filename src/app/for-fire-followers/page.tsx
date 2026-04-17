@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import CTASection from "@/components/CTASection";
 import SectionHeading from "@/components/SectionHeading";
 
@@ -150,6 +151,22 @@ export default function ForFireFollowersPage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Case Study Link */}
+      <section className="bg-neutral-bg py-10 sm:py-14">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-secondary font-semibold text-sm uppercase tracking-wider mb-2">Case Study</p>
+          <h2 className="text-2xl sm:text-3xl font-bold text-primary">
+            $2.8M. 7 extra years of runway.
+          </h2>
+          <p className="mt-3 text-neutral-dark/70">
+            Tax-efficient withdrawals and geographic arbitrage — the math that changes everything.
+          </p>
+          <Link href="/case-studies" className="inline-block mt-6 text-primary font-semibold hover:text-secondary transition-colors">
+            Read the full case study &rarr;
+          </Link>
         </div>
       </section>
 

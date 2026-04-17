@@ -1,49 +1,77 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import CTASection from "@/components/CTASection";
 import SectionHeading from "@/components/SectionHeading";
 
 export const metadata: Metadata = {
   title: "Case Studies | WIY — Flat-Fee Fiduciary Financial Planning",
   description:
-    "Anonymized case studies showing how WIY approaches complex financial planning situations — from tech exits and real estate portfolios to FIRE planning and corporate-to-consulting transitions.",
+    "Anonymized case studies showing how WIY approaches complex financial planning situations — from tech exits and real estate portfolios to FIRE planning.",
 };
 
 const caseStudies = [
   {
     label: "The Tech Founder",
+    netWorth: "$4M",
+    highlight: "$47K saved in Year 1",
+    highlightColor: "text-success",
     situation:
-      "Built a SaaS company over seven years and completed a $4M exit. Proceeds were a mix of cash and earnout payments spread across multiple tax years.",
+      "Founder of a SaaS company, $4M net worth, $800K annual income, Delaware C-Corp, no retirement plan, paying maximum marginal tax rate.",
     challenge:
-      "Needed entity restructuring, tax optimization on the sale proceeds, and a plan for what comes next. Without proactive planning, a significant portion of the exit would have gone to federal and state taxes in a single year.",
-    approach:
-      "Multi-year Roth conversion strategy to take advantage of lower-income years post-exit. Charitable giving structure using a donor-advised fund to offset concentrated gains. Coast FIRE plan that allowed for part-time advisory work without jeopardizing long-term financial independence.",
+      "Leaving $40K+ of tax-advantaged retirement savings on the table every year. Poorly structured entity choice for income type.",
+    approach: [
+      "Restructured to S-Corp election for reasonable salary optimization",
+      "Set up Solo 401(k) with profit-sharing contributions",
+      "Coordinated with tax strategist for quarterly review cadence",
+      "Rebalanced retirement allocation to align with overall portfolio",
+    ],
+    outcome:
+      "$47,000 in year-one tax savings. Ongoing annual tax advantage of ~$35,000. Solo 401(k) balance growing at maximum contribution rate.",
+    icon: "M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4",
+    segment: "Business Owners",
+    segmentHref: "/for-business-owners",
   },
   {
-    label: "The Real Estate Portfolio",
+    label: "The RE Investor",
+    netWorth: "$6M",
+    highlight: "$142K tax deferral",
+    highlightColor: "text-success",
     situation:
-      "Owned 12 rental units across 3 states with a total portfolio value of approximately $6M. Income was being reported as passive across the board.",
+      "Real estate investor with 14 properties across three states, $6M net worth, W-2 income from day job, self-managing most properties.",
     challenge:
-      "Passive income classification was wrong, costing roughly $40K per year in unnecessary taxes. Entity structure had grown organically with no coordination between properties or states.",
-    approach:
-      "REPS (Real Estate Professional Status) qualification analysis to determine eligibility for active income treatment. Cost segregation studies on qualifying properties to accelerate depreciation. Entity restructuring to improve liability protection and simplify multi-state tax filing.",
-  },
-  {
-    label: "The Corporate Escapee",
-    situation:
-      "Left a $350K corporate job to start a consulting business. Had a mix of employer 401(k), RSUs, and deferred compensation that all needed to be unwound on different timelines.",
-    challenge:
-      "Needed to transition from employer benefits to a self-employed structure without creating unnecessary tax events or coverage gaps. COBRA was expiring, deferred comp was paying out, and there was no disability coverage in place.",
-    approach:
-      "Solo 401(k) with mega backdoor Roth contributions to maximize tax-advantaged savings. HSA optimization paired with a high-deductible health plan. Individual disability insurance to replace employer-provided coverage. Cash flow projection mapping consulting revenue against fixed expenses across the first 18 months.",
+      "No cost segregation studies in place. Missed 1031 opportunity on recent sale ($80K capital gains). Entity structure mixed \u2014 some LLCs, some personal, no asset protection strategy.",
+    approach: [
+      "Coordinated cost seg studies on 4 highest-basis properties",
+      "Structured 1031 exchange for pending sale",
+      "Established series LLC structure for asset protection",
+      "Integrated depreciation optimization into overall tax strategy",
+    ],
+    outcome:
+      "$62,000 in Year 1 tax deferral through cost seg. Additional $80,000 deferred through 1031. Liability protection gap closed before a tenant lawsuit that came in Year 2.",
+    icon: "M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6",
+    segment: "Real Estate Investors",
+    segmentHref: "/for-real-estate-investors",
   },
   {
     label: "The FIRE Couple",
+    netWorth: "$2.8M",
+    highlight: "7 extra years of runway",
+    highlightColor: "text-secondary",
     situation:
-      "Combined portfolio of $2.5M across taxable brokerage, traditional IRAs, and Roth accounts. Both partners in their late 30s, both wanting to leave corporate work by 40.",
+      "Couple, late 40s, $2.8M net worth, planning to retire at 52. Heavy in traditional 401(k)s, some taxable brokerage, modest Roth balance.",
     challenge:
-      "Current withdrawal strategy would pull from traditional IRAs first, triggering unnecessary taxes and potentially losing ACA premium subsidies. No coordination between accounts or tax brackets.",
-    approach:
-      "Roth conversion ladder timed to fill lower tax brackets during the early retirement years. ACA subsidy optimization by managing modified adjusted gross income through strategic account selection. Phased retirement timeline that allowed one partner to step away first while the other maintained employer healthcare coverage.",
+      "Withdrawal sequencing plan didn\u2019t exist. Roth conversion opportunity window (low-income years between career and Social Security) was being wasted. Healthcare costs for pre-65 retirement unaccounted for.",
+    approach: [
+      "Built 40-year withdrawal sequencing model",
+      "Designed 8-year Roth conversion ladder",
+      "Analyzed geographic arbitrage options (kept Tahoe home, bought a condo in Portugal for 4 months/year)",
+      "Coordinated healthcare planning for ACA eligibility vs. expat insurance",
+    ],
+    outcome:
+      "7 additional years of financial runway vs. prior plan. $150K+ lifetime tax savings from Roth conversion ladder. Clear geographic-optionality plan they didn\u2019t have before.",
+    icon: "M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z",
+    segment: "FIRE Followers",
+    segmentHref: "/for-fire-followers",
   },
 ];
 
@@ -57,12 +85,11 @@ export default function CaseStudiesPage() {
             Case Studies
           </p>
           <h1 className="text-4xl sm:text-5xl font-bold text-primary">
-            Real planning. Real results. Real people.
+            Real planning. Quantified results.
           </h1>
           <p className="mt-6 text-lg text-neutral-dark/70 max-w-2xl mx-auto">
-            These are anonymized examples of how we&apos;ve helped clients
-            navigate complex financial situations. Names and identifying details
-            have been changed.
+            Three scenarios. Three different financial lives. One thing in
+            common: the math worked.
           </p>
         </div>
       </section>
@@ -70,61 +97,86 @@ export default function CaseStudiesPage() {
       {/* Case Studies */}
       <section className="py-10 sm:py-14 bg-white">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            eyebrow="Client Scenarios"
-            title="How we approach complex situations."
-          />
-
-          <div className="mt-16 space-y-12">
+          <div className="space-y-16">
             {caseStudies.map((study) => (
               <div
                 key={study.label}
-                className="rounded-2xl border border-neutral-bg p-8 sm:p-10 hover:shadow-lg hover:border-secondary/30 transition-all"
+                className="rounded-2xl border border-neutral-bg overflow-hidden"
               >
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-10 h-10 rounded-xl bg-secondary/10 flex items-center justify-center">
-                    <svg
-                      className="w-5 h-5 text-secondary"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      strokeWidth={1.5}
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                      />
-                    </svg>
+                {/* Header */}
+                <div className="bg-primary px-8 py-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center">
+                      <svg
+                        className="w-6 h-6 text-white"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth={1.5}
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" d={study.icon} />
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-bold text-white">
+                        {study.label}
+                      </h3>
+                      <p className="text-white/60 text-sm">
+                        {study.netWorth} net worth &middot;{" "}
+                        <Link href={study.segmentHref} className="text-secondary hover:text-secondary/80 transition-colors">
+                          {study.segment}
+                        </Link>
+                      </p>
+                    </div>
                   </div>
-                  <h3 className="text-2xl font-bold text-primary">
-                    {study.label}
-                  </h3>
+                  <div className="bg-white/10 rounded-lg px-4 py-2">
+                    <p className={`text-lg font-bold ${study.highlightColor}`}>
+                      {study.highlight}
+                    </p>
+                  </div>
                 </div>
 
-                <div className="grid gap-6 sm:grid-cols-3">
-                  <div>
-                    <h4 className="text-sm font-semibold text-secondary uppercase tracking-wider mb-2">
-                      Situation
-                    </h4>
-                    <p className="text-neutral-dark/70 leading-relaxed">
-                      {study.situation}
-                    </p>
+                {/* Body */}
+                <div className="p-8">
+                  <div className="grid gap-8 md:grid-cols-2">
+                    <div>
+                      <h4 className="text-sm font-semibold text-secondary uppercase tracking-wider mb-3">
+                        Situation
+                      </h4>
+                      <p className="text-neutral-dark/70 leading-relaxed">
+                        {study.situation}
+                      </p>
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-semibold text-secondary uppercase tracking-wider mb-3">
+                        Challenge
+                      </h4>
+                      <p className="text-neutral-dark/70 leading-relaxed">
+                        {study.challenge}
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="text-sm font-semibold text-secondary uppercase tracking-wider mb-2">
-                      Challenge
+
+                  <div className="mt-8">
+                    <h4 className="text-sm font-semibold text-secondary uppercase tracking-wider mb-3">
+                      What We Did
                     </h4>
-                    <p className="text-neutral-dark/70 leading-relaxed">
-                      {study.challenge}
-                    </p>
+                    <ul className="grid gap-3 sm:grid-cols-2">
+                      {study.approach.map((item) => (
+                        <li key={item} className="flex items-start gap-2">
+                          <span className="text-success mt-0.5 font-bold flex-shrink-0">&#10003;</span>
+                          <span className="text-neutral-dark/70 text-sm leading-relaxed">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                  <div>
-                    <h4 className="text-sm font-semibold text-secondary uppercase tracking-wider mb-2">
-                      Planning Approach
+
+                  <div className="mt-8 bg-success/5 border border-success/20 rounded-xl p-6">
+                    <h4 className="text-sm font-semibold text-success uppercase tracking-wider mb-2">
+                      Outcome
                     </h4>
-                    <p className="text-neutral-dark/70 leading-relaxed">
-                      {study.approach}
+                    <p className="text-primary font-semibold leading-relaxed">
+                      {study.outcome}
                     </p>
                   </div>
                 </div>
@@ -138,14 +190,39 @@ export default function CaseStudiesPage() {
       <section className="bg-neutral-bg py-10">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-sm text-neutral-dark/50 text-center leading-relaxed">
-            These case studies are hypothetical examples for illustrative
-            purposes only. They do not represent actual client results and should
-            not be construed as a guarantee of future performance.
+            Illustrative case study based on typical client scenarios. Names
+            and specific details have been anonymized and aggregated. Individual
+            results vary based on personal circumstances. Not a guarantee of
+            future performance or outcomes. Past results do not guarantee future
+            performance.
           </p>
         </div>
       </section>
 
-      {/* CTA */}
+      {/* See Your Math CTA */}
+      <section className="bg-white py-10 sm:py-14">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <SectionHeading
+            eyebrow="Your Turn"
+            title="See what the math looks like for you."
+          />
+          <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href="/pricing#calculator"
+              className="px-8 py-3.5 bg-primary text-white font-semibold rounded-lg hover:bg-primary/90 transition-colors"
+            >
+              Open the Fee Calculator
+            </Link>
+            <Link
+              href="/vs-aum"
+              className="px-8 py-3.5 border-2 border-primary text-primary font-semibold rounded-lg hover:bg-primary/5 transition-colors"
+            >
+              Compare WIY vs. AUM
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <CTASection />
     </main>
   );

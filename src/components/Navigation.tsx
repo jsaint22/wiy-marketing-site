@@ -8,10 +8,11 @@ import { usePathname } from "next/navigation";
 const navLinks = [
   { href: "/about", label: "About" },
   { href: "/services", label: "Services" },
-  { href: "/virtual-family-office", label: "Virtual Family Office" },
+  { href: "/virtual-family-office", label: "VFO" },
   { href: "/pricing", label: "Pricing" },
+  { href: "/vs-aum", label: "vs AUM" },
+  { href: "/case-studies", label: "Case Studies" },
   { href: "/blog", label: "Blog" },
-  { href: "/contact", label: "Contact" },
 ];
 
 export default function Navigation() {
