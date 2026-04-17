@@ -360,7 +360,7 @@ function yearOneTable() {
 
 const logoPath = path.join(process.cwd(), "public", "logos", "wiy-logo-stacked.png");
 
-export default function AumTeardownPDF() {
+export default function AumMathPDF() {
   const table = yearOneTable();
   const proj5M_20 = projectFees(5_000_000, 20);
   const proj5M_30 = projectFees(5_000_000, 30);
@@ -395,7 +395,7 @@ export default function AumTeardownPDF() {
 
   return (
     <Document
-      title="The AUM Teardown — Wealth In Yourself"
+      title="The AUM Math — Wealth In Yourself"
       author="Joshua St. Laurent, CFP®, CFT™"
       subject="What 1% of your assets actually costs you over a career"
     >
@@ -423,7 +423,7 @@ export default function AumTeardownPDF() {
               marginBottom: 16,
             }}
           >
-            The AUM Teardown
+            The AUM Math
           </Text>
           <View
             style={{

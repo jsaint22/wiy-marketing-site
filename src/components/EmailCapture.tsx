@@ -24,7 +24,7 @@ export default function EmailCapture() {
       if (res.ok) {
         setStatus("success");
         setMessage(
-          data.message || "Sent! Check your inbox for The AUM Teardown."
+          data.message || "Sent! Check your inbox for The AUM Math."
         );
         setEmail("");
       } else {
@@ -47,7 +47,7 @@ export default function EmailCapture() {
         </h2>
         <p className="mt-2 text-lg text-secondary font-semibold">(Free PDF)</p>
         <p className="mt-4 text-white/80 text-lg leading-relaxed">
-          The AUM Teardown shows exactly how 1% per year compounds into $1M+
+          The AUM Math shows exactly how 1% per year compounds into $1M+
           over a career. No email bait. Just the math.
         </p>
 
@@ -65,7 +65,7 @@ export default function EmailCapture() {
                 placeholder="your@email.com"
                 required
                 disabled={status === "loading"}
-                className="flex-1 px-4 py-3 rounded-lg text-neutral-dark placeholder:text-neutral-dark/40 focus:outline-none focus:ring-2 focus:ring-secondary disabled:opacity-60"
+                className="flex-1 px-4 py-3 rounded-lg bg-[#F5F5F0] text-gray-900 placeholder:text-gray-400 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-secondary focus:border-secondary disabled:opacity-60"
               />
               <button
                 type="submit"

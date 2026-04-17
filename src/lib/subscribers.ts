@@ -5,7 +5,7 @@ const SUBSCRIBERS_FILE = path.join(process.cwd(), "data", "subscribers.csv");
 
 export async function appendSubscriber(email: string): Promise<void> {
   const timestamp = new Date().toISOString();
-  const line = `${email},${timestamp},aum-teardown\n`;
+  const line = `${email},${timestamp},aum-math\n`;
 
   try {
     // Check if file exists; if not, write header first

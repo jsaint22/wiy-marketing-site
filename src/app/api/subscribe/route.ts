@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 import { renderToBuffer } from "@react-pdf/renderer";
 import React from "react";
-import AumTeardownPDF from "@/lib/pdf/aum-teardown";
+import AumMathPDF from "@/lib/pdf/aum-math";
 import { appendSubscriber } from "@/lib/subscribers";
 
 export const dynamic = "force-dynamic";
@@ -20,7 +20,7 @@ export async function POST(request: NextRequest) {
 
     // Generate PDF
     const pdfBuffer = await renderToBuffer(
-      React.createElement(AumTeardownPDF)
+      React.createElement(AumMathPDF)
     );
 
     // Send email with PDF attached
@@ -29,14 +29,10 @@ export async function POST(request: NextRequest) {
       from: "Josh at WIY <josh@go.wealthinyourself.com>",
       to: email,
       subject:
-        "Your AUM Teardown (and the math your advisor probably won't show you)",
+        "Your AUM Math (and what your advisor probably won't show you)",
       text: `Hey,
 
-Thanks for requesting the AUM Teardown.
-
-The math is in the attached PDF. It shows what 1% of your assets actually costs over 20 and 30 years — at $1M, $5M, $10M, and $25M net worth.
-
-Spoiler: it's more than you think.
+Thanks for requesting the AUM Math. It's in the attached PDF showing what 1% of your assets actually costs over 20 and 30 years — at $1M, $5M, $10M, and $25M net worth. Spoiler: it's more than you think.
 
 If you want to see your specific numbers, use the calculator at wealthinyourself.com/pricing.
 
@@ -45,7 +41,7 @@ If you want to talk about what flat-fee planning could look like for you, here's
 Josh`,
       attachments: [
         {
-          filename: "The-AUM-Teardown-WIY.pdf",
+          filename: "aum-math.pdf",
           content: Buffer.from(pdfBuffer),
         },
       ],
@@ -64,7 +60,7 @@ Josh`,
 
     return NextResponse.json({
       success: true,
-      message: "Sent! Check your inbox for The AUM Teardown.",
+      message: "Sent! Check your inbox for The AUM Math.",
     });
   } catch (err) {
     console.error("[Subscribe] Error:", err);
