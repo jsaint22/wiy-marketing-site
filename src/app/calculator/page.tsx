@@ -13,7 +13,7 @@ export default function CalculatorPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-primary py-16 sm:py-24">
+      <section className="bg-primary py-10 sm:py-14">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-3xl sm:text-5xl font-bold text-white">
             What would you actually pay?
@@ -26,14 +26,14 @@ export default function CalculatorPage() {
       </section>
 
       {/* Calculator */}
-      <section className="py-16 sm:py-24 bg-neutral-bg">
+      <section className="py-10 sm:py-14 bg-neutral-bg">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <FeeCalculator standalone={false} />
         </div>
       </section>
 
       {/* How the fee works */}
-      <section className="py-16 sm:py-24 bg-white">
+      <section className="py-10 sm:py-14 bg-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl sm:text-3xl font-bold text-primary">
             How the fee works
@@ -41,14 +41,14 @@ export default function CalculatorPage() {
           <div className="mt-6 space-y-4 text-neutral-dark/80 text-lg leading-relaxed">
             <p>
               WIY uses a declining percentage model. The rate you pay drops as
-              your net worth grows. Your first $1M is charged at 0.50%. The next
-              $2M at 0.35%. The next $2M at 0.25%. The next $5M at 0.15%. And
-              everything above $10M at 0.10%.
+              your net worth grows. Your first $1M is charged at 1.00%. The next
+              $2M at 0.35%. The next $7M at 0.20%. And everything above $10M at
+              0.10%. Your primary residence is excluded from the calculation.
             </p>
             <p>
               That means the more wealth you build, the less you pay as a
               percentage. Your fee never scales against you the way a flat 1%
-              AUM fee does.
+              AUM fee does. The minimum annual fee is $10,000.
             </p>
           </div>
           <div className="mt-8 flex flex-col sm:flex-row gap-4">
@@ -58,14 +58,12 @@ export default function CalculatorPage() {
             >
               See Full Pricing Details
             </Link>
-            <a
-              href="https://calendly.com/joshsanchez-wiy/intro-call"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/contact"
               className="inline-block px-8 py-3.5 bg-secondary text-primary font-semibold rounded-lg hover:bg-secondary/90 transition-colors text-center"
             >
               Book a Call
-            </a>
+            </Link>
           </div>
         </div>
       </section>

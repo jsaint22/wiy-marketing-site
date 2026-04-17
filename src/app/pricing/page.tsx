@@ -11,19 +11,18 @@ export const metadata: Metadata = {
 };
 
 const tiers = [
-  { range: "First $1M", rate: "0.50%", note: "of net worth" },
+  { range: "First $1M", rate: "1.00%", note: "of net worth" },
   { range: "$1M – $3M", rate: "0.35%", note: "next $2M" },
-  { range: "$3M – $5M", rate: "0.25%", note: "next $2M" },
-  { range: "$5M – $10M", rate: "0.15%", note: "next $5M" },
+  { range: "$3M – $10M", rate: "0.20%", note: "next $7M" },
   { range: "Above $10M", rate: "0.10%", note: "everything after" },
 ];
 
 const milestones = [
-  { nw: "$1M", fee: "$417/mo", effective: "0.50%" },
-  { nw: "$3M", fee: "$779/mo", effective: "0.31%" },
-  { nw: "$5M", fee: "$1,029/mo", effective: "0.25%" },
-  { nw: "$10M", fee: "$1,654/mo", effective: "0.20%" },
-  { nw: "$20M", fee: "$2,654/mo", effective: "0.16%" },
+  { nw: "$1M", fee: "$833/mo", effective: "1.00%" },
+  { nw: "$3M", fee: "$1,417/mo", effective: "0.57%" },
+  { nw: "$5M", fee: "$1,750/mo", effective: "0.42%" },
+  { nw: "$10M", fee: "$2,583/mo", effective: "0.31%" },
+  { nw: "$20M", fee: "$3,417/mo", effective: "0.21%" },
 ];
 
 const includedServices = [
@@ -62,6 +61,16 @@ const includedServices = [
     desc: "1031 exchanges, depreciation, entity structures, and passive activity rules.",
     icon: "M8.25 21v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21m0 0h4.5V3.545M12.75 21h7.5V10.75M2.25 21h1.5m18 0h-18M2.25 9l4.5-1.636M18.75 3l-1.5.545m0 6.205 3 1m1.5.5-1.5-.5M6.75 7.364V3h-3v18m3-13.636 10.5-3.819",
   },
+  {
+    title: "Unlimited Meetings",
+    desc: "We never nickel-and-dime your time. Meet as often as you need — it's included.",
+    icon: "M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5",
+  },
+  {
+    title: "VFO Partner Network",
+    desc: "Access to our Virtual Family Office network of specialists — CPAs, attorneys, insurance pros — included.",
+    icon: "M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z",
+  },
 ];
 
 const faqs = [
@@ -73,22 +82,22 @@ const faqs = [
   {
     question: "How is net worth calculated?",
     answer:
-      "We use total net worth: assets minus liabilities. That includes investment accounts, real estate equity, business value, and other holdings, minus any outstanding debt. We reassess periodically and adjust your fee accordingly.",
+      "We calculate net worth by totaling your assets (investments, business equity, real estate holdings, cash) minus your liabilities. Your primary residence is excluded from the calculation. We reassess your net worth on your anniversary date each year — the date we began working together.",
   },
   {
     question: "Do you charge for the intro call?",
     answer:
-      "No. The 30-minute intro call is free. No pitch. No pressure. We use it to understand your situation and determine if we're the right fit. If we're not, we'll tell you.",
+      "No. The 15-minute intro call is free. No pitch. No pressure. We use it to understand your situation and determine if we're the right fit. If we're not, we'll tell you.",
   },
   {
     question: "How does this compare to a typical AUM advisor?",
     answer:
-      "Most AUM advisors charge 1% of assets under management. At $3M, that's $30,000 per year. Our fee at $3M is about $9,350 per year. The gap widens as your wealth grows. Over 30 years, you could keep hundreds of thousands more with our model.",
+      "Most AUM advisors charge 1% of assets under management. At $3M, that's $30,000 per year. Our fee at $3M is $17,000 per year — a savings of $13,000 annually. The gap widens as your wealth grows. Over 30 years, you could keep hundreds of thousands more with our model.",
   },
   {
     question: "Is there a minimum net worth requirement?",
     answer:
-      "Yes. We work with clients who have at least $500K in net worth. Below that threshold, a flat fee model may not be the most cost-effective option for you, and we'd rather be honest about that upfront.",
+      "Our minimum annual fee is $10,000, which typically makes sense for clients with a net worth of $1M or higher (excluding primary residence). We can work with clients starting at $500K in net worth, but at that level you'd pay the $10,000 annual flat fee. Below $500K, a flat-fee model likely isn't the most cost-effective option for you, and we'd rather be honest about that upfront.",
   },
   {
     question: "Can I cancel at any time?",
@@ -101,9 +110,9 @@ const faqs = [
       "Because a $500/month fee means something very different to someone with $500K versus $10M. Our tiered model scales with complexity — higher net worth typically means more accounts, entities, and tax considerations. The declining rate ensures you're never overpaying.",
   },
   {
-    question: "Do fees change if markets drop?",
+    question: "Do fees change if my net worth decreases?",
     answer:
-      "Your fee is based on net worth, not market performance on a given day. We reassess periodically. Short-term market swings don't trigger fee changes. This keeps your costs predictable.",
+      "We reassess your fee on your anniversary date each year based on your current net worth. If your net worth has grown, your fee may increase. If it has decreased — which happens with clients who retire and travel the world, contribute heavily to philanthropy, or simply enter a different life phase — your fee decreases accordingly. Our commitment is to charge fairly based on your current situation, not to lock in a fee that stops making sense for you.",
   },
 ];
 
@@ -111,7 +120,7 @@ export default function PricingPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-white py-16 sm:py-24 lg:py-32">
+      <section className="bg-white py-10 sm:py-16 lg:py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-secondary font-semibold text-sm uppercase tracking-wider mb-4">
             Transparent Pricing
@@ -126,8 +135,20 @@ export default function PricingPage() {
         </div>
       </section>
 
+      {/* Primary residence callout */}
+      <section className="bg-success/5 border-y border-success/20">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 text-center">
+          <p className="text-lg font-semibold text-primary">
+            Your primary residence isn&apos;t included in the net worth calculation.
+          </p>
+          <p className="mt-2 text-neutral-dark/70">
+            We don&apos;t believe you should pay an advisory fee on the equity in your home — that&apos;s not an asset we&apos;re managing, strategizing around, or adding value to.
+          </p>
+        </div>
+      </section>
+
       {/* Fee Formula Visualization */}
-      <section className="bg-neutral-bg py-16 sm:py-24">
+      <section className="bg-neutral-bg py-10 sm:py-14">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="The Formula"
@@ -136,7 +157,7 @@ export default function PricingPage() {
           />
 
           {/* Tier breakdown */}
-          <div className="mt-12 max-w-3xl mx-auto">
+          <div className="mt-10 max-w-3xl mx-auto">
             <div className="bg-white rounded-2xl border border-neutral-bg overflow-hidden">
               <div className="grid grid-cols-3 gap-0 bg-primary text-white text-xs sm:text-sm font-semibold uppercase tracking-wider">
                 <div className="px-4 sm:px-6 py-3">Net Worth Range</div>
@@ -164,11 +185,14 @@ export default function PricingPage() {
                 </div>
               ))}
             </div>
+            <p className="mt-4 text-center text-sm text-neutral-dark/60">
+              $10,000 annual minimum fee applies at all net worth levels.
+            </p>
           </div>
 
           {/* Example milestones */}
-          <div className="mt-16">
-            <h3 className="text-center text-xl sm:text-2xl font-bold text-primary mb-8">
+          <div className="mt-12">
+            <h3 className="text-center text-xl sm:text-2xl font-bold text-primary mb-6">
               What that looks like in practice
             </h3>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 max-w-5xl mx-auto">
@@ -195,33 +219,50 @@ export default function PricingPage() {
         </div>
       </section>
 
+      {/* Fee Transparency Differentiator */}
+      <section className="bg-white py-10 sm:py-14">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-primary rounded-2xl p-8 sm:p-10 text-white">
+            <h3 className="text-2xl sm:text-3xl font-bold">
+              We publish our fees because we have nothing to hide.
+            </h3>
+            <p className="mt-4 text-white/80 text-lg leading-relaxed">
+              Most firms serving high-net-worth clients hide their fees. You&apos;ll sit through multiple sales calls before anyone tells you what you&apos;re actually paying. And then you find out they&apos;re charging 1% of your assets annually — for portfolio management they&apos;ve mostly automated.
+            </p>
+            <p className="mt-4 text-white/80 text-lg leading-relaxed">
+              Our pricing is flat, fair, and aligned with your success — not your account balance.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Interactive Calculator */}
-      <section className="bg-white py-16 sm:py-24">
+      <section className="bg-neutral-bg py-10 sm:py-14">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="Calculator"
             title="See your exact fee."
             subtitle="Drag the slider. Compare to a 1% AUM advisor. Do the math yourself."
           />
-          <div className="mt-12">
+          <div className="mt-10">
             <FeeCalculator />
           </div>
         </div>
       </section>
 
       {/* What's Included */}
-      <section className="bg-neutral-bg py-16 sm:py-24">
+      <section className="bg-white py-10 sm:py-14">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="What You Get"
             title="Everything. One fee."
             subtitle="No add-ons. No surprise invoices. If it touches your financial life, it's covered."
           />
-          <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {includedServices.map((service) => (
               <div
                 key={service.title}
-                className="bg-white rounded-xl p-6 border border-neutral-bg"
+                className="bg-neutral-bg rounded-xl p-6 border border-neutral-bg"
               >
                 <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
                   <svg
@@ -247,7 +288,7 @@ export default function PricingPage() {
               </div>
             ))}
           </div>
-          <p className="mt-10 text-center text-neutral-dark/60 text-sm">
+          <p className="mt-8 text-center text-neutral-dark/60 text-sm">
             No tiers. No packages. Every client gets full access to every service.
           </p>
         </div>

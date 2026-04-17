@@ -23,7 +23,7 @@ export default function FAQSection({ faqs, title = "Frequently Asked Questions" 
   };
 
   return (
-    <section className="py-16 sm:py-24 bg-white">
+    <section className="py-10 sm:py-14 bg-white">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl sm:text-4xl font-bold text-primary text-center mb-12">
           {title}

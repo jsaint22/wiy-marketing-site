@@ -31,9 +31,9 @@ export default function HomePage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-white py-16 sm:py-24 lg:py-32">
+      <section className="bg-white py-10 sm:py-16 lg:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             <div>
               <p className="text-secondary font-semibold text-sm uppercase tracking-wider mb-4">
                 Flat-Fee Fiduciary Advisory
@@ -65,8 +65,8 @@ export default function HomePage() {
             <div className="relative">
               <div className="aspect-[4/3] rounded-2xl bg-neutral-bg overflow-hidden">
                 <Image
-                  src="/team/josh-headshot.jpg"
-                  alt="Josh Sanchez, CFP, CFT-I — Founder of Wealth In Yourself"
+                  src="/team/josh-headshot-v2.jpg"
+                  alt="Joshua St. Laurent, CFP, CFT — Founder of Wealth In Yourself"
                   width={600}
                   height={450}
                   className="w-full h-full object-cover"
@@ -87,14 +87,14 @@ export default function HomePage() {
       </section>
 
       {/* VFO positioning */}
-      <section className="bg-neutral-bg py-16 sm:py-24">
+      <section className="bg-neutral-bg py-10 sm:py-14">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="The Virtual Family Office"
             title="The planning infrastructure of the ultra-wealthy. Without the eight-figure price tag."
             subtitle="A Virtual Family Office coordinates your tax strategy, investment planning, insurance, estate plan, and business structure into one coherent system. Most people only get this if they have $50M+. We built it for everyone."
           />
-          <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               { title: "Tax Strategy", desc: "Proactive tax planning, not just filing. We find the money your CPA leaves on the table." },
               { title: "Investment Planning", desc: "Low-cost, evidence-based portfolios. No proprietary products. No commissions." },
@@ -105,16 +105,16 @@ export default function HomePage() {
             ].map((item) => (
               <div
                 key={item.title}
-                className="bg-white rounded-xl p-6 border border-neutral-bg"
+                className="bg-white rounded-xl p-6 border border-neutral-bg transition-colors duration-200 hover:bg-primary hover:text-white hover:border-primary group cursor-default"
               >
-                <h3 className="text-lg font-bold text-primary">{item.title}</h3>
-                <p className="mt-2 text-sm text-neutral-dark/70 leading-relaxed">
+                <h3 className="text-lg font-bold text-primary group-hover:text-white transition-colors duration-200">{item.title}</h3>
+                <p className="mt-2 text-sm text-neutral-dark/70 leading-relaxed group-hover:text-white/80 transition-colors duration-200">
                   {item.desc}
                 </p>
               </div>
             ))}
           </div>
-          <div className="mt-10 text-center">
+          <div className="mt-8 text-center">
             <Link
               href="/virtual-family-office"
               className="text-primary font-semibold hover:text-secondary transition-colors"
@@ -126,13 +126,13 @@ export default function HomePage() {
       </section>
 
       {/* Ideal client paths */}
-      <section className="bg-white py-16 sm:py-24">
+      <section className="bg-white py-10 sm:py-14">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="Who We Work With"
             title="Built for people who refuse to do things the conventional way."
           />
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-8">
             {clientPaths.map((path) => (
               <Link
                 key={path.title}
@@ -166,9 +166,9 @@ export default function HomePage() {
       </section>
 
       {/* Fee model overview */}
-      <section className="bg-neutral-bg py-16 sm:py-24">
+      <section className="bg-neutral-bg py-10 sm:py-14">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
             <div>
               <SectionHeading
                 eyebrow="Transparent Pricing"
@@ -178,10 +178,10 @@ export default function HomePage() {
               />
               <div className="mt-8 space-y-4">
                 {[
-                  ["$1M net worth", "~$417/mo", "0.50%"],
-                  ["$3M net worth", "~$779/mo", "0.31%"],
-                  ["$5M net worth", "~$1,029/mo", "0.25%"],
-                  ["$10M net worth", "~$1,654/mo", "0.20%"],
+                  ["$1M net worth", "~$833/mo", "1.00%"],
+                  ["$3M net worth", "~$1,417/mo", "0.57%"],
+                  ["$5M net worth", "~$1,750/mo", "0.42%"],
+                  ["$10M net worth", "~$2,583/mo", "0.31%"],
                 ].map(([nw, fee, rate]) => (
                   <div
                     key={nw}

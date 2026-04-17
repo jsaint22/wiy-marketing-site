@@ -53,7 +53,7 @@ export default function ForFireFollowersPage() {
   return (
     <main>
       {/* Hero */}
-      <section className="bg-neutral-bg py-16 sm:py-24">
+      <section className="bg-neutral-bg py-10 sm:py-14">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-secondary font-semibold text-sm uppercase tracking-wider mb-3">
             Financial Planning for FIRE
@@ -70,7 +70,7 @@ export default function ForFireFollowersPage() {
       </section>
 
       {/* Pain Points */}
-      <section className="py-16 sm:py-24 bg-white">
+      <section className="py-10 sm:py-14 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="What We Focus On"
@@ -112,7 +112,7 @@ export default function ForFireFollowersPage() {
       </section>
 
       {/* How We Work */}
-      <section className="py-16 sm:py-24 bg-neutral-bg">
+      <section className="py-10 sm:py-14 bg-neutral-bg">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="How We Work"
@@ -150,7 +150,7 @@ export default function ForFireFollowersPage() {
       {/* CTA */}
       <CTASection
         headline="Ready to stop guessing and start planning your exit?"
-        subtext="Book a 30-minute intro call. No pitch. No pressure. Just a conversation about whether the math actually works."
+        subtext="Book a 15-minute intro call. No pitch. No pressure. Just a conversation about whether the math actually works."
       />
     </main>
   );

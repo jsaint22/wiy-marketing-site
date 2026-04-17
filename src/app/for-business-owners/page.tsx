@@ -117,7 +117,7 @@ export default function ForBusinessOwnersPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-white py-16 sm:py-24 lg:py-32">
+      <section className="bg-white py-10 sm:py-16 lg:py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-secondary font-semibold text-sm uppercase tracking-wider mb-4">
             For Business Owners
@@ -135,7 +135,7 @@ export default function ForBusinessOwnersPage() {
       </section>
 
       {/* Pain Points */}
-      <section className="bg-neutral-bg py-16 sm:py-24">
+      <section className="bg-neutral-bg py-10 sm:py-14">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="The Real Challenges"
@@ -162,7 +162,7 @@ export default function ForBusinessOwnersPage() {
       </section>
 
       {/* How We Work */}
-      <section className="bg-white py-16 sm:py-24">
+      <section className="bg-white py-10 sm:py-14">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="Our Approach"
@@ -195,7 +195,7 @@ export default function ForBusinessOwnersPage() {
       </section>
 
       {/* Social Proof / Credibility Block */}
-      <section className="bg-neutral-bg py-16 sm:py-24">
+      <section className="bg-neutral-bg py-10 sm:py-14">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <blockquote className="border-l-4 border-secondary pl-6 py-2 text-xl font-semibold text-primary italic">
             &ldquo;Most business owners don&apos;t have a financial plan. They
@@ -221,7 +221,7 @@ export default function ForBusinessOwnersPage() {
       {/* CTA */}
       <CTASection
         headline="Ready for an advisor who understands what you&apos;re building?"
-        subtext="Book a 30-minute intro call. No pitch. No AUM proposal. Just a conversation about your business, your taxes, and what comes next."
+        subtext="Book a 15-minute intro call. No pitch. No AUM proposal. Just a conversation about your business, your taxes, and what comes next."
       />
     </>
   );

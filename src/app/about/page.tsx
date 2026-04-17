@@ -4,37 +4,34 @@ import CTASection from "@/components/CTASection";
 import SectionHeading from "@/components/SectionHeading";
 
 export const metadata: Metadata = {
-  title: "About Josh Sanchez",
+  title: "About Joshua St. Laurent",
   description:
-    "Josh Sanchez, CFP, CFT-I, left the brokerage world to build a flat-fee fiduciary firm that serves clients first. Learn why he founded Wealth In Yourself and the FIAT principles behind it.",
+    "Joshua St. Laurent, CFP, CFT, left the brokerage world to build a flat-fee fiduciary firm that serves clients first. Learn why he founded Wealth In Yourself and the standards behind it.",
 };
 
 const credentials = [
-  { label: "CFP", detail: "Certified Financial Planner" },
-  { label: "CFT-I", detail: "Certified Financial Therapist — Level I" },
+  { label: "CFP\u00AE", detail: "Certified Financial Planner" },
+  { label: "CFT\u2122", detail: "Certified Financial Therapist" },
+  { label: "APFC\u00AE", detail: "Accredited Personal Financial Coach" },
+  { label: "ACC", detail: "Associate Certified Coach" },
   { label: "MS", detail: "Financial Life Planning, Golden Gate University" },
-  { label: "Series 65", detail: "Licensed Investment Adviser Representative" },
-  { label: "RIA", detail: "Registered Investment Adviser, State of Nevada" },
+  { label: "EA", detail: "Enrolled Agent (in progress)" },
 ];
 
-const fiatPrinciples = [
+const standards = [
   {
-    letter: "F",
     word: "Fee-only",
     desc: "No commissions. No kickbacks. We get paid by you and only you.",
   },
   {
-    letter: "I",
     word: "Independent",
     desc: "No parent company. No proprietary products. No one telling us what to sell.",
   },
   {
-    letter: "A",
     word: "Always a fiduciary",
     desc: "Not sometimes. Not when it's convenient. Every recommendation, every time.",
   },
   {
-    letter: "T",
     word: "Transparent",
     desc: "A flat fee you can see. No AUM percentages hiding in the background as your wealth grows.",
   },
@@ -44,18 +41,18 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-white py-16 sm:py-24 lg:py-32">
+      <section className="bg-white py-10 sm:py-14 lg:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             <div>
               <p className="text-secondary font-semibold text-sm uppercase tracking-wider mb-4">
                 Meet the Founder
               </p>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary leading-tight">
-                Josh Sanchez
+                Joshua St. Laurent
               </h1>
               <p className="mt-2 text-xl text-neutral-dark/70 font-medium">
-                CFP&reg; &middot; CFT-I&trade; &middot; Founder
+                CFP&reg; &middot; CFT&trade; &middot; APFC&reg; &middot; Founder
               </p>
               <p className="mt-6 text-lg text-neutral-dark/70 leading-relaxed max-w-xl">
                 I built Wealth In Yourself because the advisory industry is
@@ -66,8 +63,8 @@ export default function AboutPage() {
             <div className="relative">
               <div className="aspect-[4/5] rounded-2xl bg-neutral-bg overflow-hidden">
                 <Image
-                  src="/team/josh-headshot.jpg"
-                  alt="Josh Sanchez, CFP, CFT-I — Founder of Wealth In Yourself"
+                  src="/team/josh-headshot-v2.jpg"
+                  alt="Joshua St. Laurent, CFP, CFT — Founder of Wealth In Yourself"
                   width={600}
                   height={750}
                   className="w-full h-full object-cover"
@@ -80,13 +77,13 @@ export default function AboutPage() {
       </section>
 
       {/* Origin Story — Fidelity */}
-      <section className="bg-neutral-bg py-16 sm:py-24">
+      <section className="bg-neutral-bg py-10 sm:py-14">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="The Breaking Point"
             title="Why I left Fidelity."
           />
-          <div className="mt-10 space-y-6 text-neutral-dark/80 text-lg leading-relaxed">
+          <div className="mt-8 space-y-6 text-neutral-dark/80 text-lg leading-relaxed">
             <p>
               I started my career at Fidelity. I learned a lot. I also learned
               how the system actually works.
@@ -110,13 +107,13 @@ export default function AboutPage() {
       </section>
 
       {/* GGU Discovery */}
-      <section className="bg-white py-16 sm:py-24">
+      <section className="bg-white py-10 sm:py-14">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="The Shift"
             title="Where planning became personal."
           />
-          <div className="mt-10 space-y-6 text-neutral-dark/80 text-lg leading-relaxed">
+          <div className="mt-8 space-y-6 text-neutral-dark/80 text-lg leading-relaxed">
             <p>
               I pursued a Master&apos;s in Financial Life Planning at Golden
               Gate University. Not an MBA. Not a finance degree. A program
@@ -141,23 +138,20 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* FIAT Principles */}
-      <section className="bg-neutral-bg py-16 sm:py-24">
+      {/* What We Stand For */}
+      <section className="bg-neutral-bg py-10 sm:py-14">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="The Standard"
-            title="FIAT: The principles behind every decision."
+            title="What we stand for."
             subtitle="No commissions. No proprietary products. No AUM fees that create conflicts. A flat fee structure that stays fair as you grow."
           />
-          <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {fiatPrinciples.map((item) => (
+          <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {standards.map((item) => (
               <div
-                key={item.letter}
+                key={item.word}
                 className="bg-white rounded-xl p-6 border border-neutral-bg"
               >
-                <span className="inline-block text-3xl font-bold text-secondary mb-2">
-                  {item.letter}
-                </span>
                 <h3 className="text-lg font-bold text-primary">{item.word}</h3>
                 <p className="mt-2 text-sm text-neutral-dark/70 leading-relaxed">
                   {item.desc}
@@ -169,13 +163,13 @@ export default function AboutPage() {
       </section>
 
       {/* Credentials */}
-      <section className="bg-white py-16 sm:py-24">
+      <section className="bg-white py-10 sm:py-14">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="Credentials"
             title="The receipts."
           />
-          <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
+          <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
             {credentials.map((cred) => (
               <div
                 key={cred.label}
@@ -192,31 +186,32 @@ export default function AboutPage() {
       </section>
 
       {/* Personal */}
-      <section className="bg-neutral-bg py-16 sm:py-24">
+      <section className="bg-neutral-bg py-10 sm:py-14">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="Off the Clock"
             title="The person behind the planner."
           />
-          <div className="mt-10 space-y-6 text-neutral-dark/80 text-lg leading-relaxed">
+          <div className="mt-8 space-y-6 text-neutral-dark/80 text-lg leading-relaxed">
             <p>
-              I&apos;m building two advisory firms — Wealth In Yourself and The
-              Secure Path to Wealth — while living in Portugal with my partner
-              Amanda. Our son Cole keeps things chaotic. Amanda&apos;s daughter
-              is due September 2026, so things are about to get more chaotic.
+              I&apos;m building two advisory firms — Wealth In Yourself, for
+              entrepreneurs and real estate investors, and Top Shelf Private
+              Wealth, built exclusively for professional hockey players. I live
+              in Zephyr Cove, Nevada with my wife Amanda and our son Cole. Our
+              daughter is due September 2026.
             </p>
             <p>
-              When I&apos;m not working, you&apos;ll find me playing beer
-              league hockey in Lake Tahoe. I also run Tahoe Motorcycle Rentals
-              and CA Homes In The Pines — because apparently I don&apos;t know
-              how to sit still.
+              I also own Lake Tahoe Motorcycle Rentals and CA Homes In The
+              Pines — because I believe advisors who help clients build wealth
+              should be building it themselves, not just managing other
+              people&apos;s money.
             </p>
           </div>
         </div>
       </section>
 
       {/* As Seen In */}
-      <section className="bg-white py-12 sm:py-16">
+      <section className="bg-white py-8 sm:py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-sm text-neutral-dark/50 uppercase tracking-wider font-semibold mb-6">
             As seen in
@@ -230,8 +225,8 @@ export default function AboutPage() {
       </section>
 
       <CTASection
-        headline="Want to work with someone who actually gives a damn?"
-        subtext="Book a 30-minute intro call. No pitch. No pressure. Just a conversation about what matters to you."
+        headline="Looking for an advisor who lives the work, not just sells it?"
+        subtext="Book a 15-minute intro call. No pitch. No pressure. Just a conversation about what matters to you."
       />
     </>
   );

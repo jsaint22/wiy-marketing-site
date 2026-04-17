@@ -13,7 +13,7 @@ export default function BlogPage() {
 
   return (
     <>
-      <section className="bg-white py-16 sm:py-24">
+      <section className="bg-white py-10 sm:py-14">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-4xl sm:text-5xl font-bold text-primary">Blog</h1>
           <p className="mt-4 text-lg text-neutral-dark/70">

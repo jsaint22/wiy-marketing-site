@@ -26,9 +26,9 @@ export default function Navigation() {
             <Image
               src="/logos/wiy-logo-horizontal.png"
               alt="Wealth In Yourself"
-              width={180}
-              height={40}
-              className="h-8 sm:h-10 w-auto"
+              width={220}
+              height={48}
+              className="h-10 sm:h-12 w-auto"
               priority
             />
           </Link>

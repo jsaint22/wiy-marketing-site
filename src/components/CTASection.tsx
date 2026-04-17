@@ -10,7 +10,7 @@ interface CTASectionProps {
 
 export default function CTASection({
   headline = "Ready to stop overpaying and start designing your life?",
-  subtext = "Book a 30-minute intro call. No pitch. No pressure. Just a conversation about what matters to you.",
+  subtext = "Book a 15-minute intro call. No pitch. No pressure. Just a conversation about what matters to you.",
   buttonText = "Book Your Intro Call",
   buttonHref = "/contact",
   variant = "primary",
@@ -19,7 +19,7 @@ export default function CTASection({
 
   return (
     <section
-      className={`py-16 sm:py-24 ${
+      className={`py-10 sm:py-14 ${
         isPrimary ? "bg-primary text-white" : "bg-neutral-bg"
       }`}
     >

@@ -35,7 +35,7 @@ content/blog/your-post-slug.mdx
 title: "Your Post Title"
 description: "A brief description for SEO and previews."
 date: "2026-04-20"
-author: "Josh Sanchez"
+author: "Joshua St. Laurent"
 tags: ["tax-strategy", "business-owners"]
 ---
 

@@ -93,7 +93,7 @@ export default function ForRealEstateInvestorsPage() {
   return (
     <main>
       {/* Hero */}
-      <section className="bg-neutral-bg py-16 sm:py-24">
+      <section className="bg-neutral-bg py-10 sm:py-14">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-secondary font-semibold text-sm uppercase tracking-wider mb-3">
             For Real Estate Investors
@@ -110,7 +110,7 @@ export default function ForRealEstateInvestorsPage() {
       </section>
 
       {/* Pain Points */}
-      <section className="py-16 sm:py-24 bg-white">
+      <section className="py-10 sm:py-14 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="What We Handle"
@@ -152,7 +152,7 @@ export default function ForRealEstateInvestorsPage() {
       </section>
 
       {/* How We Work */}
-      <section className="py-16 sm:py-24 bg-neutral-bg">
+      <section className="py-10 sm:py-14 bg-neutral-bg">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="Our Approach"
@@ -199,7 +199,7 @@ export default function ForRealEstateInvestorsPage() {
       {/* CTA */}
       <CTASection
         headline="Your portfolio deserves more than a generic financial plan."
-        subtext="Book a 30-minute intro call. We'll talk about your properties, your goals, and whether we're the right fit."
+        subtext="Book a 15-minute intro call. We'll talk about your properties, your goals, and whether we're the right fit."
       />
     </main>
   );

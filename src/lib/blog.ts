@@ -29,7 +29,7 @@ export function getAllPosts(): BlogPost[] {
       title: data.title || slug,
       description: data.description || "",
       date: data.date || "",
-      author: data.author || "Josh Sanchez",
+      author: data.author || "Joshua St. Laurent",
       tags: data.tags || [],
       content,
     };
@@ -52,7 +52,7 @@ export function getPostBySlug(slug: string): BlogPost | null {
     title: data.title || slug,
     description: data.description || "",
     date: data.date || "",
-    author: data.author || "Josh Sanchez",
+    author: data.author || "Joshua St. Laurent",
     tags: data.tags || [],
     content,
   };

@@ -41,16 +41,28 @@ const services = [
     icon: "M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z",
   },
   {
-    title: "Business Owner Planning",
+    title: "Entity & Business Owner Planning",
     description:
-      "Entity optimization, retirement plan design (Solo 401k, SEP, Defined Benefit), cash flow management, and exit planning. Built for people running their own thing.",
+      "S-Corp optimization, Solo 401(k), SEP, Defined Benefit plans, cash flow management, and exit planning. Built for people running their own thing.",
     icon: "M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4",
   },
   {
-    title: "Real Estate Investor Planning",
+    title: "Real Estate Portfolio Coordination",
     description:
-      "Depreciation strategy, 1031 exchange coordination, entity structuring, passive vs. active income classification, and SDIRA guidance.",
+      "Cost segregation studies, 1031 exchange coordination, entity structuring, depreciation strategy, passive vs. active income classification, and SDIRA guidance.",
     icon: "M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6",
+  },
+  {
+    title: "Financial Therapy & Behavioral Coaching",
+    description:
+      "Money decisions are emotional decisions. We use financial therapy techniques to help you understand your relationship with money, break unproductive patterns, and make decisions with clarity.",
+    icon: "M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18",
+  },
+  {
+    title: "Cross-Border Planning",
+    description:
+      "US-Canada tax coordination, treaty optimization, and multi-jurisdiction compliance. Relevant for clients with cross-border income, assets, or family ties.",
+    icon: "M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418",
   },
 ];
 
@@ -68,17 +80,17 @@ const faqs = [
   {
     question: "Do you manage investments directly?",
     answer:
-      "Yes. We build and manage your portfolio across all accounts. Low-cost, evidence-based funds. No proprietary products, no commissions, no conflicts. You always know exactly what you own and why.",
+      "Yes. We build and manage your portfolio across all accounts. Low-cost, evidence-based funds. No proprietary products, no commissions, no conflicts. You always know exactly what you own and why. We custody with Altruist, a modern advisor-first custodian built for independent fiduciaries. No sales quotas, no proprietary products, no incentive to churn your portfolio. You get institutional-grade execution with the modern client experience you'd expect.",
   },
   {
     question: "Do you sell insurance?",
     answer:
-      "No. We review your coverage and tell you what you need. Then you buy it from whoever offers the best policy. We have no financial incentive to recommend one product over another.",
+      "We don't sell insurance. Within our Virtual Family Office model, we coordinate with independent insurance professionals to analyze coverage gaps and help you evaluate options. You pay them directly if you need coverage. We receive no commissions, ever.",
   },
   {
-    question: "What does 'flat fee' mean exactly?",
+    question: "How does the flat fee work?",
     answer:
-      "You pay a set annual fee for everything. Planning, tax strategy, investment management, ongoing advice — all included. No AUM percentage, no commissions, no hidden charges. The fee doesn't go up because your portfolio grows.",
+      "Your fee isn't tied to your portfolio's day-to-day performance. We set a flat annual fee based on your total net worth (excluding your primary residence) when we begin working together, and we reassess that fee on your anniversary date each year. This means you know exactly what you're paying — no percentage of assets, no commissions, no hidden fees.",
   },
   {
     question: "Can you help if I already have a financial plan?",
@@ -88,7 +100,7 @@ const faqs = [
   {
     question: "How often do we meet?",
     answer:
-      "At minimum, twice a year for structured reviews. In practice, most clients reach out more often — when something changes, when a decision comes up, when they just want a gut check. We're available year-round.",
+      "Our process is designed around depth, not frequency for its own sake. Our comprehensive onboarding sequence covers 13 meetings across four phases: Ground (discovery), Design (life planning), Build (execution), and Evolve (ongoing). After onboarding, we meet quarterly at minimum — and anytime you need us in between. Our goal isn't to schedule meetings to justify our fee; it's to build a relationship where you actually know us and we actually know you.",
   },
   {
     question: "What if I only need help with one area?",
@@ -101,7 +113,7 @@ export default function ServicesPage() {
   return (
     <main>
       {/* Hero */}
-      <section className="bg-neutral-bg py-16 sm:py-24">
+      <section className="bg-neutral-bg py-10 sm:py-14">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-secondary font-semibold text-sm uppercase tracking-wider mb-3">
             What We Do
@@ -117,15 +129,15 @@ export default function ServicesPage() {
       </section>
 
       {/* Services Grid */}
-      <section className="py-16 sm:py-24 bg-white">
+      <section className="py-10 sm:py-14 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="Services"
-            title="Everything you need. Nothing you don't."
+            title="Everything a family office delivers. Without the family office minimums."
             subtitle="Each engagement is tailored to your situation. Here's what we bring to the table."
           />
 
-          <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {services.map((service) => (
               <div
                 key={service.title}
@@ -159,7 +171,7 @@ export default function ServicesPage() {
       </section>
 
       {/* How It Works */}
-      <section className="py-16 sm:py-24 bg-neutral-bg">
+      <section className="py-10 sm:py-14 bg-neutral-bg">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="The Process"
@@ -167,12 +179,12 @@ export default function ServicesPage() {
             subtitle="No 47-page proposals. No months of waiting. Here's what happens."
           />
 
-          <div className="mt-14 space-y-10">
+          <div className="mt-10 space-y-8">
             {[
               {
                 step: "01",
                 title: "Intro call",
-                text: "30 minutes. No pitch. We learn about your situation, you learn about how we work. If it's a fit, we move forward.",
+                text: "15 minutes. No pitch. We learn about your situation, you learn about how we work. If it's a fit, we move forward.",
               },
               {
                 step: "02",

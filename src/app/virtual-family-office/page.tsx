@@ -74,7 +74,7 @@ export default function VirtualFamilyOfficePage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-white py-16 sm:py-24 lg:py-32">
+      <section className="bg-white py-10 sm:py-16 lg:py-20">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-secondary font-semibold text-sm uppercase tracking-wider mb-4">
             The Model
@@ -94,7 +94,7 @@ export default function VirtualFamilyOfficePage() {
       </section>
 
       {/* What Is a VFO */}
-      <section className="bg-neutral-bg py-16 sm:py-24">
+      <section className="bg-neutral-bg py-10 sm:py-14">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="The Concept"
@@ -119,7 +119,7 @@ export default function VirtualFamilyOfficePage() {
       </section>
 
       {/* How It's Different */}
-      <section className="bg-white py-16 sm:py-24">
+      <section className="bg-white py-10 sm:py-14">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="The Difference"
@@ -148,7 +148,7 @@ export default function VirtualFamilyOfficePage() {
       </section>
 
       {/* What's Included */}
-      <section className="bg-neutral-bg py-16 sm:py-24">
+      <section className="bg-neutral-bg py-10 sm:py-14">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="What You Get"
@@ -174,7 +174,7 @@ export default function VirtualFamilyOfficePage() {
       </section>
 
       {/* Who It's For */}
-      <section className="bg-white py-16 sm:py-24">
+      <section className="bg-white py-10 sm:py-14">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="Who This Is For"
@@ -200,7 +200,7 @@ export default function VirtualFamilyOfficePage() {
 
       <CTASection
         headline="Ready for an advisor who sees the whole picture?"
-        subtext="Book a 30-minute intro call. No pitch. No pressure. Just a conversation about what matters to you."
+        subtext="Book a 15-minute intro call. No pitch. No pressure. Just a conversation about what matters to you."
       />
     </>
   );
