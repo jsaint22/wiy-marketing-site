@@ -1,0 +1,157 @@
+import type { Metadata } from "next";
+import CTASection from "@/components/CTASection";
+import SectionHeading from "@/components/SectionHeading";
+
+export const metadata: Metadata = {
+  title: "Financial Planning for FIRE | WIY — Flat-Fee Fiduciary Financial Planning",
+  description:
+    "Flat-fee financial planning built for the FIRE community. Roth conversion ladders, tax-efficient withdrawal strategies, coast FIRE analysis, sequence of returns risk testing, and healthcare planning before Medicare.",
+};
+
+const painPoints = [
+  {
+    title: "Optionality Over Deprivation",
+    description:
+      "FIRE isn't about suffering through a 50% savings rate. It's about creating options. Coast FIRE, Barista FIRE, Lean FIRE — we help you find the version that fits your actual life.",
+    icon: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z",
+  },
+  {
+    title: "Tax-Efficient Withdrawal Strategy",
+    description:
+      "Roth conversion ladders, capital gains harvesting, ACA subsidy optimization. The order you pull from your accounts matters more than most people realize.",
+    icon: "M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z",
+  },
+  {
+    title: "Coasting Strategies",
+    description:
+      "You might not need to grind for 20 more years. A coast strategy lets you work less, earn less, and still hit your number — if the math is right.",
+    icon: "M13 7h8m0 0v8m0-8l-8 8-4-4-6 6",
+  },
+  {
+    title: "Sequence of Returns Risk",
+    description:
+      "The first 5 years of early retirement can make or break your plan. We stress-test against bad markets, not just average returns.",
+    icon: "M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3",
+  },
+  {
+    title: "Healthcare Before Medicare",
+    description:
+      "This is the FIRE killer nobody talks about enough. ACA optimization, health sharing ministries, and planning for the gap years.",
+    icon: "M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z",
+  },
+];
+
+const howWeWork = [
+  "We run Monte Carlo simulations with real-world assumptions",
+  "We build Roth conversion strategies across your accumulation and drawdown phases",
+  "We coordinate tax strategy with your withdrawal sequence",
+  "We help you define \"enough\" — then build the plan to get there",
+  "Flat fee means we don't benefit from keeping your money invested longer",
+];
+
+export default function ForFireFollowersPage() {
+  return (
+    <main>
+      {/* Hero */}
+      <section className="bg-neutral-bg py-16 sm:py-24">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-secondary font-semibold text-sm uppercase tracking-wider mb-3">
+            Financial Planning for FIRE
+          </p>
+          <h1 className="text-4xl sm:text-5xl font-bold text-primary">
+            FIRE isn&apos;t about deprivation. It&apos;s about optionality.
+          </h1>
+          <p className="mt-6 text-lg text-neutral-dark/70 max-w-2xl mx-auto">
+            Most FIRE content focuses on cutting expenses to the bone. We focus
+            on designing a life worth living — and building the financial
+            structure to support it on your terms.
+          </p>
+        </div>
+      </section>
+
+      {/* Pain Points */}
+      <section className="py-16 sm:py-24 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeading
+            eyebrow="What We Focus On"
+            title="The stuff that actually moves the needle."
+            subtitle="Spreadsheets are a starting point. Planning is what fills the gaps."
+          />
+
+          <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {painPoints.map((point) => (
+              <div
+                key={point.title}
+                className="group rounded-2xl border border-neutral-bg p-8 hover:shadow-lg hover:border-secondary/30 transition-all"
+              >
+                <div className="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center mb-5">
+                  <svg
+                    className="w-6 h-6 text-secondary"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth={1.5}
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d={point.icon}
+                    />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-primary mb-3">
+                  {point.title}
+                </h3>
+                <p className="text-neutral-dark/70 leading-relaxed">
+                  {point.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* How We Work */}
+      <section className="py-16 sm:py-24 bg-neutral-bg">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeading
+            eyebrow="How We Work"
+            title="How we work with FIRE followers."
+            subtitle="No generic retirement projections. No one-size-fits-all asset allocation. Here's what an engagement actually looks like."
+          />
+
+          <div className="mt-14 space-y-6">
+            {howWeWork.map((item, index) => (
+              <div key={index} className="flex gap-4 items-start">
+                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-secondary/10 flex items-center justify-center mt-0.5">
+                  <svg
+                    className="w-4 h-4 text-secondary"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth={2}
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                </div>
+                <p className="text-lg text-neutral-dark/80 leading-relaxed">
+                  {item}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <CTASection
+        headline="Ready to stop guessing and start planning your exit?"
+        subtext="Book a 30-minute intro call. No pitch. No pressure. Just a conversation about whether the math actually works."
+      />
+    </main>
+  );
+}
