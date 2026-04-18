@@ -207,7 +207,7 @@ const categories: FAQCategory[] = [
       {
         question: "Do you share your clients' results or testimonials?",
         answer:
-          "We don't publish client testimonials or case studies. As a fiduciary, we take client privacy seriously — and public testimonials create compliance complexity we'd rather avoid at this stage of our firm's growth. What we can offer instead: book a 15-minute intro call. You'll get a direct sense of whether we're a fit and walk away knowing exactly how we work — whether or not you become a client. That's a better measure than anyone else's testimonial.",
+          "We don't publish client testimonials. As a fiduciary, we take client privacy seriously. The illustrative scenarios on our site are composites — real planning strategies applied to representative situations, not specific client accounts. What we can offer instead: book a 15-minute intro call. You'll get a direct sense of whether we're a fit and walk away knowing exactly how we work — whether or not you become a client. That's a better measure than anyone else's testimonial.",
       },
     ],
   },

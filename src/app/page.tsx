@@ -79,7 +79,7 @@ const pressFeatures = [
     name: "Forbes",
     title: "Featured Contributor",
     logo: "/press/Forbes.png",
-    href: "https://www.forbes.com", // TODO: Josh to supply actual Forbes article URL
+    href: "https://www.forbes.com/councils/forbesfinancecouncil/", // TODO: Josh to supply actual Forbes article URL
   },
   {
     name: "MarketWatch",
@@ -236,8 +236,7 @@ export default function HomePage() {
             Not ready to book a call? Read Josh&apos;s most popular essay.
           </p>
           <a
-            // TODO: Update this URL when joshstlaurent.com DNS cuts over from WordPress to Vercel.
-            href="https://joshstlaurent-site-git-main-josh-8401s-projects.vercel.app/writing/the-hat-trick-nobody-talks-about"
+            href="https://joshstlaurent.com/writing/the-hat-trick-nobody-talks-about"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block mt-4 px-8 py-3.5 border-2 border-primary text-primary font-semibold rounded-lg hover:bg-primary/5 transition-colors"
@@ -303,8 +302,7 @@ export default function HomePage() {
                   <div className="w-2.5 h-2.5 rounded-full bg-white/20" />
                   <div className="w-2.5 h-2.5 rounded-full bg-white/20" />
                 </div>
-                {/* TODO: Update to portal.wealthinyourself.com when custom domain is configured. */}
-                <a href="https://wiy-prospect-portal.vercel.app" target="_blank" rel="noopener noreferrer" className="text-xs text-white/60 ml-2 hover:text-white/80 transition-colors">portal.wealthinyourself.com</a>
+                <a href="https://portal.wealthinyourself.com" target="_blank" rel="noopener noreferrer" className="text-xs text-white/60 ml-2 hover:text-white/80 transition-colors">portal.wealthinyourself.com</a>
               </div>
               <div className="bg-neutral-bg p-6">
                 <div className="bg-white rounded-lg p-4 mb-3">
@@ -445,8 +443,7 @@ export default function HomePage() {
           </div>
           <p className="mt-8 text-center text-sm text-neutral-dark/50">
             Clients only. Existing clients log in at{" "}
-{/* TODO: Update to portal.wealthinyourself.com when custom domain is configured. */}
-            <a href="https://wiy-prospect-portal.vercel.app" target="_blank" rel="noopener noreferrer" className="font-medium text-primary hover:text-secondary transition-colors underline">portal.wealthinyourself.com</a>.
+            <a href="https://portal.wealthinyourself.com" target="_blank" rel="noopener noreferrer" className="font-medium text-primary hover:text-secondary transition-colors underline">portal.wealthinyourself.com</a>.
           </p>
         </div>
       </section>

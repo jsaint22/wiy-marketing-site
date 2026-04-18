@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Book a free 15-minute intro call with Joshua St. Laurent, CFP. No pitch, no pressure — just a conversation about your financial life and whether Wealth In Yourself is the right fit.",
+    "Book a free 15-minute intro call with Joshua St. Laurent, CFP®, CFT-I, APFC®, ACC. Flat-fee fiduciary financial planning from Lake Tahoe, Nevada. No pitch, no pressure.",
 };
 
 export default function ContactPage() {
@@ -71,7 +71,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Email fallback */}
+      {/* Contact info */}
       <section className="py-8 sm:py-10 bg-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-neutral-dark/70 text-lg">
@@ -84,6 +84,11 @@ export default function ContactPage() {
           >
             josh@wealthinyourself.com
           </a>
+          <div className="mt-8 pt-8 border-t border-neutral-bg">
+            <p className="text-neutral-dark/50 text-sm">
+              195 Highway 50, Suite 205 &middot; Zephyr Cove, NV 89448 &middot; (415) 915-5948
+            </p>
+          </div>
         </div>
       </section>
     </>
