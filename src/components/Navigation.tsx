@@ -13,6 +13,7 @@ const navLinks = [
   { href: "/vs-aum", label: "vs AUM" },
   { href: "/case-studies", label: "Case Studies" },
   { href: "/blog", label: "Blog" },
+  { href: "/faq", label: "FAQ" },
 ];
 
 export default function Navigation() {

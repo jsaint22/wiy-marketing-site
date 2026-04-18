@@ -20,6 +20,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/case-studies",
     "/vs-aum",
     "/blog",
+    "/faq",
   ];
 
   const posts = getAllPosts();
