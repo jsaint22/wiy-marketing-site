@@ -78,21 +78,25 @@ const pressFeatures = [
   {
     name: "Forbes",
     title: "Featured Contributor",
+    logo: "/press/Forbes.png",
     href: "https://www.forbes.com", // TODO: Josh to supply actual Forbes article URL
   },
   {
     name: "MarketWatch",
     title: "Featured Contributor",
+    logo: "/press/marketwatch.png",
     href: "https://www.marketwatch.com/guides/financial-advisors/best-financial-advisors-in-reno-nv/",
   },
   {
     name: "Advisorpedia",
     title: "Contributing Author",
+    logo: "/press/Advisorpedia Logo.jpeg",
     href: "https://www.advisorpedia.com/author/joshua-st-laurent/",
   },
   {
     name: "BiggerPockets",
     title: "Featured Financial Advisor",
+    logo: "/press/BiggerPockets.png",
     href: "https://www.biggerpockets.com",
   },
 ];
@@ -162,17 +166,34 @@ export default function HomePage() {
                 href={press.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex flex-col items-center text-center p-6 bg-white rounded-xl border border-neutral-bg hover:border-secondary/30 hover:shadow-md transition-all"
+                className="flex flex-col items-center justify-center text-center p-6 bg-white rounded-xl border border-neutral-bg hover:border-secondary/30 hover:shadow-md transition-all"
               >
-                <span className="text-2xl sm:text-3xl font-bold text-primary font-display">
-                  {press.name}
-                </span>
-                <span className="mt-2 text-sm text-neutral-dark/60">
+                <Image
+                  src={press.logo}
+                  alt={press.name}
+                  width={160}
+                  height={48}
+                  className="max-h-10 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all"
+                />
+                <span className="mt-3 text-sm text-neutral-dark/60">
                   {press.title}
                 </span>
               </a>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* BiggerPockets Featured Financial Advisor Badge */}
+      <section className="bg-white py-6 sm:py-8">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
+          <Image
+            src="/badges/BP_Featured-FinAd-Blue_1000W.png"
+            alt="BiggerPockets Featured Financial Advisor"
+            width={200}
+            height={200}
+            className="w-36 sm:w-44 h-auto"
+          />
         </div>
       </section>
 
@@ -215,7 +236,8 @@ export default function HomePage() {
             Not ready to book a call? Read Josh&apos;s most popular essay.
           </p>
           <a
-            href="https://joshstlaurent.com/writing/the-hat-trick-nobody-talks-about"
+            // TODO: Update this URL when joshstlaurent.com DNS cuts over from WordPress to Vercel.
+            href="https://joshstlaurent-site-git-main-josh-8401s-projects.vercel.app/writing/the-hat-trick-nobody-talks-about"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block mt-4 px-8 py-3.5 border-2 border-primary text-primary font-semibold rounded-lg hover:bg-primary/5 transition-colors"
@@ -281,7 +303,8 @@ export default function HomePage() {
                   <div className="w-2.5 h-2.5 rounded-full bg-white/20" />
                   <div className="w-2.5 h-2.5 rounded-full bg-white/20" />
                 </div>
-                <span className="text-xs text-white/60 ml-2">portal.wealthinyourself.com</span>
+                {/* TODO: Update to portal.wealthinyourself.com when custom domain is configured. */}
+                <a href="https://wiy-prospect-portal.vercel.app" target="_blank" rel="noopener noreferrer" className="text-xs text-white/60 ml-2 hover:text-white/80 transition-colors">portal.wealthinyourself.com</a>
               </div>
               <div className="bg-neutral-bg p-6">
                 <div className="bg-white rounded-lg p-4 mb-3">
@@ -422,7 +445,8 @@ export default function HomePage() {
           </div>
           <p className="mt-8 text-center text-sm text-neutral-dark/50">
             Clients only. Existing clients log in at{" "}
-            <span className="font-medium">portal.wealthinyourself.com</span>.
+{/* TODO: Update to portal.wealthinyourself.com when custom domain is configured. */}
+            <a href="https://wiy-prospect-portal.vercel.app" target="_blank" rel="noopener noreferrer" className="font-medium text-primary hover:text-secondary transition-colors underline">portal.wealthinyourself.com</a>.
           </p>
         </div>
       </section>

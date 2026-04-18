@@ -36,6 +36,7 @@ export default function Footer() {
               width={200}
               height={133}
               className="h-28 w-auto mb-4 brightness-0 invert"
+              priority
             />
             <p className="text-white/70 text-sm leading-relaxed max-w-sm">
               A flat-fee fiduciary advisory firm built for people designing their

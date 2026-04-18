@@ -4,7 +4,7 @@ import SectionHeading from "@/components/SectionHeading";
 import FAQSection from "@/components/FAQSection";
 
 export const metadata: Metadata = {
-  title: "Services | Wealth In Yourself — Flat-Fee Fiduciary Financial Planning",
+  title: "Services",
   description:
     "Flat fee financial planning from a fiduciary advisor. Life planning, tax strategy, investment management, insurance review, estate coordination, and planning for business owners and real estate investors.",
 };

@@ -4,7 +4,7 @@ import CTASection from "@/components/CTASection";
 import { projectFees, formatUSD } from "@/lib/pdf/fee-math";
 
 export const metadata: Metadata = {
-  title: "Wealth In Yourself vs AUM Advisors — The Math Most Advisors Won't Show You",
+  title: "Flat Fee vs. AUM Advisors — The Math Most Advisors Won't Show You",
   description:
     "AUM fees cost you $2.37M in portfolio value over 20 years at $5M. See the side-by-side comparison between a traditional 1% AUM advisor and Wealth In Yourself's flat-fee model.",
 };

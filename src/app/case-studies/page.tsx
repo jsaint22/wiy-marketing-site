@@ -4,7 +4,7 @@ import CTASection from "@/components/CTASection";
 import SectionHeading from "@/components/SectionHeading";
 
 export const metadata: Metadata = {
-  title: "Case Studies | Wealth In Yourself — Flat-Fee Fiduciary Financial Planning",
+  title: "Case Studies",
   description:
     "Anonymized case studies showing how Wealth In Yourself approaches complex financial planning situations — from tech exits and real estate portfolios to FIRE planning.",
 };

@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import SectionHeading from "@/components/SectionHeading";
 import FeeCalculator from "@/components/FeeCalculator";
 import FAQSection from "@/components/FAQSection";
@@ -307,6 +308,19 @@ export default function PricingPage() {
           <Link href="/vs-aum" className="inline-block mt-6 px-8 py-3.5 bg-primary text-white font-semibold rounded-lg hover:bg-primary/90 transition-colors">
             See the full comparison &rarr;
           </Link>
+        </div>
+      </section>
+
+      {/* Credibility Badge */}
+      <section className="bg-white py-6">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center">
+          <Image
+            src="/badges/BP_Featured-FinAd-Blue_1000W.png"
+            alt="BiggerPockets Featured Financial Advisor"
+            width={140}
+            height={140}
+            className="w-28 h-auto opacity-80"
+          />
         </div>
       </section>
 

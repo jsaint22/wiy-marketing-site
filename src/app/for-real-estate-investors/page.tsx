@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import CTASection from "@/components/CTASection";
 import SectionHeading from "@/components/SectionHeading";
 import FAQSection from "@/components/FAQSection";
 
 export const metadata: Metadata = {
-  title: "Financial Planning for Real Estate Investors | Flat Fee Advisor",
+  title: "Financial Planning for Real Estate Investors",
   description:
     "Flat fee financial advisor for real estate investors. Depreciation strategy, 1031 exchange coordination, entity structuring, passive vs. active income planning, and portfolio integration — all for one flat fee.",
 };
@@ -196,6 +197,22 @@ export default function ForRealEstateInvestorsPage() {
         faqs={faqs}
         title="Questions From Real Estate Investors"
       />
+
+      {/* BiggerPockets Featured Financial Advisor Badge */}
+      <section className="bg-neutral-bg py-8">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
+          <Image
+            src="/badges/BP_Featured-FinAd-Blue_1000W.png"
+            alt="BiggerPockets Featured Financial Advisor"
+            width={180}
+            height={180}
+            className="w-40 h-auto"
+          />
+          <p className="mt-3 text-sm text-neutral-dark/50 text-center">
+            Recognized by BiggerPockets as a Featured Financial Advisor for real estate investors.
+          </p>
+        </div>
+      </section>
 
       {/* Case Study Link */}
       <section className="bg-white py-10 sm:py-14">

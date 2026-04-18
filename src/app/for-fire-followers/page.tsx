@@ -4,7 +4,7 @@ import CTASection from "@/components/CTASection";
 import SectionHeading from "@/components/SectionHeading";
 
 export const metadata: Metadata = {
-  title: "Financial Planning for FIRE | Wealth In Yourself — Flat-Fee Fiduciary Financial Planning",
+  title: "Financial Planning for FIRE",
   description:
     "Flat-fee financial planning built for the FIRE community. Roth conversion ladders, tax-efficient withdrawal strategies, coast FIRE analysis, sequence of returns risk testing, and healthcare planning before Medicare.",
 };

@@ -43,8 +43,7 @@ const nextConfig: NextConfig = {
       { source: "/about-us/", destination: "/about", permanent: true },
       { source: "/real-fiduciary", destination: "/about", permanent: true },
       { source: "/real-fiduciary/", destination: "/about", permanent: true },
-      { source: "/faq", destination: "/pricing", permanent: true },
-      { source: "/faq/", destination: "/pricing", permanent: true },
+      // /faq now has its own page — redirect removed
       { source: "/podcast", destination: "/blog", permanent: true },
       { source: "/podcast/", destination: "/blog", permanent: true },
       { source: "/whats-included", destination: "/services", permanent: true },
