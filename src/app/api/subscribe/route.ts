@@ -32,7 +32,9 @@ export async function POST(request: NextRequest) {
         "Your AUM Math (and what your advisor probably won't show you)",
       text: `Hey,
 
-Thanks for requesting the AUM Math. It's in the attached PDF showing what 1% of your assets actually costs over 20 and 30 years — at $1M, $5M, $10M, and $25M net worth. Spoiler: it's more than you think.
+Thanks for requesting the AUM Math. It's attached — and the numbers are real.
+
+At $5M over 20 years, AUM fees can cost you $2.37M more in portfolio value than a flat-fee structure. At 30 years, that gap grows to $6.99M. The PDF breaks it down at $1M, $5M, $10M, and $25M so you can see where you fall.
 
 If you want to see your specific numbers, use the calculator at wealthinyourself.com/pricing.
 

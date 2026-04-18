@@ -1,6 +1,13 @@
 /**
  * Fee calculation logic shared between the website calculator and the PDF.
  * Mirrors src/components/FeeCalculator.tsx — keep in sync.
+ *
+ * METHODOLOGY (see MATH-METHODOLOGY.md for full documentation):
+ * - Portfolio grows at 7% annually (configurable)
+ * - AUM fee: 1% of portfolio value, charged end-of-year
+ * - WIY fee: tiered formula recalculated on current portfolio each year
+ * - Fees are paid FROM the portfolio each year (reducing the base for future growth)
+ * - Two separate portfolio tracks are maintained: one for AUM, one for WIY
  */
 
 export function calculateWiyAnnualFee(netWorth: number): number {
@@ -35,46 +42,76 @@ export function formatUSD(value: number): string {
   }).format(value);
 }
 
-export interface YearlyProjection {
+export interface DualProjection {
   year: number;
-  portfolioValue: number;
+  aumPortfolio: number;
+  wiyPortfolio: number;
   aumFee: number;
   wiyFee: number;
-  cumulativeAum: number;
-  cumulativeWiy: number;
+  cumulativeAumFees: number;
+  cumulativeWiyFees: number;
 }
 
+export interface ProjectionSummary {
+  years: DualProjection[];
+  cumulativeAumFees: number;
+  cumulativeWiyFees: number;
+  feeDelta: number;
+  aumEndPortfolio: number;
+  wiyEndPortfolio: number;
+  portfolioBenefit: number;
+}
+
+/**
+ * Project fees over time with two separate portfolio paths.
+ * Fees are deducted from the portfolio each year, and WIY fee
+ * is recalculated on the current WIY portfolio value.
+ */
 export function projectFees(
   startingValue: number,
   years: number,
-  growthRate = 0.07,
-  wiyEscalation = 0.03
-): YearlyProjection[] {
-  const projections: YearlyProjection[] = [];
-  let portfolioValue = startingValue;
-  let cumulativeAum = 0;
-  let cumulativeWiy = 0;
-  const baseWiyFee = calculateWiyAnnualFee(startingValue);
+  growthRate = 0.07
+): ProjectionSummary {
+  const projections: DualProjection[] = [];
+  let aumPortfolio = startingValue;
+  let wiyPortfolio = startingValue;
+  let cumulativeAumFees = 0;
+  let cumulativeWiyFees = 0;
 
   for (let y = 1; y <= years; y++) {
-    const aumFee = portfolioValue * 0.01;
-    // WIY fee: based on initial assessment, adjusted annually based on net worth growth
-    const wiyFee = baseWiyFee * Math.pow(1 + wiyEscalation, y - 1);
+    // Grow both portfolios
+    aumPortfolio *= 1 + growthRate;
+    wiyPortfolio *= 1 + growthRate;
 
-    cumulativeAum += aumFee;
-    cumulativeWiy += wiyFee;
+    // Calculate fees on end-of-year value
+    const aumFee = aumPortfolio * 0.01;
+    const wiyFee = calculateWiyAnnualFee(wiyPortfolio);
+
+    cumulativeAumFees += aumFee;
+    cumulativeWiyFees += wiyFee;
+
+    // Deduct fees from portfolio
+    aumPortfolio -= aumFee;
+    wiyPortfolio -= wiyFee;
 
     projections.push({
       year: y,
-      portfolioValue,
+      aumPortfolio,
+      wiyPortfolio,
       aumFee,
       wiyFee,
-      cumulativeAum,
-      cumulativeWiy,
+      cumulativeAumFees,
+      cumulativeWiyFees,
     });
-
-    portfolioValue *= 1 + growthRate;
   }
 
-  return projections;
+  return {
+    years: projections,
+    cumulativeAumFees,
+    cumulativeWiyFees,
+    feeDelta: cumulativeAumFees - cumulativeWiyFees,
+    aumEndPortfolio: aumPortfolio,
+    wiyEndPortfolio: wiyPortfolio,
+    portfolioBenefit: wiyPortfolio - aumPortfolio,
+  };
 }

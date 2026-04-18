@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import CTASection from "@/components/CTASection";
+import { projectFees, formatUSD } from "@/lib/pdf/fee-math";
 
 export const metadata: Metadata = {
   title: "Wealth In Yourself vs AUM Advisors — The Math Most Advisors Won't Show You",
   description:
-    "AUM fees cost you $1M+ over 20 years. See the side-by-side comparison between a traditional 1% AUM advisor and Wealth In Yourself's flat-fee model.",
+    "AUM fees cost you $2.37M in portfolio value over 20 years at $5M. See the side-by-side comparison between a traditional 1% AUM advisor and Wealth In Yourself's flat-fee model.",
 };
 
 const comparisonRows = [
@@ -61,38 +62,33 @@ function formatCurrency(n: number): string {
 }
 
 function buildFeeTable() {
-  const years = 20;
-  const growthRate = 0.07;
-  const aumRate = 0.01;
-  const wiyStartFee = 21000;
-  const wiyGrowthRate = 0.03;
-  let portfolio = 5_000_000;
-  let cumAum = 0;
-  let cumWiy = 0;
-  const rows: { year: number; portfolio: string; aumFee: string; cumAum: string; wiyFee: string; cumWiy: string }[] = [];
+  const proj = projectFees(5_000_000, 20);
+  const milestoneYears = [1, 5, 10, 15, 20];
+  const rows = proj.years
+    .filter((y) => milestoneYears.includes(y.year))
+    .map((y) => ({
+      year: y.year,
+      aumPortfolio: formatCurrency(y.aumPortfolio),
+      aumFee: formatCurrency(y.aumFee),
+      cumAum: formatCurrency(y.cumulativeAumFees),
+      wiyFee: formatCurrency(y.wiyFee),
+      cumWiy: formatCurrency(y.cumulativeWiyFees),
+    }));
 
-  for (let y = 1; y <= years; y++) {
-    const aumFee = portfolio * aumRate;
-    const wiyFee = wiyStartFee * Math.pow(1 + wiyGrowthRate, y - 1);
-    cumAum += aumFee;
-    cumWiy += wiyFee;
-    if (y === 1 || y === 5 || y === 10 || y === 15 || y === 20) {
-      rows.push({
-        year: y,
-        portfolio: formatCurrency(portfolio),
-        aumFee: formatCurrency(aumFee),
-        cumAum: formatCurrency(cumAum),
-        wiyFee: formatCurrency(wiyFee),
-        cumWiy: formatCurrency(cumWiy),
-      });
-    }
-    portfolio = portfolio * (1 + growthRate) - aumFee;
-  }
-  return { rows, totalAum: formatCurrency(cumAum), totalWiy: formatCurrency(cumWiy), diff: formatCurrency(cumAum - cumWiy) };
+  return {
+    rows,
+    totalAum: formatCurrency(proj.cumulativeAumFees),
+    totalWiy: formatCurrency(proj.cumulativeWiyFees),
+    feeDelta: formatCurrency(proj.feeDelta),
+    portfolioBenefit: formatCurrency(proj.portfolioBenefit),
+    aumEnd: formatCurrency(proj.aumEndPortfolio),
+    wiyEnd: formatCurrency(proj.wiyEndPortfolio),
+  };
 }
 
 export default function VsAumPage() {
-  const { rows, totalAum, totalWiy, diff } = buildFeeTable();
+  const { rows, totalAum, totalWiy, feeDelta, portfolioBenefit, aumEnd, wiyEnd } = buildFeeTable();
+  const proj30 = projectFees(5_000_000, 30);
 
   return (
     <>
@@ -103,10 +99,10 @@ export default function VsAumPage() {
             Wealth In Yourself vs. AUM
           </p>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary leading-tight">
-            AUM fees cost you $1&nbsp;million over 20&nbsp;years. Flat fees don&apos;t.
+            AUM fees cost you $2.37M in portfolio value over 20&nbsp;years.
           </h1>
           <p className="mt-6 text-lg sm:text-xl text-neutral-dark/70 leading-relaxed max-w-2xl mx-auto">
-            Here&apos;s the math most advisors don&apos;t want you to see.
+            At $5M, the difference compounds to $6.99M over 30 years. Here&apos;s the math most advisors don&apos;t want you to see.
           </p>
         </div>
       </section>
@@ -172,29 +168,42 @@ export default function VsAumPage() {
               The Math
             </p>
             <h2 className="text-3xl sm:text-4xl font-bold text-primary">
-              The math at $5M.
+              The math at $5M over 20 years.
             </h2>
             <p className="mt-4 text-lg text-neutral-dark/70 max-w-2xl mx-auto">
-              Cumulative fees over 20 years. Starting portfolio of $5M with 7% annual growth.
+              Fees are paid from the portfolio each year, reducing the base for future growth.
             </p>
           </div>
 
-          {/* Summary cards */}
+          {/* Summary cards — lead with portfolio benefit */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
+            <div className="bg-primary/5 border border-primary/20 rounded-xl p-6 text-center">
+              <p className="text-sm font-semibold text-primary uppercase tracking-wider">Portfolio Benefit</p>
+              <p className="text-3xl sm:text-4xl font-bold text-primary mt-2">{portfolioBenefit}</p>
+              <p className="text-sm text-neutral-dark/60 mt-1">more in your portfolio with WIY over 20 years</p>
+            </div>
+            <div className="bg-primary/5 border border-primary/20 rounded-xl p-6 text-center">
+              <p className="text-sm font-semibold text-primary uppercase tracking-wider">30-Year Benefit</p>
+              <p className="text-3xl sm:text-4xl font-bold text-primary mt-2">{formatCurrency(proj30.portfolioBenefit)}</p>
+              <p className="text-sm text-neutral-dark/60 mt-1">more in your portfolio with WIY over 30 years</p>
+            </div>
+          </div>
+
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-10">
             <div className="bg-warning/5 border border-warning/20 rounded-xl p-6 text-center">
-              <p className="text-sm font-semibold text-warning uppercase tracking-wider">AUM Advisor (1%)</p>
-              <p className="text-3xl sm:text-4xl font-bold text-warning mt-2">{totalAum}</p>
+              <p className="text-sm font-semibold text-warning uppercase tracking-wider">AUM Fees Paid (20yr)</p>
+              <p className="text-2xl sm:text-3xl font-bold text-warning mt-2">{totalAum}</p>
               <p className="text-sm text-neutral-dark/60 mt-1">cumulative fees</p>
             </div>
             <div className="bg-success/5 border border-success/20 rounded-xl p-6 text-center">
-              <p className="text-sm font-semibold text-success uppercase tracking-wider">WIY Flat Fee</p>
-              <p className="text-3xl sm:text-4xl font-bold text-success mt-2">{totalWiy}</p>
+              <p className="text-sm font-semibold text-success uppercase tracking-wider">WIY Fees Paid (20yr)</p>
+              <p className="text-2xl sm:text-3xl font-bold text-success mt-2">{totalWiy}</p>
               <p className="text-sm text-neutral-dark/60 mt-1">cumulative fees</p>
             </div>
-            <div className="bg-primary/5 border border-primary/20 rounded-xl p-6 text-center">
-              <p className="text-sm font-semibold text-primary uppercase tracking-wider">You Keep</p>
-              <p className="text-3xl sm:text-4xl font-bold text-primary mt-2">{diff}</p>
-              <p className="text-sm text-neutral-dark/60 mt-1">more with WIY</p>
+            <div className="bg-neutral-bg border border-neutral-bg rounded-xl p-6 text-center">
+              <p className="text-sm font-semibold text-neutral-dark uppercase tracking-wider">Fee Delta (20yr)</p>
+              <p className="text-2xl sm:text-3xl font-bold text-neutral-dark mt-2">{feeDelta}</p>
+              <p className="text-sm text-neutral-dark/60 mt-1">less in fees with WIY</p>
             </div>
           </div>
 
@@ -202,16 +211,16 @@ export default function VsAumPage() {
           <div className="hidden sm:block bg-neutral-bg rounded-2xl border border-neutral-bg overflow-hidden">
             <div className="grid grid-cols-6 gap-0 bg-primary text-white text-xs font-semibold uppercase tracking-wider">
               <div className="px-4 py-3">Year</div>
-              <div className="px-4 py-3 text-right">Portfolio</div>
+              <div className="px-4 py-3 text-right">AUM Portfolio</div>
               <div className="px-4 py-3 text-right">AUM Fee</div>
-              <div className="px-4 py-3 text-right">Cum. AUM</div>
+              <div className="px-4 py-3 text-right">Cum. AUM Fees</div>
               <div className="px-4 py-3 text-right">WIY Fee</div>
-              <div className="px-4 py-3 text-right">Cum. WIY</div>
+              <div className="px-4 py-3 text-right">Cum. WIY Fees</div>
             </div>
             {rows.map((r, i) => (
               <div key={r.year} className={`grid grid-cols-6 gap-0 text-sm ${i % 2 === 0 ? "bg-white" : "bg-neutral-bg/50"}`}>
                 <div className="px-4 py-3 font-semibold text-neutral-dark">{r.year}</div>
-                <div className="px-4 py-3 text-right text-neutral-dark/70">{r.portfolio}</div>
+                <div className="px-4 py-3 text-right text-neutral-dark/70">{r.aumPortfolio}</div>
                 <div className="px-4 py-3 text-right text-warning font-medium">{r.aumFee}</div>
                 <div className="px-4 py-3 text-right text-warning">{r.cumAum}</div>
                 <div className="px-4 py-3 text-right text-success font-medium">{r.wiyFee}</div>
@@ -224,7 +233,7 @@ export default function VsAumPage() {
           <div className="sm:hidden space-y-3">
             {rows.map((r) => (
               <div key={r.year} className="bg-white rounded-xl border border-neutral-bg p-4">
-                <p className="font-bold text-primary mb-2">Year {r.year} &middot; Portfolio: {r.portfolio}</p>
+                <p className="font-bold text-primary mb-2">Year {r.year} &middot; AUM Portfolio: {r.aumPortfolio}</p>
                 <div className="grid grid-cols-2 gap-3 text-sm">
                   <div>
                     <p className="text-xs text-warning font-semibold uppercase">AUM Fee</p>
@@ -242,8 +251,7 @@ export default function VsAumPage() {
           </div>
 
           <p className="mt-6 text-center text-xs text-neutral-dark/50 max-w-2xl mx-auto">
-            Illustrative calculation. Assumes 7% annual portfolio growth with fee adjusted
-            annually based on net worth growth. Actual results vary.
+            Assumes 7% annual portfolio growth, fees paid from portfolio each year. Illustrative only. Individual results vary.
           </p>
         </div>
       </section>

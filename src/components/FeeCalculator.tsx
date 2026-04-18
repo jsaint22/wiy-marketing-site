@@ -59,19 +59,26 @@ export default function FeeCalculator({ standalone = false }: { standalone?: boo
   const aumAnnual = netWorth * 0.01;
   const aumMonthly = Math.round(aumAnnual / 12);
 
-  // 30-year projection (assuming 7% annual growth)
+  // 30-year projection: two portfolio paths, fees deducted each year
   const years = 30;
   const growthRate = 0.07;
-  let wiyTotal = 0;
+  let aumPortfolio = netWorth;
+  let wiyPortfolio = netWorth;
   let aumTotal = 0;
-  let projectedNW = netWorth;
+  let wiyTotal = 0;
 
   for (let i = 0; i < years; i++) {
-    wiyTotal += calculateAnnualFee(projectedNW);
-    aumTotal += projectedNW * 0.01;
-    projectedNW *= 1 + growthRate;
+    aumPortfolio *= 1 + growthRate;
+    wiyPortfolio *= 1 + growthRate;
+    const aumFee = aumPortfolio * 0.01;
+    const wiyFee = calculateAnnualFee(wiyPortfolio);
+    aumTotal += aumFee;
+    wiyTotal += wiyFee;
+    aumPortfolio -= aumFee;
+    wiyPortfolio -= wiyFee;
   }
 
+  const portfolioBenefit = wiyPortfolio - aumPortfolio;
   const delta = aumTotal - wiyTotal;
 
   return (
@@ -168,12 +175,15 @@ export default function FeeCalculator({ standalone = false }: { standalone?: boo
                 </div>
               </div>
               <div className="mt-4 bg-primary/5 rounded-xl p-4 text-center">
-                <p className="text-sm text-neutral-dark/70">You keep</p>
+                <p className="text-sm text-neutral-dark/70">Portfolio benefit</p>
                 <p className="text-3xl font-bold text-primary">
-                  {formatCurrency(delta)}
+                  {formatCurrency(portfolioBenefit)}
                 </p>
                 <p className="text-sm text-neutral-dark/70">
-                  more of your money over 30 years
+                  more in your portfolio over 30 years
+                </p>
+                <p className="text-xs text-neutral-dark/50 mt-1">
+                  ({formatCurrency(delta)} in fee savings, plus growth on those savings)
                 </p>
               </div>
             </div>

@@ -342,15 +342,16 @@ function Bar({
 
 const wealthLevels = [1_000_000, 5_000_000, 10_000_000, 25_000_000];
 
+function wealthLabel(nw: number): string {
+  return nw >= 1_000_000 ? `$${nw / 1_000_000}M` : formatUSD(nw);
+}
+
 function yearOneTable() {
   return wealthLevels.map((nw) => ({
     netWorth: nw,
     aumFee: nw * 0.01,
     wiyFee: calculateWiyAnnualFee(nw),
-    label:
-      nw >= 1_000_000
-        ? `$${nw / 1_000_000}M`
-        : formatUSD(nw),
+    label: wealthLabel(nw),
   }));
 }
 
@@ -362,36 +363,23 @@ const logoPath = path.join(process.cwd(), "public", "logos", "wiy-logo-stacked.p
 
 export default function AumMathPDF() {
   const table = yearOneTable();
+
+  // Run projections for $5M at 20 and 30 years
   const proj5M_20 = projectFees(5_000_000, 20);
   const proj5M_30 = projectFees(5_000_000, 30);
-  const last20 = proj5M_20[proj5M_20.length - 1];
-  const last30 = proj5M_30[proj5M_30.length - 1];
-  const delta20 = last20.cumulativeAum - last20.cumulativeWiy;
-  const delta30 = last30.cumulativeAum - last30.cumulativeWiy;
 
-  // For bar charts — get cumulative 20yr at each wealth level
-  const bars20 = wealthLevels.map((nw) => {
-    const p = projectFees(nw, 20);
-    const last = p[p.length - 1];
-    return {
-      label: nw >= 1_000_000 ? `$${nw / 1_000_000}M` : formatUSD(nw),
-      aum: last.cumulativeAum,
-      wiy: last.cumulativeWiy,
-    };
-  });
+  // Run projections for all wealth levels at 20 and 30 years
+  const summaries20 = wealthLevels.map((nw) => ({
+    label: wealthLabel(nw),
+    ...projectFees(nw, 20),
+  }));
+  const summaries30 = wealthLevels.map((nw) => ({
+    label: wealthLabel(nw),
+    ...projectFees(nw, 30),
+  }));
 
-  const bars30 = wealthLevels.map((nw) => {
-    const p = projectFees(nw, 30);
-    const last = p[p.length - 1];
-    return {
-      label: nw >= 1_000_000 ? `$${nw / 1_000_000}M` : formatUSD(nw),
-      aum: last.cumulativeAum,
-      wiy: last.cumulativeWiy,
-    };
-  });
-
-  const maxBar20 = Math.max(...bars20.map((b) => b.aum));
-  const maxBar30 = Math.max(...bars30.map((b) => b.aum));
+  const maxBarPortBenefit20 = Math.max(...summaries20.map((s) => s.portfolioBenefit));
+  const maxBarPortBenefit30 = Math.max(...summaries30.map((s) => s.portfolioBenefit));
 
   return (
     <Document
@@ -673,34 +661,49 @@ export default function AumMathPDF() {
             marginBottom: 16,
           }}
         >
-          Cumulative fees over 20 years. Assumes 7% annual portfolio growth.
+          Portfolio benefit over 20 years at each wealth level. Fees are paid
+          from the portfolio each year, reducing the base for future growth.
         </Text>
         <View style={s.goldDivider} />
 
         <View style={s.section}>
-          <Text style={s.h3}>Cumulative AUM fees (20 years)</Text>
-          {bars20.map((b) => (
+          <Text style={s.h3}>Portfolio benefit of flat fees vs. AUM (20 years)</Text>
+          {summaries20.map((b) => (
             <Bar
               key={b.label}
               label={b.label}
-              value={b.aum}
-              maxValue={maxBar20}
-              barColor={color.warning}
+              value={b.portfolioBenefit}
+              maxValue={maxBarPortBenefit20}
+              barColor={color.success}
             />
           ))}
         </View>
 
         <View style={s.section}>
-          <Text style={s.h3}>Cumulative WIY flat fees (20 years)</Text>
-          {bars20.map((b) => (
-            <Bar
-              key={b.label}
-              label={b.label}
-              value={b.wiy}
-              maxValue={maxBar20}
-              barColor={color.success}
-            />
-          ))}
+          <Text style={s.h3}>Cumulative fee comparison at $5M (20 years)</Text>
+          <View style={{ flexDirection: "row", marginBottom: 8 }}>
+            <View style={[s.card, { flex: 1, marginRight: 4 }]}>
+              <Text style={[s.bodySmall, { color: color.warning, fontWeight: 700 }]}>
+                AUM fees paid
+              </Text>
+              <Text style={[s.h3, { color: color.warning, marginBottom: 0 }]}>
+                {formatUSD(proj5M_20.cumulativeAumFees)}
+              </Text>
+            </View>
+            <View style={[s.card, { flex: 1, marginLeft: 4 }]}>
+              <Text style={[s.bodySmall, { color: color.success, fontWeight: 700 }]}>
+                WIY fees paid
+              </Text>
+              <Text style={[s.h3, { color: color.success, marginBottom: 0 }]}>
+                {formatUSD(proj5M_20.cumulativeWiyFees)}
+              </Text>
+            </View>
+          </View>
+          <Text style={s.bodySmall}>
+            Fee savings: {formatUSD(proj5M_20.feeDelta)}. But because those
+            savings stay invested and compound, the total portfolio benefit is
+            even larger.
+          </Text>
         </View>
 
         <View style={s.cardAccent}>
@@ -710,15 +713,15 @@ export default function AumMathPDF() {
                 At $5M over 20 years
               </Text>
               <Text style={{ fontSize: 9, color: "#FFFFFFAA" }}>
-                AUM: {formatUSD(last20.cumulativeAum)}
+                AUM portfolio: {formatUSD(proj5M_20.aumEndPortfolio)}
               </Text>
               <Text style={{ fontSize: 9, color: "#FFFFFFAA" }}>
-                WIY: {formatUSD(last20.cumulativeWiy)}
+                WIY portfolio: {formatUSD(proj5M_20.wiyEndPortfolio)}
               </Text>
             </View>
             <View style={{ flex: 1, alignItems: "flex-end" }}>
               <Text style={{ fontSize: 9, color: color.secondary, marginBottom: 4 }}>
-                You keep
+                Portfolio benefit
               </Text>
               <Text
                 style={{
@@ -728,17 +731,17 @@ export default function AumMathPDF() {
                   color: color.secondary,
                 }}
               >
-                {formatUSD(delta20)}
+                {formatUSD(proj5M_20.portfolioBenefit)}
               </Text>
             </View>
           </View>
         </View>
 
         <Text style={s.bodySmall}>
-          Assumptions: Starting portfolio as shown. 7% annual growth,
-          reinvested. AUM fee: 1% of current portfolio value each year. Wealth In
-          Yourself fee: flat fee based on initial net worth, adjusted annually
-          based on net worth growth. All figures pre-tax.
+          Assumptions: 7% annual portfolio growth. AUM fee: 1% of current
+          portfolio value each year. WIY fee: tiered formula recalculated on
+          current portfolio value. Fees paid from portfolio each year. All
+          figures pre-tax and illustrative.
         </Text>
 
         <Footer pageNumber={5} />
@@ -760,29 +763,42 @@ export default function AumMathPDF() {
         <View style={s.goldDivider} />
 
         <View style={s.section}>
-          <Text style={s.h3}>Cumulative AUM fees (30 years)</Text>
-          {bars30.map((b) => (
+          <Text style={s.h3}>Portfolio benefit of flat fees vs. AUM (30 years)</Text>
+          {summaries30.map((b) => (
             <Bar
               key={b.label}
               label={b.label}
-              value={b.aum}
-              maxValue={maxBar30}
-              barColor={color.warning}
+              value={b.portfolioBenefit}
+              maxValue={maxBarPortBenefit30}
+              barColor={color.success}
             />
           ))}
         </View>
 
         <View style={s.section}>
-          <Text style={s.h3}>Cumulative WIY flat fees (30 years)</Text>
-          {bars30.map((b) => (
-            <Bar
-              key={b.label}
-              label={b.label}
-              value={b.wiy}
-              maxValue={maxBar30}
-              barColor={color.success}
-            />
-          ))}
+          <Text style={s.h3}>Cumulative fee comparison at $5M (30 years)</Text>
+          <View style={{ flexDirection: "row", marginBottom: 8 }}>
+            <View style={[s.card, { flex: 1, marginRight: 4 }]}>
+              <Text style={[s.bodySmall, { color: color.warning, fontWeight: 700 }]}>
+                AUM fees paid
+              </Text>
+              <Text style={[s.h3, { color: color.warning, marginBottom: 0 }]}>
+                {formatUSD(proj5M_30.cumulativeAumFees)}
+              </Text>
+            </View>
+            <View style={[s.card, { flex: 1, marginLeft: 4 }]}>
+              <Text style={[s.bodySmall, { color: color.success, fontWeight: 700 }]}>
+                WIY fees paid
+              </Text>
+              <Text style={[s.h3, { color: color.success, marginBottom: 0 }]}>
+                {formatUSD(proj5M_30.cumulativeWiyFees)}
+              </Text>
+            </View>
+          </View>
+          <Text style={s.bodySmall}>
+            Fee savings: {formatUSD(proj5M_30.feeDelta)}. With compounding,
+            the total portfolio benefit grows to {formatUSD(proj5M_30.portfolioBenefit)}.
+          </Text>
         </View>
 
         <View style={s.cardAccent}>
@@ -792,15 +808,15 @@ export default function AumMathPDF() {
                 At $5M over 30 years
               </Text>
               <Text style={{ fontSize: 9, color: "#FFFFFFAA" }}>
-                AUM: {formatUSD(last30.cumulativeAum)}
+                AUM portfolio: {formatUSD(proj5M_30.aumEndPortfolio)}
               </Text>
               <Text style={{ fontSize: 9, color: "#FFFFFFAA" }}>
-                WIY: {formatUSD(last30.cumulativeWiy)}
+                WIY portfolio: {formatUSD(proj5M_30.wiyEndPortfolio)}
               </Text>
             </View>
             <View style={{ flex: 1, alignItems: "flex-end" }}>
               <Text style={{ fontSize: 9, color: color.secondary, marginBottom: 4 }}>
-                You keep
+                Portfolio benefit
               </Text>
               <Text
                 style={{
@@ -810,7 +826,7 @@ export default function AumMathPDF() {
                   color: color.secondary,
                 }}
               >
-                {formatUSD(delta30)}
+                {formatUSD(proj5M_30.portfolioBenefit)}
               </Text>
             </View>
           </View>
@@ -819,14 +835,16 @@ export default function AumMathPDF() {
         <View style={s.pullquote}>
           <Text style={s.pullquoteText}>
             The 30-year view is where the math becomes impossible to ignore.
-            At $5M, you are looking at nearly {formatUSD(delta30)} that
-            never had to leave your balance sheet.
+            At $5M, your portfolio is {formatUSD(proj5M_30.portfolioBenefit)}{" "}
+            larger with flat fees — money that never had to leave your
+            balance sheet.
           </Text>
         </View>
 
         <Text style={s.bodySmall}>
-          Same assumptions as 20-year projections. 7% annual growth. 1% AUM
-          fee on current value. Wealth In Yourself flat fee adjusted annually based on net worth growth.
+          Same assumptions as 20-year projections. 7% annual growth. Fees
+          paid from portfolio each year. WIY fee recalculated on current
+          portfolio value annually.
         </Text>
 
         <Footer pageNumber={6} />
@@ -838,9 +856,10 @@ export default function AumMathPDF() {
         <View style={s.goldDivider} />
 
         <Text style={[s.body, { marginBottom: 6 }]}>
-          The savings from a flat-fee model range from {formatUSD(delta20)} over
-          20 years to {formatUSD(delta30)} over 30 years — at the $5M level
-          alone. At higher net worth, the numbers are dramatically larger.
+          At the $5M level alone, your portfolio grows{" "}
+          {formatUSD(proj5M_20.portfolioBenefit)} more over 20 years and{" "}
+          {formatUSD(proj5M_30.portfolioBenefit)} more over 30 years with flat
+          fees. At higher net worth, the numbers are dramatically larger.
           Here is what that money could mean for your life:
         </Text>
 
@@ -870,7 +889,7 @@ export default function AumMathPDF() {
               Early retirement by 3–5 years
             </Text>
             <Text style={[s.bodySmall, { fontSize: 8.5 }]}>
-              An extra half-million to two million in your portfolio means
+              An extra two to seven million in your portfolio means
               you reach financial independence years sooner.
             </Text>
           </View>
@@ -959,7 +978,79 @@ export default function AumMathPDF() {
         <Footer pageNumber={8} />
       </Page>
 
-      {/* ========== PAGE 9 — YOUR NUMBERS ========== */}
+      {/* ========== PAGE 9 — METHODOLOGY ========== */}
+      <Page size="LETTER" style={s.page}>
+        <Text style={s.h2}>Methodology &amp; Assumptions</Text>
+        <View style={s.goldDivider} />
+
+        <View style={s.section}>
+          <Text style={s.h3}>Assumptions used in this analysis</Text>
+          <Bullet>
+            7% annual portfolio growth, applied before fees each year.
+          </Bullet>
+          <Bullet>
+            Fees are paid from the portfolio each year, reducing the base for
+            future growth. This is how fees work in practice.
+          </Bullet>
+          <Bullet>
+            AUM fee: 1% of current portfolio value, charged at end of year.
+          </Bullet>
+          <Bullet>
+            WIY fee: tiered formula recalculated on current portfolio value
+            each year — 1% on the first $1M, 0.35% on the next $2M, 0.20% on
+            the next $7M, 0.10% above $10M. $10,000 annual minimum.
+          </Bullet>
+          <Bullet>
+            Two separate portfolio paths are tracked: one paying AUM fees,
+            one paying WIY fees. The difference in ending portfolio value is
+            the "portfolio benefit."
+          </Bullet>
+        </View>
+
+        <View style={s.section}>
+          <Text style={s.h3}>Why "portfolio benefit" matters more than fee savings</Text>
+          <Text style={s.body}>
+            The cumulative fee difference understates the true cost of AUM
+            fees. When fees are deducted from a portfolio, the money lost to
+            fees can no longer compound. Over decades, this lost compounding
+            significantly exceeds the raw fee difference. The "portfolio
+            benefit" figure captures both the direct fee savings and the
+            growth on those savings.
+          </Text>
+        </View>
+
+        <View style={s.section}>
+          <Text style={s.h3}>Important disclaimers</Text>
+          <Text style={s.body}>
+            Figures compound over time. Individual results will vary based on
+            actual returns, tax situation, and portfolio composition. The 7%
+            growth rate is a long-term historical average for diversified
+            portfolios and is not a guarantee. All projections are
+            illustrative and pre-tax. This analysis does not account for
+            inflation, taxes, or specific investment strategies.
+          </Text>
+        </View>
+
+        <View style={s.card}>
+          <Text style={s.h3}>Summary of key results at $5M starting portfolio</Text>
+          <View style={{ flexDirection: "row", marginTop: 4 }}>
+            <View style={{ flex: 1 }}>
+              <Text style={[s.bodySmall, { fontWeight: 700 }]}>20 Years</Text>
+              <Text style={s.bodySmall}>Fee delta: {formatUSD(proj5M_20.feeDelta)}</Text>
+              <Text style={s.bodySmall}>Portfolio benefit: {formatUSD(proj5M_20.portfolioBenefit)}</Text>
+            </View>
+            <View style={{ flex: 1 }}>
+              <Text style={[s.bodySmall, { fontWeight: 700 }]}>30 Years</Text>
+              <Text style={s.bodySmall}>Fee delta: {formatUSD(proj5M_30.feeDelta)}</Text>
+              <Text style={s.bodySmall}>Portfolio benefit: {formatUSD(proj5M_30.portfolioBenefit)}</Text>
+            </View>
+          </View>
+        </View>
+
+        <Footer pageNumber={9} />
+      </Page>
+
+      {/* ========== PAGE 10 — YOUR NUMBERS ========== */}
       <Page size="LETTER" style={s.page}>
         <Text style={s.h2}>Your Numbers</Text>
         <View style={s.goldDivider} />
@@ -1073,10 +1164,10 @@ export default function AumMathPDF() {
           </View>
         </View>
 
-        <Footer pageNumber={9} />
+        <Footer pageNumber={10} />
       </Page>
 
-      {/* ========== PAGE 10 — ABOUT ========== */}
+      {/* ========== PAGE 11 — ABOUT ========== */}
       <Page size="LETTER" style={s.page}>
         <Text style={s.h2}>About Josh &amp; Wealth In Yourself</Text>
         <View style={s.goldDivider} />
@@ -1139,7 +1230,7 @@ export default function AumMathPDF() {
           </Text>
         </View>
 
-        <Footer pageNumber={10} />
+        <Footer pageNumber={11} />
       </Page>
     </Document>
   );
