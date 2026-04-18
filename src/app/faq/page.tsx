@@ -48,7 +48,7 @@ const categories: FAQCategory[] = [
         question:
           "Where are you located? Do you work with clients outside Nevada?",
         answer:
-          "We're based in Reno, Nevada but work with clients across the country. Everything is virtual — video calls, shared portals, and a tech stack built for remote collaboration. Where you live doesn't limit what we can do together.",
+          "We're based at Lake Tahoe, Nevada — our office is walking distance from Nevada Beach on the lake. We work with clients nationwide, virtually. Location doesn't constrain our service — what we do scales just as well for a business owner in Boston as for an investor in Miami. If you're ever in Tahoe, come visit — the view alone is worth it.",
       },
     ],
   },
@@ -100,7 +100,7 @@ const categories: FAQCategory[] = [
       {
         question: "What happens after the intro call if we're a fit?",
         answer:
-          "We schedule a 45-minute Strategy & Vision meeting where we go deeper — your goals, your concerns, and what your ideal life looks like. After that, you'll get access to a prospect portal where you can see exactly what the planning process looks like, meet the team, and review a proposal. No PDFs lost in your inbox — everything lives in one place.",
+          "If we're a fit, we build a prospect portal customized to you and your family's situation. You get immediate access — your own dashboard showing the scope of work we'd do, your estimated fee, your onboarding timeline, and what Year One together would look like. From there we schedule a Strategy & Vision call to go deeper. The portal means you don't leave the intro call with 'I'll follow up' — you leave with a clear picture of what working together actually involves.",
       },
       {
         question: "How long does onboarding take?",
@@ -126,7 +126,7 @@ const categories: FAQCategory[] = [
       {
         question: "Do you manage my investments directly?",
         answer:
-          "Yes. We build and manage evidence-based, low-cost portfolios across all your accounts — taxable, retirement, HSA, 529s. No proprietary products. No commissions. Your investments are custodied at Altruist, a modern RIA custodian, so your assets are always in your name and fully independent from us.",
+          "Yes — investment management is fully included in your flat fee. No separate AUM charge, no performance fee, no trading commissions. Our primary custodian is Altruist, who I selected specifically because their fee structure and technology align with how we work. For edge cases that Altruist can't accommodate, I'm also set up on Interactive Brokers as a secondary platform. You always know where your money is and what's being done with it — our fee doesn't change whether you have $1M or $20M invested with us.",
       },
       {
         question: "Do you prepare my taxes?",
@@ -207,7 +207,7 @@ const categories: FAQCategory[] = [
       {
         question: "Do you share your clients' results or testimonials?",
         answer:
-          "We're compliance-conservative on this and don't publish client testimonials. What we can do is connect you with existing clients who are willing to share their experience directly — a real conversation beats a curated quote on a website. Just ask on your intro call.",
+          "We don't publish client testimonials or case studies. As a fiduciary, we take client privacy seriously — and public testimonials create compliance complexity we'd rather avoid at this stage of our firm's growth. What we can offer instead: book a 15-minute intro call. You'll get a direct sense of whether we're a fit and walk away knowing exactly how we work — whether or not you become a client. That's a better measure than anyone else's testimonial.",
       },
     ],
   },
