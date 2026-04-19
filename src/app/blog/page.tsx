@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { getAllPosts } from "@/lib/blog";
-import CTASection from "@/components/CTASection";
+import NewsletterCTA from "@/components/NewsletterCTA";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -70,7 +70,7 @@ export default function BlogPage() {
         </div>
       </section>
 
-      <CTASection variant="light" />
+      <NewsletterCTA />
     </>
   );
 }

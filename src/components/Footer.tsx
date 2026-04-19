@@ -46,6 +46,14 @@ export default function Footer() {
               A flat-fee fiduciary advisory firm built for people designing their
               lives on their own terms.
             </p>
+            <a
+              href="https://joshstlaurent.substack.com/subscribe"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block mt-4 px-5 py-2.5 bg-secondary text-primary text-sm font-semibold rounded-lg hover:bg-secondary/90 transition-colors"
+            >
+              Subscribe to the newsletter
+            </a>
           </div>
 
           {/* Link columns */}

@@ -2,7 +2,7 @@ import { getAllPosts, getPostBySlug } from "@/lib/blog";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import Link from "next/link";
-import CTASection from "@/components/CTASection";
+import NewsletterCTA from "@/components/NewsletterCTA";
 import type { Metadata } from "next";
 
 interface Props {
@@ -153,7 +153,12 @@ export default async function BlogPostPage({ params }: Props) {
         </div>
       </article>
 
-      <CTASection variant="light" />
+      {/* Newsletter subscribe */}
+      <section className="bg-neutral-bg py-10 sm:py-14">
+        <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+          <NewsletterCTA variant="inline" />
+        </div>
+      </section>
     </>
   );
 }
