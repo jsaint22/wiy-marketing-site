@@ -1,10 +1,10 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
 import SectionHeading from "@/components/SectionHeading";
 import FeeCalculator from "@/components/FeeCalculator";
 import FAQSection from "@/components/FAQSection";
 import CTASection from "@/components/CTASection";
+import { projectFees, formatUSD } from "@/lib/pdf/fee-math";
 
 export const metadata: Metadata = {
   title: "Pricing",
@@ -94,7 +94,7 @@ const faqs = [
   {
     question: "How does this compare to a typical AUM advisor?",
     answer:
-      "Most AUM advisors charge 1% of assets under management. At $3M, that's $30,000 per year. Our fee at $3M is $17,000 per year — $13,000 less annually. At $5M, the gap is $29,000 per year. Over 20 years at $5M, compounding that difference means roughly $2.37M more stays in your portfolio. We built an entire page that walks through the math — see our full AUM comparison.",
+      "Most AUM advisors charge 1% of assets under management. At $3M, that's $30,000 per year. Our fee at $3M is $17,000 per year — $13,000 less annually. At $5M, the gap is $29,000 per year in the first year alone, and it widens as a 1% AUM fee compounds on a growing portfolio while our flat fee stays the same. We built an entire page that walks through the math — see our full AUM comparison.",
   },
   {
     question: "Is there a minimum net worth requirement?",
@@ -119,6 +119,8 @@ const faqs = [
 ];
 
 export default function PricingPage() {
+  const proj20 = projectFees(5_000_000, 20);
+
   return (
     <>
       {/* Hero */}
@@ -311,24 +313,11 @@ export default function PricingPage() {
             How does this compare to a 1% AUM advisor?
           </h2>
           <p className="mt-3 text-neutral-dark/70">
-            At $5M over 20 years: our flat fee costs ~$603K. A typical 1% AUM advisor costs ~$1.95M — a difference of $1.35M in fees alone, or $2.37M when you account for the growth those fees would have earned you.
+            At $5M over 20 years: our flat fee costs {formatUSD(proj20.cumulativeWiyFees)}. A typical 1% AUM advisor costs {formatUSD(proj20.cumulativeAumFees)} — a difference of {formatUSD(proj20.feeDelta)} in fees alone, or {formatUSD(proj20.portfolioBenefit)} when you account for the growth those fees would have earned you.
           </p>
           <Link href="/vs-aum" className="inline-block mt-6 px-8 py-3.5 bg-primary text-white font-semibold rounded-lg hover:bg-primary/90 transition-colors">
             See the full comparison &rarr;
           </Link>
-        </div>
-      </section>
-
-      {/* Credibility Badge */}
-      <section className="bg-white py-6">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center">
-          <Image
-            src="/badges/BP_Featured-FinAd-Blue_1000W.png"
-            alt="BiggerPockets Featured Financial Advisor"
-            width={140}
-            height={140}
-            className="w-28 h-auto opacity-80"
-          />
         </div>
       </section>
 

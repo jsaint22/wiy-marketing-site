@@ -59,6 +59,13 @@ export default function FeeCalculator({ standalone = false }: { standalone?: boo
   const aumAnnual = netWorth * 0.01;
   const aumMonthly = Math.round(aumAnnual / 12);
 
+  // WIY fee is a flat fee based on net worth at time of engagement.
+  // It does NOT automatically grow with portfolio returns (unlike AUM).
+  const wiyAnnualFee = annual; // fixed based on current net worth input
+
+  // True when AUM is cheaper than WIY (typically below ~$1M)
+  const aumIsCheaper = aumAnnual < annual;
+
   // 30-year projection: two portfolio paths, fees deducted each year
   const years = 30;
   const growthRate = 0.07;
@@ -68,14 +75,15 @@ export default function FeeCalculator({ standalone = false }: { standalone?: boo
   let wiyTotal = 0;
 
   for (let i = 0; i < years; i++) {
+    // Grow both portfolios first
     aumPortfolio *= 1 + growthRate;
     wiyPortfolio *= 1 + growthRate;
+    // AUM fee scales with portfolio; WIY fee is fixed at starting net worth
     const aumFee = aumPortfolio * 0.01;
-    const wiyFee = calculateAnnualFee(wiyPortfolio);
     aumTotal += aumFee;
-    wiyTotal += wiyFee;
+    wiyTotal += wiyAnnualFee;
     aumPortfolio -= aumFee;
-    wiyPortfolio -= wiyFee;
+    wiyPortfolio -= wiyAnnualFee;
   }
 
   const portfolioBenefit = wiyPortfolio - aumPortfolio;
@@ -174,18 +182,31 @@ export default function FeeCalculator({ standalone = false }: { standalone?: boo
                   </p>
                 </div>
               </div>
-              <div className="mt-4 bg-primary/5 rounded-xl p-4 text-center">
-                <p className="text-sm text-neutral-dark/70">Portfolio benefit</p>
-                <p className="text-3xl font-bold text-primary">
-                  {formatCurrency(portfolioBenefit)}
-                </p>
-                <p className="text-sm text-neutral-dark/70">
-                  more in your portfolio over 30 years
-                </p>
-                <p className="text-xs text-neutral-dark/50 mt-1">
-                  ({formatCurrency(delta)} in fee savings, plus growth on those savings)
-                </p>
-              </div>
+              {aumIsCheaper ? (
+                <div className="mt-4 bg-warning/5 border border-warning/20 rounded-xl p-4 text-center">
+                  <p className="text-sm font-semibold text-warning">
+                    At this net worth, a 1% AUM advisor is less expensive.
+                  </p>
+                  <p className="text-xs text-neutral-dark/60 mt-2">
+                    Our flat-fee model is designed for clients with $1M+ in net worth.
+                    Below that threshold, a percentage-based advisor may cost less.
+                    The flat fee starts to save you money as your wealth grows beyond ~$1M.
+                  </p>
+                </div>
+              ) : (
+                <div className="mt-4 bg-primary/5 rounded-xl p-4 text-center">
+                  <p className="text-sm text-neutral-dark/70">Portfolio benefit</p>
+                  <p className="text-3xl font-bold text-primary">
+                    {formatCurrency(portfolioBenefit)}
+                  </p>
+                  <p className="text-sm text-neutral-dark/70">
+                    more in your portfolio over 30 years
+                  </p>
+                  <p className="text-xs text-neutral-dark/50 mt-1">
+                    ({formatCurrency(delta)} in fee savings, plus growth on those savings)
+                  </p>
+                </div>
+              )}
             </div>
 
             {/* Monthly comparison */}
@@ -199,6 +220,11 @@ export default function FeeCalculator({ standalone = false }: { standalone?: boo
                 <span className="font-semibold text-success">{formatCurrency(monthly)}</span>
               </div>
             </div>
+
+            {/* Compliance disclosure */}
+            <p className="text-xs text-neutral-dark/40 leading-relaxed">
+              Assumes 7% annual portfolio growth for illustrative purposes only. Actual returns will vary. This is not a guarantee of future performance. Fees are assumed to be deducted from the portfolio annually.
+            </p>
           </>
         )}
       </div>

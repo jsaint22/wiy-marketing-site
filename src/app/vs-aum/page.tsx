@@ -6,7 +6,7 @@ import { projectFees, formatUSD } from "@/lib/pdf/fee-math";
 export const metadata: Metadata = {
   title: "Flat Fee vs. AUM Advisors — The Math Most Advisors Won't Show You",
   description:
-    "AUM fees cost you $2.37M in portfolio value over 20 years at $5M. See the side-by-side comparison between a traditional 1% AUM advisor and Wealth In Yourself's flat-fee model.",
+    "See the side-by-side comparison between a traditional 1% AUM advisor and Wealth In Yourself's flat-fee model. The math shows the true cost of percentage-based fees over 20 and 30 years.",
 };
 
 const comparisonRows = [
@@ -102,7 +102,7 @@ export default function VsAumPage() {
             The 1% fee isn&apos;t 1%. It&apos;s much more.
           </h1>
           <p className="mt-6 text-lg sm:text-xl text-neutral-dark/70 leading-relaxed max-w-2xl mx-auto">
-            At $5M, a 1% AUM fee costs you $2.37M in portfolio value over 20 years — and $6.99M over 30. The math is simple. The impact is not.
+            At $5M, a 1% AUM fee costs you {portfolioBenefit} in portfolio value over 20 years — and {formatCurrency(proj30.portfolioBenefit)} over 30. The math is simple. The impact is not.
           </p>
         </div>
       </section>
@@ -211,10 +211,10 @@ export default function VsAumPage() {
           <div className="hidden sm:block bg-neutral-bg rounded-2xl border border-neutral-bg overflow-hidden">
             <div className="grid grid-cols-6 gap-0 bg-primary text-white text-xs font-semibold uppercase tracking-wider">
               <div className="px-4 py-3">Year</div>
-              <div className="px-4 py-3 text-right">AUM Portfolio</div>
-              <div className="px-4 py-3 text-right">AUM Fee</div>
+              <div className="px-4 py-3 text-right">AUM Portfolio (after fee)</div>
+              <div className="px-4 py-3 text-right">AUM Fee (1%)</div>
               <div className="px-4 py-3 text-right">Cum. AUM Fees</div>
-              <div className="px-4 py-3 text-right">WIY Fee</div>
+              <div className="px-4 py-3 text-right">WIY Fee (flat)</div>
               <div className="px-4 py-3 text-right">Cum. WIY Fees</div>
             </div>
             {rows.map((r, i) => (
@@ -251,7 +251,7 @@ export default function VsAumPage() {
           </div>
 
           <p className="mt-6 text-center text-xs text-neutral-dark/50 max-w-2xl mx-auto">
-            Assumes 7% annual portfolio growth, fees paid from portfolio each year. Illustrative only. Individual results vary.
+            Assumes 7% annual portfolio growth for illustrative purposes only. Actual returns will vary. This is not a guarantee of future performance. Fees are assumed to be deducted from the portfolio annually. AUM fee is 1% of portfolio value each year (grows with portfolio). WIY fee is a flat fee based on starting net worth (does not grow with portfolio returns).
           </p>
         </div>
       </section>

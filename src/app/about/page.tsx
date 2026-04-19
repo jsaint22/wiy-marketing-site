@@ -200,6 +200,12 @@ export default function AboutPage() {
               daughter is due September 2026.
             </p>
             <p>
+              I host a podcast where I talk about the things most advisors
+              won&apos;t say out loud &mdash; fee conflicts, industry
+              incentives, and what real financial planning actually looks like
+              when you strip away the sales pitch.
+            </p>
+            <p>
               I also own Lake Tahoe Motorcycle Rentals and CA Homes In The
               Pines, a short-term rental business in the Sierra Nevada.
               Advisors who help clients build wealth should be building it

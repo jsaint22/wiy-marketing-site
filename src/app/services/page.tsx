@@ -144,7 +144,7 @@ export default function ServicesPage() {
             {services.map((service) => (
               <div
                 key={service.title}
-                className="group rounded-2xl border border-neutral-bg p-8 hover:shadow-lg hover:border-secondary/30 transition-all"
+                className="group rounded-2xl border border-neutral-bg border-l-4 border-l-secondary/40 p-8 hover:shadow-lg hover:border-secondary/30 hover:border-l-secondary transition-all hover:-translate-y-1"
               >
                 <div className="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center mb-5">
                   <svg
@@ -161,7 +161,7 @@ export default function ServicesPage() {
                     />
                   </svg>
                 </div>
-                <h3 className="text-xl font-bold text-primary mb-3">
+                <h3 className="text-xl font-bold text-primary mb-3 group-hover:text-secondary transition-colors">
                   {service.title}
                 </h3>
                 <p className="text-neutral-dark/70 leading-relaxed">
@@ -205,14 +205,14 @@ export default function ServicesPage() {
                 text: "Life changes. Markets move. Tax law shifts. Your plan adapts to all of it. We meet regularly, catch things before they become problems, and handle the coordination so you can focus on building your life.",
               },
             ].map((item) => (
-              <div key={item.step} className="flex gap-6">
-                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center">
+              <div key={item.step} className="group flex gap-6 bg-white rounded-xl p-6 border border-transparent hover:border-secondary/20 hover:shadow-md transition-all">
+                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center group-hover:bg-secondary/20 transition-colors">
                   <span className="text-secondary font-bold text-sm">
                     {item.step}
                   </span>
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-primary">
+                  <h3 className="text-lg font-bold text-primary group-hover:text-secondary transition-colors">
                     {item.title}
                   </h3>
                   <p className="mt-1 text-neutral-dark/70 leading-relaxed">

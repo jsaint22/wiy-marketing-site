@@ -64,8 +64,11 @@ export interface ProjectionSummary {
 
 /**
  * Project fees over time with two separate portfolio paths.
- * Fees are deducted from the portfolio each year, and WIY fee
- * is recalculated on the current WIY portfolio value.
+ * Fees are deducted from the portfolio each year.
+ *
+ * AUM fee: 1% of current portfolio value (grows with portfolio).
+ * WIY fee: flat fee based on STARTING net worth (does not grow with
+ *          portfolio returns — this is the core advantage of flat-fee).
  */
 export function projectFees(
   startingValue: number,
@@ -78,14 +81,17 @@ export function projectFees(
   let cumulativeAumFees = 0;
   let cumulativeWiyFees = 0;
 
+  // WIY fee is fixed based on starting net worth
+  const fixedWiyFee = calculateWiyAnnualFee(startingValue);
+
   for (let y = 1; y <= years; y++) {
     // Grow both portfolios
     aumPortfolio *= 1 + growthRate;
     wiyPortfolio *= 1 + growthRate;
 
-    // Calculate fees on end-of-year value
+    // AUM fee scales with portfolio; WIY fee is fixed
     const aumFee = aumPortfolio * 0.01;
-    const wiyFee = calculateWiyAnnualFee(wiyPortfolio);
+    const wiyFee = fixedWiyFee;
 
     cumulativeAumFees += aumFee;
     cumulativeWiyFees += wiyFee;

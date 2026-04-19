@@ -52,7 +52,7 @@ export default function EmailCapture() {
         </p>
 
         {status === "success" ? (
-          <div className="mt-8 bg-white/10 rounded-xl p-6">
+          <div className="mt-8 bg-success/20 rounded-xl p-6 border border-success/30">
             <p className="text-white font-semibold text-lg">{message}</p>
           </div>
         ) : (

@@ -108,7 +108,9 @@ export default function HomePage() {
                 Flat-Fee Fiduciary Advisory
               </p>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary leading-tight">
-                Your money should buy you time. Not the other way around.
+                Your money should buy you time.
+                <br className="hidden sm:block" />
+                Not the other way around.
               </h1>
               <p className="mt-6 text-lg text-neutral-dark/70 leading-relaxed max-w-xl">
                 Wealth In Yourself is a flat-fee, fiduciary financial life
@@ -155,7 +157,7 @@ export default function HomePage() {
           <p className="text-center text-xs font-semibold text-white/40 uppercase tracking-widest mb-5">
             As Featured In
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-12">
+          <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-8">
             {pressFeatures.map((press) => (
               <a
                 key={press.name}
@@ -164,15 +166,17 @@ export default function HomePage() {
                 rel="noopener noreferrer"
                 className="flex flex-col items-center gap-2 group"
               >
-                <Image
-                  src={press.logo}
-                  alt={press.name}
-                  width={"isBadge" in press && press.isBadge ? 80 : 140}
-                  height={"isBadge" in press && press.isBadge ? 80 : 40}
-                  className={`object-contain brightness-0 invert opacity-70 group-hover:opacity-100 transition-opacity ${
-                    "isBadge" in press && press.isBadge ? "h-16 w-auto" : "h-8 w-auto"
-                  }`}
-                />
+                <div className="bg-white rounded-full px-6 py-3 flex items-center justify-center">
+                  <Image
+                    src={press.logo}
+                    alt={press.name}
+                    width={"isBadge" in press && press.isBadge ? 80 : 140}
+                    height={"isBadge" in press && press.isBadge ? 80 : 40}
+                    className={`object-contain ${
+                      "isBadge" in press && press.isBadge ? "h-10 w-auto" : "h-8 w-auto"
+                    }`}
+                  />
+                </div>
                 <span className="text-[11px] text-white/50 group-hover:text-white/70 transition-colors font-medium">
                   {press.title}
                 </span>
@@ -446,13 +450,13 @@ export default function HomePage() {
                 key={partner.name}
                 className="bg-white rounded-xl p-5 border border-neutral-bg hover:border-secondary/20 hover:shadow-sm transition-all"
               >
-                <div className="h-10 flex items-center justify-center mb-2">
+                <div className={`${partner.name === "Monarch Money" ? "h-12" : "h-10"} flex items-center justify-center mb-2`}>
                   <Image
                     src={partner.logo}
                     alt={partner.name}
-                    width={120}
-                    height={40}
-                    className="max-h-10 w-auto object-contain"
+                    width={partner.name === "Monarch Money" ? 140 : 120}
+                    height={partner.name === "Monarch Money" ? 48 : 40}
+                    className={`${partner.name === "Monarch Money" ? "max-h-12" : "max-h-10"} w-auto object-contain`}
                   />
                 </div>
                 <p className="text-xs font-semibold text-primary text-center mb-2">
