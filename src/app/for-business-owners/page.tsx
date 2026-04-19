@@ -235,6 +235,26 @@ export default function ForBusinessOwnersPage() {
         </div>
       </section>
 
+      {/* Free Resource */}
+      <section className="bg-secondary/10 py-10 sm:py-14">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-xs font-semibold text-secondary uppercase tracking-wider mb-3">Free Download</p>
+          <h2 className="text-2xl sm:text-3xl font-bold text-primary">
+            The Entrepreneur&apos;s Wealth Extraction Roadmap
+          </h2>
+          <p className="mt-4 text-neutral-dark/70 leading-relaxed max-w-xl mx-auto">
+            Valuation, entity structure, QSBS, cash flow modeling, and the full advisory
+            team you need before you exit — or before your next growth phase. Free PDF.
+          </p>
+          <Link
+            href="/business-owner-roadmap"
+            className="inline-block mt-6 px-8 py-3.5 bg-primary text-white font-semibold rounded-lg hover:bg-primary/90 transition-colors"
+          >
+            Get the free roadmap
+          </Link>
+        </div>
+      </section>
+
       {/* CTA */}
       <CTASection
         headline="Ready for an advisor who understands what you&apos;re building?"

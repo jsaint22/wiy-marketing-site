@@ -210,6 +210,27 @@ export default function ForFireFollowersPage() {
         title="Questions From the FIRE Community"
       />
 
+      {/* Free Resource */}
+      <section className="bg-secondary/10 py-10 sm:py-14">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-xs font-semibold text-secondary uppercase tracking-wider mb-3">Free Download</p>
+          <h2 className="text-2xl sm:text-3xl font-bold text-primary">
+            The W-2 Escape Plan
+          </h2>
+          <p className="mt-4 text-neutral-dark/70 leading-relaxed max-w-xl mx-auto">
+            Runway math, health insurance, entity setup, retirement accounts, and income
+            replacement — 13 questions that separate a calculated leap from an expensive
+            mistake. Free PDF.
+          </p>
+          <Link
+            href="/w2-escape-plan"
+            className="inline-block mt-6 px-8 py-3.5 bg-primary text-white font-semibold rounded-lg hover:bg-primary/90 transition-colors"
+          >
+            Get the free checklist
+          </Link>
+        </div>
+      </section>
+
       {/* CTA */}
       <CTASection
         headline="Ready to stop guessing and start planning your exit?"

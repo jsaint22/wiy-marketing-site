@@ -233,6 +233,27 @@ export default function ForRealEstateInvestorsPage() {
         </div>
       </section>
 
+      {/* Free Resource */}
+      <section className="bg-secondary/10 py-10 sm:py-14">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-xs font-semibold text-secondary uppercase tracking-wider mb-3">Free Download</p>
+          <h2 className="text-2xl sm:text-3xl font-bold text-primary">
+            The RE Investor&apos;s Tax Strategy Checklist
+          </h2>
+          <p className="mt-4 text-neutral-dark/70 leading-relaxed max-w-xl mx-auto">
+            16 questions your advisory team should be answering about 1031 exchanges,
+            cost segregation, entity structure, and depreciation. Free PDF — built for
+            investors with 3+ properties.
+          </p>
+          <Link
+            href="/re-investor-checklist"
+            className="inline-block mt-6 px-8 py-3.5 bg-primary text-white font-semibold rounded-lg hover:bg-primary/90 transition-colors"
+          >
+            Get the free checklist
+          </Link>
+        </div>
+      </section>
+
       {/* CTA */}
       <CTASection
         headline="Your portfolio deserves more than a generic financial plan."

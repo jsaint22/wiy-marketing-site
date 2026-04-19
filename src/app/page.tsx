@@ -589,6 +589,64 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Free Resources */}
+      <section className="bg-neutral-bg py-10 sm:py-14">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeading
+            eyebrow="Free Resources"
+            title="Not ready to book a call? Start here."
+            subtitle="Free guides built for the people we work with. No fluff. No email spam. Just the questions your advisory team should be answering."
+          />
+          <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
+            <Link
+              href="/re-investor-checklist"
+              className="group bg-white rounded-xl p-6 border border-transparent hover:border-secondary/20 hover:shadow-lg transition-all"
+            >
+              <p className="text-xs font-semibold text-secondary uppercase tracking-wider">For RE Investors</p>
+              <h3 className="mt-2 text-lg font-bold text-primary group-hover:text-secondary transition-colors">
+                Tax Strategy Checklist
+              </h3>
+              <p className="mt-2 text-sm text-neutral-dark/70 leading-relaxed">
+                16 questions about 1031 exchanges, cost segregation, entity structure, and depreciation.
+              </p>
+              <p className="mt-3 text-sm font-semibold text-primary group-hover:text-secondary transition-colors">
+                Get the free PDF &rarr;
+              </p>
+            </Link>
+            <Link
+              href="/business-owner-roadmap"
+              className="group bg-white rounded-xl p-6 border border-transparent hover:border-secondary/20 hover:shadow-lg transition-all"
+            >
+              <p className="text-xs font-semibold text-secondary uppercase tracking-wider">For Business Owners</p>
+              <h3 className="mt-2 text-lg font-bold text-primary group-hover:text-secondary transition-colors">
+                Wealth Extraction Roadmap
+              </h3>
+              <p className="mt-2 text-sm text-neutral-dark/70 leading-relaxed">
+                Valuation, QSBS, entity structure, and the full team you need before you exit.
+              </p>
+              <p className="mt-3 text-sm font-semibold text-primary group-hover:text-secondary transition-colors">
+                Get the free PDF &rarr;
+              </p>
+            </Link>
+            <Link
+              href="/w2-escape-plan"
+              className="group bg-white rounded-xl p-6 border border-transparent hover:border-secondary/20 hover:shadow-lg transition-all"
+            >
+              <p className="text-xs font-semibold text-secondary uppercase tracking-wider">For W-2 Professionals</p>
+              <h3 className="mt-2 text-lg font-bold text-primary group-hover:text-secondary transition-colors">
+                W-2 Escape Plan
+              </h3>
+              <p className="mt-2 text-sm text-neutral-dark/70 leading-relaxed">
+                Runway math, health insurance, entity setup, and 13 questions before you make the leap.
+              </p>
+              <p className="mt-3 text-sm font-semibold text-primary group-hover:text-secondary transition-colors">
+                Get the free PDF &rarr;
+              </p>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <CTASection />
     </>
   );
