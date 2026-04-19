@@ -129,9 +129,9 @@ export default function HomePage() {
                 </a>
                 <Link
                   href="/pricing#calculator"
-                  className="px-8 py-3.5 border-2 border-primary text-primary font-semibold rounded-lg hover:bg-primary/5 transition-colors text-center"
+                  className="text-primary font-medium underline underline-offset-4 hover:text-secondary transition-colors py-2"
                 >
-                  See what you&apos;d pay
+                  Or see what you&apos;d pay &rarr;
                 </Link>
               </div>
             </div>

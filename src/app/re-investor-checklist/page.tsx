@@ -58,7 +58,7 @@ export default function REInvestorChecklist() {
   return (
     <main>
       {/* Hero */}
-      <section className="bg-cream py-16 sm:py-24">
+      <section className="bg-neutral-bg py-16 sm:py-24">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-secondary font-semibold text-sm tracking-wide uppercase">
             Free Download

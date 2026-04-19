@@ -58,12 +58,14 @@ export default function CalculatorPage() {
             >
               See Full Pricing Details
             </Link>
-            <Link
-              href="/contact"
+            <a
+              href="https://links.wealthinyourself.com/widget/bookings/wiy-15-min-call"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-block px-8 py-3.5 bg-secondary text-primary font-semibold rounded-lg hover:bg-secondary/90 transition-colors text-center"
             >
               Book a Call
-            </Link>
+            </a>
           </div>
         </div>
       </section>

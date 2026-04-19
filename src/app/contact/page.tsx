@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Book a free 15-minute intro call with Joshua St. Laurent, CFP®, CFT-I, APFC®, ACC. Flat-fee fiduciary financial planning from Lake Tahoe, Nevada. No pitch, no pressure.",
+    "Book a free 15-minute intro call with Joshua St. Laurent, CFP®, CFT™, APFC®, ACC. Flat-fee fiduciary financial planning from Lake Tahoe, Nevada. No pitch, no pressure.",
 };
 
 export default function ContactPage() {

@@ -193,11 +193,17 @@ export default function AboutPage() {
           />
           <div className="mt-8 space-y-6 text-neutral-dark/80 text-lg leading-relaxed">
             <p>
-              I&apos;m building two advisory firms &mdash; Wealth In Yourself
-              for entrepreneurs and real estate investors, and Top Shelf
-              Private Wealth for professional hockey players. I live near Lake
-              Tahoe, Nevada with my partner Amanda and our son Cole. Our
-              daughter is due September 2026.
+              Wealth In Yourself is where I spend most of my time &mdash; serving
+              entrepreneurs and real estate investors who&apos;ve outgrown the AUM
+              model. I also run a separate practice, Top Shelf Private Wealth, for
+              professional hockey players. I&apos;m a lifelong hockey player myself,
+              and it turns out compressed earning windows, jock tax, and cross-border
+              planning demand the same rigor I bring to WIY clients in different
+              contexts. The work informs the work.
+            </p>
+            <p>
+              I live near Lake Tahoe, Nevada with my wife Amanda and our son Cole.
+              Our daughter is due September 2026.
             </p>
             <p>
               I host a podcast where I talk about the things most advisors
