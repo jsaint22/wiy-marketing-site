@@ -14,6 +14,9 @@ const footerLinks = {
     { href: "/for-business-owners", label: "For Business Owners" },
     { href: "/for-real-estate-investors", label: "For Real Estate Investors" },
     { href: "/for-fire-followers", label: "For FIRE Followers" },
+    { href: "/re-investor-checklist", label: "RE Tax Checklist" },
+    { href: "/business-owner-roadmap", label: "Exit Planning Roadmap" },
+    { href: "/w2-escape-plan", label: "W-2 Escape Plan" },
   ],
   Learn: [
     { href: "/blog", label: "Blog" },
@@ -104,14 +107,18 @@ export default function Footer() {
             >
               Form CRS (ADV Part 3)
             </a>
-            <a
-              href="https://wealthinyourself.com/privacy-policy/"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/privacy-policy"
               className="hover:text-white/70 transition-colors"
             >
               Privacy Policy
-            </a>
+            </Link>
+            <Link
+              href="/disclosures"
+              className="hover:text-white/70 transition-colors"
+            >
+              Disclosures &amp; Terms
+            </Link>
             <span>&copy; {new Date().getFullYear()} Wealth In Yourself LLC</span>
           </div>
         </div>

@@ -79,7 +79,7 @@ const pressFeatures = [
     name: "Forbes",
     title: "Featured Contributor",
     logo: "/press/Forbes.png",
-    href: "https://www.forbes.com/councils/forbesfinancecouncil/", // TODO: Josh to supply actual Forbes article URL
+    href: "https://www.forbes.com/councils/forbesfinancecouncil/",
   },
   {
     name: "MarketWatch",
