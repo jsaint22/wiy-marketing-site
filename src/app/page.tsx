@@ -158,23 +158,23 @@ export default function HomePage() {
           <p className="text-center text-xs font-semibold text-white/40 uppercase tracking-widest mb-5">
             As Featured In
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-10">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-5">
             {pressFeatures.map((press) => (
               <a
                 key={press.name}
                 href={press.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-white rounded-2xl px-8 py-4 flex items-center justify-center hover:shadow-lg transition-shadow"
-                style={{ minWidth: 200, height: 80 }}
+                className="bg-white rounded-xl flex items-center justify-center hover:shadow-lg transition-shadow"
+                style={{ height: 72, padding: "12px 16px" }}
               >
                 <Image
                   src={press.logo}
                   alt={press.name}
-                  width={180}
-                  height={60}
-                  className="object-contain"
-                  style={{ height: 48, width: "auto" }}
+                  width={200}
+                  height={56}
+                  className="object-contain max-w-full"
+                  style={{ height: 40, width: "auto", maxWidth: "100%" }}
                 />
               </a>
             ))}
