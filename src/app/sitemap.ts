@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { getAllPosts } from "@/lib/blog";
+import { getAllEpisodes } from "@/lib/podcast";
 
 const BASE_URL = process.env.NEXT_PUBLIC_ENVIRONMENT === "production"
   ? "https://wealthinyourself.com"
@@ -21,12 +22,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/vs-aum",
     "/blog",
     "/faq",
+    "/podcast",
     "/re-investor-checklist",
     "/business-owner-roadmap",
     "/w2-escape-plan",
   ];
 
   const posts = getAllPosts();
+  const episodes = getAllEpisodes();
 
   return [
     ...staticPages.map((page) => ({
@@ -40,6 +43,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(post.date),
       changeFrequency: "monthly" as const,
       priority: 0.6,
+    })),
+    ...episodes.map((ep) => ({
+      url: `${BASE_URL}/podcast/${ep.slug}`,
+      lastModified: new Date(ep.date),
+      changeFrequency: "monthly" as const,
+      priority: 0.5,
     })),
   ];
 }
