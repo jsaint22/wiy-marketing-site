@@ -21,13 +21,13 @@ const painPoints = [
   {
     title: "1031 Exchanges",
     description:
-      "Timing, identification rules, qualified intermediaries, and what happens when a deal falls through. We coordinate the entire process with your team.",
+      "45-day identification windows. 180-day closing deadlines. Qualified intermediary selection. Reverse exchange structures. And what happens when your target property falls through on day 40. We\u2019ve coordinated dozens of these — we know where they go wrong.",
     icon: "M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4",
   },
   {
     title: "Entity Structures",
     description:
-      "LLCs, series LLCs, LPs, land trusts. The right structure protects your assets and minimizes taxes. The wrong one creates liability.",
+      "LLCs, series LLCs, LPs, land trusts. Every property in your personal name is a lawsuit away from threatening everything else you own. The right structure protects your assets and minimizes taxes. The wrong one creates liability you don\u2019t see until it\u2019s too late.",
     icon: "M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4",
   },
   {
@@ -39,13 +39,13 @@ const painPoints = [
   {
     title: "Self-Directed IRA / Solo 401(k)",
     description:
-      "Using retirement accounts to invest in real estate. The rules are strict. The opportunities are significant.",
+      "Using retirement accounts to invest in real estate. The rules are strict — one prohibited transaction can blow up the entire account\u2019s tax-advantaged status. We help you navigate the structure so you capture the opportunity without triggering a disqualification.",
     icon: "M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3",
   },
   {
     title: "Portfolio Integration",
     description:
-      "Your real estate isn't separate from your financial plan. We integrate rental income, equity, and leverage into your total picture.",
+      "Your real estate isn\u2019t separate from your financial plan — even though most advisors treat it that way. We integrate rental income, equity, leverage, and concentration risk into your total picture. Because 80% of your net worth in one asset class is a plan. It\u2019s just not a complete one.",
     icon: "M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z",
   },
 ];
@@ -192,15 +192,9 @@ export default function ForRealEstateInvestorsPage() {
         </div>
       </section>
 
-      {/* FAQ */}
-      <FAQSection
-        faqs={faqs}
-        title="Questions From Real Estate Investors"
-      />
-
       {/* BiggerPockets Featured Financial Advisor Badge */}
-      <section className="bg-neutral-bg py-8">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
+      <section className="bg-neutral-bg py-10 sm:py-14">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center">
           <Image
             src="/badges/BP_Featured-FinAd-Blue_1000W.png"
             alt="BiggerPockets Featured Financial Advisor"
@@ -208,11 +202,20 @@ export default function ForRealEstateInvestorsPage() {
             height={180}
             className="w-40 h-auto"
           />
-          <p className="mt-3 text-sm text-neutral-dark/50 text-center">
-            Recognized by BiggerPockets as a Featured Financial Advisor for real estate investors.
+          <p className="mt-4 text-lg font-semibold text-primary">
+            Featured Financial Advisor on BiggerPockets
+          </p>
+          <p className="mt-2 text-neutral-dark/60 max-w-xl">
+            BiggerPockets is the largest real estate investing community in the world. We&apos;re recognized as a Featured Financial Advisor because we actually understand real estate — not just stocks and bonds.
           </p>
         </div>
       </section>
+
+      {/* FAQ */}
+      <FAQSection
+        faqs={faqs}
+        title="Questions From Real Estate Investors"
+      />
 
       {/* Case Study Link */}
       <section className="bg-white py-10 sm:py-14">

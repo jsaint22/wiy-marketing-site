@@ -3,47 +3,48 @@ import LeadMagnetCapture from "@/components/LeadMagnetCapture";
 import CTASection from "@/components/CTASection";
 
 export const metadata: Metadata = {
-  title: "Free: The Entrepreneur's Exit Planning Roadmap",
+  title: "Free: The Business Owner's Wealth Extraction Roadmap",
   description:
-    "Business valuation, QSBS exclusion, entity structuring, succession planning, and tax timing strategies. Free roadmap for business owners planning their exit.",
+    "Business valuation, QSBS exclusion, entity structuring, cash flow optimization, and exit timing strategies. Free roadmap for entrepreneurs building real wealth from their business.",
 };
 
 const roadmapSections = [
   {
-    category: "Business Valuation",
+    category: "Tax Architecture",
     items: [
-      "Do you have a current, independent business valuation?",
-      "Have you identified the 3-5 value drivers a buyer will care about most?",
+      "Is your entity structure optimized for how your business actually operates today?",
+      "Have you evaluated a Qualified Small Business Stock (QSBS) exclusion — before it's too late to qualify?",
+      "Are you running a multi-year tax projection, or just reacting every April?",
     ],
   },
   {
-    category: "Entity Structure & Tax Positioning",
+    category: "Owner Compensation & Cash Flow",
     items: [
-      "Is your entity structured to minimize the tax impact of a sale?",
-      "Have you evaluated a Qualified Small Business Stock (QSBS) exclusion?",
-      "Are you using estate planning vehicles to transfer business interests at today's valuation?",
+      "Are you paying yourself the right mix of salary, distributions, and retained earnings?",
+      "Do you have a system separating business cash, tax reserves, and personal wealth?",
+      "Have you set up the right retirement plan — Solo 401(k), defined benefit, or cash balance?",
     ],
   },
   {
-    category: "Cash Flow & Income Replacement",
+    category: "Business Valuation & Equity",
     items: [
-      "Do you know your post-exit income need — not want, need?",
-      "Have you modeled the after-tax proceeds of your sale?",
-      "Do you have a wealth management plan for the proceeds?",
+      "Do you have a current, independent business valuation — even if you're not selling?",
+      "Have you identified the 3-5 value drivers that would matter most to a buyer?",
     ],
   },
   {
-    category: "Succession & Continuity",
+    category: "Exit & Succession",
     items: [
-      "Have you evaluated internal sale vs. external sale vs. ESOP?",
-      "Do you have a buy-sell agreement with your partners?",
+      "Have you modeled the after-tax proceeds of a sale at your current valuation?",
+      "Do you have a buy-sell agreement with your partners (if applicable)?",
+      "Are you using estate planning vehicles to transfer business interests at today's valuation — not tomorrow's?",
     ],
   },
   {
     category: "The Advisory Team",
     items: [
-      "Do you have all four: financial planner, CPA, estate attorney, M&A advisor?",
-      "Are all four talking to each other?",
+      "Do you have all four: financial planner, CPA, estate attorney, and M&A advisor?",
+      "Are all four working from the same playbook — or operating in silos?",
     ],
   },
 ];
@@ -58,14 +59,17 @@ export default function BusinessOwnerRoadmap() {
             Free Download
           </p>
           <h1 className="mt-2 text-4xl sm:text-5xl font-bold text-primary tracking-tight">
-            The Entrepreneur&apos;s Exit Planning Roadmap
+            The Business Owner&apos;s Wealth Extraction Roadmap
           </h1>
           <p className="mt-6 text-xl text-neutral-dark/80 leading-relaxed max-w-3xl">
-            Most business owners build incredible companies — and then leave
-            millions on the table when it&apos;s time to step away. Whether
-            you&apos;re five years out or five months, this roadmap covers the
-            decisions that determine whether your exit builds generational wealth
-            or just pays the tax bill.
+            Your business generates revenue. The question is how much of it
+            actually becomes your wealth — and how much disappears to taxes,
+            poor entity structure, or an exit you never planned for. This
+            roadmap covers the decisions that separate business owners who
+            build generational wealth from those who just build busy companies.
+          </p>
+          <p className="mt-4 text-sm text-neutral-dark/50 font-medium">
+            For entrepreneurs doing $500K+ in annual revenue or planning a transition within 5 years.
           </p>
         </div>
       </section>
@@ -95,7 +99,7 @@ export default function BusinessOwnerRoadmap() {
           </div>
           <p className="mt-8 text-neutral-dark/60 text-sm">
             ...plus installment sale strategies, Charitable Remainder Trusts,
-            key person insurance, and post-exit health insurance planning.
+            key person insurance, and a personal financial independence calculator.
           </p>
         </div>
       </section>
@@ -104,10 +108,10 @@ export default function BusinessOwnerRoadmap() {
       <LeadMagnetCapture
         magnet="business-owner-roadmap"
         headline="Get the full roadmap — free."
-        subheadline="The exit plan your advisor should have given you years ago."
-        description="Enter your name and email and we'll send the complete Exit Planning Roadmap to your inbox."
+        subheadline="The wealth extraction plan your advisor should have built on day one."
+        description="Enter your name and email. You'll get the complete Wealth Extraction Roadmap in your inbox within 60 seconds."
         buttonText="Send me the roadmap"
-        successMessage="Sent! Check your inbox for the Exit Planning Roadmap."
+        successMessage="Sent! Check your inbox for the Wealth Extraction Roadmap."
       />
 
       <CTASection />

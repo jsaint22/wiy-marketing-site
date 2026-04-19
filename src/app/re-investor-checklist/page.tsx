@@ -3,46 +3,53 @@ import LeadMagnetCapture from "@/components/LeadMagnetCapture";
 import CTASection from "@/components/CTASection";
 
 export const metadata: Metadata = {
-  title: "Free: The Real Estate Investor's Tax Strategy Checklist",
+  title: "Free: The 16-Point Tax Strategy Checklist for RE Investors",
   description:
-    "14 questions your advisory team should be answering about 1031 exchanges, cost segregation, entity structure, depreciation, QBI, and state tax strategy. Free checklist for RE investors.",
+    "16 questions your advisory team should be answering about 1031 exchanges, cost segregation, entity structure, depreciation recapture, and STR tax strategy. Free checklist for serious RE investors.",
 };
 
 const checklistItems = [
   {
     category: "1031 Exchanges",
     items: [
-      "Do you have a 1031 exchange strategy for your next property sale?",
-      "Have you evaluated a Reverse 1031 exchange?",
-      "Do you have a Qualified Intermediary relationship established?",
+      "Do you have a 1031 exchange strategy mapped for your next property sale — before you list?",
+      "Have you evaluated a Reverse 1031 exchange to lock in your replacement property first?",
+      "Do you have a Qualified Intermediary relationship established (not your title company)?",
     ],
   },
   {
     category: "Cost Segregation",
     items: [
-      "Have you run a cost segregation study on every property you own?",
-      "Are you tracking the current bonus depreciation percentage?",
+      "Have you run a cost segregation study on every property you own — including ones you bought years ago?",
+      "Are you tracking the current bonus depreciation phase-down and how it affects your next acquisition?",
     ],
   },
   {
     category: "Entity Structure",
     items: [
-      "Is your entity structure optimized for liability protection and tax efficiency?",
-      "Have you evaluated a holding company structure for your portfolio size?",
+      "Is each property held in the right entity for liability protection and tax efficiency?",
+      "Have you evaluated a holding company structure as your portfolio crosses 5+ doors?",
     ],
   },
   {
     category: "STR Tax Strategies",
     items: [
-      "Are you leveraging the STR loophole for material participation?",
-      "Do you have documentation proving your material participation hours?",
+      "Are you leveraging the STR loophole for material participation — and do you qualify?",
+      "Do you have contemporaneous documentation proving your material participation hours?",
+    ],
+  },
+  {
+    category: "Depreciation & Recapture",
+    items: [
+      "Do you have a depreciation recapture plan for when you eventually sell?",
+      "Have you modeled the tax impact of a sale vs. a refinance-and-hold strategy?",
     ],
   },
   {
     category: "Advisory Team",
     items: [
       "Do you have both a CPA and a financial planner — and are they talking to each other?",
-      "Is your CPA proactively suggesting strategies — or just filing?",
+      "Is your CPA proactively suggesting strategies — or just filing what you hand them?",
     ],
   },
 ];
@@ -57,13 +64,17 @@ export default function REInvestorChecklist() {
             Free Download
           </p>
           <h1 className="mt-2 text-4xl sm:text-5xl font-bold text-primary tracking-tight">
-            The Real Estate Investor&apos;s Tax Strategy Checklist
+            16 Tax Questions Your Advisory Team Should Be Answering Right Now
           </h1>
           <p className="mt-6 text-xl text-neutral-dark/80 leading-relaxed max-w-3xl">
-            Most real estate investors are leaving money on the table — and they
-            don&apos;t know it until someone runs the numbers. This checklist
-            covers the tax strategies that separate sophisticated investors from
-            everyone else.
+            Most RE investors have a CPA who files and an advisor who allocates.
+            Neither one is running the numbers on 1031 timing, cost segregation
+            studies, or depreciation recapture. This checklist is the gap
+            between &ldquo;good enough&rdquo; and keeping an extra $50K–$200K
+            on every transaction.
+          </p>
+          <p className="mt-4 text-sm text-neutral-dark/50 font-medium">
+            Built for investors with 3+ properties and $1M+ in real estate equity.
           </p>
         </div>
       </section>
@@ -93,7 +104,7 @@ export default function REInvestorChecklist() {
           </div>
           <p className="mt-8 text-neutral-dark/60 text-sm">
             ...plus QBI deduction strategies, state tax considerations, and
-            depreciation recapture planning.
+            a one-page action plan template.
           </p>
         </div>
       </section>
@@ -102,8 +113,8 @@ export default function REInvestorChecklist() {
       <LeadMagnetCapture
         magnet="re-investor-checklist"
         headline="Get the full checklist — free."
-        subheadline="14 questions. Zero fluff."
-        description="Enter your name and email and we'll send the complete Tax Strategy Checklist to your inbox. No spam, no sales pitch — just the checklist."
+        subheadline="16 questions. Zero fluff. Built for investors who actually run the numbers."
+        description="Enter your name and email. You'll get the complete Tax Strategy Checklist in your inbox within 60 seconds. No spam, no sales pitch — just the checklist."
         buttonText="Send me the checklist"
         successMessage="Sent! Check your inbox for the Tax Strategy Checklist."
       />

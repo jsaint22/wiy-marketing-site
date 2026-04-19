@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import CTASection from "@/components/CTASection";
 import SectionHeading from "@/components/SectionHeading";
+import FAQSection from "@/components/FAQSection";
 
 export const metadata: Metadata = {
   title: "Virtual Family Office",
@@ -66,7 +67,40 @@ const whoItsFor = [
   },
   {
     title: "People Who\u2019ve Outgrown Their Advisor",
-    desc: "Or never had one worth keeping. You know you need coordination. You just haven\u2019t found someone who does it right.",
+    desc: "Your advisor manages your brokerage account and sends you a quarterly report. That\u2019s not planning. You need someone who sees your tax strategy, your estate, your insurance, and your investments as one system. That\u2019s what we do.",
+  },
+];
+
+const faqs = [
+  {
+    question: "What exactly is a Virtual Family Office?",
+    answer:
+      "A traditional family office is a private firm that manages every aspect of a wealthy family\u2019s financial life \u2014 investments, taxes, estate, insurance, philanthropy \u2014 with a dedicated team under one roof. They typically require $50M\u2013$100M+ in assets and cost $500K\u2013$1M+ per year. A Virtual Family Office delivers the same coordinated approach through one advisor who quarterbacks your existing team \u2014 your CPA, your estate attorney, your insurance professional \u2014 for a flat fee that\u2019s a fraction of the cost.",
+  },
+  {
+    question: "How is this different from a regular financial advisor?",
+    answer:
+      "Most advisors manage your investments and call it a day. They don\u2019t coordinate with your CPA on tax strategy. They don\u2019t review your estate documents. They don\u2019t audit your insurance coverage. A VFO model covers all of those domains and makes sure every decision is coordinated. Your tax strategy informs your investment plan. Your estate plan reflects your business structure. Nothing operates in isolation.",
+  },
+  {
+    question: "How much does it cost?",
+    answer:
+      "Our flat fee is based on the complexity of your financial life \u2014 measured by total net worth (excluding your primary residence). Fees start at $10,000 per year. Compare that to a traditional family office ($500K+/year) or an AUM advisor charging 1% on a $5M portfolio ($50,000/year for less scope). You get more coordination for less cost, with zero conflicts of interest.",
+  },
+  {
+    question: "Do you replace my CPA and attorney?",
+    answer:
+      "No. We work alongside them. Your CPA handles tax compliance. Your attorney handles legal documents. We sit in the middle and make sure every professional on your team is working from the same strategy. Think of us as the general contractor for your financial life \u2014 we coordinate all the specialists so nothing falls through the cracks.",
+  },
+  {
+    question: "What if I don't have a CPA or estate attorney yet?",
+    answer:
+      "We\u2019ll help you find the right ones. Part of the VFO model is building your team \u2014 not just managing it. We have relationships with tax professionals and estate attorneys who work well in a coordinated model, and we\u2019ll make introductions based on your specific needs.",
+  },
+  {
+    question: "Is this only for business owners?",
+    answer:
+      "No. The VFO model works for anyone whose financial life has real complexity \u2014 business owners, real estate investors, FIRE pursuers, executives with stock compensation, and families who\u2019ve simply outgrown their current advisor. If you have decisions that span tax, investments, estate, and insurance, this model was built for you.",
   },
 ];
 
@@ -86,9 +120,10 @@ export default function VirtualFamilyOfficePage() {
           </h1>
           <p className="mt-6 text-lg sm:text-xl text-neutral-dark/70 leading-relaxed max-w-2xl mx-auto">
             Ultra-wealthy families have had coordinated financial teams for
-            decades. We built the same infrastructure &mdash; tax, investments,
-            insurance, estate, business planning &mdash; into one flat-fee
-            advisory relationship.
+            decades &mdash; a tax strategist, an investment manager, an estate
+            attorney, an insurance analyst, all talking to each other. We built
+            that same infrastructure into one flat-fee advisory relationship.
+            No eight-figure minimum required.
           </p>
         </div>
       </section>
@@ -103,16 +138,20 @@ export default function VirtualFamilyOfficePage() {
           <div className="mt-10 space-y-6 text-neutral-dark/80 text-lg leading-relaxed">
             <p>
               Traditional family offices serve families with $50M&ndash;$100M+.
-              They employ a team of specialists &mdash; tax strategists,
-              investment managers, estate attorneys, insurance analysts &mdash;
-              all coordinated under one roof.
+              They employ a full-time team &mdash; tax strategists, investment
+              managers, estate attorneys, insurance analysts &mdash; all
+              coordinated under one roof. The cost? $500K&ndash;$1M+ per year.
             </p>
-            <p>The problem? Most people can&apos;t afford that.</p>
             <p>
-              A Virtual Family Office delivers the same coordinated approach
-              through one advisor who quarterbacks the entire team. Your CPA,
-              estate attorney, insurance agent, and investment strategy &mdash;
-              all working from the same playbook.
+              You don&apos;t need to spend that much. But you do need
+              the coordination.
+            </p>
+            <p>
+              A Virtual Family Office delivers that same coordinated approach
+              through one advisor who quarterbacks your entire team. Your CPA,
+              estate attorney, insurance professionals, and investment strategy
+              &mdash; all working from the same playbook, with one person making
+              sure nothing falls through the cracks.
             </p>
           </div>
         </div>
@@ -129,8 +168,10 @@ export default function VirtualFamilyOfficePage() {
             <p>
               Most advisors manage investments and call it financial planning.
               They charge 1% of your assets, which means their incentive is to
-              gather more assets &mdash; not to help you spend your money well,
-              minimize taxes, or design your life.
+              gather more of your money &mdash; not to help you use it well,
+              minimize taxes, or design your life. Your estate plan says one
+              thing, your investment account says another, and nobody is
+              making sure they agree.
             </p>
             <p className="font-semibold text-primary">
               A VFO approach is different:
@@ -198,9 +239,15 @@ export default function VirtualFamilyOfficePage() {
         </div>
       </section>
 
+      {/* FAQ */}
+      <FAQSection
+        faqs={faqs}
+        title="Questions About the Virtual Family Office"
+      />
+
       <CTASection
         headline="Ready for an advisor who sees the whole picture?"
-        subtext="Book a 15-minute intro call. No pitch. No pressure. Just a conversation about what matters to you."
+        subtext="Book a 15-minute intro call. No pitch. No pressure. Just a conversation about what\u2019s working, what\u2019s not, and whether this model fits your life."
       />
     </>
   );

@@ -30,12 +30,12 @@ const milestones = [
 const includedServices = [
   {
     title: "Life Planning",
-    desc: "Goals-based planning built around the life you actually want to live.",
+    desc: "Your money exists to fund a specific life. We design the plan around that life — not around a portfolio benchmark.",
     icon: "M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342",
   },
   {
     title: "Tax Strategy",
-    desc: "Proactive planning that finds money your CPA leaves on the table.",
+    desc: "Proactive tax planning that coordinates with your CPA. Roth conversions, harvesting, entity optimization, estimated payments — quarterly, not just at filing time.",
     icon: "M2.25 18.75a60.07 60.07 0 0 1 15.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 0 1 3 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 0 0-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 0 1-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 0 0 3 15h-.75M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm3 0h.008v.008H18V10.5Zm-12 0h.008v.008H6V10.5Z",
   },
   {
@@ -45,32 +45,32 @@ const includedServices = [
   },
   {
     title: "Insurance Review",
-    desc: "Coverage that actually protects your family. No upsells. No kickbacks.",
+    desc: "Term life, umbrella, disability, long-term care — we review every policy. No commissions. No affiliated carriers. Just coverage that fits.",
     icon: "M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z",
   },
   {
     title: "Estate Coordination",
-    desc: "Documents that reflect your values. Structures that protect what you built.",
+    desc: "Trusts, beneficiary audits, titling reviews, powers of attorney. We coordinate with your estate attorney so nothing falls through the cracks.",
     icon: "M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0 0 12 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75Z",
   },
   {
     title: "Business Planning",
-    desc: "Entity optimization, retirement plan design, and exit strategy for owners.",
+    desc: "S-Corp vs. LLC analysis, Solo 401(k) and defined benefit plan design, buy-sell agreements, and exit strategy modeling.",
     icon: "M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 0 0 .75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 0 0-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0 1 12 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 0 1-.673-.38m0 0A2.18 2.18 0 0 1 3 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 0 1 3.413-.387m7.5 0V5.25A2.25 2.25 0 0 0 13.5 3h-3a2.25 2.25 0 0 0-2.25 2.25v.894m7.5 0a48.667 48.667 0 0 0-7.5 0",
   },
   {
     title: "RE Investor Planning",
-    desc: "1031 exchanges, depreciation, entity structures, and passive activity rules.",
+    desc: "1031 exchanges, cost segregation studies, depreciation recapture planning, series LLC structures, and passive activity rule optimization.",
     icon: "M8.25 21v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21m0 0h4.5V3.545M12.75 21h7.5V10.75M2.25 21h1.5m18 0h-18M2.25 9l4.5-1.636M18.75 3l-1.5.545m0 6.205 3 1m1.5.5-1.5-.5M6.75 7.364V3h-3v18m3-13.636 10.5-3.819",
   },
   {
     title: "Unlimited Meetings",
-    desc: "We never nickel-and-dime your time. Meet as often as you need — it's included.",
+    desc: "No per-meeting charges. No hourly billing. Meet weekly during a transition, quarterly when things are steady. Your call.",
     icon: "M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5",
   },
   {
     title: "VFO Partner Network",
-    desc: "Access to our Virtual Family Office network of specialists — CPAs, attorneys, insurance pros — included.",
+    desc: "A vetted network of CPAs, estate attorneys, and insurance specialists who coordinate directly with us. No referral fees. No separate onboarding.",
     icon: "M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z",
   },
 ];
@@ -94,7 +94,7 @@ const faqs = [
   {
     question: "How does this compare to a typical AUM advisor?",
     answer:
-      "Most AUM advisors charge 1% of assets under management. At $3M, that's $30,000 per year. Our fee at $3M is $17,000 per year — a savings of $13,000 annually. The gap widens as your wealth grows. Over 30 years, you could keep hundreds of thousands more with our model.",
+      "Most AUM advisors charge 1% of assets under management. At $3M, that's $30,000 per year. Our fee at $3M is $17,000 per year — $13,000 less annually. At $5M, the gap is $29,000 per year. Over 20 years at $5M, compounding that difference means roughly $2.37M more stays in your portfolio. We built an entire page that walks through the math — see our full AUM comparison.",
   },
   {
     question: "Is there a minimum net worth requirement?",
@@ -128,11 +128,10 @@ export default function PricingPage() {
             Transparent Pricing
           </p>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary leading-tight">
-            A fee structure that makes sense.
+            Your fee goes down as your wealth goes up.
           </h1>
           <p className="mt-6 text-lg sm:text-xl text-neutral-dark/70 leading-relaxed max-w-2xl mx-auto">
-            AUM advisors charge more as you succeed. Our declining flat fee
-            rewards your growth instead of penalizing it.
+            Most advisors charge 1% of your portfolio — forever. We charge a declining flat fee based on net worth. The wealthier you get, the less you pay as a percentage. That&apos;s the point.
           </p>
         </div>
       </section>
@@ -249,6 +248,15 @@ export default function PricingPage() {
           <div className="mt-10">
             <FeeCalculator />
           </div>
+        </div>
+      </section>
+
+      {/* Post-calculator nudge */}
+      <section className="bg-white py-8">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-lg text-neutral-dark/70">
+            Like what you see? That fee covers <strong>everything</strong> below.
+          </p>
         </div>
       </section>
 

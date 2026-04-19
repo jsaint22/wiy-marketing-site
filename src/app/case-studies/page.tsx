@@ -16,17 +16,17 @@ const caseStudies = [
     highlight: "$47K saved in Year 1",
     highlightColor: "text-success",
     situation:
-      "Founder of a SaaS company, $4M net worth, $800K annual income, Delaware C-Corp, no retirement plan, paying maximum marginal tax rate.",
+      "Founder of a B2B SaaS company, $4M net worth, $800K W-2-equivalent income, operating as a Delaware C-Corp with no employer-sponsored retirement plan. Paying 37% federal + 3.8% NIIT on nearly all income.",
     challenge:
-      "Leaving $40K+ of tax-advantaged retirement savings on the table every year. Poorly structured entity choice for income type.",
+      "Leaving $69K+ of annual tax-advantaged retirement contributions on the table. C-Corp structure creating double taxation on distributions. No quarterly tax planning cadence with CPA.",
     approach: [
-      "Restructured to S-Corp election for reasonable salary optimization",
-      "Set up Solo 401(k) with profit-sharing contributions",
-      "Coordinated with tax strategist for quarterly review cadence",
-      "Rebalanced retirement allocation to align with overall portfolio",
+      "Elected S-Corp status and set reasonable salary at $250K — reducing self-employment tax on remaining distributions",
+      "Established Solo 401(k) with $69,000 in combined employee/employer contributions (Year 1)",
+      "Built quarterly tax projection cadence with coordinated CPA",
+      "Rebalanced retirement allocation from 100% target-date fund to low-cost, tax-efficient index portfolio",
     ],
     outcome:
-      "$47,000 in year-one tax savings. Ongoing annual tax advantage of ~$35,000. Solo 401(k) balance growing at maximum contribution rate.",
+      "$47,000 in year-one tax savings between S-Corp election and retirement contributions. Ongoing annual tax advantage of ~$35,000. WIY annual fee: $17,000 — paid for itself 2.7x in Year 1 alone.",
     icon: "M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4",
     segment: "Business Owners",
     segmentHref: "/for-business-owners",
@@ -37,17 +37,17 @@ const caseStudies = [
     highlight: "$142K tax deferral",
     highlightColor: "text-success",
     situation:
-      "Real estate investor with 14 properties across three states, $6M net worth, W-2 income from day job, self-managing most properties.",
+      "Real estate investor with 14 residential rental properties across three states. $6M net worth. Still working a W-2 day job at $180K. Self-managing most properties. No formal asset protection strategy.",
     challenge:
-      "No cost segregation studies in place. Missed 1031 opportunity on recent sale ($80K capital gains). Entity structure mixed \u2014 some LLCs, some personal, no asset protection strategy.",
+      "Zero cost segregation studies on any property. Missed a 1031 exchange on a recent $400K sale — triggering $80K in capital gains tax. Entity structure was a patchwork: some properties in LLCs, some held personally, no series LLC, no umbrella policy.",
     approach: [
-      "Coordinated cost seg studies on 4 highest-basis properties",
-      "Structured 1031 exchange for pending sale",
-      "Established series LLC structure for asset protection",
-      "Integrated depreciation optimization into overall tax strategy",
+      "Coordinated cost segregation studies on 4 highest-basis properties (combined basis: $2.1M)",
+      "Structured 1031 exchange for a pending $520K sale into two replacement properties",
+      "Established series LLC structure with each property in its own series for lawsuit isolation",
+      "Integrated accelerated depreciation into overall tax strategy to offset W-2 income via Real Estate Professional Status analysis",
     ],
     outcome:
-      "$62,000 in Year 1 tax deferral through cost seg. Additional $80,000 deferred through 1031. Liability protection gap closed before a tenant lawsuit that came in Year 2.",
+      "$62,000 in Year 1 tax deferral through cost segregation. Additional $80,000 deferred via 1031 exchange. Series LLC in place 8 months before a tenant slip-and-fall claim — liability isolated to a single property. WIY annual fee: $21,000.",
     icon: "M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6",
     segment: "Real Estate Investors",
     segmentHref: "/for-real-estate-investors",
@@ -58,17 +58,17 @@ const caseStudies = [
     highlight: "7 extra years of runway",
     highlightColor: "text-secondary",
     situation:
-      "Couple, late 40s, $2.8M net worth, planning to retire at 52. Heavy in traditional 401(k)s, some taxable brokerage, modest Roth balance.",
+      "Dual-income couple, both 48, combined $340K income. $2.8M net worth: $1.6M in traditional 401(k)s, $400K taxable brokerage, $200K Roth, $600K in home equity. Target: retire at 52.",
     challenge:
-      "Withdrawal sequencing plan didn\u2019t exist. Roth conversion opportunity window (low-income years between career and Social Security) was being wasted. Healthcare costs for pre-65 retirement unaccounted for.",
+      "No withdrawal sequencing plan. $1.6M in pre-tax accounts with no Roth conversion strategy — meaning a massive tax bomb at RMD age. Healthcare costs for 13 years of pre-Medicare coverage completely unmodeled. Original plan ran out of money at age 81.",
     approach: [
-      "Built 40-year withdrawal sequencing model",
-      "Designed 8-year Roth conversion ladder",
-      "Analyzed geographic arbitrage options (kept Tahoe home, bought a condo in Portugal for 4 months/year)",
-      "Coordinated healthcare planning for ACA eligibility vs. expat insurance",
+      "Built a 40-year withdrawal sequencing model across all account types with Monte Carlo stress testing",
+      "Designed an 8-year Roth conversion ladder targeting $200K/year in conversions during the low-income window between retirement and Social Security",
+      "Modeled geographic arbitrage: keep Tahoe primary residence, spend 4 months/year in Portugal at ~40% lower cost of living",
+      "Built healthcare bridge plan: ACA eligibility by managing MAGI below 400% FPL during conversion years, with expat insurance as backup",
     ],
     outcome:
-      "7 additional years of financial runway vs. prior plan. $150K+ lifetime tax savings from Roth conversion ladder. Clear geographic-optionality plan they didn\u2019t have before.",
+      "7 additional years of financial runway vs. their original plan (money lasts to 88, not 81). $150K+ in projected lifetime tax savings from the Roth conversion ladder. Clear month-by-month retirement income plan they can actually follow. WIY annual fee: $13,500.",
     icon: "M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z",
     segment: "FIRE Followers",
     segmentHref: "/for-fire-followers",
@@ -85,11 +85,10 @@ export default function CaseStudiesPage() {
             Case Studies
           </p>
           <h1 className="text-4xl sm:text-5xl font-bold text-primary">
-            Real planning. Quantified results.
+            The fee paid for itself. Every time.
           </h1>
           <p className="mt-6 text-lg text-neutral-dark/70 max-w-2xl mx-auto">
-            Three scenarios. Three different financial lives. One thing in
-            common: the math worked.
+            Three real planning scenarios. Three different financial lives. In each case, the value delivered in Year 1 exceeded the annual fee — and the benefits compound from there.
           </p>
         </div>
       </section>
@@ -190,11 +189,7 @@ export default function CaseStudiesPage() {
       <section className="bg-neutral-bg py-10">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-sm text-neutral-dark/50 text-center leading-relaxed">
-            Illustrative case study based on typical client scenarios. Names
-            and specific details have been anonymized and aggregated. Individual
-            results vary based on personal circumstances. Not a guarantee of
-            future performance or outcomes. Past results do not guarantee future
-            performance.
+            These case studies are anonymized composites for illustrative purposes. Individual results vary based on personal financial circumstances. No guarantee of similar outcomes. Past results do not guarantee future performance. Tax savings and financial projections referenced are based on specific circumstances and should not be interpreted as typical or expected results.
           </p>
         </div>
       </section>

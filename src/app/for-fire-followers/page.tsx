@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import CTASection from "@/components/CTASection";
 import SectionHeading from "@/components/SectionHeading";
+import FAQSection from "@/components/FAQSection";
 
 export const metadata: Metadata = {
   title: "Financial Planning for FIRE",
@@ -25,7 +26,7 @@ const painPoints = [
   {
     title: "Coasting Strategies",
     description:
-      "You might not need to grind for 20 more years. A coast strategy lets you work less, earn less, and still hit your number — if the math is right.",
+      "You might not need to grind for 20 more years. A coast strategy lets you downshift — part-time work, a passion project, a lower-stress role — and still hit your number. But the math has to be right, and most spreadsheets miss the nuance.",
     icon: "M13 7h8m0 0v8m0-8l-8 8-4-4-6 6",
   },
   {
@@ -37,7 +38,7 @@ const painPoints = [
   {
     title: "Healthcare Before Medicare",
     description:
-      "This is the FIRE killer nobody talks about enough. ACA optimization, health sharing ministries, and planning for the gap years.",
+      "This is the FIRE killer nobody talks about enough. A family of four paying full-price health insurance can burn $30K+ per year before they see a doctor. ACA subsidy optimization, MAGI management, and gap-year planning aren\u2019t optional — they\u2019re the difference between FIRE working and FIRE failing.",
     icon: "M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z",
   },
   {
@@ -54,6 +55,39 @@ const howWeWork = [
   "We coordinate tax strategy with your withdrawal sequence",
   "We help you define \"enough\" — then build the plan to get there",
   "Flat fee means we don't benefit from keeping your money invested longer",
+];
+
+const faqs = [
+  {
+    question: "Do I really need a financial advisor if I'm pursuing FIRE?",
+    answer:
+      "You've done the hard part — building the savings rate and the discipline. But the withdrawal phase is where the real complexity lives. Roth conversion ladders, ACA subsidy cliffs, sequence of returns risk, and tax-efficient drawdown across multiple account types. A spreadsheet can model the basics. A planner catches the $50K mistakes hiding in the details.",
+  },
+  {
+    question: "Won't your fee eat into my FIRE number?",
+    answer:
+      "Our flat fee is based on complexity, not assets. And for most FIRE clients, the tax savings alone — from Roth conversion optimization, capital gains harvesting, and ACA subsidy planning — more than cover the cost in Year 1. We don't take a percentage of your portfolio. We charge a known, fixed amount.",
+  },
+  {
+    question: "I'm not fully FIRE yet. Is it too early to work with you?",
+    answer:
+      "The best time to start planning is before you leave your job — not after. The decisions you make in the 2-3 years before FIRE (Roth conversions, asset location, mega backdoor contributions, healthcare planning) have outsized impact on how long your money lasts. Waiting until you've already quit limits your options.",
+  },
+  {
+    question: "How do you handle the healthcare gap before Medicare?",
+    answer:
+      "We model your income to optimize ACA subsidies — sometimes saving $15K-$20K per year in premiums alone. This means coordinating your Roth conversions, capital gains harvesting, and withdrawal sequence so your Modified Adjusted Gross Income stays in the subsidy range. It's one of the highest-ROI planning moves for early retirees.",
+  },
+  {
+    question: "Do you understand the different types of FIRE?",
+    answer:
+      "Lean FIRE, Fat FIRE, Coast FIRE, Barista FIRE — we've worked with all of them. The planning is different for someone targeting $40K/year in expenses versus $150K/year. We don't push one version. We model yours, stress-test it, and make sure the math actually works across a range of market conditions.",
+  },
+  {
+    question: "What makes you different from other fee-only advisors?",
+    answer:
+      "Most fee-only advisors still charge AUM — a percentage of your assets. That means their incentive is to keep your money invested with them, not to help you spend it wisely. We charge a flat fee. We also bring financial therapy training, which matters when you're wrestling with the emotional side of leaving a career, redefining your identity, and trusting your plan.",
+  },
 ];
 
 export default function ForFireFollowersPage() {
@@ -169,6 +203,12 @@ export default function ForFireFollowersPage() {
           </Link>
         </div>
       </section>
+
+      {/* FAQ */}
+      <FAQSection
+        faqs={faqs}
+        title="Questions From the FIRE Community"
+      />
 
       {/* CTA */}
       <CTASection

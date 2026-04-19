@@ -21,34 +21,34 @@ const comparisonRows = [
     wiy: "$10K/year minimum (typically $1M+ net worth)",
   },
   {
-    label: "Scope",
+    label: "Scope of services",
     aum: "Primarily portfolio management",
-    wiy: "Full Virtual Family Office",
+    wiy: "Tax, investments, estate, insurance, business planning, RE investor planning, financial therapy",
   },
   {
     label: "Fee grows when portfolio grows",
-    aum: "Yes \u2014 automatically",
-    wiy: "No \u2014 your fee is your fee",
+    aum: "Yes — automatically, even if they did nothing",
+    wiy: "Rate declines as your net worth grows",
   },
   {
-    label: "Included services",
-    aum: "Investment management, occasional planning",
-    wiy: "Tax strategy, investments, estate, insurance, real estate, business planning, financial therapy",
+    label: "Incentive to keep assets in your account",
+    aum: "Yes — moving money out reduces their fee",
+    wiy: "None. Your fee doesn't change based on where assets are held.",
   },
   {
     label: "Conflicts of interest",
-    aum: "AUM fee creates incentive to keep assets with them regardless of optimal deployment",
-    wiy: "Zero. Fee is independent of decisions.",
+    aum: "Incentive to discourage paying down debt, gifting, real estate purchases, or starting a business",
+    wiy: "Zero. Fee is independent of asset allocation decisions.",
   },
   {
-    label: "Access to partners (CPA, attorney, insurance)",
-    aum: "You find them yourself",
-    wiy: "Coordinated VFO network included",
+    label: "CPA, attorney, insurance coordination",
+    aum: "You find and manage them yourself",
+    wiy: "Vetted VFO partner network — coordinated and included",
   },
   {
-    label: "Client portal experience",
-    aum: "Usually a third-party aggregator",
-    wiy: "Custom-built Wealth In Yourself portal",
+    label: "Meeting frequency",
+    aum: "Typically 1-2 per year",
+    wiy: "Unlimited — meet as often as you need",
   },
   {
     label: "Transparent pricing published online",
@@ -99,10 +99,10 @@ export default function VsAumPage() {
             Wealth In Yourself vs. AUM
           </p>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary leading-tight">
-            AUM fees cost you $2.37M in portfolio value over 20&nbsp;years.
+            The 1% fee isn&apos;t 1%. It&apos;s much more.
           </h1>
           <p className="mt-6 text-lg sm:text-xl text-neutral-dark/70 leading-relaxed max-w-2xl mx-auto">
-            At $5M, the difference compounds to $6.99M over 30 years. Here&apos;s the math most advisors don&apos;t want you to see.
+            At $5M, a 1% AUM fee costs you $2.37M in portfolio value over 20 years — and $6.99M over 30. The math is simple. The impact is not.
           </p>
         </div>
       </section>
@@ -264,21 +264,35 @@ export default function VsAumPage() {
           </h2>
           <div className="space-y-6 text-lg text-neutral-dark/80 leading-relaxed">
             <p>
-              The AUM model was invented in the 1980s as a compromise &mdash; better
-              than commission-only, but still tied to the asset. The problem: if your
-              advisor earns more when your account grows, they have an incentive to keep
-              assets in the account.
+              The AUM model was designed in the 1980s as a step up from commissions.
+              It was better. But &quot;better than commissions&quot; is a low bar.
             </p>
             <p>
-              Should you pay down your mortgage? Take equity out for real estate? Gift
-              to the next generation? Start a business? These are often the right
-              decisions &mdash; and they all reduce your advisor&apos;s fee.
+              The structural problem: your advisor earns more when your investable
+              account balance grows. That creates a quiet incentive to keep assets
+              parked — even when moving them is the right call.
             </p>
             <p>
-              That&apos;s a quiet conflict of interest baked into the model. Flat fees
-              eliminate it entirely.
+              Should you pay off the mortgage? Buy a rental property? Fund a
+              business? Gift to your kids? Start a donor-advised fund? These are
+              often the best financial decisions you can make. Every one of them
+              reduces your advisor&apos;s paycheck.
+            </p>
+            <p>
+              A flat fee based on net worth removes that conflict entirely. We get
+              paid the same whether you invest it, spend it, gift it, or deploy it
+              into real estate. Our only job is to help you make the right decision.
             </p>
           </div>
+        </div>
+      </section>
+
+      {/* Compliance Disclaimer */}
+      <section className="bg-white py-8">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-sm text-neutral-dark/50 text-center leading-relaxed">
+            This comparison uses hypothetical examples for illustrative purposes only. Past performance is not indicative of future results. Individual results will vary. Assumes 7% annual portfolio growth with fees deducted annually. Actual returns, fees, and outcomes depend on individual circumstances and market conditions.
+          </p>
         </div>
       </section>
 

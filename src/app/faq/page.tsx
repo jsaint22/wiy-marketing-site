@@ -37,7 +37,7 @@ const categories: FAQCategory[] = [
       {
         question: "What makes you different from other financial advisors?",
         answer:
-          "Three things. First, we charge a flat fee — not a percentage of your assets — so our income doesn't grow just because your portfolio does. Second, we start with your life, not your money. Financial therapy and values-based planning come before spreadsheets. Third, we operate as a Virtual Family Office — you get a coordinated team (CPA, estate attorney, insurance specialist) instead of one advisor trying to do everything alone.",
+          "Three things. First, we charge a flat fee — not a percentage of your assets — so our incentive is the quality of our advice, not the size of your account. Second, we start with your life, not your money. Values-based planning and financial therapy come before spreadsheets. Third, we operate as a Virtual Family Office — you get a coordinated team (CPA, estate attorney, insurance specialist) instead of one advisor trying to do everything alone.",
       },
       {
         question: "Are you a fiduciary?",
@@ -69,7 +69,7 @@ const categories: FAQCategory[] = [
       {
         question: "What's the minimum net worth to work with you?",
         answer:
-          "Our minimum annual fee is $10,000, which typically makes sense for clients with a net worth of $1M or higher (excluding primary residence). We can work with clients starting at $500K, but below that threshold a flat-fee model likely isn't the most cost-effective option for you — and we'd rather be honest about that upfront.",
+          "Our minimum annual fee is $10,000, which typically makes sense for clients with a net worth of $1M or higher (excluding primary residence). Below that threshold, a flat-fee model likely isn't cost-effective for you yet — and we'd rather tell you that upfront than sign you up anyway.",
       },
       {
         question: "What happens to my fee as my net worth grows?",
@@ -202,7 +202,7 @@ const categories: FAQCategory[] = [
       {
         question: "What's your investment philosophy?",
         answer:
-          "Evidence-based, low-cost, globally diversified. We don't try to beat the market or chase hot stocks. We build portfolios designed to capture market returns efficiently while managing tax impact and aligning with your risk tolerance and timeline. Boring investing, exciting life — that's the goal.",
+          "Evidence-based, low-cost, globally diversified. We don't try to beat the market or chase hot stocks. We build portfolios designed to capture market returns efficiently while managing tax impact and aligning with your actual timeline — not a generic risk questionnaire. Boring investing, exciting life.",
       },
       {
         question: "Do you share your clients' results or testimonials?",

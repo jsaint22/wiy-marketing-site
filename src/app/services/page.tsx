@@ -13,49 +13,49 @@ const services = [
   {
     title: "Life Planning",
     description:
-      "Your plan starts with what you want your life to look like — not a retirement date. We use financial therapy and values-based coaching to build a financial structure around the life you actually want.",
+      "Your plan starts with the life you want — not a retirement date. We use financial therapy and values-based coaching to design a financial structure around your ideal life. Not a generic Monte Carlo printout. A real plan built on what matters to you.",
     icon: "M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z",
   },
   {
     title: "Tax Strategy",
     description:
-      "Proactive tax planning that goes beyond filing. We coordinate with your CPA and find the money they leave on the table. Entity structuring, Roth conversions, tax-loss harvesting, and multi-year projections.",
+      "Your CPA files what already happened. We plan what happens next. Entity structuring, Roth conversions, tax-loss harvesting, and multi-year projections — coordinated directly with your CPA so nothing falls through the cracks.",
     icon: "M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z",
   },
   {
     title: "Investment Planning",
     description:
-      "Evidence-based, low-cost portfolios. No proprietary products. No commissions. We build and manage your investment strategy across all accounts — taxable, retirement, HSA, 529s.",
+      "Evidence-based, low-cost portfolios. No proprietary products. No commissions. No one calling you with a hot stock tip. We build and manage your investment strategy across every account — taxable, retirement, HSA, 529s — so your portfolio actually matches your plan.",
     icon: "M13 7h8m0 0v8m0-8l-8 8-4-4-6 6",
   },
   {
     title: "Insurance Review",
     description:
-      "We audit your current coverage and fill the gaps. Life, disability, umbrella, long-term care — we recommend what you actually need, not what pays us commissions. We don't sell insurance.",
+      "Most people are over-insured in the wrong places and exposed where it matters. We audit your coverage — life, disability, umbrella, long-term care — and tell you what you actually need. We don't sell insurance. We never earn a commission.",
     icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z",
   },
   {
     title: "Estate Planning Coordination",
     description:
-      "We work with your estate attorney to ensure your documents reflect your values and your plan. Trusts, beneficiary designations, power of attorney, healthcare directives.",
+      "Your estate attorney drafts the documents. We make sure they actually reflect your plan. Trusts, beneficiary designations, power of attorney, healthcare directives — all coordinated so nothing contradicts your financial strategy.",
     icon: "M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z",
   },
   {
     title: "Entity & Business Owner Planning",
     description:
-      "S-Corp optimization, Solo 401(k), SEP, Defined Benefit plans, cash flow management, and exit planning. Built for people running their own thing.",
+      "S-Corp optimization, Solo 401(k), SEP, Defined Benefit plans, cash flow management, and exit planning. Built for founders who need their personal finances and business structure working from the same playbook.",
     icon: "M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4",
   },
   {
     title: "Real Estate Portfolio Coordination",
     description:
-      "Cost segregation studies, 1031 exchange coordination, entity structuring, depreciation strategy, passive vs. active income classification, and SDIRA guidance.",
+      "Cost segregation studies, 1031 exchange coordination, entity structuring, depreciation strategy, passive vs. active income classification, and SDIRA guidance. Your properties aren't separate from your financial plan. We integrate them.",
     icon: "M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6",
   },
   {
     title: "Financial Therapy & Behavioral Coaching",
     description:
-      "Money decisions are emotional decisions. We use financial therapy techniques to help you understand your relationship with money, break unproductive patterns, and make decisions with clarity.",
+      "Money decisions are emotional decisions. The spreadsheet says one thing, your gut says another. We use financial therapy techniques to uncover the patterns driving your financial behavior — so you stop making the same expensive mistakes.",
     icon: "M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18",
   },
   {
@@ -100,12 +100,12 @@ const faqs = [
   {
     question: "How often do we meet?",
     answer:
-      "Our process is designed around depth, not frequency for its own sake. Our comprehensive onboarding sequence covers 13 meetings across four phases: Ground (discovery), Design (life planning), Build (execution), and Evolve (ongoing). After onboarding, we meet quarterly at minimum — and anytime you need us in between. Our goal isn't to schedule meetings to justify our fee; it's to build a relationship where you actually know us and we actually know you.",
+      "During onboarding, we meet frequently — 13 meetings across four phases to build your plan with real depth. After that, we meet quarterly at minimum and anytime you need us in between. We don't schedule meetings to justify our fee. We meet when there's something worth discussing.",
   },
   {
     question: "What if I only need help with one area?",
     answer:
-      "That's fine. Some clients come in for tax strategy and realize they need investment help. Others just want an insurance audit. We'll scope the engagement to fit what you actually need.",
+      "Start where it hurts most. Some clients come in for tax strategy and realize their estate plan is outdated. Others want an insurance audit and discover their entity structure is costing them six figures. Your flat fee covers everything — we use what you need, when you need it.",
   },
 ];
 
@@ -187,22 +187,22 @@ export default function ServicesPage() {
               {
                 step: "01",
                 title: "Intro call",
-                text: "15 minutes. No pitch. We learn about your situation, you learn about how we work. If it's a fit, we move forward.",
+                text: "15 minutes. No pitch. No slides. You tell us what's going on. We tell you how we work. If there's a fit, we move forward that week.",
               },
               {
                 step: "02",
-                title: "Discovery & data gathering",
-                text: "We dig into your finances, your goals, and what your ideal life actually looks like. This is where the real work starts.",
+                title: "Discovery & life design",
+                text: "We dig into your finances, your goals, and what your ideal life actually looks like. Not what a retirement calculator says — what you want your Tuesday morning to look like in 10 years. This is where the real work starts.",
               },
               {
                 step: "03",
-                title: "Your plan",
-                text: "A clear, actionable financial plan covering every relevant area. Not a binder that collects dust — a living strategy you'll actually use.",
+                title: "Your plan comes to life",
+                text: "A clear, actionable financial plan covering every relevant area — tax, investments, insurance, estate, business, real estate. Not a binder that collects dust. A living strategy you'll actually use, with every piece coordinated.",
               },
               {
                 step: "04",
                 title: "Ongoing partnership",
-                text: "Life changes. Your plan changes with it. We meet regularly, stay proactive, and handle the details so you don't have to.",
+                text: "Life changes. Markets move. Tax law shifts. Your plan adapts to all of it. We meet regularly, catch things before they become problems, and handle the coordination so you can focus on building your life.",
               },
             ].map((item) => (
               <div key={item.step} className="flex gap-6">

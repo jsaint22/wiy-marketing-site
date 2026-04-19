@@ -24,7 +24,7 @@ const clientPaths = [
   {
     title: "FIRE Followers",
     description:
-      "Optionality over deprivation. Coasting strategies, tax-efficient withdrawals, and actually enjoying the life you designed.",
+      "You didn't grind for years to white-knuckle a 4% rule. Roth ladders, tax-efficient withdrawals, coast strategies, and a plan that lets you actually live.",
     href: "/for-fire-followers",
     caseStudyLabel: "See how a FIRE couple added 7 years of runway",
     icon: "M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z",
@@ -200,15 +200,14 @@ export default function HomePage() {
               outside the industry knows it&apos;s happening.
             </p>
             <p>
-              That&apos;s the day I decided to build something different. A firm
-              where fiduciary isn&apos;t a hat you put on when it&apos;s
-              convenient. Where the fee doesn&apos;t grow just because your
-              account did. Where the person sitting across from you is actually
-              doing what they&apos;re telling you to do &mdash; building businesses,
-              owning real estate, designing their own life, not just managing yours.
+              So I built a firm where fiduciary isn&apos;t a hat you put on
+              when it&apos;s convenient. Where your fee doesn&apos;t grow just
+              because your account did. Where the person sitting across from
+              you is building businesses, owning real estate, and designing
+              their own life &mdash; not just managing yours.
             </p>
             <p className="text-primary font-semibold">
-              That&apos;s Wealth In Yourself. That&apos;s why it exists.
+              That&apos;s Wealth In Yourself.
             </p>
           </div>
         </div>
@@ -237,13 +236,13 @@ export default function HomePage() {
           <SectionHeading
             eyebrow="The Virtual Family Office"
             title="The planning infrastructure of the ultra-wealthy. Without the eight-figure price tag."
-            subtitle="A Virtual Family Office coordinates your tax strategy, investment planning, insurance, estate plan, and business structure into one coherent system. Most people only get this if they have $50M+. We built it for everyone."
+            subtitle="A Virtual Family Office coordinates your tax strategy, investments, insurance, estate plan, and business structure into one system. Typically reserved for $50M+ families. We built it into every client engagement."
           />
           <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               { title: "Tax Strategy", desc: "Proactive tax planning, not just filing. We find the money your CPA leaves on the table." },
               { title: "Investment Planning", desc: "Low-cost, evidence-based portfolios. No proprietary products. No commissions." },
-              { title: "Life Planning", desc: "Your plan starts with what you want your life to look like — then we build the financial structure to support it." },
+              { title: "Life Planning", desc: "We start with what you want your life to look like. The financial structure exists to serve that vision, not the other way around." },
               { title: "Insurance & Estate", desc: "Coverage that actually protects your family. Estate documents that reflect your values." },
               { title: "Business Structure", desc: "Entity optimization, retirement plan design, and cash flow strategy for business owners." },
               { title: "One Flat Fee", desc: "All of this, coordinated. No AUM percentage. No hidden costs. One transparent monthly fee." },
@@ -276,7 +275,7 @@ export default function HomePage() {
           <SectionHeading
             eyebrow="Your Wealth In Yourself Experience"
             title="Most advisors send PDFs. We built you a portal."
-            subtitle="Here's what you get access to on Day 1."
+            subtitle="Your dashboard, journey map, and wins tracker — live from Day 1. No PDFs. No guessing where you stand."
           />
           <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Dashboard Preview */}
@@ -439,7 +438,7 @@ export default function HomePage() {
           <SectionHeading
             eyebrow="Your Team Under One Fee"
             title="You don't coordinate the team. We do."
-            subtitle="The Wealth In Yourself flat fee gives you access to a full Virtual Family Office — without institutional minimums, additional fees, or coordination headaches. Here's who's in your corner from Day 1."
+            subtitle="Your flat fee covers the coordination. You pay partners directly only when their service is engaged. No markups. No middlemen."
           />
           <div className="mt-10 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
             {partners.map((partner) => (
@@ -471,9 +470,6 @@ export default function HomePage() {
           </p>
         </div>
       </section>
-
-      {/* Email Capture */}
-      <EmailCapture />
 
       {/* Who We Work With */}
       <section className="bg-white py-10 sm:py-14">
@@ -524,6 +520,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Email Capture */}
+      <EmailCapture />
 
       {/* Fee model overview */}
       <section className="bg-white py-10 sm:py-14">

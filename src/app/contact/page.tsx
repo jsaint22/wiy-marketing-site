@@ -17,7 +17,8 @@ export default function ContactPage() {
             15 minutes. No pitch. Just a real conversation.
           </h1>
           <p className="mt-4 text-lg sm:text-xl text-white/80">
-            No pitch. No pressure. 15 minutes to see if we&rsquo;re a fit.
+            You&rsquo;ll talk with Josh directly. If we&rsquo;re not a fit,
+            you&rsquo;ll still leave with more clarity than you walked in with.
           </p>
         </div>
       </section>
@@ -31,22 +32,34 @@ export default function ContactPage() {
               <h2 className="text-2xl sm:text-3xl font-bold text-primary">
                 What to expect
               </h2>
-              <div className="mt-6 space-y-4 text-neutral-dark/80 text-lg leading-relaxed">
-                <p>
-                  The intro call is a conversation, not a sales pitch. We&rsquo;ll
-                  spend 15 minutes talking about your life, your goals, and
-                  what&rsquo;s on your mind financially.
-                </p>
-                <p>
-                  We&rsquo;ll cover what&rsquo;s working in your current
-                  situation and what isn&rsquo;t. You&rsquo;ll ask questions.
-                  We&rsquo;ll ask questions. By the end, we&rsquo;ll both know
-                  whether Wealth In Yourself is the right fit.
-                </p>
-                <p>
-                  If it&rsquo;s not, that&rsquo;s fine. You&rsquo;ll still
-                  leave with clarity you didn&rsquo;t have before.
-                </p>
+              <div className="mt-6 space-y-5">
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-secondary/10 flex items-center justify-center">
+                    <span className="text-sm font-bold text-secondary">1</span>
+                  </div>
+                  <div>
+                    <p className="font-semibold text-primary">You book a time</p>
+                    <p className="text-neutral-dark/70 text-sm mt-1">Pick any open slot. Calls are via Zoom or phone &mdash; your choice.</p>
+                  </div>
+                </div>
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-secondary/10 flex items-center justify-center">
+                    <span className="text-sm font-bold text-secondary">2</span>
+                  </div>
+                  <div>
+                    <p className="font-semibold text-primary">We talk about your life</p>
+                    <p className="text-neutral-dark/70 text-sm mt-1">What you&rsquo;re building, what&rsquo;s working, what isn&rsquo;t. No questionnaires. No pre-work.</p>
+                  </div>
+                </div>
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-secondary/10 flex items-center justify-center">
+                    <span className="text-sm font-bold text-secondary">3</span>
+                  </div>
+                  <div>
+                    <p className="font-semibold text-primary">We both decide if it&rsquo;s a fit</p>
+                    <p className="text-neutral-dark/70 text-sm mt-1">If it is, we&rsquo;ll walk you through next steps. If it isn&rsquo;t, you&rsquo;ll still leave with clarity you didn&rsquo;t have before.</p>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -56,7 +69,8 @@ export default function ContactPage() {
                 Book your intro call
               </h3>
               <p className="mt-3 text-neutral-dark/70">
-                Pick a time that works for you. 15 minutes, no obligation.
+                Pick any open slot. 15 minutes, no obligation, no follow-up
+                spam.
               </p>
               <a
                 href="https://links.wealthinyourself.com/widget/bookings/wiy-15-min-call"
@@ -64,8 +78,12 @@ export default function ContactPage() {
                 rel="noopener noreferrer"
                 className="inline-block mt-8 w-full sm:w-auto px-10 py-4 bg-secondary text-primary font-semibold text-lg rounded-lg hover:bg-secondary/90 transition-colors"
               >
-                Schedule a Call
+                Pick a Time
               </a>
+              <p className="mt-4 text-xs text-neutral-dark/40">
+                Typical response within 1 business day if your preferred time
+                isn&rsquo;t available.
+              </p>
             </div>
           </div>
         </div>

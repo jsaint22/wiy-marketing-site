@@ -55,9 +55,9 @@ export default function AboutPage() {
                 MS &middot; CFP&reg; &middot; CFT&trade; &middot; APFC&reg; &middot; ACC &middot; Founder
               </p>
               <p className="mt-6 text-lg text-neutral-dark/70 leading-relaxed max-w-xl">
-                I built Wealth In Yourself because the advisory industry is
-                broken. It&apos;s built to serve advisors and firms, not the
-                people sitting across the table. I decided to fix that.
+                I left the brokerage world because the system is built to
+                serve advisors and firms &mdash; not the people sitting across the
+                table. So I built something that does.
               </p>
             </div>
             <div className="relative max-w-sm mx-auto lg:mx-0">
@@ -85,14 +85,11 @@ export default function AboutPage() {
           />
           <div className="mt-8 space-y-6 text-neutral-dark/80 text-lg leading-relaxed">
             <p>
-              I started my career at Fidelity. I learned a lot. I also learned
-              how the system actually works.
-            </p>
-            <p>
-              The system served the firm. Advisors were incentivized to gather
-              assets, push products, and keep clients in the dark about what
-              they were really paying. The client&apos;s best interest came
-              second — if it came at all.
+              I spent years at Fidelity. I learned the craft. I also learned
+              how the system actually works &mdash; advisors incentivized to
+              gather assets, push products, and keep clients in the dark about
+              what they were really paying. The client&apos;s best interest
+              came second. Sometimes it didn&apos;t come at all.
             </p>
             <blockquote className="border-l-4 border-secondary pl-6 py-2 my-8 text-xl font-semibold text-primary italic">
               &ldquo;I watched advisors take off their fiduciary hat and put on
@@ -117,12 +114,14 @@ export default function AboutPage() {
             <p>
               I pursued a Master&apos;s in Financial Life Planning at Golden
               Gate University. Not an MBA. Not a finance degree. A program
-              built around the idea that planning starts with life, not money.
+              built around a radical idea: planning starts with your life, not
+              your money.
             </p>
             <p>
-              That&apos;s where I discovered financial therapy and
-              values-aligned coaching. It changed everything about how I think
-              about this work.
+              That&apos;s where I discovered financial therapy &mdash; the
+              practice of understanding why you make the decisions you make
+              about money before trying to optimize them. It rewired how I
+              think about this work entirely.
             </p>
             <blockquote className="border-l-4 border-secondary pl-6 py-2 my-8 text-xl font-semibold text-primary italic">
               &ldquo;I watched a financial coach ask someone one question and
@@ -194,18 +193,18 @@ export default function AboutPage() {
           />
           <div className="mt-8 space-y-6 text-neutral-dark/80 text-lg leading-relaxed">
             <p>
-              I&apos;m building two advisory firms — Wealth In Yourself, for
-              entrepreneurs and real estate investors, and Top Shelf Private
-              Wealth, built exclusively for professional hockey players. I live
-              in Lake Tahoe, Nevada with my wife Amanda and our son Cole. Our
+              I&apos;m building two advisory firms &mdash; Wealth In Yourself
+              for entrepreneurs and real estate investors, and Top Shelf
+              Private Wealth for professional hockey players. I live near Lake
+              Tahoe, Nevada with my partner Amanda and our son Cole. Our
               daughter is due September 2026.
             </p>
             <p>
               I also own Lake Tahoe Motorcycle Rentals and CA Homes In The
-              Pines — a luxury short-term rental business creating world-class
-              vacation experiences in the Sierra Nevada. I believe advisors
-              who help clients build wealth should be building it themselves,
-              not just managing other people&apos;s money.
+              Pines, a short-term rental business in the Sierra Nevada.
+              Advisors who help clients build wealth should be building it
+              themselves. I&apos;m not just managing your money &mdash;
+              I&apos;m doing the same work you are.
             </p>
           </div>
         </div>

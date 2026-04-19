@@ -12,39 +12,39 @@ const checklistSections = [
   {
     category: "The Runway",
     items: [
-      "Do you know your monthly burn rate — the real one?",
-      "Do you have 12-18 months of living expenses in liquid savings?",
-      "Have you stress-tested your runway against a delayed revenue scenario?",
+      "Do you know your actual monthly burn rate — not your guess, your real number?",
+      "Do you have 12-18 months of living expenses in liquid savings (not retirement accounts)?",
+      "Have you stress-tested your runway against a 6-month delayed revenue scenario?",
     ],
   },
   {
     category: "Health Insurance",
     items: [
-      "Do you have a post-employment health insurance plan?",
-      "Have you factored the full annual cost into your runway math?",
+      "Do you have a specific post-employment health insurance plan — COBRA, marketplace, or spouse's plan?",
+      "Have you factored the full annual cost ($12K-$30K+ for a family) into your runway math?",
     ],
   },
   {
     category: "Entity Setup & Tax Architecture",
     items: [
-      "Have you decided on your business entity structure?",
-      "Do you understand the self-employment tax impact?",
-      "Have you set up quarterly estimated tax payments?",
+      "Have you decided on your business entity — and do you know why LLC vs. S-Corp matters?",
+      "Do you understand how self-employment tax changes your effective rate by 7-15%?",
+      "Have you set up quarterly estimated tax payments before your first invoice?",
     ],
   },
   {
     category: "Retirement Accounts",
     items: [
-      "Do you have a plan for your employer 401(k)?",
-      "Have you evaluated a Solo 401(k) or SEP-IRA?",
+      "Do you have a plan for your employer 401(k) — rollover, leave, or Roth convert?",
+      "Have you evaluated a Solo 401(k) to shelter $60K+ per year from day one?",
     ],
   },
   {
     category: "Income Replacement",
     items: [
-      "Do you have your first client or revenue source identified?",
-      "Have you calculated your break-even number?",
-      "Do you have a non-compete or non-solicitation agreement?",
+      "Do you have your first client or revenue source identified — not hypothetical, signed?",
+      "Have you calculated your personal break-even number (not your business break-even)?",
+      "Have you reviewed your non-compete or non-solicitation agreement with an attorney?",
     ],
   },
 ];
@@ -62,13 +62,17 @@ export default function W2EscapePlan() {
             The W-2 Escape Plan
           </h1>
           <p className="mt-3 text-2xl font-semibold text-secondary">
-            A Financial Readiness Checklist
+            Know Your Number Before You Give Notice
           </p>
           <p className="mt-6 text-xl text-neutral-dark/80 leading-relaxed max-w-3xl">
-            You&apos;ve been thinking about it for months — maybe years. Leaving
-            the W-2, going independent, building something of your own. The
-            dream is clear. What&apos;s usually missing is the financial
-            architecture underneath it.
+            You&apos;ve run the mental math a hundred times. You know you want
+            out. But &ldquo;I think I have enough saved&rdquo; isn&apos;t a
+            plan — it&apos;s a hope. This checklist turns the leap into a
+            calculated decision: your real runway, your real burn rate, and the
+            exact financial architecture you need before you give notice.
+          </p>
+          <p className="mt-4 text-sm text-neutral-dark/50 font-medium">
+            For W-2 professionals earning $150K+ who are 6-18 months from going independent.
           </p>
         </div>
       </section>
@@ -107,9 +111,9 @@ export default function W2EscapePlan() {
       {/* Email capture */}
       <LeadMagnetCapture
         magnet="w2-escape-plan"
-        headline="Get the full checklist — free."
-        subheadline="The financial plan your employer won't build for you."
-        description="Enter your name and email and we'll send the complete W-2 Escape Plan to your inbox."
+        headline="Get the full escape plan — free."
+        subheadline="13 questions that separate a calculated leap from an expensive mistake."
+        description="Enter your name and email. You'll get the complete W-2 Escape Plan in your inbox within 60 seconds."
         buttonText="Send me the escape plan"
         successMessage="Sent! Check your inbox for the W-2 Escape Plan."
       />

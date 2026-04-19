@@ -47,8 +47,8 @@ export default function EmailCapture() {
         </h2>
         <p className="mt-2 text-lg text-secondary font-semibold">(Free PDF)</p>
         <p className="mt-4 text-white/80 text-lg leading-relaxed">
-          The AUM Math shows exactly how 1% per year compounds into $1M+
-          over a career. No email bait. Just the math.
+          A 1% AUM fee looks small. Over 20 years it compounds into
+          six figures — sometimes seven. This PDF shows you the exact math.
         </p>
 
         {status === "success" ? (

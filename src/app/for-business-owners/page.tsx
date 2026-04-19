@@ -14,7 +14,7 @@ const painPoints = [
   {
     title: "Uneven Income",
     description:
-      "Your income isn\u2019t a salary. It\u2019s distributions, retained earnings, and capital gains. Planning around irregular cash flow requires an advisor who gets it.",
+      "A $400K year followed by a $150K year. Distributions in Q4 that don\u2019t show up in your personal account until January. Planning around irregular cash flow requires an advisor who\u2019s seen it before — not one who tells you to \u201Cjust save 20%.\u201D",
     icon: (
       <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M3 7.5L7.5 3m0 0L12 7.5M7.5 3v13.5m13.5-6L16.5 16m0 0L12 10.5m4.5 5.5V3" />
@@ -24,7 +24,7 @@ const painPoints = [
   {
     title: "Tax Complexity",
     description:
-      "S-Corp vs. C-Corp vs. LLC. Reasonable compensation. QBI deductions. Retirement plan contributions. Your CPA handles compliance. We handle strategy.",
+      "S-Corp vs. C-Corp vs. LLC. Reasonable compensation rules. QBI deduction phase-outs. Retirement plan contribution limits that change based on your entity type. Your CPA handles the filing. We handle the strategy that makes filing day a lot less painful.",
     icon: (
       <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
@@ -44,7 +44,7 @@ const painPoints = [
   {
     title: "Retirement Plan Design",
     description:
-      "Solo 401(k), SEP IRA, Defined Benefit plans. Most advisors don\u2019t know these exist. We design the plan that maximizes your tax-deferred savings.",
+      "Solo 401(k), SEP IRA, Defined Benefit plans, cash balance plans. Most advisors default to a SEP because it\u2019s easy. We run the numbers on every option and find the structure that lets you shelter the most income from taxes — sometimes $100K+ per year.",
     icon: (
       <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -54,7 +54,7 @@ const painPoints = [
   {
     title: "Exit Planning",
     description:
-      "Whether you\u2019re selling in 2 years or 20, your exit strategy should start now. Valuation, tax optimization, and what comes after.",
+      "Whether you\u2019re selling in 2 years or 20, your exit strategy should start now. Valuation strategy, deal structure, installment sale analysis, and the question nobody asks until it\u2019s too late: what does your life look like after the wire hits?",
     icon: (
       <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9" />
@@ -64,7 +64,7 @@ const painPoints = [
   {
     title: "Cash Flow Management",
     description:
-      "Balancing business reinvestment with personal financial security. We help you decide when to pull money out and where to put it.",
+      "You have $200K sitting in your business account. Do you reinvest, distribute, or fund a retirement plan? The answer changes every quarter. We build the framework so you stop guessing and start deciding with confidence.",
     icon: (
       <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" />
@@ -74,11 +74,11 @@ const painPoints = [
 ];
 
 const howWeWork = [
-  "We coordinate with your CPA and attorney \u2014 not replace them",
-  "We build multi-year tax projections, not just this year\u2019s return",
-  "We stress-test your plan against business downturns",
-  "We design compensation strategies that minimize your total tax burden",
-  "One flat fee \u2014 no AUM percentage eating into your growth",
+  "We coordinate with your CPA and attorney so every decision is informed by your full picture — not made in a vacuum",
+  "We build multi-year tax projections, not just this year\u2019s return. You\u2019ll see the 3-year and 5-year impact before you make a move",
+  "We stress-test your plan against business downturns, because a good plan doesn\u2019t break when revenue dips 30%",
+  "We design compensation strategies — salary, distributions, retirement contributions — that minimize your total tax burden across federal, state, and self-employment taxes",
+  "One flat fee. No AUM percentage eating into your growth. Your success doesn\u2019t increase our cost",
 ];
 
 const faqs = [
