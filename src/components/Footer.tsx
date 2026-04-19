@@ -8,6 +8,8 @@ const footerLinks = {
     { href: "/pricing", label: "Pricing" },
     { href: "/faq", label: "FAQ" },
     { href: "/contact", label: "Contact" },
+    { href: "/fiduciary", label: "Real Fiduciary\u2122" },
+    { href: "/for-partners", label: "For Partners" },
   ],
   Resources: [
     { href: "/virtual-family-office", label: "Virtual Family Office" },

@@ -26,6 +26,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/re-investor-checklist",
     "/business-owner-roadmap",
     "/w2-escape-plan",
+    "/fiduciary",
+    "/for-partners",
+    "/financial-planner-lake-tahoe",
   ];
 
   const posts = getAllPosts();
