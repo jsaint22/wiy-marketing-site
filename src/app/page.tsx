@@ -206,7 +206,8 @@ export default function HomePage() {
               their own life &mdash; not just managing yours.
             </p>
             <p className="text-primary font-semibold">
-              That&apos;s Wealth In Yourself.
+              That&apos;s Wealth In Yourself. We call the standard{" "}
+              <a href="/fiduciary" className="text-secondary hover:text-secondary/80 underline">FIAT &mdash; Fiduciary In All Things</a>.
             </p>
           </div>
         </div>

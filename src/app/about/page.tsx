@@ -145,6 +145,54 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Teaching */}
+      <section className="bg-neutral-bg py-10 sm:py-14">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeading
+            eyebrow="Teaching"
+            title="I teach the program I graduated from."
+          />
+          <div className="mt-8 space-y-6 text-neutral-dark/80 text-lg leading-relaxed">
+            <p>
+              I&apos;m an Adjunct Professor at Golden Gate University,
+              teaching in the same Financial Planning program I came through
+              as a student. It keeps me sharp. It also keeps me honest &mdash;
+              the students ask the questions my clients don&apos;t know to ask,
+              and the answer has to hold up either way.
+            </p>
+            <p>
+              Teaching is a tax on certainty. You can&apos;t coast on jargon when
+              a student wants to know why. If I can&apos;t defend a financial
+              planning position to someone studying for the CFP exam, it
+              probably doesn&apos;t belong in a client recommendation.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* FIAT */}
+      <section className="bg-primary py-10 sm:py-14">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-xs font-semibold text-secondary uppercase tracking-widest mb-4">
+            Our Standard
+          </p>
+          <h2 className="text-3xl sm:text-4xl font-bold text-white">
+            FIAT &mdash; Fiduciary In All Things
+          </h2>
+          <p className="mt-6 text-lg text-white/80 leading-relaxed max-w-2xl mx-auto">
+            Not just a legal obligation. A standard we apply to every relationship,
+            every recommendation, and every decision. Your interests come first &mdash;
+            not sometimes, not when it&apos;s convenient, but always.
+          </p>
+          <a
+            href="/fiduciary"
+            className="inline-block mt-6 text-secondary font-semibold hover:text-secondary/80 transition-colors"
+          >
+            Read our full fiduciary commitment &rarr;
+          </a>
+        </div>
+      </section>
+
       {/* What We Stand For */}
       <section className="bg-neutral-bg py-10 sm:py-14">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -192,6 +240,39 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Service */}
+      <section className="bg-neutral-bg py-10 sm:py-14">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeading
+            eyebrow="Service"
+            title="Financial planning done right is a public good."
+          />
+          <div className="mt-8 space-y-6 text-neutral-dark/80 text-lg leading-relaxed">
+            <p>
+              I&apos;ve donated time to{" "}
+              <a href="https://www.3rddecade.org" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary hover:text-secondary underline">3rd Decade</a>,
+              a nonprofit providing financial planning and mentorship to young
+              adults who wouldn&apos;t otherwise have access to it. Most financial
+              advice is delivered to the people who need it least. That&apos;s
+              backward.
+            </p>
+            <p>
+              I&apos;ve served as a Guardian ad Litem, representing youth in the
+              court system who would otherwise have no voice in decisions being
+              made about their lives. It&apos;s the kind of work that doesn&apos;t
+              pay, doesn&apos;t scale, and doesn&apos;t look like advisory practice
+              at all. It&apos;s also the kind of work that keeps the rest of it
+              honest.
+            </p>
+            <p>
+              I&apos;ve supported Junior Achievement&apos;s financial literacy
+              programs in schools. Few things matter more than teaching people
+              young what compound interest and honest fees actually look like.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Personal */}
       <section className="bg-neutral-bg py-10 sm:py-14">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -224,7 +305,9 @@ export default function AboutPage() {
               Pines, a short-term rental business in the Sierra Nevada.
               Advisors who help clients build wealth should be building it
               themselves. I&apos;m not just managing your money &mdash;
-              I&apos;m doing the same work you are.
+              I&apos;m doing the same work you are. I&apos;m also working
+              toward my private pilot&apos;s license &mdash; slower than
+              I&apos;d like, but the hours add up.
             </p>
           </div>
         </div>
