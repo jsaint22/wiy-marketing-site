@@ -151,35 +151,30 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* As Featured In — Integrated Credential Bar */}
+      {/* As Featured In */}
       <section className="bg-primary py-6 sm:py-8">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-center text-xs font-semibold text-white/40 uppercase tracking-widest mb-5">
             As Featured In
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-8">
+          <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-10">
             {pressFeatures.map((press) => (
               <a
                 key={press.name}
                 href={press.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex flex-col items-center gap-2 group"
+                className="bg-white rounded-2xl px-8 py-4 flex items-center justify-center hover:shadow-lg transition-shadow"
+                style={{ minWidth: 200, height: 80 }}
               >
-                <div className="bg-white rounded-full px-6 py-3 flex items-center justify-center">
-                  <Image
-                    src={press.logo}
-                    alt={press.name}
-                    width={"isBadge" in press && press.isBadge ? 80 : 140}
-                    height={"isBadge" in press && press.isBadge ? 80 : 40}
-                    className={`object-contain ${
-                      "isBadge" in press && press.isBadge ? "h-10 w-auto" : "h-8 w-auto"
-                    }`}
-                  />
-                </div>
-                <span className="text-[11px] text-white/50 group-hover:text-white/70 transition-colors font-medium">
-                  {press.title}
-                </span>
+                <Image
+                  src={press.logo}
+                  alt={press.name}
+                  width={180}
+                  height={60}
+                  className="object-contain"
+                  style={{ height: 48, width: "auto" }}
+                />
               </a>
             ))}
           </div>

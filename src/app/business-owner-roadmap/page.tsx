@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import LeadMagnetCapture from "@/components/LeadMagnetCapture";
-import CTASection from "@/components/CTASection";
+
 
 export const metadata: Metadata = {
   title: "Free: The Business Owner's Wealth Extraction Roadmap",
@@ -75,7 +75,7 @@ export default function BusinessOwnerRoadmap() {
       </section>
 
       {/* Preview */}
-      <section className="py-16 bg-white">
+      <section className="py-10 sm:py-12 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold text-primary mb-8">
             What&apos;s inside
@@ -114,7 +114,6 @@ export default function BusinessOwnerRoadmap() {
         successMessage="Sent! Check your inbox for the Wealth Extraction Roadmap."
       />
 
-      <CTASection />
     </main>
   );
 }

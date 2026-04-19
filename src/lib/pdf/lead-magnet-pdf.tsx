@@ -7,6 +7,7 @@ import {
   Font,
   StyleSheet,
   Link,
+  Image,
 } from "@react-pdf/renderer";
 
 /* ------------------------------------------------------------------ */
@@ -58,6 +59,9 @@ const color = {
   muted: "#8A8A8A",
   checkBorder: "#C9A449",
 };
+
+const LOGO_URL = "https://wiy-marketing-site.vercel.app/logos/wiy-logo-stacked.png";
+const BOOKING_URL = "https://links.wealthinyourself.com/widget/bookings/wiy-15-min-call";
 
 /* ------------------------------------------------------------------ */
 /*  Styles                                                             */
@@ -233,7 +237,7 @@ function CTAPage() {
         </Text>
         <Link src="https://links.wealthinyourself.com/widget/bookings/wiy-15-min-call">
           <Text style={s.ctaLink}>
-            wealthinyourself.com/contact →
+            Book a 15-minute intro call →
           </Text>
         </Link>
       </View>
@@ -251,14 +255,15 @@ export function REInvestorChecklistPDF() {
     <Document>
       {/* Cover */}
       <Page size="LETTER" style={s.coverPage}>
+        <Image src={LOGO_URL} style={{ width: 120, marginBottom: 30, opacity: 0.9 }} />
         <Text style={s.coverTitle}>
           The Real Estate Investor&apos;s{"\n"}Tax Strategy Checklist
         </Text>
         <Text style={s.coverSubtitle}>
-          14 questions your advisory team should be answering.
+          16 questions your advisory team should be answering.
         </Text>
         <Text style={s.coverFooter}>
-          Wealth In Yourself | wealthinyourself.com
+          wealthinyourself.com
         </Text>
       </Page>
 
@@ -319,15 +324,16 @@ export function BusinessOwnerRoadmapPDF() {
   return (
     <Document>
       <Page size="LETTER" style={s.coverPage}>
+        <Image src={LOGO_URL} style={{ width: 120, marginBottom: 30, opacity: 0.9 }} />
         <Text style={s.coverTitle}>
-          The Entrepreneur&apos;s{"\n"}Exit Planning Roadmap
+          The Entrepreneur&apos;s{"\n"}Wealth Extraction Roadmap
         </Text>
         <Text style={s.coverSubtitle}>
           The financial architecture decisions that determine whether{"\n"}your
           exit builds generational wealth or just pays the tax bill.
         </Text>
         <Text style={s.coverFooter}>
-          Wealth In Yourself | wealthinyourself.com
+          wealthinyourself.com
         </Text>
       </Page>
 
@@ -385,14 +391,15 @@ export function W2EscapePlanPDF() {
   return (
     <Document>
       <Page size="LETTER" style={s.coverPage}>
+        <Image src={LOGO_URL} style={{ width: 120, marginBottom: 30, opacity: 0.9 }} />
         <Text style={s.coverTitle}>
           The W-2 Escape Plan
         </Text>
         <Text style={s.coverSubtitle}>
-          A Financial Readiness Checklist
+          Know Your Number Before You Give Notice
         </Text>
         <Text style={s.coverFooter}>
-          Wealth In Yourself | wealthinyourself.com
+          wealthinyourself.com
         </Text>
       </Page>
 

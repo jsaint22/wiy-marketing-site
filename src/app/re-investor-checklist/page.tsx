@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import LeadMagnetCapture from "@/components/LeadMagnetCapture";
-import CTASection from "@/components/CTASection";
+
 
 export const metadata: Metadata = {
   title: "Free: The 16-Point Tax Strategy Checklist for RE Investors",
@@ -80,7 +80,7 @@ export default function REInvestorChecklist() {
       </section>
 
       {/* Preview of what's inside */}
-      <section className="py-16 bg-white">
+      <section className="py-10 sm:py-12 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold text-primary mb-8">
             What&apos;s inside
@@ -119,7 +119,6 @@ export default function REInvestorChecklist() {
         successMessage="Sent! Check your inbox for the Tax Strategy Checklist."
       />
 
-      <CTASection />
     </main>
   );
 }
