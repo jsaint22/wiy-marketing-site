@@ -76,23 +76,24 @@ const partners = [
 
 const pressFeatures = [
   {
+    name: "Forbes",
+    logo: "/press/Forbes.png",
+    href: "https://www.forbes.com/sites/chriscarosa/2022/11/03/dont-let-robs-steal-your-retirement/",
+  },
+  {
     name: "MarketWatch",
-    title: "Featured Contributor",
     logo: "/press/marketwatch.png",
     href: "https://www.marketwatch.com/guides/financial-advisors/best-financial-advisors-in-reno-nv/",
   },
   {
     name: "Advisorpedia",
-    title: "Contributing Author",
     logo: "/press/Advisorpedia Logo.jpeg",
     href: "https://www.advisorpedia.com/author/joshua-st-laurent/",
   },
   {
     name: "BiggerPockets",
-    title: "Featured Financial Advisor",
     logo: "/badges/BP_Featured-FinAd-Blue_1000W.png",
     href: "https://www.biggerpockets.com",
-    isBadge: true,
   },
 ] as const;
 
