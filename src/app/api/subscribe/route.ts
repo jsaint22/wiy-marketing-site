@@ -5,6 +5,27 @@ import React from "react";
 import AumMathPDF from "@/lib/pdf/aum-math";
 import { appendSubscriber } from "@/lib/subscribers";
 
+async function createGhlContact(email: string) {
+  const token = process.env.GHL_API_TOKEN;
+  const locationId = process.env.GHL_LOCATION_ID;
+  if (!token || !locationId) return;
+
+  await fetch("https://services.leadconnectorhq.com/contacts/upsert", {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${token}`,
+      "Content-Type": "application/json",
+      Version: "2021-07-28",
+    },
+    body: JSON.stringify({
+      email,
+      locationId,
+      tags: ["aum-math-download"],
+      source: "AUM Math PDF Download",
+    }),
+  });
+}
+
 export const dynamic = "force-dynamic";
 
 export async function POST(request: NextRequest) {
@@ -59,6 +80,11 @@ Josh`,
 
     // Log subscriber for future reference
     await appendSubscriber(email);
+
+    // Create GHL contact with aum-math-download tag (fire-and-forget)
+    createGhlContact(email).catch((err) =>
+      console.error("[Subscribe] GHL contact creation failed:", err)
+    );
 
     return NextResponse.json({
       success: true,
