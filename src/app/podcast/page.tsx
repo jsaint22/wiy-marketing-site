@@ -56,7 +56,7 @@ export default function PodcastPage() {
       <section className="bg-white py-6">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <iframe
-            src="https://open.spotify.com/embed/show/5E3wy1vqBE8zdriSfUdwiO?utm_source=generator&theme=0"
+            src="https://open.spotify.com/embed/show/6L3ew149S5Kc8vN2UwYRSR?utm_source=generator&theme=0"
             width="100%"
             height="352"
             frameBorder="0"
