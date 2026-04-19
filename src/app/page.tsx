@@ -87,7 +87,7 @@ const pressFeatures = [
   },
   {
     name: "Advisorpedia",
-    logo: "/press/Advisorpedia Logo.jpeg",
+    logo: "/press/Advisorpedia Logo.png",
     href: "https://www.advisorpedia.com/author/joshua-st-laurent/",
   },
   {
