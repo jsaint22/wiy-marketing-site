@@ -108,12 +108,13 @@ export default function HomePage() {
                 Flat-Fee Fiduciary Advisory
               </p>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary leading-tight">
-                The advisor who builds what he&apos;s helping you build.
+                Your money should buy you time. Not the other way around.
               </h1>
               <p className="mt-6 text-lg text-neutral-dark/70 leading-relaxed max-w-xl">
-                Flat-fee fiduciary planning for entrepreneurs and real estate
-                investors. No AUM fees. No commissions. No conflicts. Just a
-                real advisor who lives the life he&apos;s helping you design.
+                Wealth In Yourself is a flat-fee, fiduciary financial life
+                planning firm for entrepreneurs and real estate investors. No
+                commissions. No AUM fees. Just honest advice built around the
+                life you want to create.
               </p>
               <div className="mt-8 flex flex-col sm:flex-row gap-4">
                 <a
