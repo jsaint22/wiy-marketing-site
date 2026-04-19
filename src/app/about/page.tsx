@@ -99,6 +99,14 @@ export default function AboutPage() {
               That was the moment. I couldn&apos;t unsee it. And I
               couldn&apos;t keep being part of it.
             </p>
+            <p>
+              When I finally left, I walked away from the highest-paying
+              job of my life. I took no clients with me, on principle. I
+              built from zero.
+            </p>
+            <p className="text-primary font-semibold">
+              I am proud of that.
+            </p>
           </div>
         </div>
       </section>
