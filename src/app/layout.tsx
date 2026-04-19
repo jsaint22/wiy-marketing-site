@@ -124,6 +124,7 @@ export default function RootLayout({
                   "https://podcasters.spotify.com/pod/show/wealth-in-yourself/",
                   "https://www.advisorpedia.com/author/joshua-st-laurent/",
                   "https://joshstlaurent.com",
+                  "https://www.biggerpockets.com/users/jsaint",
                 ],
                 url: "https://joshstlaurent.com",
               },

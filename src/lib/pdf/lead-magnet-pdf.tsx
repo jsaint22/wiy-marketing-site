@@ -60,7 +60,7 @@ const color = {
   checkBorder: "#C9A449",
 };
 
-const LOGO_URL = "https://wiy-marketing-site.vercel.app/logos/wiy-logo-stacked.png";
+const LOGO_URL = "https://wealthinyourself.com/logos/wiy-logo-stacked.png";
 const BOOKING_URL = "https://links.wealthinyourself.com/widget/bookings/wiy-15-min-call";
 
 /* ------------------------------------------------------------------ */
@@ -260,7 +260,7 @@ export function REInvestorChecklistPDF() {
           The Real Estate Investor&apos;s{"\n"}Tax Strategy Checklist
         </Text>
         <Text style={s.coverSubtitle}>
-          16 questions your advisory team should be answering.
+          13 questions your advisory team should be answering.
         </Text>
         <Text style={s.coverFooter}>
           wealthinyourself.com
@@ -285,7 +285,7 @@ export function REInvestorChecklistPDF() {
 
         <Text style={s.sectionTitle}>Cost Segregation</Text>
         <CheckItem bold="Have you run a cost segregation study on every property you own?" text="Cost segregation reclassifies building components into shorter depreciation categories (5, 7, or 15 years instead of 27.5 or 39). The result: accelerated depreciation deductions that can dramatically reduce your taxable income." />
-        <CheckItem bold="Are you aware of the current bonus depreciation percentage?" text="Bonus depreciation has been phasing down. The percentage depends on when the property was placed in service. Your CPA and financial planner should be modeling this together." />
+        <CheckItem bold="Are you aware of the current bonus depreciation rules?" text="Bonus depreciation is 100% again for most qualifying property acquired and placed in service after January 19, 2025, under the One Big Beautiful Bill Act (OBBBA). This permanently reversed the prior phase-down schedule. Your CPA and financial planner should model acquisition timing together." />
         <Footer />
       </Page>
 
@@ -353,7 +353,7 @@ export function BusinessOwnerRoadmapPDF() {
 
         <Text style={s.sectionTitle}>Entity Structure &amp; Tax Positioning</Text>
         <CheckItem bold="Is your entity structured to minimize the tax impact of a sale?" text="The difference between a stock sale and an asset sale can be millions. C-corp vs. S-corp vs. LLC — the structure you chose at founding may not be right for exit." />
-        <CheckItem bold="Have you evaluated QSBS (Section 1202)?" text="Qualified Small Business Stock can exclude up to $10M in capital gains from federal tax. Requirements are specific and most owners learn about it too late." />
+        <CheckItem bold="Have you evaluated QSBS (Section 1202)?" text="Qualified Small Business Stock can exclude up to $10M in capital gains from federal tax — or $15M for stock issued after July 4, 2025 under the OBBBA expansion, with tiered holding periods. Requirements are specific and most owners learn about it too late." />
         <CheckItem bold="Are you using an IDGT or estate vehicle to transfer interests?" text="Transferring business interests at today's valuation — before the exit premium — can save your family millions in estate tax." />
         <Footer />
       </Page>
@@ -387,6 +387,7 @@ export function BusinessOwnerRoadmapPDF() {
 /*  W-2 ESCAPE PLAN CHECKLIST                                          */
 /* ================================================================== */
 
+// NOTE: Tax figures reference 2026 IRS limits. REVIEW ANNUALLY each December.
 export function W2EscapePlanPDF() {
   return (
     <Document>
@@ -424,7 +425,7 @@ export function W2EscapePlanPDF() {
 
         <Text style={s.sectionTitle}>Entity Setup &amp; Tax Architecture</Text>
         <CheckItem bold="Have you decided on your business entity structure?" text="An LLC provides liability protection. An S-corp election can save thousands in self-employment tax once income exceeds ~$50-60K." />
-        <CheckItem bold="Do you understand the self-employment tax impact?" text="You pay both halves of Social Security and Medicare — 15.3% on the first $168,600 plus 2.9% above that. This is in addition to income tax." />
+        <CheckItem bold="Do you understand the self-employment tax impact?" text="You pay both halves of Social Security and Medicare — 15.3% on the first $184,500 in 2026 plus 2.9% above that. This is in addition to income tax. Limits are adjusted annually." />
         <CheckItem bold="Have you set up quarterly estimated tax payments?" text="The IRS expects you to pay as you earn. If you owe more than $1,000 at filing, you'll face underpayment penalties." />
         <Footer />
       </Page>
@@ -432,8 +433,8 @@ export function W2EscapePlanPDF() {
       <Page size="LETTER" style={s.page}>
         <Text style={s.sectionTitle}>Retirement Accounts</Text>
         <CheckItem bold="Do you have a plan for your employer 401(k)?" text="Leave it, roll to an IRA, or roll to a new plan. Do not cash it out — the tax hit plus 10% penalty will cost you a quarter of the balance." />
-        <CheckItem bold="Have you evaluated a Solo 401(k) or SEP-IRA?" text="A Solo 401(k) lets you contribute up to $69,000/year as both employer and employee. A SEP-IRA limits you to 25% of net self-employment income." />
-        <CheckItem bold="Are you planning to use an HSA?" text="With a high-deductible health plan, you can contribute $4,150 (individual) or $8,300 (family). The only triple-tax-advantaged account in the tax code." />
+        <CheckItem bold="Have you evaluated a Solo 401(k) or SEP-IRA?" text="A Solo 401(k) lets you contribute up to $72,000/year ($24,500 employee + up to 25% employer). A SEP-IRA limits you to 25% of net self-employment income. Limits are adjusted annually." />
+        <CheckItem bold="Are you planning to use an HSA?" text="With a high-deductible health plan, you can contribute $4,400 (individual) or $8,750 (family), plus $1,000 catch-up at 55+. The only triple-tax-advantaged account in the tax code. Limits are adjusted annually." />
 
         <Text style={s.sectionTitle}>Income Replacement</Text>
         <CheckItem bold="Do you have your first client identified before you leave?" text="Ideally, you've already landed your first paying client while still employed. This validates the model and puts cash flow on the calendar." />

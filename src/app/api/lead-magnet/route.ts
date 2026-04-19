@@ -26,16 +26,16 @@ const LEAD_MAGNETS: Record<
     subject: "Your Real Estate Investor's Tax Strategy Checklist",
     tag: "re-investor-checklist-download",
     description:
-      "The Real Estate Investor's Tax Strategy Checklist — 14 questions your advisory team should be answering about 1031 exchanges, cost segregation, entity structure, depreciation, QBI, and more.",
+      "The Real Estate Investor's Tax Strategy Checklist — 13 questions your advisory team should be answering about 1031 exchanges, cost segregation, entity structure, depreciation, QBI, and more.",
     filename: "RE-Investor-Tax-Strategy-Checklist-WIY.pdf",
     pdf: () => React.createElement(REInvestorChecklistPDF),
   },
   "business-owner-roadmap": {
-    subject: "Your Entrepreneur's Exit Planning Roadmap",
+    subject: "Your Entrepreneur's Wealth Extraction Roadmap",
     tag: "business-owner-roadmap-download",
     description:
-      "The Entrepreneur's Exit Planning Roadmap — covering valuation, entity structure, QSBS, cash flow modeling, succession planning, and the full advisory team you need before you exit.",
-    filename: "Entrepreneurs-Exit-Planning-Roadmap-WIY.pdf",
+      "The Entrepreneur's Wealth Extraction Roadmap — covering valuation, entity structure, QSBS, cash flow modeling, succession planning, and the full advisory team you need before you exit.",
+    filename: "Entrepreneurs-Wealth-Extraction-Roadmap-WIY.pdf",
     pdf: () => React.createElement(BusinessOwnerRoadmapPDF),
   },
   "w2-escape-plan": {

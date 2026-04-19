@@ -104,6 +104,19 @@ export default async function BlogPostPage({ params }: Props) {
             <MDXRemote source={post.content} />
           </div>
 
+          {/* Compliance footer */}
+          <footer className="mt-12 pt-6 border-t border-neutral-bg">
+            <p className="text-xs text-neutral-dark/50 italic leading-relaxed">
+              Educational content only. Not financial, tax, or legal advice. This
+              post reflects the views of Joshua St. Laurent as of the publish date
+              and is not a recommendation to buy, sell, or hold any security.
+              Illustrations and numbers are hypothetical; your situation is unique.
+              Consult a qualified fiduciary advisor before making financial
+              decisions. Wealth In Yourself LLC is a Registered Investment Adviser
+              with the State of Nevada.
+            </p>
+          </footer>
+
           {/* Author bio */}
           <div className="mt-14 pt-8 border-t border-neutral-dark/10">
             <div className="flex items-start gap-4">
@@ -111,11 +124,11 @@ export default async function BlogPostPage({ params }: Props) {
                 J
               </div>
               <div>
-                <p className="font-semibold text-primary">{post.author}</p>
+                <p className="font-semibold text-primary">{post.author}, MS, CFP®, CFT™, APFC®, ACC</p>
                 <p className="text-sm text-neutral-dark/60 mt-1">
-                  Founder of Wealth In Yourself. CFP, CFT, APFC, ACC. Flat-fee
-                  fiduciary for entrepreneurs, RE investors, and people building
-                  life on their own terms. Based at Lake Tahoe.
+                  Founder of Wealth In Yourself. Flat-fee fiduciary for
+                  entrepreneurs, RE investors, and people building life on their
+                  own terms. Based at Lake Tahoe.
                 </p>
               </div>
             </div>

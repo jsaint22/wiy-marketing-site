@@ -889,7 +889,7 @@ export default function AumMathPDF() {
               Early retirement by 3–5 years
             </Text>
             <Text style={[s.bodySmall, { fontSize: 8.5 }]}>
-              An extra two to seven million in your portfolio means
+              An extra two to fifteen million in your portfolio — depending on wealth level and time horizon — means
               you reach financial independence years sooner.
             </Text>
           </View>
@@ -935,7 +935,7 @@ export default function AumMathPDF() {
         <View style={s.section}>
           <Text style={s.h3}>The structural reality</Text>
           <Text style={s.body}>
-            AUM fees account for over 90% of revenue at most registered
+            AUM fees account for the vast majority of revenue at most registered
             investment advisory (RIA) firms in the United States. The entire
             industry infrastructure — custodians, compliance platforms,
             technology vendors — is built around AUM billing. Showing clients
@@ -1175,8 +1175,8 @@ export default function AumMathPDF() {
         <View style={s.section}>
           <Text style={s.body}>
             Joshua St. Laurent is a CERTIFIED FINANCIAL PLANNER™ professional,
-            Certified Financial Therapist™, Accredited Portfolio Construction
-            Finalist®, Associate Certified Coach, and holds a Master of Science
+            Certified Financial Therapist™, Accredited Personal Financial
+            Coach®, Associate Certified Coach, and holds a Master of Science
             in Financial Planning. He founded Wealth In Yourself to deliver
             institutional-quality financial planning at a flat fee — because
             Josh believes the way advisors get paid should never compromise the
@@ -1187,11 +1187,11 @@ export default function AumMathPDF() {
         <View style={s.section}>
           <Text style={s.h3}>The FIAT Philosophy</Text>
           <Text style={s.body}>
-            WIY is built on the FIAT framework: Financial planning, Investment
-            management, Accountability, and Tax strategy — integrated into a
-            single, flat-fee engagement. No AUM. No commissions. No product
-            sales. The only revenue is the planning fee, which means the only
-            incentive is to give you the best advice possible.
+            FIAT — Fiduciary In All Things. WIY is built on a single principle:
+            fiduciary in all things. One flat fee. No AUM. No commissions. No
+            product sales. The only revenue is the planning fee — which means
+            the only incentive Josh has is to give you the best advice possible,
+            regardless of where your money ends up.
           </Text>
         </View>
 
