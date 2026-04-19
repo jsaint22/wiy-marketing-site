@@ -41,11 +41,9 @@ const nextConfig: NextConfig = {
       // WordPress page redirects (from live API audit)
       { source: "/about-us", destination: "/about", permanent: true },
       { source: "/about-us/", destination: "/about", permanent: true },
-      { source: "/real-fiduciary", destination: "/about", permanent: true },
-      { source: "/real-fiduciary/", destination: "/about", permanent: true },
-      // /faq now has its own page — redirect removed
-      { source: "/podcast", destination: "/blog", permanent: true },
-      { source: "/podcast/", destination: "/blog", permanent: true },
+      { source: "/real-fiduciary", destination: "/fiduciary", permanent: true },
+      { source: "/real-fiduciary/", destination: "/fiduciary", permanent: true },
+      // /faq and /podcast now have their own pages — redirects removed
       { source: "/whats-included", destination: "/services", permanent: true },
       { source: "/whats-included/", destination: "/services", permanent: true },
       { source: "/real-estate-investors", destination: "/for-real-estate-investors", permanent: true },
