@@ -3,7 +3,7 @@ import { getAllPosts } from "@/lib/blog";
 
 const BASE_URL = process.env.NEXT_PUBLIC_ENVIRONMENT === "production"
   ? "https://wealthinyourself.com"
-  : "https://wiy-marketing-staging.vercel.app";
+  : "https://wiy-marketing-site.vercel.app";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages = [
@@ -21,6 +21,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/vs-aum",
     "/blog",
     "/faq",
+    "/re-investor-checklist",
+    "/business-owner-roadmap",
+    "/w2-escape-plan",
   ];
 
   const posts = getAllPosts();

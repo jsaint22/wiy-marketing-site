@@ -63,6 +63,7 @@ export default function EmailCapture() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="your@email.com"
+                aria-label="Email address"
                 required
                 disabled={status === "loading"}
                 className="flex-1 px-4 py-3 rounded-lg bg-[#F5F5F0] text-gray-900 placeholder:text-gray-400 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-secondary focus:border-secondary disabled:opacity-60"
