@@ -3,6 +3,7 @@ interface SectionHeadingProps {
   title: string;
   subtitle?: string;
   centered?: boolean;
+  dark?: boolean;
 }
 
 export default function SectionHeading({
@@ -10,6 +11,7 @@ export default function SectionHeading({
   title,
   subtitle,
   centered = true,
+  dark = false,
 }: SectionHeadingProps) {
   return (
     <div className={centered ? "text-center" : ""}>
@@ -18,9 +20,9 @@ export default function SectionHeading({
           {eyebrow}
         </p>
       )}
-      <h2 className="text-3xl sm:text-4xl font-bold text-primary">{title}</h2>
+      <h2 className={`text-3xl sm:text-4xl font-bold ${dark ? "text-white" : "text-primary"}`}>{title}</h2>
       {subtitle && (
-        <p className="mt-4 text-lg text-neutral-dark/70 max-w-2xl mx-auto">
+        <p className={`mt-4 text-lg max-w-2xl mx-auto ${dark ? "text-white/70" : "text-neutral-dark/70"}`}>
           {subtitle}
         </p>
       )}

@@ -160,6 +160,18 @@ export default function VsAumPage() {
         </div>
       </section>
 
+      {/* Pull Quote */}
+      <section className="bg-primary py-10 sm:py-14">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <blockquote className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-tight font-[family-name:var(--font-playfair)]">
+            &ldquo;The AUM model was designed in the 1980s. Better than commissions. But &lsquo;better than commissions&rsquo; is a low bar.&rdquo;
+          </blockquote>
+          <p className="mt-4 text-secondary font-semibold text-sm">
+            &mdash; Josh St. Laurent
+          </p>
+        </div>
+      </section>
+
       {/* The Math at $5M */}
       <section className="bg-white py-10 sm:py-14">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">

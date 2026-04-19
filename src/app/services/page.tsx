@@ -173,6 +173,18 @@ export default function ServicesPage() {
         </div>
       </section>
 
+      {/* Pull Quote */}
+      <section className="bg-primary py-10 sm:py-14">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <blockquote className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-tight font-[family-name:var(--font-playfair)]">
+            &ldquo;Your CPA files what happened. Your advisor should be designing what happens next.&rdquo;
+          </blockquote>
+          <p className="mt-4 text-secondary font-semibold text-sm">
+            &mdash; Josh St. Laurent
+          </p>
+        </div>
+      </section>
+
       {/* How It Works */}
       <section className="py-10 sm:py-14 bg-neutral-bg">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -158,13 +158,14 @@ export default function VirtualFamilyOfficePage() {
       </section>
 
       {/* How It's Different */}
-      <section className="bg-white py-10 sm:py-14">
+      <section className="bg-primary py-10 sm:py-14">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="The Difference"
             title="This isn&rsquo;t what most advisors do."
+            dark
           />
-          <div className="mt-10 space-y-6 text-neutral-dark/80 text-lg leading-relaxed">
+          <div className="mt-10 space-y-6 text-white/80 text-lg leading-relaxed">
             <p>
               Most advisors manage investments and call it financial planning.
               They charge 1% of your assets, which means their incentive is to
@@ -173,7 +174,7 @@ export default function VirtualFamilyOfficePage() {
               thing, your investment account says another, and nobody is
               making sure they agree.
             </p>
-            <p className="font-semibold text-primary">
+            <p className="font-semibold text-white">
               A VFO approach is different:
             </p>
           </div>
@@ -181,7 +182,7 @@ export default function VirtualFamilyOfficePage() {
             {vfoDifferences.map((item) => (
               <li key={item} className="flex items-start gap-3">
                 <span className="mt-1.5 h-2 w-2 rounded-full bg-secondary flex-shrink-0" />
-                <span className="text-lg text-neutral-dark/80">{item}</span>
+                <span className="text-lg text-white/80">{item}</span>
               </li>
             ))}
           </ul>

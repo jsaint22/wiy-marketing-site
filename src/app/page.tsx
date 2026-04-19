@@ -43,29 +43,14 @@ const partners = [
     description: "Financial planning software — powers your projections, scenarios, and retirement models.",
   },
   {
-    name: "Sequence",
-    logo: "/logos/partners/sequence.svg",
-    description: "Life planning platform — maps your goals, values, and ideal life design.",
+    name: "Encore Estate Plans",
+    logo: "/logos/partners/encore-estate-plans.webp",
+    description: "Estate planning — wills, trusts, and powers of attorney coordinated with your financial plan.",
   },
   {
     name: "Valur",
     logo: "/logos/partners/valur.svg",
     description: "Advanced tax strategies — Charitable Remainder Trusts, OZ funds, and more.",
-  },
-  {
-    name: "Northwest Registered Agent",
-    logo: "/logos/partners/northwest-registered-agent.svg",
-    description: "Entity formation — LLCs, S-Corps, and registered agent services.",
-  },
-  {
-    name: "Equity Trust",
-    logo: "/logos/partners/equity-trust.png",
-    description: "Self-directed IRA custodian — invest retirement funds in real estate and alternatives.",
-  },
-  {
-    name: "Encore Estate Plans",
-    logo: "/logos/partners/encore-estate-plans.webp",
-    description: "Estate planning — wills, trusts, and powers of attorney coordinated with your financial plan.",
   },
   {
     name: "Monarch Money",
@@ -101,7 +86,7 @@ export default function HomePage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-white pt-4 pb-6 sm:pt-6 sm:pb-8 lg:pt-8 lg:pb-10">
+      <section className="bg-gradient-to-br from-white via-neutral-bg/30 to-neutral-bg/60 pt-4 pb-6 sm:pt-6 sm:pb-8 lg:pt-8 lg:pb-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             <div>
@@ -135,14 +120,17 @@ export default function HomePage() {
                   Or see what you&apos;d pay &rarr;
                 </Link>
               </div>
+              <p className="mt-6 text-xs text-neutral-dark/40">
+                As seen in Forbes, MarketWatch, and Advisorpedia
+              </p>
             </div>
             <div className="relative">
-              <div className="aspect-[4/3] rounded-2xl bg-neutral-bg overflow-hidden">
+              <div className="aspect-[3/4] max-w-sm mx-auto lg:mx-0 rounded-2xl bg-neutral-bg overflow-hidden shadow-lg">
                 <Image
                   src="/team/josh-headshot-v2.jpg"
                   alt="Joshua St. Laurent, CFP, CFT — Founder of Wealth In Yourself"
-                  width={600}
-                  height={450}
+                  width={420}
+                  height={560}
                   className="w-full h-full object-cover"
                   priority
                 />
@@ -182,15 +170,15 @@ export default function HomePage() {
       </section>
 
       {/* Why This Exists */}
-      <section className="bg-white py-10 sm:py-14">
+      <section className="bg-primary py-10 sm:py-14">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-secondary font-semibold text-sm uppercase tracking-wider mb-4">
             Why This Exists
           </p>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary leading-tight">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-tight">
             I watched advisors take off their fiduciary hat and put on their sales hat in the same conversation.
           </h2>
-          <div className="mt-8 space-y-6 text-lg text-neutral-dark/80 leading-relaxed">
+          <div className="mt-8 space-y-6 text-lg text-white/80 leading-relaxed">
             <p>
               I spent a decade at Fidelity watching advisors legally switch
               between fiduciary and broker-dealer mode mid-conversation. They
@@ -205,7 +193,7 @@ export default function HomePage() {
               you is building businesses, owning real estate, and designing
               their own life &mdash; not just managing yours.
             </p>
-            <p className="text-primary font-semibold">
+            <p className="text-secondary font-semibold">
               That&apos;s Wealth In Yourself. We call the standard{" "}
               <a href="/fiduciary" className="text-secondary hover:text-secondary/80 underline">FIAT &mdash; Fiduciary In All Things</a>.
             </p>
@@ -440,7 +428,7 @@ export default function HomePage() {
             title="You don't coordinate the team. We do."
             subtitle="Your flat fee covers the coordination. You pay partners directly only when their service is engaged. No markups. No middlemen."
           />
-          <div className="mt-10 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+          <div className="mt-10 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
             {partners.map((partner) => (
               <div
                 key={partner.name}
@@ -464,7 +452,15 @@ export default function HomePage() {
               </div>
             ))}
           </div>
-          <p className="mt-6 text-center text-xs text-neutral-dark/50 max-w-2xl mx-auto">
+          <div className="mt-6 text-center">
+            <Link
+              href="/virtual-family-office"
+              className="text-sm font-semibold text-primary hover:text-secondary transition-colors"
+            >
+              See all partners and tools &rarr;
+            </Link>
+          </div>
+          <p className="mt-3 text-center text-xs text-neutral-dark/50 max-w-2xl mx-auto">
             Services coordinated through Wealth In Yourself. You pay the partner directly only
             when their service is actively engaged. No additional advisory fees.
           </p>
@@ -472,21 +468,22 @@ export default function HomePage() {
       </section>
 
       {/* Who We Work With */}
-      <section className="bg-white py-10 sm:py-14">
+      <section className="bg-primary py-10 sm:py-14">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="Who We Work With"
             title="Built for people who refuse to do things the conventional way."
+            dark
           />
           <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-8">
             {clientPaths.map((path) => (
               <div
                 key={path.title}
-                className="group bg-neutral-bg rounded-xl p-6 sm:p-8 hover:shadow-lg transition-all border border-transparent hover:border-secondary/20"
+                className="group bg-white/10 rounded-xl p-6 sm:p-8 hover:shadow-lg transition-all border border-white/10 hover:border-secondary/30"
               >
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                <div className="w-12 h-12 rounded-lg bg-white/10 flex items-center justify-center mb-4">
                   <svg
-                    className="w-6 h-6 text-primary"
+                    className="w-6 h-6 text-secondary"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -495,22 +492,22 @@ export default function HomePage() {
                     <path strokeLinecap="round" strokeLinejoin="round" d={path.icon} />
                   </svg>
                 </div>
-                <h3 className="text-xl font-bold text-primary group-hover:text-secondary transition-colors">
+                <h3 className="text-xl font-bold text-white group-hover:text-secondary transition-colors">
                   {path.title}
                 </h3>
-                <p className="mt-3 text-neutral-dark/70 text-sm leading-relaxed">
+                <p className="mt-3 text-white/70 text-sm leading-relaxed">
                   {path.description}
                 </p>
                 <div className="mt-4 flex flex-col gap-2">
                   <Link
                     href={path.href}
-                    className="text-sm font-semibold text-primary group-hover:text-secondary transition-colors"
+                    className="text-sm font-semibold text-secondary hover:text-secondary/80 transition-colors"
                   >
                     Learn more &rarr;
                   </Link>
                   <Link
                     href="/case-studies"
-                    className="text-xs text-neutral-dark/50 hover:text-secondary transition-colors"
+                    className="text-xs text-white/50 hover:text-secondary transition-colors"
                   >
                     {path.caseStudyLabel} &rarr;
                   </Link>

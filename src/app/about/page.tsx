@@ -194,21 +194,22 @@ export default function AboutPage() {
       </section>
 
       {/* What We Stand For */}
-      <section className="bg-neutral-bg py-10 sm:py-14">
+      <section className="bg-primary py-10 sm:py-14">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="The Standard"
             title="What we stand for."
             subtitle="No commissions. No proprietary products. No AUM fees that create conflicts. A flat fee structure that stays fair as you grow."
+            dark
           />
           <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {standards.map((item) => (
               <div
                 key={item.word}
-                className="bg-white rounded-xl p-6 border border-neutral-bg"
+                className="bg-white/10 rounded-xl p-6 border border-white/10"
               >
-                <h3 className="text-lg font-bold text-primary">{item.word}</h3>
-                <p className="mt-2 text-sm text-neutral-dark/70 leading-relaxed">
+                <h3 className="text-lg font-bold text-white">{item.word}</h3>
+                <p className="mt-2 text-sm text-white/70 leading-relaxed">
                   {item.desc}
                 </p>
               </div>

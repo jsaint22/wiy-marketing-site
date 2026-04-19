@@ -252,6 +252,18 @@ export default function FAQPage() {
         </div>
       </section>
 
+      {/* Pull Quote */}
+      <section className="bg-primary py-10 sm:py-14">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <blockquote className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-tight font-[family-name:var(--font-playfair)]">
+            &ldquo;We publish our fees, explain our process, and answer every question before you sign anything. If that sounds unusual, that tells you something about the industry.&rdquo;
+          </blockquote>
+          <p className="mt-4 text-secondary font-semibold text-sm">
+            &mdash; Josh St. Laurent
+          </p>
+        </div>
+      </section>
+
       {/* FAQ Content */}
       <section className="bg-neutral-bg py-10 sm:py-14">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
