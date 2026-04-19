@@ -47,3 +47,11 @@ details summary {
 details summary::-webkit-details-marker {
   display: none;
 }
+
+/* Prevent green tint on email inputs from Tailwind v4 oklab color-mixing */
+.email-input:-webkit-autofill,
+.email-input:-webkit-autofill:hover,
+.email-input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px #FFFFFF inset !important;
+  -webkit-text-fill-color: #1A1A1A !important;
+}

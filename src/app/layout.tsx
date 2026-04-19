@@ -34,6 +34,16 @@ export const metadata: Metadata = {
       : "https://wealthinyourself.com"
   ),
   robots: isStaging ? { index: false, follow: false } : { index: true, follow: true },
+  icons: {
+    icon: [
+      { url: "/icon-32.png", sizes: "32x32", type: "image/png" },
+      { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
+    ],
+    apple: "/apple-icon.png",
+  },
+  alternates: {
+    canonical: isStaging ? undefined : "https://wealthinyourself.com",
+  },
   openGraph: {
     type: "website",
     locale: "en_US",

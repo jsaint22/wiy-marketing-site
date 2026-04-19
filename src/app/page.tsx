@@ -63,22 +63,18 @@ const pressFeatures = [
   {
     name: "Forbes",
     logo: "/press/Forbes.png",
-    href: "https://www.forbes.com/sites/chriscarosa/2022/11/03/dont-let-robs-steal-your-retirement/",
   },
   {
     name: "MarketWatch",
     logo: "/press/marketwatch.png",
-    href: "https://www.marketwatch.com/guides/financial-advisors/best-financial-advisors-in-reno-nv/",
   },
   {
     name: "Advisorpedia",
     logo: "/press/Advisorpedia Logo.png",
-    href: "https://www.advisorpedia.com/author/joshua-st-laurent/",
   },
   {
     name: "BiggerPockets",
     logo: "/badges/BP_Featured-FinAd-Blue_1000W.png",
-    href: "https://www.biggerpockets.com",
   },
 ] as const;
 
@@ -148,12 +144,9 @@ export default function HomePage() {
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-5">
             {pressFeatures.map((press) => (
-              <a
+              <div
                 key={press.name}
-                href={press.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-white rounded-xl flex items-center justify-center hover:shadow-lg transition-shadow p-4"
+                className="bg-white rounded-xl flex items-center justify-center p-4"
                 style={{ height: 80 }}
               >
                 <Image
@@ -163,7 +156,7 @@ export default function HomePage() {
                   height={64}
                   className="object-contain w-full h-full"
                 />
-              </a>
+              </div>
             ))}
           </div>
         </div>

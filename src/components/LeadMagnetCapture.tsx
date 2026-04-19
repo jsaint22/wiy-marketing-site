@@ -83,7 +83,8 @@ export default function LeadMagnetCapture({
                 aria-label="First name"
                 required
                 disabled={status === "loading"}
-                className="px-4 py-3 rounded-lg bg-[#F5F5F0] text-gray-900 placeholder:text-gray-400 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-secondary focus:border-secondary disabled:opacity-60"
+                className="email-input px-4 py-3 rounded-lg bg-[#F5F5F0] text-gray-900 placeholder:text-gray-400 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-secondary focus:border-secondary disabled:opacity-60"
+                style={{ backgroundColor: "#FFFFFF", color: "#1A1A1A" }}
               />
               <div className="flex flex-col sm:flex-row gap-3">
                 <input
@@ -94,7 +95,8 @@ export default function LeadMagnetCapture({
                   aria-label="Email address"
                   required
                   disabled={status === "loading"}
-                  className="flex-1 px-4 py-3 rounded-lg bg-[#F5F5F0] text-gray-900 placeholder:text-gray-400 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-secondary focus:border-secondary disabled:opacity-60"
+                  className="email-input flex-1 px-4 py-3 rounded-lg bg-[#F5F5F0] text-gray-900 placeholder:text-gray-400 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-secondary focus:border-secondary disabled:opacity-60"
+                  style={{ backgroundColor: "#FFFFFF", color: "#1A1A1A" }}
                 />
                 <button
                   type="submit"
