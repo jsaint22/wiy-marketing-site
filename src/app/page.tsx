@@ -76,12 +76,6 @@ const partners = [
 
 const pressFeatures = [
   {
-    name: "Forbes",
-    title: "Featured Contributor",
-    logo: "/press/Forbes.png",
-    href: "https://www.forbes.com/councils/forbesfinancecouncil/",
-  },
-  {
     name: "MarketWatch",
     title: "Featured Contributor",
     logo: "/press/marketwatch.png",
