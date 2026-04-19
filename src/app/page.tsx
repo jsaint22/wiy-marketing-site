@@ -165,16 +165,15 @@ export default function HomePage() {
                 href={press.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-white rounded-xl flex items-center justify-center hover:shadow-lg transition-shadow"
-                style={{ height: 72, padding: "12px 16px" }}
+                className="bg-white rounded-xl flex items-center justify-center hover:shadow-lg transition-shadow p-4"
+                style={{ height: 80 }}
               >
                 <Image
                   src={press.logo}
                   alt={press.name}
-                  width={200}
-                  height={56}
-                  className="object-contain max-w-full"
-                  style={{ height: 40, width: "auto", maxWidth: "100%" }}
+                  width={240}
+                  height={64}
+                  className="object-contain w-full h-full"
                 />
               </a>
             ))}
