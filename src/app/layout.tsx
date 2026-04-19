@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     "A flat-fee fiduciary advisory firm for business owners, real estate investors, and people designing their lives on their own terms. No AUM fees. No conflicts.",
   metadataBase: new URL(
     isStaging
-      ? "https://wiy-marketing-staging.vercel.app"
+      ? "https://wiy-marketing-site.vercel.app"
       : "https://wealthinyourself.com"
   ),
   robots: isStaging ? { index: false, follow: false } : { index: true, follow: true },

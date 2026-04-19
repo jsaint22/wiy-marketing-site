@@ -90,10 +90,11 @@ const pressFeatures = [
   {
     name: "BiggerPockets",
     title: "Featured Financial Advisor",
-    logo: "/press/BiggerPockets.png",
+    logo: "/badges/BP_Featured-FinAd-Blue_1000W.png",
     href: "https://www.biggerpockets.com",
+    isBadge: true,
   },
-];
+] as const;
 
 export default function HomePage() {
   return (
@@ -147,47 +148,36 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* As Featured In */}
-      <section className="bg-neutral-bg/50 border-y border-neutral-bg py-6 sm:py-8">
+      {/* As Featured In — Integrated Credential Bar */}
+      <section className="bg-primary py-6 sm:py-8">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-center text-sm font-semibold text-neutral-dark/40 uppercase tracking-wider mb-6">
-            As Seen In
+          <p className="text-center text-xs font-semibold text-white/40 uppercase tracking-widest mb-5">
+            As Featured In
           </p>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6">
+          <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-12">
             {pressFeatures.map((press) => (
               <a
                 key={press.name}
                 href={press.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex flex-col items-center justify-center text-center p-6 bg-white rounded-xl border border-neutral-bg hover:border-secondary/30 hover:shadow-md transition-all"
+                className="flex flex-col items-center gap-2 group"
               >
                 <Image
                   src={press.logo}
                   alt={press.name}
-                  width={160}
-                  height={48}
-                  className="max-h-10 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all"
+                  width={"isBadge" in press && press.isBadge ? 80 : 140}
+                  height={"isBadge" in press && press.isBadge ? 80 : 40}
+                  className={`object-contain brightness-0 invert opacity-70 group-hover:opacity-100 transition-opacity ${
+                    "isBadge" in press && press.isBadge ? "h-16 w-auto" : "h-8 w-auto"
+                  }`}
                 />
-                <span className="mt-3 text-sm text-neutral-dark/60">
+                <span className="text-[11px] text-white/50 group-hover:text-white/70 transition-colors font-medium">
                   {press.title}
                 </span>
               </a>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* BiggerPockets Featured Financial Advisor Badge */}
-      <section className="bg-white py-6 sm:py-8">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
-          <Image
-            src="/badges/BP_Featured-FinAd-Blue_1000W.png"
-            alt="BiggerPockets Featured Financial Advisor"
-            width={200}
-            height={200}
-            className="w-36 sm:w-44 h-auto"
-          />
         </div>
       </section>
 
