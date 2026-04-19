@@ -153,49 +153,64 @@ export default function FeeCalculator({ standalone = false }: { standalone?: boo
               </div>
             </div>
 
-            {/* Comparison panel */}
-            <div className="border-t border-neutral-bg pt-6">
-              <h3 className="text-lg font-bold text-primary mb-4">
-                30-Year Fee Comparison
-              </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="rounded-xl border-2 border-success/30 bg-success/5 p-4">
-                  <p className="text-xs font-semibold text-success uppercase tracking-wider">
-                    With Wealth In Yourself (Flat Fee)
-                  </p>
-                  <p className="text-2xl font-bold text-success mt-1">
-                    {formatCurrency(wiyTotal)}
-                  </p>
-                  <p className="text-xs text-neutral-dark/50 mt-1">
-                    Total fees over 30 years
-                  </p>
+            {aumIsCheaper ? (
+              /* Below ~$1M: WIY minimum is more expensive than 1% AUM.
+                 Show honest comparison without misleading projections. */
+              <div className="border-t border-neutral-bg pt-6">
+                <div className="flex items-center justify-between bg-neutral-bg rounded-xl p-4 text-sm">
+                  <div>
+                    <span className="text-neutral-dark/60">1% AUM advisor: </span>
+                    <span className="font-semibold text-neutral-dark">{formatCurrency(aumMonthly)}/mo</span>
+                  </div>
+                  <div>
+                    <span className="text-neutral-dark/60">WIY flat fee: </span>
+                    <span className="font-semibold text-primary">{formatCurrency(monthly)}/mo</span>
+                  </div>
                 </div>
-                <div className="rounded-xl border-2 border-warning/30 bg-warning/5 p-4">
-                  <p className="text-xs font-semibold text-warning uppercase tracking-wider">
-                    At 1% AUM Advisor
+                <div className="mt-4 bg-neutral-bg rounded-xl p-5 text-center">
+                  <p className="text-sm font-semibold text-primary">
+                    Honest math: at {formatNetWorth(netWorth)}, a 1% AUM advisor costs less per year.
                   </p>
-                  <p className="text-2xl font-bold text-warning mt-1">
-                    {formatCurrency(aumTotal)}
-                  </p>
-                  <p className="text-xs text-neutral-dark/50 mt-1">
-                    Total fees over 30 years
+                  <p className="text-sm text-neutral-dark/70 mt-2 leading-relaxed">
+                    Our {formatCurrency(annual)}/year minimum is designed for clients with
+                    $1M+ in net worth, where the flat fee saves you money every year
+                    — and the gap grows as your wealth grows. Below $1M, percentage-based
+                    pricing may be more cost-effective.
                   </p>
                 </div>
               </div>
-              {aumIsCheaper ? (
-                <div className="mt-4 bg-warning/5 border border-warning/20 rounded-xl p-4 text-center">
-                  <p className="text-sm font-semibold text-warning">
-                    At this net worth, a 1% AUM advisor is less expensive.
-                  </p>
-                  <p className="text-xs text-neutral-dark/60 mt-2">
-                    Our flat-fee model is designed for clients with $1M+ in net worth.
-                    Below that threshold, a percentage-based advisor may cost less.
-                    The flat fee starts to save you money as your wealth grows beyond ~$1M.
-                  </p>
+            ) : (
+              /* Above ~$1M: WIY is cheaper. Show the full 30-year comparison. */
+              <div className="border-t border-neutral-bg pt-6">
+                <h3 className="text-lg font-bold text-primary mb-4">
+                  30-Year Fee Comparison
+                </h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="rounded-xl border-2 border-success/30 bg-success/5 p-4">
+                    <p className="text-xs font-semibold text-success uppercase tracking-wider">
+                      With Wealth In Yourself (Flat Fee)
+                    </p>
+                    <p className="text-2xl font-bold text-success mt-1">
+                      {formatCurrency(wiyTotal)}
+                    </p>
+                    <p className="text-xs text-neutral-dark/50 mt-1">
+                      Total fees over 30 years
+                    </p>
+                  </div>
+                  <div className="rounded-xl border-2 border-warning/30 bg-warning/5 p-4">
+                    <p className="text-xs font-semibold text-warning uppercase tracking-wider">
+                      At 1% AUM Advisor
+                    </p>
+                    <p className="text-2xl font-bold text-warning mt-1">
+                      {formatCurrency(aumTotal)}
+                    </p>
+                    <p className="text-xs text-neutral-dark/50 mt-1">
+                      Total fees over 30 years
+                    </p>
+                  </div>
                 </div>
-              ) : (
                 <div className="mt-4 bg-primary/5 rounded-xl p-4 text-center">
-                  <p className="text-sm text-neutral-dark/70">Portfolio benefit</p>
+                  <p className="text-sm text-neutral-dark/70">Estimated portfolio benefit</p>
                   <p className="text-3xl font-bold text-primary">
                     {formatCurrency(portfolioBenefit)}
                   </p>
@@ -203,28 +218,39 @@ export default function FeeCalculator({ standalone = false }: { standalone?: boo
                     more in your portfolio over 30 years
                   </p>
                   <p className="text-xs text-neutral-dark/50 mt-1">
-                    ({formatCurrency(delta)} in fee savings, plus growth on those savings)
+                    ({formatCurrency(delta)} in fee savings, compounded at the assumed growth rate)
                   </p>
                 </div>
-              )}
-            </div>
 
-            {/* Monthly comparison */}
-            <div className="flex items-center justify-between bg-neutral-bg rounded-xl p-4 text-sm">
-              <div>
-                <span className="text-neutral-dark/60">AUM advisor monthly: </span>
-                <span className="font-semibold text-warning">{formatCurrency(aumMonthly)}</span>
+                {/* Monthly comparison */}
+                <div className="mt-4 flex items-center justify-between bg-neutral-bg rounded-xl p-4 text-sm">
+                  <div>
+                    <span className="text-neutral-dark/60">AUM advisor monthly: </span>
+                    <span className="font-semibold text-warning">{formatCurrency(aumMonthly)}</span>
+                  </div>
+                  <div>
+                    <span className="text-neutral-dark/60">Your flat fee: </span>
+                    <span className="font-semibold text-success">{formatCurrency(monthly)}</span>
+                  </div>
+                </div>
               </div>
-              <div>
-                <span className="text-neutral-dark/60">Your flat fee: </span>
-                <span className="font-semibold text-success">{formatCurrency(monthly)}</span>
-              </div>
-            </div>
+            )}
 
-            {/* Compliance disclosure */}
-            <p className="text-xs text-neutral-dark/40 leading-relaxed">
-              Assumes 7% annual portfolio growth for illustrative purposes only. Actual returns will vary. This is not a guarantee of future performance. Fees are assumed to be deducted from the portfolio annually.
-            </p>
+            {/* Compliance disclosure — always visible */}
+            <div className="border-t border-neutral-bg pt-4 mt-2">
+              <p className="text-xs text-neutral-dark/50 leading-relaxed">
+                <strong>Important disclosure:</strong> This calculator is for illustrative
+                purposes only. The 30-year projection assumes a hypothetical 7% annual
+                portfolio growth rate with fees deducted annually from the portfolio balance.
+                Actual investment returns will vary and may be higher or lower than the
+                assumed rate. Past performance is not indicative of future results. The WIY
+                flat fee is based on net worth at engagement and is reviewed annually. AUM
+                fees shown assume a 1% annual fee on portfolio value — actual AUM fees vary
+                by advisor and may be higher or lower. This is not investment advice, a
+                guarantee of future performance, or a solicitation to purchase any security.
+                Consult a qualified professional before making financial decisions.
+              </p>
+            </div>
           </>
         )}
       </div>
