@@ -67,8 +67,11 @@ export interface ProjectionSummary {
  * Fees are deducted from the portfolio each year.
  *
  * AUM fee: 1% of current portfolio value (grows with portfolio).
- * WIY fee: flat fee based on STARTING net worth (does not grow with
- *          portfolio returns — this is the core advantage of flat-fee).
+ * WIY fee: tiered formula REASSESSED ANNUALLY on current portfolio value.
+ *   Per firm policy (FAQ, pricing page): "We reassess your fee on your
+ *   anniversary date each year based on your current net worth."
+ *   The advantage of WIY's declining-tier model is that the effective rate
+ *   drops as wealth grows — so fees scale more slowly than a flat 1% AUM.
  */
 export function projectFees(
   startingValue: number,
@@ -81,17 +84,15 @@ export function projectFees(
   let cumulativeAumFees = 0;
   let cumulativeWiyFees = 0;
 
-  // WIY fee is fixed based on starting net worth
-  const fixedWiyFee = calculateWiyAnnualFee(startingValue);
-
   for (let y = 1; y <= years; y++) {
     // Grow both portfolios
     aumPortfolio *= 1 + growthRate;
     wiyPortfolio *= 1 + growthRate;
 
-    // AUM fee scales with portfolio; WIY fee is fixed
+    // AUM fee: flat 1% of current value
     const aumFee = aumPortfolio * 0.01;
-    const wiyFee = fixedWiyFee;
+    // WIY fee: reassessed annually using declining tiered rates
+    const wiyFee = calculateWiyAnnualFee(wiyPortfolio);
 
     cumulativeAumFees += aumFee;
     cumulativeWiyFees += wiyFee;

@@ -55,18 +55,17 @@ export default function FeeCalculator({ standalone = false }: { standalone?: boo
   const monthly = Math.round(annual / 12);
   const effectiveRate = netWorth > 0 ? ((annual / netWorth) * 100).toFixed(2) : "0.00";
 
-  // AUM comparison: 1% annually
+  // AUM comparison: 1% annually (first-year values for display)
   const aumAnnual = netWorth * 0.01;
   const aumMonthly = Math.round(aumAnnual / 12);
 
-  // WIY fee is a flat fee based on net worth at time of engagement.
-  // It does NOT automatically grow with portfolio returns (unlike AUM).
-  const wiyAnnualFee = annual; // fixed based on current net worth input
-
-  // True when AUM is cheaper than WIY (typically below ~$1M)
+  // True when AUM is cheaper than WIY in year 1 (typically below ~$1M)
   const aumIsCheaper = aumAnnual < annual;
 
-  // 30-year projection: two portfolio paths, fees deducted each year
+  // 30-year projection: two portfolio paths, fees deducted each year.
+  // FIRM POLICY: WIY fee is reassessed annually based on current net worth
+  // (per FAQ and pricing page). Both fee models scale with portfolio growth,
+  // but WIY uses declining tiers so the effective rate drops as wealth grows.
   const years = 30;
   const growthRate = 0.07;
   let aumPortfolio = netWorth;
@@ -75,15 +74,17 @@ export default function FeeCalculator({ standalone = false }: { standalone?: boo
   let wiyTotal = 0;
 
   for (let i = 0; i < years; i++) {
-    // Grow both portfolios first
+    // Grow both portfolios
     aumPortfolio *= 1 + growthRate;
     wiyPortfolio *= 1 + growthRate;
-    // AUM fee scales with portfolio; WIY fee is fixed at starting net worth
+    // AUM fee: 1% of current portfolio value
     const aumFee = aumPortfolio * 0.01;
+    // WIY fee: reassessed annually on current portfolio value using tiered rates
+    const wiyFee = calculateAnnualFee(wiyPortfolio);
     aumTotal += aumFee;
-    wiyTotal += wiyAnnualFee;
+    wiyTotal += wiyFee;
     aumPortfolio -= aumFee;
-    wiyPortfolio -= wiyAnnualFee;
+    wiyPortfolio -= wiyFee;
   }
 
   const portfolioBenefit = wiyPortfolio - aumPortfolio;

@@ -138,7 +138,7 @@ export default function DisclosuresPage() {
           <p>
             Please refer to the{" "}
             <a
-              href="https://adviserinfo.sec.gov/firm/summary/332498"
+              href="https://adviserinfo.sec.gov/firm/summary/322123"
               target="_blank"
               rel="noopener noreferrer"
             >
