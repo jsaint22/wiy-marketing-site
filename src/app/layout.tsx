@@ -33,7 +33,8 @@ export const metadata: Metadata = {
       ? "https://wiy-marketing-site.vercel.app"
       : "https://wealthinyourself.com"
   ),
-  robots: isStaging ? { index: false, follow: false } : { index: true, follow: true },
+  // TODO: Revert to { index: false, follow: false } for staging before production launch
+  robots: { index: true, follow: true },
   openGraph: {
     type: "website",
     locale: "en_US",

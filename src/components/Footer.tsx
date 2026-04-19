@@ -20,7 +20,7 @@ const footerLinks = {
   ],
   Learn: [
     { href: "/blog", label: "Blog" },
-    { href: "#", label: "Podcast" },
+    { href: "https://creators.spotify.com/pod/show/wealth-in-yourself/", label: "Podcast" },
     { href: "/case-studies", label: "Case Studies" },
     { href: "/vs-aum", label: "Flat Fee vs. AUM" },
     { href: "/calculator", label: "Fee Calculator" },
