@@ -53,7 +53,7 @@ function DesktopDropdown({ item, pathname }: { item: NavItem; pathname: string }
   }
 
   function handleLeave() {
-    timeoutRef.current = setTimeout(() => setOpen(false), 150);
+    timeoutRef.current = setTimeout(() => setOpen(false), 300);
   }
 
   useEffect(() => {
@@ -85,7 +85,7 @@ function DesktopDropdown({ item, pathname }: { item: NavItem; pathname: string }
         </svg>
       </button>
       {open && (
-        <div className="absolute top-full left-0 mt-1 w-56 bg-white shadow-lg rounded-lg border border-neutral-bg py-2 z-50">
+        <div className="absolute top-full left-0 pt-1 w-56 z-50"><div className="bg-white shadow-lg rounded-lg border border-neutral-bg py-2">
           {item.children!.map((child) => (
             <Link
               key={child.href}
@@ -100,7 +100,7 @@ function DesktopDropdown({ item, pathname }: { item: NavItem; pathname: string }
               {child.label}
             </Link>
           ))}
-        </div>
+        </div></div>
       )}
     </div>
   );
