@@ -58,6 +58,11 @@ const partners = [
     logo: "/logos/partners/monarch.png",
     description: "Cash flow tracking — real-time visibility into your income, spending, and net worth.",
   },
+  {
+    name: "Interactive Brokers",
+    logo: "/logos/partners/interactive-brokers.svg",
+    description: "Secondary custodian — institutional-grade access for complex portfolios and alternative strategies.",
+  },
 ];
 
 const pressFeatures = [
@@ -119,9 +124,6 @@ export default function HomePage() {
                   Or see what you&apos;d pay &rarr;
                 </Link>
               </div>
-              <p className="mt-6 text-xs text-neutral-dark/40">
-                As seen in Forbes, MarketWatch, and Advisorpedia
-              </p>
             </div>
             <div className="relative">
               <div className="aspect-[3/4] max-w-sm mx-auto lg:mx-0 rounded-2xl bg-neutral-bg overflow-hidden shadow-lg">
@@ -190,7 +192,7 @@ export default function HomePage() {
               their own life &mdash; not just managing yours.
             </p>
             <p className="text-secondary font-semibold">
-              That&apos;s Wealth In Yourself. We call the standard{" "}
+              That&apos;s Wealth In Yourself. The standard here is{" "}
               <a href="/fiduciary" className="text-secondary hover:text-secondary/80 underline">FIAT &mdash; Fiduciary In All Things</a>.
             </p>
           </div>
@@ -424,19 +426,19 @@ export default function HomePage() {
             title="You don't coordinate the team. We do."
             subtitle="Your flat fee covers the coordination. You pay partners directly only when their service is engaged. No markups. No middlemen."
           />
-          <div className="mt-10 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+          <div className="mt-10 grid grid-cols-2 sm:grid-cols-3 gap-4 max-w-4xl mx-auto">
             {partners.map((partner) => (
               <div
                 key={partner.name}
                 className="bg-white rounded-xl p-5 border border-neutral-bg hover:border-secondary/20 hover:shadow-sm transition-all"
               >
-                <div className={`${partner.name === "Monarch Money" ? "h-12" : "h-10"} flex items-center justify-center mb-2`}>
+                <div className="h-10 flex items-center justify-center mb-2">
                   <Image
                     src={partner.logo}
                     alt={partner.name}
-                    width={partner.name === "Monarch Money" ? 140 : 120}
-                    height={partner.name === "Monarch Money" ? 48 : 40}
-                    className={`${partner.name === "Monarch Money" ? "max-h-12" : "max-h-10"} w-auto object-contain`}
+                    width={120}
+                    height={40}
+                    className="max-h-10 w-auto object-contain"
                   />
                 </div>
                 <p className="text-xs font-semibold text-primary text-center mb-2">
@@ -669,6 +671,33 @@ export default function HomePage() {
           </div>
         </section>
       )}
+
+      {/* Newsletter */}
+      <section className="bg-primary py-10 sm:py-14">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-xs font-semibold text-secondary uppercase tracking-widest mb-3">
+            Newsletter
+          </p>
+          <h2 className="text-3xl sm:text-4xl font-bold text-white">
+            One real idea, every week
+          </h2>
+          <p className="mt-4 text-lg text-white/80 leading-relaxed max-w-xl mx-auto">
+            Money, life planning, and what the advisory industry doesn&apos;t want
+            you to know. Written by Josh — not a marketing team. No spam. No fluff.
+          </p>
+          <a
+            href="https://joshstlaurent.substack.com/subscribe"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block mt-6 px-8 py-3.5 bg-secondary text-primary font-semibold rounded-lg hover:bg-secondary/90 transition-colors"
+          >
+            Subscribe on Substack
+          </a>
+          <p className="mt-3 text-white/40 text-xs">
+            Free. Unsubscribe anytime. Your email stays between us.
+          </p>
+        </div>
+      </section>
 
       {/* Latest Podcast Episode */}
       <section className="bg-neutral-bg py-10 sm:py-14">

@@ -25,6 +25,7 @@ const milestones = [
   { nw: "$5M", fee: "$1,750/mo", effective: "0.42%" },
   { nw: "$10M", fee: "$2,583/mo", effective: "0.31%" },
   { nw: "$20M", fee: "$3,417/mo", effective: "0.21%" },
+  { nw: "$30M", fee: "$4,250/mo", effective: "0.17%" },
 ];
 
 const includedServices = [
@@ -198,7 +199,7 @@ export default function PricingPage() {
             <h3 className="text-center text-xl sm:text-2xl font-bold text-primary mb-6">
               What that looks like in practice
             </h3>
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 max-w-5xl mx-auto">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 max-w-5xl mx-auto">
               {milestones.map((m) => (
                 <div
                   key={m.nw}
