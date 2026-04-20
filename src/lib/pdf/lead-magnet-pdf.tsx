@@ -60,7 +60,9 @@ const color = {
   checkBorder: "#C9A449",
 };
 
-const LOGO_URL = "https://wealthinyourself.com/logos/wiy-logo-stacked.png";
+const LOGO_URL = process.env.NEXT_PUBLIC_ENVIRONMENT === "production"
+  ? "https://wealthinyourself.com/logos/wiy-logo-stacked.png"
+  : "https://wiy-marketing-site.vercel.app/logos/wiy-logo-stacked.png";
 const BOOKING_URL = "https://links.wealthinyourself.com/widget/bookings/wiy-15-min-call";
 
 /* ------------------------------------------------------------------ */
@@ -91,7 +93,7 @@ const s = StyleSheet.create({
     bottom: 24,
     left: 60,
     right: 60,
-    fontSize: 6.5,
+    fontSize: 8,
     color: color.muted,
     textAlign: "center",
     lineHeight: 1.4,
@@ -220,22 +222,37 @@ function Footer() {
   );
 }
 
-function CTAPage() {
+function CTAPage({ variant }: { variant?: "re-investor" | "business-owner" | "w2-escape" }) {
+  const copy = {
+    "re-investor": {
+      title: "How many boxes did you check?",
+      body1: "Every unchecked box is a conversation your advisory team should be having — and money that may be walking out the door. Most RE investors we work with find $50K–$200K in overlooked tax savings within the first 90 days of engagement.",
+      body2: "Book a complimentary 15-minute intro call. We'll talk about your portfolio, your team, and whether coordination is the missing piece.",
+    },
+    "business-owner": {
+      title: "Is your exit plan actually built — or just imagined?",
+      body1: "Most business owners discover 3–5 structural gaps that would cost them hundreds of thousands at exit. QSBS qualification, entity restructuring, defined benefit plans — these have deadlines that don't wait for you to be ready.",
+      body2: "Book a complimentary 15-minute intro call. We'll talk about your timeline, your structure, and whether your current team has the full picture.",
+    },
+    "w2-escape": {
+      title: "Ready to build your escape plan?",
+      body1: "The difference between a stressful leap and a calculated transition is a few hours of financial architecture work. Runway math, entity setup, tax optimization, and income sequencing — that's what we build together.",
+      body2: "Book a complimentary 15-minute intro call. We'll talk about your timeline, your runway, and whether flat-fee planning is the right fit.",
+    },
+  };
+
+  const c = copy[variant || "re-investor"];
+
   return (
     <Page size="LETTER" style={s.page}>
       <View style={s.ctaBox}>
-        <Text style={s.ctaTitle}>Ready to talk about your situation?</Text>
-        <Text style={s.body}>
-          Most people leave six figures in tax savings on the table because no
-          one is coordinating their full picture — taxes, entity structure, cash
-          flow, and long-term wealth building. That&apos;s exactly what we do at
-          Wealth In Yourself.
+        <Text style={s.ctaTitle}>{c.title}</Text>
+        <Text style={s.body}>{c.body1}</Text>
+        <Text style={s.body}>{c.body2}</Text>
+        <Text style={{ fontSize: 9, color: color.muted, marginTop: 10, marginBottom: 10 }}>
+          Josh St. Laurent, CFP®, CFT™, APFC®, ACC, MS — Founder, Wealth In Yourself
         </Text>
-        <Text style={s.body}>
-          Book a complimentary 15-minute intro call. No pitch. No pressure. Just
-          a real conversation about whether we are a fit.
-        </Text>
-        <Link src="https://links.wealthinyourself.com/widget/bookings/wiy-15-min-call">
+        <Link src={BOOKING_URL}>
           <Text style={s.ctaLink}>
             Book a 15-minute intro call →
           </Text>
@@ -255,12 +272,16 @@ export function REInvestorChecklistPDF() {
     <Document>
       {/* Cover */}
       <Page size="LETTER" style={s.coverPage}>
-        <Image src={LOGO_URL} style={{ width: 120, marginBottom: 30, opacity: 0.9 }} />
+        <Image src={LOGO_URL} style={{ width: 140, marginBottom: 30, opacity: 0.9 }} />
         <Text style={s.coverTitle}>
           The Real Estate Investor&apos;s{"\n"}Tax Strategy Checklist
         </Text>
+        <View style={{ borderBottomWidth: 2, borderBottomColor: color.secondary, width: 60, marginBottom: 16 }} />
         <Text style={s.coverSubtitle}>
-          13 questions your advisory team should be answering.
+          16 questions your advisory team should be answering.
+        </Text>
+        <Text style={{ fontSize: 10, color: "#FFFFFFBB", textAlign: "center", marginTop: 20 }}>
+          By Josh St. Laurent, CFP®, CFT™, APFC®, ACC, MS
         </Text>
         <Text style={s.coverFooter}>
           wealthinyourself.com
@@ -306,12 +327,17 @@ export function REInvestorChecklistPDF() {
         <CheckItem bold="Are you leveraging the STR loophole for material participation?" text="Short-term rentals with average stays of 7 days or less are not treated as rental activity under IRC Section 469. If you materially participate, losses can offset your ordinary income." />
         <CheckItem bold="Do you have documentation proving your material participation hours?" text="The IRS requires contemporaneous logs. A simple time-tracking habit now protects a potentially massive deduction later." />
 
+        <Text style={s.sectionTitle}>Depreciation &amp; Recapture</Text>
+        <CheckItem bold="Do you have a depreciation recapture plan for when you eventually sell?" text="When you sell a depreciated property, the IRS recaptures depreciation at 25% — plus capital gains on any appreciation. This tax bill surprises investors who never modeled it." />
+        <CheckItem bold="Have you modeled the tax impact of a sale vs. a refinance-and-hold strategy?" text="A cash-out refinance gives you liquidity without triggering depreciation recapture or capital gains. In many cases, the math favors holding indefinitely and refinancing instead of selling." />
+
         <Text style={s.sectionTitle}>Your Advisory Team</Text>
         <CheckItem bold="Do you have both a CPA and a financial planner — and are they talking?" text="Your CPA handles compliance. Your financial planner handles strategy. You need both, and they need to coordinate. If they've never spoken, that's a problem." />
+        <CheckItem bold="Is your CPA proactively suggesting strategies — or just filing what you hand them?" text="A reactive CPA costs you money every year. If they've never mentioned cost segregation, entity restructuring, or STR material participation without you asking first, that's a gap." />
         <Footer />
       </Page>
 
-      <CTAPage />
+      <CTAPage variant="re-investor" />
     </Document>
   );
 }
@@ -324,13 +350,17 @@ export function BusinessOwnerRoadmapPDF() {
   return (
     <Document>
       <Page size="LETTER" style={s.coverPage}>
-        <Image src={LOGO_URL} style={{ width: 120, marginBottom: 30, opacity: 0.9 }} />
+        <Image src={LOGO_URL} style={{ width: 140, marginBottom: 30, opacity: 0.9 }} />
         <Text style={s.coverTitle}>
           The Entrepreneur&apos;s{"\n"}Wealth Extraction Roadmap
         </Text>
+        <View style={{ borderBottomWidth: 2, borderBottomColor: color.secondary, width: 60, marginBottom: 16 }} />
         <Text style={s.coverSubtitle}>
           The financial architecture decisions that determine whether{"\n"}your
           exit builds generational wealth or just pays the tax bill.
+        </Text>
+        <Text style={{ fontSize: 10, color: "#FFFFFFBB", textAlign: "center", marginTop: 20 }}>
+          By Josh St. Laurent, CFP®, CFT™, APFC®, ACC, MS
         </Text>
         <Text style={s.coverFooter}>
           wealthinyourself.com
@@ -378,7 +408,7 @@ export function BusinessOwnerRoadmapPDF() {
         <Footer />
       </Page>
 
-      <CTAPage />
+      <CTAPage variant="business-owner" />
     </Document>
   );
 }
@@ -392,12 +422,16 @@ export function W2EscapePlanPDF() {
   return (
     <Document>
       <Page size="LETTER" style={s.coverPage}>
-        <Image src={LOGO_URL} style={{ width: 120, marginBottom: 30, opacity: 0.9 }} />
+        <Image src={LOGO_URL} style={{ width: 140, marginBottom: 30, opacity: 0.9 }} />
         <Text style={s.coverTitle}>
           The W-2 Escape Plan
         </Text>
+        <View style={{ borderBottomWidth: 2, borderBottomColor: color.secondary, width: 60, marginBottom: 16 }} />
         <Text style={s.coverSubtitle}>
           Know Your Number Before You Give Notice
+        </Text>
+        <Text style={{ fontSize: 10, color: "#FFFFFFBB", textAlign: "center", marginTop: 20 }}>
+          By Josh St. Laurent, CFP®, CFT™, APFC®, ACC, MS
         </Text>
         <Text style={s.coverFooter}>
           wealthinyourself.com
@@ -448,7 +482,7 @@ export function W2EscapePlanPDF() {
         <Footer />
       </Page>
 
-      <CTAPage />
+      <CTAPage variant="w2-escape" />
     </Document>
   );
 }

@@ -3,7 +3,7 @@ import LeadMagnetCapture from "@/components/LeadMagnetCapture";
 
 
 export const metadata: Metadata = {
-  title: "Free: The 16-Point Tax Strategy Checklist for RE Investors",
+  title: "Free: The 16-Question Tax Strategy Checklist for RE Investors",
   description:
     "16 questions your advisory team should be answering about 1031 exchanges, cost segregation, entity structure, depreciation recapture, and STR tax strategy. Free checklist for serious RE investors.",
 };
@@ -103,8 +103,8 @@ export default function REInvestorChecklist() {
             ))}
           </div>
           <p className="mt-8 text-neutral-dark/60 text-sm">
-            ...plus QBI deduction strategies, state tax considerations, and
-            a one-page action plan template.
+            ...plus QBI deduction strategies, state tax considerations,
+            depreciation recapture planning, and an advisory team evaluation.
           </p>
         </div>
       </section>

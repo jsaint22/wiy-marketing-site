@@ -6,6 +6,7 @@ import {
   View,
   Image,
   Font,
+  Link,
   StyleSheet,
 } from "@react-pdf/renderer";
 import path from "path";
@@ -101,7 +102,7 @@ const s = StyleSheet.create({
     bottom: 24,
     left: 60,
     right: 60,
-    fontSize: 6.5,
+    fontSize: 8,
     color: color.muted,
     textAlign: "center",
     lineHeight: 1.4,
@@ -955,11 +956,13 @@ export default function AumMathPDF() {
             it does not require the most cost-effective fee arrangement.
           </Text>
           <Text style={s.body}>
-            Think of it this way: a fiduciary can wear multiple hats. One hat
-            says &ldquo;I advise you.&rdquo; Another says &ldquo;I sell to
-            you.&rdquo; The question is which hat they are wearing when they
-            recommend you stay in a 1% AUM arrangement as your portfolio
-            crosses $5 million, $10 million, or more.
+            Many advisors are dually registered — they hold both an RIA
+            (fiduciary) license and a broker-dealer license. When acting as a
+            broker, fiduciary duty does not apply. And even in their fiduciary
+            capacity, the standard does not require the lowest possible fee —
+            only that the advice be in your best interest given the services
+            provided. A 1% AUM fee on a $10 million portfolio can satisfy
+            fiduciary duty even when a flat fee would save you $69,000 per year.
           </Text>
         </View>
 
@@ -1070,99 +1073,103 @@ export default function AumMathPDF() {
           or lower.
         </Text>
 
-        <View style={[s.cardAccent, { marginTop: 20, padding: 24 }]}>
-          <Text
-            style={{
-              fontFamily: "Playfair Display",
-              fontSize: 16,
-              fontWeight: 700,
-              color: color.white,
-              textAlign: "center",
-              marginBottom: 12,
-            }}
-          >
-            See your exact numbers
-          </Text>
-          <Text
-            style={{
-              fontSize: 11,
-              color: "#FFFFFFCC",
-              textAlign: "center",
-              lineHeight: 1.6,
-              marginBottom: 16,
-            }}
-          >
-            Use the WIY fee calculator to run the math on your specific net
-            worth — and see exactly what you would save over 30 years.
-          </Text>
-          <View
-            style={{
-              backgroundColor: color.secondary,
-              borderRadius: 6,
-              paddingVertical: 12,
-              paddingHorizontal: 20,
-              alignSelf: "center",
-            }}
-          >
+        <Link src="https://wealthinyourself.com/pricing">
+          <View style={[s.cardAccent, { marginTop: 20, padding: 24 }]}>
             <Text
               style={{
-                fontSize: 12,
+                fontFamily: "Playfair Display",
+                fontSize: 16,
                 fontWeight: 700,
-                color: color.primary,
+                color: color.white,
                 textAlign: "center",
+                marginBottom: 12,
               }}
             >
-              wealthinyourself.com/pricing
+              See your exact numbers
             </Text>
+            <Text
+              style={{
+                fontSize: 11,
+                color: "#FFFFFFCC",
+                textAlign: "center",
+                lineHeight: 1.6,
+                marginBottom: 16,
+              }}
+            >
+              Use the WIY fee calculator to run the math on your specific net
+              worth — and see exactly what you would save over 30 years.
+            </Text>
+            <View
+              style={{
+                backgroundColor: color.secondary,
+                borderRadius: 6,
+                paddingVertical: 12,
+                paddingHorizontal: 20,
+                alignSelf: "center",
+              }}
+            >
+              <Text
+                style={{
+                  fontSize: 12,
+                  fontWeight: 700,
+                  color: color.primary,
+                  textAlign: "center",
+                }}
+              >
+                wealthinyourself.com/pricing
+              </Text>
+            </View>
           </View>
-        </View>
+        </Link>
 
-        <View style={[s.cardAccent, { marginTop: 16, padding: 24 }]}>
-          <Text
-            style={{
-              fontFamily: "Playfair Display",
-              fontSize: 16,
-              fontWeight: 700,
-              color: color.white,
-              textAlign: "center",
-              marginBottom: 12,
-            }}
-          >
-            Talk to Josh
-          </Text>
-          <Text
-            style={{
-              fontSize: 11,
-              color: "#FFFFFFCC",
-              textAlign: "center",
-              lineHeight: 1.6,
-              marginBottom: 16,
-            }}
-          >
-            Book a free 15-minute intro call to see if flat-fee planning
-            is the right fit for your situation.
-          </Text>
-          <View
-            style={{
-              backgroundColor: color.secondary,
-              borderRadius: 6,
-              paddingVertical: 12,
-              paddingHorizontal: 20,
-              alignSelf: "center",
-            }}
-          >
+        <Link src="https://links.wealthinyourself.com/widget/bookings/wiy-15-min-call">
+          <View style={[s.cardAccent, { marginTop: 16, padding: 24 }]}>
             <Text
               style={{
-                fontSize: 10,
+                fontFamily: "Playfair Display",
+                fontSize: 16,
                 fontWeight: 700,
-                color: color.primary,
+                color: color.white,
                 textAlign: "center",
+                marginBottom: 12,
               }}
             >
-              links.wealthinyourself.com/widget/bookings/wiy-15-min-call
+              Talk to Josh
             </Text>
+            <Text
+              style={{
+                fontSize: 11,
+                color: "#FFFFFFCC",
+                textAlign: "center",
+                lineHeight: 1.6,
+                marginBottom: 16,
+              }}
+            >
+              Book a free 15-minute intro call to see if flat-fee planning
+              is the right fit for your situation.
+            </Text>
+            <View
+              style={{
+                backgroundColor: color.secondary,
+                borderRadius: 6,
+                paddingVertical: 12,
+                paddingHorizontal: 20,
+                alignSelf: "center",
+              }}
+            >
+              <Text
+                style={{
+                  fontSize: 10,
+                  fontWeight: 700,
+                  color: color.primary,
+                  textAlign: "center",
+                }}
+              >
+                Book a 15-minute intro call →
+              </Text>
+            </View>
           </View>
-        </View>
+        </Link>
 
         <Footer pageNumber={10} />
       </Page>

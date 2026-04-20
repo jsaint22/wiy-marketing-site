@@ -26,7 +26,7 @@ const LEAD_MAGNETS: Record<
     subject: "Your Real Estate Investor's Tax Strategy Checklist",
     tag: "re-investor-checklist-download",
     description:
-      "The Real Estate Investor's Tax Strategy Checklist — 13 questions your advisory team should be answering about 1031 exchanges, cost segregation, entity structure, depreciation, QBI, and more.",
+      "The Real Estate Investor's Tax Strategy Checklist — 16 questions your advisory team should be answering about 1031 exchanges, cost segregation, entity structure, depreciation recapture, QBI, and more.",
     filename: "RE-Investor-Tax-Strategy-Checklist-WIY.pdf",
     pdf: () => React.createElement(REInvestorChecklistPDF),
   },
