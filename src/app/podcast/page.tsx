@@ -89,7 +89,7 @@ export default function PodcastPage() {
                     <h3 className="text-lg font-bold text-primary group-hover:text-secondary transition-colors leading-snug">
                       {ep.title}
                     </h3>
-                    <div className="mt-1 flex flex-wrap items-center gap-3 text-sm text-neutral-dark/50">
+                    <div className="mt-1 flex flex-wrap items-center gap-3 text-sm text-neutral-dark/70">
                       <time>
                         {new Date(ep.date).toLocaleDateString("en-US", {
                           year: "numeric",

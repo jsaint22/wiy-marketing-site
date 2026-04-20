@@ -80,7 +80,7 @@ export default function ContactPage() {
               >
                 Pick a Time
               </a>
-              <p className="mt-4 text-xs text-neutral-dark/40">
+              <p className="mt-4 text-xs text-neutral-dark/70">
                 Typical response within 1 business day if your preferred time
                 isn&rsquo;t available.
               </p>
@@ -113,7 +113,7 @@ export default function ContactPage() {
                   <span>Anyone who&rsquo;s outgrown their current advisor &mdash; or never had one</span>
                 </li>
               </ul>
-              <p className="mt-4 text-sm text-neutral-dark/50">
+              <p className="mt-4 text-sm text-neutral-dark/70">
                 Not sure if you&rsquo;re a fit? Book the call anyway. 15 minutes costs nothing and you&rsquo;ll leave with clarity either way.
               </p>
             </div>
@@ -146,7 +146,7 @@ export default function ContactPage() {
             josh@wealthinyourself.com
           </a>
           <div className="mt-8 pt-8 border-t border-neutral-dark/10">
-            <p className="text-neutral-dark/50 text-sm">
+            <p className="text-neutral-dark/70 text-sm">
               195 Highway 50, Suite 205 &middot; Zephyr Cove, NV 89448 &middot; (415) 915-5948
             </p>
           </div>

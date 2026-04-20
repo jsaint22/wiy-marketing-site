@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import LeadMagnetCapture from "@/components/LeadMagnetCapture";
+import CTASection from "@/components/CTASection";
 
 
 export const metadata: Metadata = {
@@ -68,7 +69,7 @@ export default function BusinessOwnerRoadmap() {
             roadmap covers the decisions that separate business owners who
             build generational wealth from those who just build busy companies.
           </p>
-          <p className="mt-4 text-sm text-neutral-dark/50 font-medium">
+          <p className="mt-4 text-sm text-neutral-dark/70 font-medium">
             For entrepreneurs doing $500K+ in annual revenue or planning a transition within 5 years.
           </p>
         </div>
@@ -97,7 +98,7 @@ export default function BusinessOwnerRoadmap() {
               </div>
             ))}
           </div>
-          <p className="mt-8 text-neutral-dark/60 text-sm">
+          <p className="mt-8 text-neutral-dark/70 text-sm">
             ...plus installment sale strategies, Charitable Remainder Trusts,
             IDGT estate planning vehicles, and post-exit wealth management.
           </p>
@@ -114,6 +115,7 @@ export default function BusinessOwnerRoadmap() {
         successMessage="Sent! Check your inbox for the Wealth Extraction Roadmap."
       />
 
+      <CTASection />
     </main>
   );
 }

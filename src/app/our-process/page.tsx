@@ -201,7 +201,7 @@ export default function OurProcessPage() {
                     <h3 className="text-2xl font-bold text-primary">
                       {phase.name}
                     </h3>
-                    <p className="text-sm text-neutral-dark/50">
+                    <p className="text-sm text-neutral-dark/70">
                       {phase.timing}
                     </p>
                   </div>
@@ -271,7 +271,7 @@ export default function OurProcessPage() {
                 <p className="text-sm font-semibold text-white">
                   {partner.name}
                 </p>
-                <p className="text-xs text-white/50 mt-1">{partner.role}</p>
+                <p className="text-xs text-white/70 mt-1">{partner.role}</p>
               </div>
             ))}
           </div>

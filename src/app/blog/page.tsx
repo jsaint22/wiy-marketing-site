@@ -31,7 +31,7 @@ export default function BlogPage() {
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-0">
             {posts.length === 0 ? (
-              <p className="text-neutral-dark/50">No posts yet. Check back soon.</p>
+              <p className="text-neutral-dark/70">No posts yet. Check back soon.</p>
             ) : (
               posts.map((post, idx) => (
                 <article
@@ -40,7 +40,7 @@ export default function BlogPage() {
                 >
                   <Link href={`/blog/${post.slug}`} className="block">
                     <div className="flex items-center gap-3 mb-2">
-                      <time className="text-sm text-neutral-dark/50">
+                      <time className="text-sm text-neutral-dark/70">
                         {new Date(post.date).toLocaleDateString("en-US", {
                           year: "numeric",
                           month: "long",

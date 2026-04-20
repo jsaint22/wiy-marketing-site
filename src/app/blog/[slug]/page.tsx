@@ -75,14 +75,14 @@ export default async function BlogPostPage({ params }: Props) {
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link
             href="/blog"
-            className="text-sm text-neutral-dark/50 hover:text-primary transition-colors"
+            className="text-sm text-neutral-dark/70 hover:text-primary transition-colors"
           >
             &larr; Back to blog
           </Link>
 
           <header className="mt-6 mb-10">
             <div className="flex items-center gap-3 mb-3">
-              <time className="text-sm text-neutral-dark/50">
+              <time className="text-sm text-neutral-dark/70">
                 {new Date(post.date).toLocaleDateString("en-US", {
                   year: "numeric",
                   month: "long",
@@ -106,7 +106,7 @@ export default async function BlogPostPage({ params }: Props) {
 
           {/* Compliance footer */}
           <footer className="mt-12 pt-6 border-t border-neutral-bg">
-            <p className="text-xs text-neutral-dark/50 italic leading-relaxed">
+            <p className="text-xs text-neutral-dark/70 italic leading-relaxed">
               Educational content only. Not financial, tax, or legal advice. This
               post reflects the views of Joshua St. Laurent as of the publish date
               and is not a recommendation to buy, sell, or hold any security.
@@ -125,7 +125,7 @@ export default async function BlogPostPage({ params }: Props) {
               </div>
               <div>
                 <p className="font-semibold text-primary">{post.author}, MS, CFP®, CFT™, APFC®, ACC</p>
-                <p className="text-sm text-neutral-dark/60 mt-1">
+                <p className="text-sm text-neutral-dark/70 mt-1">
                   Founder of Wealth In Yourself. Flat-fee fiduciary for
                   entrepreneurs, RE investors, and people building life on their
                   own terms. Based at Lake Tahoe.
@@ -160,7 +160,7 @@ export default async function BlogPostPage({ params }: Props) {
                   href={`/blog/${prevPost.slug}`}
                   className="group"
                 >
-                  <p className="text-xs text-neutral-dark/40 mb-1">Previous</p>
+                  <p className="text-xs text-neutral-dark/70 mb-1">Previous</p>
                   <p className="text-sm font-semibold text-primary group-hover:text-secondary transition-colors">
                     &larr; {prevPost.title}
                   </p>
@@ -173,7 +173,7 @@ export default async function BlogPostPage({ params }: Props) {
                   href={`/blog/${nextPost.slug}`}
                   className="group sm:text-right"
                 >
-                  <p className="text-xs text-neutral-dark/40 mb-1">Next</p>
+                  <p className="text-xs text-neutral-dark/70 mb-1">Next</p>
                   <p className="text-sm font-semibold text-primary group-hover:text-secondary transition-colors">
                     {nextPost.title} &rarr;
                   </p>

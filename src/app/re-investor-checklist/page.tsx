@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import LeadMagnetCapture from "@/components/LeadMagnetCapture";
+import CTASection from "@/components/CTASection";
 
 
 export const metadata: Metadata = {
@@ -73,7 +74,7 @@ export default function REInvestorChecklist() {
             between &ldquo;good enough&rdquo; and keeping an extra $50K–$200K
             on every transaction.
           </p>
-          <p className="mt-4 text-sm text-neutral-dark/50 font-medium">
+          <p className="mt-4 text-sm text-neutral-dark/70 font-medium">
             Built for investors with 3+ properties and $1M+ in real estate equity.
           </p>
         </div>
@@ -102,7 +103,7 @@ export default function REInvestorChecklist() {
               </div>
             ))}
           </div>
-          <p className="mt-8 text-neutral-dark/60 text-sm">
+          <p className="mt-8 text-neutral-dark/70 text-sm">
             ...plus QBI deduction strategies, state tax considerations,
             depreciation recapture planning, and an advisory team evaluation.
           </p>
@@ -119,6 +120,7 @@ export default function REInvestorChecklist() {
         successMessage="Sent! Check your inbox for the Tax Strategy Checklist."
       />
 
+      <CTASection />
     </main>
   );
 }

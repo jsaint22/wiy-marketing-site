@@ -144,7 +144,7 @@ export default function HomePage() {
       {/* As Featured In */}
       <section className="bg-primary py-6 sm:py-8">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-center text-xs font-semibold text-white/40 uppercase tracking-widest mb-5">
+          <p className="text-center text-xs font-semibold text-white/80 uppercase tracking-widest mb-5">
             As Featured In
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-5">
@@ -276,22 +276,22 @@ export default function HomePage() {
               </div>
               <div className="bg-neutral-bg p-6">
                 <div className="bg-white rounded-lg p-4 mb-3">
-                  <p className="text-xs font-semibold text-neutral-dark/40 uppercase tracking-wider">Dashboard</p>
+                  <p className="text-xs font-semibold text-neutral-dark/70 uppercase tracking-wider">Dashboard</p>
                   <p className="text-lg font-bold text-primary mt-1">Welcome, Sarah</p>
-                  <p className="text-sm text-neutral-dark/60 mt-1">Your next meeting is April 22</p>
+                  <p className="text-sm text-neutral-dark/70 mt-1">Your next meeting is April 22</p>
                 </div>
                 <div className="grid grid-cols-2 gap-2">
                   <div className="bg-white rounded-lg p-3">
-                    <p className="text-xs text-neutral-dark/40">Net Worth</p>
+                    <p className="text-xs text-neutral-dark/70">Net Worth</p>
                     <p className="text-sm font-bold text-primary">$3.2M</p>
                   </div>
                   <div className="bg-white rounded-lg p-3">
-                    <p className="text-xs text-neutral-dark/40">Phase</p>
+                    <p className="text-xs text-neutral-dark/70">Phase</p>
                     <p className="text-sm font-bold text-success">Build</p>
                   </div>
                 </div>
                 <div className="bg-white rounded-lg p-3 mt-2">
-                  <p className="text-xs text-neutral-dark/40">Action Items</p>
+                  <p className="text-xs text-neutral-dark/70">Action Items</p>
                   <div className="mt-1 space-y-1">
                     <div className="flex items-center gap-2">
                       <div className="w-3 h-3 rounded border border-secondary" />
@@ -301,7 +301,7 @@ export default function HomePage() {
                       <div className="w-3 h-3 rounded bg-success/20 border border-success flex items-center justify-center">
                         <span className="text-[8px] text-success">&#10003;</span>
                       </div>
-                      <p className="text-xs text-neutral-dark/40 line-through">Fund Solo 401(k)</p>
+                      <p className="text-xs text-neutral-dark/70 line-through">Fund Solo 401(k)</p>
                     </div>
                   </div>
                 </div>
@@ -352,7 +352,7 @@ export default function HomePage() {
                           </p>
                         </div>
                       </div>
-                      <p className="text-xs text-neutral-dark/40">{p.meetings}</p>
+                      <p className="text-xs text-neutral-dark/70">{p.meetings}</p>
                     </div>
                   ))}
                 </div>
@@ -378,7 +378,7 @@ export default function HomePage() {
                       </div>
                       <div>
                         <p className="text-sm font-semibold text-primary">S-Corp Election Savings</p>
-                        <p className="text-xs text-neutral-dark/60 mt-0.5">Saved $18,400 in self-employment tax</p>
+                        <p className="text-xs text-neutral-dark/70 mt-0.5">Saved $18,400 in self-employment tax</p>
                         <p className="text-[10px] text-neutral-dark/30 mt-1">March 2026</p>
                       </div>
                     </div>
@@ -390,7 +390,7 @@ export default function HomePage() {
                       </div>
                       <div>
                         <p className="text-sm font-semibold text-primary">Roth Conversion Ladder</p>
-                        <p className="text-xs text-neutral-dark/60 mt-0.5">Converted $85K at 12% bracket</p>
+                        <p className="text-xs text-neutral-dark/70 mt-0.5">Converted $85K at 12% bracket</p>
                         <p className="text-[10px] text-neutral-dark/30 mt-1">February 2026</p>
                       </div>
                     </div>
@@ -402,7 +402,7 @@ export default function HomePage() {
                       </div>
                       <div>
                         <p className="text-sm font-semibold text-primary">Estate Plan Complete</p>
-                        <p className="text-xs text-neutral-dark/60 mt-0.5">Trust, will, POA, and healthcare directive</p>
+                        <p className="text-xs text-neutral-dark/70 mt-0.5">Trust, will, POA, and healthcare directive</p>
                         <p className="text-[10px] text-neutral-dark/30 mt-1">January 2026</p>
                       </div>
                     </div>
@@ -411,7 +411,7 @@ export default function HomePage() {
               </div>
             </div>
           </div>
-          <p className="mt-8 text-center text-sm text-neutral-dark/50">
+          <p className="mt-8 text-center text-sm text-neutral-dark/70">
             Clients only. Existing clients log in at{" "}
             <a href="https://portal.wealthinyourself.com" target="_blank" rel="noopener noreferrer" className="font-medium text-primary hover:text-secondary transition-colors underline">portal.wealthinyourself.com</a>.
           </p>
@@ -444,7 +444,7 @@ export default function HomePage() {
                 <p className="text-xs font-semibold text-primary text-center mb-2">
                   {partner.name}
                 </p>
-                <p className="text-xs text-neutral-dark/60 leading-relaxed">
+                <p className="text-xs text-neutral-dark/70 leading-relaxed">
                   {partner.description}
                 </p>
               </div>
@@ -458,7 +458,7 @@ export default function HomePage() {
               See all partners and tools &rarr;
             </Link>
           </div>
-          <p className="mt-3 text-center text-xs text-neutral-dark/50 max-w-2xl mx-auto">
+          <p className="mt-3 text-center text-xs text-neutral-dark/70 max-w-2xl mx-auto">
             Services coordinated through Wealth In Yourself. You pay the partner directly only
             when their service is actively engaged. No additional advisory fees.
           </p>
@@ -486,6 +486,7 @@ export default function HomePage() {
                     viewBox="0 0 24 24"
                     stroke="currentColor"
                     strokeWidth={1.5}
+                    aria-hidden="true"
                   >
                     <path strokeLinecap="round" strokeLinejoin="round" d={path.icon} />
                   </svg>
@@ -505,7 +506,7 @@ export default function HomePage() {
                   </Link>
                   <Link
                     href="/case-studies"
-                    className="text-xs text-white/50 hover:text-secondary transition-colors"
+                    className="text-xs text-white/70 hover:text-secondary transition-colors"
                   >
                     {path.caseStudyLabel} &rarr;
                   </Link>
@@ -544,7 +545,7 @@ export default function HomePage() {
                     <span className="text-sm font-medium text-neutral-dark">{nw}</span>
                     <div className="text-right">
                       <span className="text-sm font-bold text-primary">{fee}</span>
-                      <span className="text-xs text-neutral-dark/50 ml-2">({rate})</span>
+                      <span className="text-xs text-neutral-dark/70 ml-2">({rate})</span>
                     </div>
                   </div>
                 ))}
@@ -558,7 +559,7 @@ export default function HomePage() {
                 </Link>
                 <Link
                   href="/vs-aum"
-                  className="text-neutral-dark/50 font-medium hover:text-secondary transition-colors"
+                  className="text-neutral-dark/70 font-medium hover:text-secondary transition-colors"
                 >
                   Compare to AUM advisors &rarr;
                 </Link>
@@ -650,7 +651,7 @@ export default function HomePage() {
               {posts.map((post) => (
                 <Link key={post.slug} href={`/blog/${post.slug}`} className="group">
                   <div className="bg-neutral-bg rounded-xl p-6 hover:shadow-lg hover:border-secondary/20 border border-transparent transition-all h-full">
-                    <time className="text-xs text-neutral-dark/50">
+                    <time className="text-xs text-neutral-dark/70">
                       {new Date(post.date).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}
                     </time>
                     <h3 className="mt-2 text-lg font-bold text-primary group-hover:text-secondary transition-colors">
@@ -693,7 +694,7 @@ export default function HomePage() {
           >
             Subscribe on Substack
           </a>
-          <p className="mt-3 text-white/40 text-xs">
+          <p className="mt-3 text-white/80 text-xs">
             Free. Unsubscribe anytime. Your email stays between us.
           </p>
         </div>

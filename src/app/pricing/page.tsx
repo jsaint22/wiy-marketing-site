@@ -183,13 +183,13 @@ export default function PricingPage() {
                       {tier.rate}
                     </span>
                   </div>
-                  <div className="px-4 sm:px-6 py-4 text-right text-neutral-dark/60 text-sm">
+                  <div className="px-4 sm:px-6 py-4 text-right text-neutral-dark/70 text-sm">
                     {tier.note}
                   </div>
                 </div>
               ))}
             </div>
-            <p className="mt-4 text-center text-sm text-neutral-dark/60">
+            <p className="mt-4 text-center text-sm text-neutral-dark/70">
               $10,000 annual minimum fee applies at all net worth levels.
             </p>
           </div>
@@ -205,7 +205,7 @@ export default function PricingPage() {
                   key={m.nw}
                   className="bg-white rounded-xl p-5 border border-neutral-bg text-center"
                 >
-                  <p className="text-xs font-semibold text-neutral-dark/50 uppercase tracking-wider">
+                  <p className="text-xs font-semibold text-neutral-dark/70 uppercase tracking-wider">
                     Net Worth
                   </p>
                   <p className="text-lg sm:text-xl font-bold text-primary mt-1">
@@ -213,7 +213,7 @@ export default function PricingPage() {
                   </p>
                   <hr className="my-3 border-neutral-bg" />
                   <p className="text-lg font-bold text-secondary">{m.fee}</p>
-                  <p className="text-xs text-neutral-dark/50 mt-1">
+                  <p className="text-xs text-neutral-dark/70 mt-1">
                     Effective: {m.effective}
                   </p>
                 </div>
@@ -301,7 +301,7 @@ export default function PricingPage() {
               </div>
             ))}
           </div>
-          <p className="mt-8 text-center text-neutral-dark/60 text-sm">
+          <p className="mt-8 text-center text-neutral-dark/70 text-sm">
             No tiers. No packages. Every client gets full access to every service.
           </p>
         </div>

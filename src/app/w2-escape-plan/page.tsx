@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import LeadMagnetCapture from "@/components/LeadMagnetCapture";
+import CTASection from "@/components/CTASection";
 
 
 export const metadata: Metadata = {
@@ -71,7 +72,7 @@ export default function W2EscapePlan() {
             calculated decision: your real runway, your real burn rate, and the
             exact financial architecture you need before you give notice.
           </p>
-          <p className="mt-4 text-sm text-neutral-dark/50 font-medium">
+          <p className="mt-4 text-sm text-neutral-dark/70 font-medium">
             For W-2 professionals earning $150K+ who are 6-18 months from going independent.
           </p>
         </div>
@@ -100,7 +101,7 @@ export default function W2EscapePlan() {
               </div>
             ))}
           </div>
-          <p className="mt-8 text-neutral-dark/60 text-sm">
+          <p className="mt-8 text-neutral-dark/70 text-sm">
             ...plus personal financial architecture review, emergency fund
             separation strategy, partner alignment framework, and a
             milestone-based departure timeline.
@@ -118,6 +119,7 @@ export default function W2EscapePlan() {
         successMessage="Sent! Check your inbox for the W-2 Escape Plan."
       />
 
+      <CTASection />
     </main>
   );
 }

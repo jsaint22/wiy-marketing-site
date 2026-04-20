@@ -205,7 +205,7 @@ export default function ForRealEstateInvestorsPage() {
           <p className="mt-4 text-lg font-semibold text-primary">
             Featured Financial Advisor on BiggerPockets
           </p>
-          <p className="mt-2 text-neutral-dark/60 max-w-xl">
+          <p className="mt-2 text-neutral-dark/70 max-w-xl">
             BiggerPockets is the largest real estate investing community in the world. We&apos;re recognized as a Featured Financial Advisor because we actually understand real estate — not just stocks and bonds.
           </p>
         </div>

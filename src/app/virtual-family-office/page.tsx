@@ -330,7 +330,7 @@ export default function VirtualFamilyOfficePage() {
               </div>
             ))}
           </div>
-          <p className="mt-8 text-center text-sm text-neutral-dark/50">
+          <p className="mt-8 text-center text-sm text-neutral-dark/70">
             Existing clients log in at{" "}
             <a href="https://portal.wealthinyourself.com" target="_blank" rel="noopener noreferrer" className="font-medium text-primary hover:text-secondary transition-colors underline">portal.wealthinyourself.com</a>.
           </p>

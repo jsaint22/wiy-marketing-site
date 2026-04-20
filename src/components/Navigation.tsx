@@ -73,6 +73,7 @@ function DesktopDropdown({ item, pathname }: { item: NavItem; pathname: string }
         }`}
         onClick={() => setOpen(!open)}
         aria-expanded={open}
+        aria-haspopup="true"
       >
         {item.label}
         <svg
@@ -122,6 +123,8 @@ function MobileDropdown({
     <div>
       <button
         onClick={() => setExpanded(!expanded)}
+        aria-expanded={expanded}
+        aria-haspopup="true"
         className={`w-full flex items-center justify-between px-3 py-2 text-base font-medium rounded-md ${
           item.children?.some((c) => pathname === c.href)
             ? "text-primary bg-neutral-bg"
@@ -167,7 +170,7 @@ export default function Navigation() {
 
   return (
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-neutral-bg">
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <nav aria-label="Main navigation" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-20">
           <Link href="/" className="flex-shrink-0">
             <Image
@@ -203,7 +206,7 @@ export default function Navigation() {
               href="https://portal.wealthinyourself.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="ml-3 px-3 py-2 text-xs font-medium text-neutral-dark/50 hover:text-primary transition-colors"
+              className="ml-3 px-3 py-2 text-xs font-medium text-neutral-dark/70 hover:text-primary transition-colors"
             >
               Client Login
             </a>
@@ -221,7 +224,8 @@ export default function Navigation() {
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
             className="lg:hidden p-2 text-neutral-dark"
-            aria-label="Toggle menu"
+            aria-expanded={mobileOpen}
+            aria-label={mobileOpen ? "Close menu" : "Open menu"}
           >
             {mobileOpen ? (
               <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -276,7 +280,7 @@ export default function Navigation() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setMobileOpen(false)}
-                className="mt-2 mx-3 px-3 py-2 text-center text-xs text-neutral-dark/50 hover:text-primary transition-colors"
+                className="mt-2 mx-3 px-3 py-2 text-center text-xs text-neutral-dark/70 hover:text-primary transition-colors"
               >
                 Existing client? Log in to your portal &rarr;
               </a>

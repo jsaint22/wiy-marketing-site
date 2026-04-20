@@ -50,7 +50,7 @@ export default function NewsletterCTA({ variant = "section" }: NewsletterCTAProp
         >
           Subscribe on Substack
         </a>
-        <p className="mt-3 text-white/40 text-xs">
+        <p className="mt-3 text-white/80 text-xs">
           Free. Unsubscribe anytime. Your email stays between us.
         </p>
       </div>

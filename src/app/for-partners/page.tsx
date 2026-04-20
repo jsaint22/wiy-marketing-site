@@ -183,7 +183,7 @@ export default function ForPartnersPage() {
                 ))}
               </div>
             </div>
-            <p className="mt-6 text-center text-sm text-neutral-dark/60">
+            <p className="mt-6 text-center text-sm text-neutral-dark/70">
               Every client gets access to a private portal, unlimited meetings,
               and direct access to their planner. No call centers. No
               hand-offs.

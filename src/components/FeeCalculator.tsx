@@ -116,9 +116,13 @@ export default function FeeCalculator({ standalone = false }: { standalone?: boo
             step={50_000}
             value={netWorth}
             onChange={(e) => handleSliderChange(Number(e.target.value))}
+            aria-label="Net worth slider"
+            aria-valuemin={500_000}
+            aria-valuemax={35_000_000}
+            aria-valuenow={netWorth}
             className="w-full h-2 bg-neutral-bg rounded-lg appearance-none cursor-pointer accent-primary"
           />
-          <div className="flex justify-between text-xs text-neutral-dark/50 mt-1">
+          <div className="flex justify-between text-xs text-neutral-dark/70 mt-1">
             <span>$500K</span>
             <span>$35M</span>
           </div>
@@ -139,7 +143,7 @@ export default function FeeCalculator({ standalone = false }: { standalone?: boo
             {/* Your fee */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               <div className="bg-neutral-bg rounded-xl p-4">
-                <p className="text-xs font-semibold text-neutral-dark/60 uppercase tracking-wider">
+                <p className="text-xs font-semibold text-neutral-dark/70 uppercase tracking-wider">
                   Monthly Fee
                 </p>
                 <p className="text-2xl font-bold text-primary mt-1">
@@ -147,7 +151,7 @@ export default function FeeCalculator({ standalone = false }: { standalone?: boo
                 </p>
               </div>
               <div className="bg-neutral-bg rounded-xl p-4">
-                <p className="text-xs font-semibold text-neutral-dark/60 uppercase tracking-wider">
+                <p className="text-xs font-semibold text-neutral-dark/70 uppercase tracking-wider">
                   Annual Fee
                 </p>
                 <p className="text-2xl font-bold text-primary mt-1">
@@ -155,7 +159,7 @@ export default function FeeCalculator({ standalone = false }: { standalone?: boo
                 </p>
               </div>
               <div className="bg-neutral-bg rounded-xl p-4">
-                <p className="text-xs font-semibold text-neutral-dark/60 uppercase tracking-wider">
+                <p className="text-xs font-semibold text-neutral-dark/70 uppercase tracking-wider">
                   Effective Rate
                 </p>
                 <p className="text-2xl font-bold text-success mt-1">{effectiveRate}%</p>
@@ -168,11 +172,11 @@ export default function FeeCalculator({ standalone = false }: { standalone?: boo
               <div className="border-t border-neutral-bg pt-6">
                 <div className="flex items-center justify-between bg-neutral-bg rounded-xl p-4 text-sm">
                   <div>
-                    <span className="text-neutral-dark/60">1% AUM advisor: </span>
+                    <span className="text-neutral-dark/70">1% AUM advisor: </span>
                     <span className="font-semibold text-neutral-dark">{formatCurrency(aumMonthly)}/mo</span>
                   </div>
                   <div>
-                    <span className="text-neutral-dark/60">WIY flat fee: </span>
+                    <span className="text-neutral-dark/70">WIY flat fee: </span>
                     <span className="font-semibold text-primary">{formatCurrency(monthly)}/mo</span>
                   </div>
                 </div>
@@ -202,7 +206,7 @@ export default function FeeCalculator({ standalone = false }: { standalone?: boo
                     <p className="text-2xl font-bold text-success mt-1">
                       {formatCurrency(wiyTotal)}
                     </p>
-                    <p className="text-xs text-neutral-dark/50 mt-1">
+                    <p className="text-xs text-neutral-dark/70 mt-1">
                       Total fees over 30 years
                     </p>
                   </div>
@@ -213,7 +217,7 @@ export default function FeeCalculator({ standalone = false }: { standalone?: boo
                     <p className="text-2xl font-bold text-warning mt-1">
                       {formatCurrency(aumTotal)}
                     </p>
-                    <p className="text-xs text-neutral-dark/50 mt-1">
+                    <p className="text-xs text-neutral-dark/70 mt-1">
                       Total fees over 30 years
                     </p>
                   </div>
@@ -226,7 +230,7 @@ export default function FeeCalculator({ standalone = false }: { standalone?: boo
                   <p className="text-sm text-neutral-dark/70">
                     more in your portfolio over 30 years
                   </p>
-                  <p className="text-xs text-neutral-dark/50 mt-1">
+                  <p className="text-xs text-neutral-dark/70 mt-1">
                     ({formatCurrency(delta)} in fee savings, compounded at the assumed growth rate)
                   </p>
                 </div>
@@ -234,11 +238,11 @@ export default function FeeCalculator({ standalone = false }: { standalone?: boo
                 {/* Monthly comparison */}
                 <div className="mt-4 flex items-center justify-between bg-neutral-bg rounded-xl p-4 text-sm">
                   <div>
-                    <span className="text-neutral-dark/60">AUM advisor monthly: </span>
+                    <span className="text-neutral-dark/70">AUM advisor monthly: </span>
                     <span className="font-semibold text-warning">{formatCurrency(aumMonthly)}</span>
                   </div>
                   <div>
-                    <span className="text-neutral-dark/60">Your flat fee: </span>
+                    <span className="text-neutral-dark/70">Your flat fee: </span>
                     <span className="font-semibold text-success">{formatCurrency(monthly)}</span>
                   </div>
                 </div>
@@ -247,7 +251,7 @@ export default function FeeCalculator({ standalone = false }: { standalone?: boo
 
             {/* Compliance disclosure — always visible */}
             <div className="border-t border-neutral-bg pt-4 mt-2">
-              <p className="text-xs text-neutral-dark/50 leading-relaxed">
+              <p className="text-xs text-neutral-dark/70 leading-relaxed">
                 <strong>Important disclosure:</strong> This calculator is for illustrative
                 purposes only. The 30-year projection assumes a hypothetical 7% annual
                 portfolio growth rate with fees deducted annually from the portfolio balance.

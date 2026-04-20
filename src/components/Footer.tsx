@@ -84,7 +84,7 @@ export default function Footer() {
 
         {/* Compliance footer */}
         <div className="mt-10 pt-8 border-t border-white/10">
-          <p className="text-white/50 text-xs leading-relaxed max-w-4xl">
+          <p className="text-white/70 text-xs leading-relaxed max-w-4xl">
             Wealth In Yourself LLC is a Registered Investment Adviser with the
             State of Nevada. Registration as an investment adviser does not imply
             a certain level of skill or training. Advisory services are only
@@ -94,7 +94,7 @@ export default function Footer() {
             advice may be rendered by Wealth In Yourself unless a client service
             agreement is in place.
           </p>
-          <p className="mt-3 text-white/50 text-xs leading-relaxed max-w-4xl">
+          <p className="mt-3 text-white/70 text-xs leading-relaxed max-w-4xl">
             The information on this website is not intended as tax, accounting,
             or legal advice, as an offer or solicitation of an offer to buy or
             sell, or as an endorsement of any company, security, fund, or other
@@ -103,7 +103,7 @@ export default function Footer() {
             content on this site is information of a general nature and does not
             address the circumstances of any particular individual or entity.
           </p>
-          <div className="mt-4 flex flex-wrap gap-4 text-xs text-white/50">
+          <div className="mt-4 flex flex-wrap gap-4 text-xs text-white/70">
             <a
               href="https://adviserinfo.sec.gov/firm/summary/322123"
               target="_blank"
@@ -113,9 +113,7 @@ export default function Footer() {
               Form ADV &amp; firm disclosures on SEC.gov
             </a>
             <a
-              href="https://wealthinyourself.com/form-crs/"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/form-crs"
               className="hover:text-white/70 transition-colors"
             >
               Form CRS (ADV Part 3)

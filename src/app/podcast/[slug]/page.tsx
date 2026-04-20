@@ -70,7 +70,7 @@ export default async function EpisodePage({ params }: Props) {
           <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
             <Link
               href="/podcast"
-              className="text-white/50 hover:text-white text-sm transition-colors"
+              className="text-white/70 hover:text-white text-sm transition-colors"
             >
               &larr; All Episodes
             </Link>
@@ -158,7 +158,7 @@ export default async function EpisodePage({ params }: Props) {
               <nav className="flex justify-between items-start gap-4">
                 {prevEp ? (
                   <Link href={`/podcast/${prevEp.slug}`} className="group flex-1">
-                    <p className="text-xs text-neutral-dark/40 mb-1">Previous Episode</p>
+                    <p className="text-xs text-neutral-dark/70 mb-1">Previous Episode</p>
                     <p className="text-sm font-semibold text-primary group-hover:text-secondary transition-colors">
                       &larr; EP {prevEp.episodeNumber}: {prevEp.title}
                     </p>
@@ -168,7 +168,7 @@ export default async function EpisodePage({ params }: Props) {
                 )}
                 {nextEp && (
                   <Link href={`/podcast/${nextEp.slug}`} className="group flex-1 text-right">
-                    <p className="text-xs text-neutral-dark/40 mb-1">Next Episode</p>
+                    <p className="text-xs text-neutral-dark/70 mb-1">Next Episode</p>
                     <p className="text-sm font-semibold text-primary group-hover:text-secondary transition-colors">
                       EP {nextEp.episodeNumber}: {nextEp.title} &rarr;
                     </p>

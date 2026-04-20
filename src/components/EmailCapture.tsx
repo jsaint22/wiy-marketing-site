@@ -100,7 +100,7 @@ export default function EmailCapture() {
             {status === "error" && (
               <p className="mt-3 text-warning text-sm">{message}</p>
             )}
-            <p className="mt-4 text-white/50 text-xs">
+            <p className="mt-4 text-white/70 text-xs">
               We don&apos;t share your email. Unsubscribe anytime. This is not
               financial advice.
             </p>

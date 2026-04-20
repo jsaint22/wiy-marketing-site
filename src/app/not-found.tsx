@@ -19,7 +19,7 @@ export default function NotFound() {
             className="block p-4 bg-neutral-bg rounded-lg hover:bg-neutral-bg/80 transition-colors"
           >
             <p className="font-semibold text-primary text-sm">How We Work</p>
-            <p className="text-xs text-neutral-dark/60 mt-1">
+            <p className="text-xs text-neutral-dark/70 mt-1">
               Flat-fee, fiduciary, Virtual Family Office.
             </p>
           </Link>
@@ -28,7 +28,7 @@ export default function NotFound() {
             className="block p-4 bg-neutral-bg rounded-lg hover:bg-neutral-bg/80 transition-colors"
           >
             <p className="font-semibold text-primary text-sm">Pricing</p>
-            <p className="text-xs text-neutral-dark/60 mt-1">
+            <p className="text-xs text-neutral-dark/70 mt-1">
               See exactly what you&apos;d pay. No surprises.
             </p>
           </Link>
@@ -37,7 +37,7 @@ export default function NotFound() {
             className="block p-4 bg-neutral-bg rounded-lg hover:bg-neutral-bg/80 transition-colors"
           >
             <p className="font-semibold text-primary text-sm">Blog</p>
-            <p className="text-xs text-neutral-dark/60 mt-1">
+            <p className="text-xs text-neutral-dark/70 mt-1">
               Thinking out loud about money and life planning.
             </p>
           </Link>
@@ -46,13 +46,13 @@ export default function NotFound() {
             className="block p-4 bg-neutral-bg rounded-lg hover:bg-neutral-bg/80 transition-colors"
           >
             <p className="font-semibold text-primary text-sm">FAQ</p>
-            <p className="text-xs text-neutral-dark/60 mt-1">
+            <p className="text-xs text-neutral-dark/70 mt-1">
               Straight answers. No fine print.
             </p>
           </Link>
         </div>
 
-        <p className="mt-8 text-sm text-neutral-dark/50">
+        <p className="mt-8 text-sm text-neutral-dark/70">
           Existing client?{" "}
           <a
             href="https://portal.wealthinyourself.com"

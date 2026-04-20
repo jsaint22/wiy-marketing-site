@@ -188,7 +188,7 @@ export default function CaseStudiesPage() {
       {/* Compliance Disclaimer */}
       <section className="bg-neutral-bg py-10">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-sm text-neutral-dark/50 text-center leading-relaxed">
+          <p className="text-sm text-neutral-dark/70 text-center leading-relaxed">
             These case studies are anonymized composites for illustrative purposes. Individual results vary based on personal financial circumstances. No guarantee of similar outcomes. Past results do not guarantee future performance. Tax savings and financial projections referenced are based on specific circumstances and should not be interpreted as typical or expected results.
           </p>
         </div>

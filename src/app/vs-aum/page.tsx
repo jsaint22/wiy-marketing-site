@@ -192,12 +192,12 @@ export default function VsAumPage() {
             <div className="bg-primary/5 border border-primary/20 rounded-xl p-6 text-center">
               <p className="text-sm font-semibold text-primary uppercase tracking-wider">Portfolio Benefit</p>
               <p className="text-3xl sm:text-4xl font-bold text-primary mt-2">{portfolioBenefit}</p>
-              <p className="text-sm text-neutral-dark/60 mt-1">more in your portfolio with WIY over 20 years</p>
+              <p className="text-sm text-neutral-dark/70 mt-1">more in your portfolio with WIY over 20 years</p>
             </div>
             <div className="bg-primary/5 border border-primary/20 rounded-xl p-6 text-center">
               <p className="text-sm font-semibold text-primary uppercase tracking-wider">30-Year Benefit</p>
               <p className="text-3xl sm:text-4xl font-bold text-primary mt-2">{formatCurrency(proj30.portfolioBenefit)}</p>
-              <p className="text-sm text-neutral-dark/60 mt-1">more in your portfolio with WIY over 30 years</p>
+              <p className="text-sm text-neutral-dark/70 mt-1">more in your portfolio with WIY over 30 years</p>
             </div>
           </div>
 
@@ -205,17 +205,17 @@ export default function VsAumPage() {
             <div className="bg-warning/5 border border-warning/20 rounded-xl p-6 text-center">
               <p className="text-sm font-semibold text-warning uppercase tracking-wider">AUM Fees Paid (20yr)</p>
               <p className="text-2xl sm:text-3xl font-bold text-warning mt-2">{totalAum}</p>
-              <p className="text-sm text-neutral-dark/60 mt-1">cumulative fees</p>
+              <p className="text-sm text-neutral-dark/70 mt-1">cumulative fees</p>
             </div>
             <div className="bg-success/5 border border-success/20 rounded-xl p-6 text-center">
               <p className="text-sm font-semibold text-success uppercase tracking-wider">WIY Fees Paid (20yr)</p>
               <p className="text-2xl sm:text-3xl font-bold text-success mt-2">{totalWiy}</p>
-              <p className="text-sm text-neutral-dark/60 mt-1">cumulative fees</p>
+              <p className="text-sm text-neutral-dark/70 mt-1">cumulative fees</p>
             </div>
             <div className="bg-neutral-bg border border-neutral-bg rounded-xl p-6 text-center">
               <p className="text-sm font-semibold text-neutral-dark uppercase tracking-wider">Fee Delta (20yr)</p>
               <p className="text-2xl sm:text-3xl font-bold text-neutral-dark mt-2">{feeDelta}</p>
-              <p className="text-sm text-neutral-dark/60 mt-1">less in fees with WIY</p>
+              <p className="text-sm text-neutral-dark/70 mt-1">less in fees with WIY</p>
             </div>
           </div>
 
@@ -250,19 +250,19 @@ export default function VsAumPage() {
                   <div>
                     <p className="text-xs text-warning font-semibold uppercase">AUM Fee</p>
                     <p className="text-neutral-dark/70">{r.aumFee}/yr</p>
-                    <p className="text-xs text-neutral-dark/50">Total: {r.cumAum}</p>
+                    <p className="text-xs text-neutral-dark/70">Total: {r.cumAum}</p>
                   </div>
                   <div>
                     <p className="text-xs text-success font-semibold uppercase">WIY Fee</p>
                     <p className="text-neutral-dark/70">{r.wiyFee}/yr</p>
-                    <p className="text-xs text-neutral-dark/50">Total: {r.cumWiy}</p>
+                    <p className="text-xs text-neutral-dark/70">Total: {r.cumWiy}</p>
                   </div>
                 </div>
               </div>
             ))}
           </div>
 
-          <p className="mt-6 text-center text-xs text-neutral-dark/50 max-w-2xl mx-auto">
+          <p className="mt-6 text-center text-xs text-neutral-dark/70 max-w-2xl mx-auto">
             Assumes 7% annual portfolio growth for illustrative purposes only. Actual returns will vary. This is not a guarantee of future performance. Fees are assumed to be deducted from the portfolio annually. AUM fee is 1% of portfolio value each year (grows with portfolio). WIY fee is a flat fee based on starting net worth (does not grow with portfolio returns).
           </p>
         </div>
@@ -302,7 +302,7 @@ export default function VsAumPage() {
       {/* Compliance Disclaimer */}
       <section className="bg-white py-8">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-sm text-neutral-dark/50 text-center leading-relaxed">
+          <p className="text-sm text-neutral-dark/70 text-center leading-relaxed">
             This comparison uses hypothetical examples for illustrative purposes only. Past performance is not indicative of future results. Individual results will vary. Assumes 7% annual portfolio growth with fees deducted annually. Actual returns, fees, and outcomes depend on individual circumstances and market conditions.
           </p>
         </div>

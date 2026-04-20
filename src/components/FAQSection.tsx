@@ -37,7 +37,7 @@ export default function FAQSection({ faqs, title = "Frequently Asked Questions" 
               <summary className="flex items-center justify-between p-5 font-semibold text-neutral-dark hover:bg-neutral-bg/50 transition-colors">
                 {faq.question}
                 <svg
-                  className="w-5 h-5 text-neutral-dark/40 transition-transform group-open:rotate-180 flex-shrink-0 ml-4"
+                  className="w-5 h-5 text-neutral-dark/70 transition-transform group-open:rotate-180 flex-shrink-0 ml-4"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
