@@ -30,6 +30,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/for-partners",
     "/financial-planner-lake-tahoe",
     "/our-process",
+    "/disclosures",
+    "/privacy-policy",
+    "/w2-escape-plan",
   ];
 
   const posts = getAllPosts();
