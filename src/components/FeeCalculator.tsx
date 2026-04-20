@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useRef, useCallback } from "react";
+import { trackCalculatorInteract } from "@/lib/analytics";
 
 function calculateAnnualFee(netWorth: number): number {
   if (netWorth < 500_000) return 0;
@@ -49,6 +50,13 @@ function formatNetWorth(value: number): string {
 
 export default function FeeCalculator({ standalone = false }: { standalone?: boolean }) {
   const [netWorth, setNetWorth] = useState(3_000_000);
+  const trackTimeout = useRef<NodeJS.Timeout | null>(null);
+
+  const handleSliderChange = useCallback((value: number) => {
+    setNetWorth(value);
+    if (trackTimeout.current) clearTimeout(trackTimeout.current);
+    trackTimeout.current = setTimeout(() => trackCalculatorInteract(value), 2000);
+  }, []);
 
   const isBelowMinimum = netWorth < 500_000;
   const annual = useMemo(() => calculateAnnualFee(netWorth), [netWorth]);
@@ -107,7 +115,7 @@ export default function FeeCalculator({ standalone = false }: { standalone?: boo
             max={35_000_000}
             step={50_000}
             value={netWorth}
-            onChange={(e) => setNetWorth(Number(e.target.value))}
+            onChange={(e) => handleSliderChange(Number(e.target.value))}
             className="w-full h-2 bg-neutral-bg rounded-lg appearance-none cursor-pointer accent-primary"
           />
           <div className="flex justify-between text-xs text-neutral-dark/50 mt-1">

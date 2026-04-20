@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { trackLeadCapture } from "@/lib/analytics";
 
 export default function EmailCapture() {
   const [email, setEmail] = useState("");
@@ -23,6 +24,7 @@ export default function EmailCapture() {
       const data = await res.json();
       if (res.ok) {
         setStatus("success");
+        trackLeadCapture("aum_math");
         setMessage(
           data.message || "Sent! Check your inbox for The AUM Math."
         );

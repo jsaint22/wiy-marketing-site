@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { trackLeadCapture } from "@/lib/analytics";
 
 interface LeadMagnetCaptureProps {
   magnet: string;
@@ -40,6 +41,7 @@ export default function LeadMagnetCapture({
       const data = await res.json();
       if (res.ok) {
         setStatus("success");
+        trackLeadCapture(magnet);
         setMessage(data.message || successMessage);
         setEmail("");
         setFirstName("");
