@@ -71,8 +71,24 @@ export default function LeadMagnetCapture({
         </p>
 
         {status === "success" ? (
-          <div className="mt-8 bg-white/10 rounded-xl p-6">
+          <div className="mt-8 bg-white/10 rounded-xl p-6 sm:p-8">
             <p className="text-white font-semibold text-lg">{message}</p>
+            <p className="mt-3 text-white/70 text-sm">
+              It should arrive within a minute. Check spam if you don&apos;t see it.
+            </p>
+            <div className="mt-6 pt-6 border-t border-white/10">
+              <p className="text-white/80 text-sm">
+                Want to talk through how this applies to your situation?
+              </p>
+              <a
+                href="https://links.wealthinyourself.com/widget/bookings/wiy-15-min-call"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block mt-3 px-6 py-2.5 bg-secondary text-primary text-sm font-semibold rounded-lg hover:bg-secondary/90 transition-colors"
+              >
+                Book a free 15-min call
+              </a>
+            </div>
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="mt-8">

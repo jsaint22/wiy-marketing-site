@@ -8,6 +8,9 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // Client portal shortcut
+      { source: "/portal", destination: "https://portal.wealthinyourself.com", permanent: false },
+      { source: "/login", destination: "https://portal.wealthinyourself.com", permanent: false },
       // WordPress core page redirects
       { source: "/home", destination: "/", permanent: true },
       { source: "/home/", destination: "/", permanent: true },

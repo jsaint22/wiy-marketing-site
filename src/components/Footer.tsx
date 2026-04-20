@@ -27,6 +27,7 @@ const footerLinks = {
     { href: "/case-studies", label: "Case Studies" },
     { href: "/vs-aum", label: "Flat Fee vs. AUM" },
     { href: "/calculator", label: "Fee Calculator" },
+    { href: "https://portal.wealthinyourself.com", label: "Client Portal Login" },
   ],
 };
 

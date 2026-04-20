@@ -200,10 +200,18 @@ export default function Navigation() {
               )
             )}
             <a
+              href="https://portal.wealthinyourself.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="ml-3 px-3 py-2 text-xs font-medium text-neutral-dark/50 hover:text-primary transition-colors"
+            >
+              Client Login
+            </a>
+            <a
               href="https://links.wealthinyourself.com/widget/bookings/wiy-15-min-call"
               target="_blank"
               rel="noopener noreferrer"
-              className="ml-4 px-5 py-2.5 bg-primary text-white text-sm font-semibold rounded-lg hover:bg-primary/90 transition-colors"
+              className="ml-2 px-5 py-2.5 bg-primary text-white text-sm font-semibold rounded-lg hover:bg-primary/90 transition-colors"
             >
               Book a Call
             </a>
@@ -262,6 +270,15 @@ export default function Navigation() {
                 className="mt-2 mx-3 px-5 py-2.5 bg-primary text-white text-center text-sm font-semibold rounded-lg"
               >
                 Book a Call
+              </a>
+              <a
+                href="https://portal.wealthinyourself.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setMobileOpen(false)}
+                className="mt-2 mx-3 px-3 py-2 text-center text-xs text-neutral-dark/50 hover:text-primary transition-colors"
+              >
+                Existing client? Log in to your portal &rarr;
               </a>
             </div>
           </div>

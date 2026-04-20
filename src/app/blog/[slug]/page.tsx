@@ -134,6 +134,24 @@ export default async function BlogPostPage({ params }: Props) {
             </div>
           </div>
 
+          {/* Conversion bridge */}
+          <div className="mt-10 pt-8 border-t border-neutral-dark/10 bg-neutral-bg rounded-xl p-6 sm:p-8 text-center">
+            <p className="text-lg font-bold text-primary">
+              Want to talk about how this applies to your situation?
+            </p>
+            <p className="mt-2 text-sm text-neutral-dark/70">
+              15 minutes. No pitch. Just a real conversation about what you&rsquo;re building.
+            </p>
+            <a
+              href="https://links.wealthinyourself.com/widget/bookings/wiy-15-min-call"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block mt-4 px-8 py-3 bg-primary text-white font-semibold rounded-lg hover:bg-primary/90 transition-colors"
+            >
+              Book your free intro call
+            </a>
+          </div>
+
           {/* Prev / Next */}
           {(prevPost || nextPost) && (
             <nav className="mt-10 pt-8 border-t border-neutral-dark/10 grid grid-cols-1 sm:grid-cols-2 gap-6">

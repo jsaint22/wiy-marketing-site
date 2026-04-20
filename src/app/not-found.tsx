@@ -15,7 +15,7 @@ export default function NotFound() {
 
         <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4 text-left max-w-md mx-auto">
           <Link
-            href="/approach"
+            href="/our-process"
             className="block p-4 bg-neutral-bg rounded-lg hover:bg-neutral-bg/80 transition-colors"
           >
             <p className="font-semibold text-primary text-sm">How We Work</p>
@@ -51,6 +51,16 @@ export default function NotFound() {
             </p>
           </Link>
         </div>
+
+        <p className="mt-8 text-sm text-neutral-dark/50">
+          Existing client?{" "}
+          <a
+            href="https://portal.wealthinyourself.com"
+            className="text-primary font-medium hover:text-secondary transition-colors"
+          >
+            Log in to your portal &rarr;
+          </a>
+        </p>
 
         <Link
           href="/"

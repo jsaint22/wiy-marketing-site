@@ -89,8 +89,51 @@ export default function ContactPage() {
         </div>
       </section>
 
+      {/* Best fit + what happens next */}
+      <section className="py-10 sm:py-14 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
+            <div>
+              <h2 className="text-2xl font-bold text-primary">Best fit for</h2>
+              <ul className="mt-4 space-y-3 text-neutral-dark/70">
+                <li className="flex gap-3">
+                  <span className="text-secondary flex-shrink-0 mt-0.5">&bull;</span>
+                  <span>Business owners with complex tax or entity situations</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-secondary flex-shrink-0 mt-0.5">&bull;</span>
+                  <span>Real estate investors managing multiple properties or entities</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-secondary flex-shrink-0 mt-0.5">&bull;</span>
+                  <span>Individuals or households with $1M+ in total net worth</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-secondary flex-shrink-0 mt-0.5">&bull;</span>
+                  <span>Anyone who&rsquo;s outgrown their current advisor &mdash; or never had one</span>
+                </li>
+              </ul>
+              <p className="mt-4 text-sm text-neutral-dark/50">
+                Not sure if you&rsquo;re a fit? Book the call anyway. 15 minutes costs nothing and you&rsquo;ll leave with clarity either way.
+              </p>
+            </div>
+            <div>
+              <h2 className="text-2xl font-bold text-primary">What happens after</h2>
+              <div className="mt-4 space-y-3 text-neutral-dark/70">
+                <p>
+                  If we both decide it&rsquo;s a fit, the next step is a Strategy &amp; Vision meeting &mdash; a deeper conversation about your full financial picture. No commitment until you&rsquo;re ready.
+                </p>
+                <p>
+                  If we&rsquo;re not the right firm for you, we&rsquo;ll tell you honestly and point you to someone who is. No pressure. No follow-up spam.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Contact info */}
-      <section className="py-8 sm:py-10 bg-white">
+      <section className="py-8 sm:py-10 bg-neutral-bg">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-neutral-dark/70 text-lg">
             Prefer email? Send us a message and we&rsquo;ll respond within one
@@ -102,7 +145,7 @@ export default function ContactPage() {
           >
             josh@wealthinyourself.com
           </a>
-          <div className="mt-8 pt-8 border-t border-neutral-bg">
+          <div className="mt-8 pt-8 border-t border-neutral-dark/10">
             <p className="text-neutral-dark/50 text-sm">
               195 Highway 50, Suite 205 &middot; Zephyr Cove, NV 89448 &middot; (415) 915-5948
             </p>
