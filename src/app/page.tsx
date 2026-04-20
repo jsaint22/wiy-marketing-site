@@ -3,6 +3,7 @@ import Image from "next/image";
 import CTASection from "@/components/CTASection";
 import SectionHeading from "@/components/SectionHeading";
 import EmailCapture from "@/components/EmailCapture";
+import { getAllPosts } from "@/lib/blog";
 
 const clientPaths = [
   {
@@ -79,6 +80,8 @@ const pressFeatures = [
 ] as const;
 
 export default function HomePage() {
+  const posts = getAllPosts().slice(0, 3);
+
   return (
     <>
       {/* Hero */}
@@ -628,6 +631,68 @@ export default function HomePage() {
               <p className="mt-3 text-sm font-semibold text-primary group-hover:text-secondary transition-colors">
                 Get the free PDF &rarr;
               </p>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Latest Writing */}
+      {posts.length > 0 && (
+        <section className="bg-white py-10 sm:py-14">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <SectionHeading
+              eyebrow="Latest Writing"
+              title="Recent essays and insights."
+            />
+            <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
+              {posts.map((post) => (
+                <Link key={post.slug} href={`/blog/${post.slug}`} className="group">
+                  <div className="bg-neutral-bg rounded-xl p-6 hover:shadow-lg hover:border-secondary/20 border border-transparent transition-all h-full">
+                    <time className="text-xs text-neutral-dark/50">
+                      {new Date(post.date).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}
+                    </time>
+                    <h3 className="mt-2 text-lg font-bold text-primary group-hover:text-secondary transition-colors">
+                      {post.title}
+                    </h3>
+                    <p className="mt-2 text-sm text-neutral-dark/70 leading-relaxed line-clamp-3">
+                      {post.description}
+                    </p>
+                  </div>
+                </Link>
+              ))}
+            </div>
+            <div className="mt-6 text-center">
+              <Link href="/blog" className="text-primary font-semibold hover:text-secondary transition-colors">
+                Read all essays &rarr;
+              </Link>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Latest Podcast Episode */}
+      <section className="bg-neutral-bg py-10 sm:py-14">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeading
+            eyebrow="Latest Episode"
+            title="The Wealth In Yourself Podcast"
+            subtitle="Conversations about money, life planning, and the things most advisors won't say out loud."
+          />
+          <div className="mt-8">
+            <iframe
+              src="https://open.spotify.com/embed/show/6L3ew149S5Kc8vN2UwYRSR?utm_source=generator&theme=0"
+              width="100%"
+              height="232"
+              frameBorder="0"
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"
+              className="rounded-xl"
+              title="Wealth In Yourself Podcast on Spotify"
+            />
+          </div>
+          <div className="mt-4 text-center">
+            <Link href="/podcast" className="text-primary font-semibold hover:text-secondary transition-colors">
+              Browse all 35 episodes &rarr;
             </Link>
           </div>
         </div>

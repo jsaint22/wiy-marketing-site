@@ -26,6 +26,7 @@ const navLinks: NavItem[] = [
       { href: "/for-business-owners", label: "For Business Owners" },
       { href: "/for-real-estate-investors", label: "For RE Investors" },
       { href: "/for-fire-followers", label: "For FIRE Followers" },
+      { href: "/our-process", label: "Our Process" },
     ],
   },
   { href: "/pricing", label: "Pricing" },

@@ -19,6 +19,7 @@ const footerLinks = {
     { href: "/re-investor-checklist", label: "RE Tax Checklist" },
     { href: "/business-owner-roadmap", label: "Exit Planning Roadmap" },
     { href: "/w2-escape-plan", label: "W-2 Escape Plan" },
+    { href: "/our-process", label: "Our Process" },
   ],
   Learn: [
     { href: "/blog", label: "Blog" },
