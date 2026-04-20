@@ -99,7 +99,7 @@ export default function BusinessOwnerRoadmap() {
           </div>
           <p className="mt-8 text-neutral-dark/60 text-sm">
             ...plus installment sale strategies, Charitable Remainder Trusts,
-            key person insurance, and a personal financial independence calculator.
+            IDGT estate planning vehicles, and post-exit wealth management.
           </p>
         </div>
       </section>

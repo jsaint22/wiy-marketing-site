@@ -210,15 +210,18 @@ function CheckItem({
   );
 }
 
-function Footer() {
+function Footer({ page }: { page?: number }) {
   return (
-    <Text style={s.footer}>
-      Wealth In Yourself LLC | Registered Investment Adviser — State of Nevada |
-      195 Highway 50, Suite 205, Zephyr Cove, NV 89448 | (415) 915-5948 |
-      josh@wealthinyourself.com{"\n"}This checklist is educational and is not
-      tax, legal, or investment advice. Discuss all items with your qualified
-      advisory team before taking action.
-    </Text>
+    <>
+      <Text style={s.footer}>
+        Wealth In Yourself LLC | Registered Investment Adviser — State of Nevada |
+        195 Highway 50, Suite 205, Zephyr Cove, NV 89448 | (415) 915-5948 |
+        josh@wealthinyourself.com{"\n"}This checklist is educational and is not
+        tax, legal, or investment advice. Discuss all items with your qualified
+        advisory team before taking action.
+      </Text>
+      {page && <Text style={s.pageNum}>{page}</Text>}
+    </>
   );
 }
 
@@ -296,6 +299,10 @@ export function REInvestorChecklistPDF() {
           checklist covers the tax strategies that separate sophisticated
           investors from everyone else. It&apos;s not advice — it&apos;s a
           conversation starter between you and your advisory team.
+        </Text>
+        <Text style={{ fontSize: 9, color: color.secondary, fontWeight: 600, marginBottom: 8 }}>
+          How to use this: Check each box you can answer &ldquo;yes&rdquo; to.
+          Every unchecked box is a conversation to have with your team.
         </Text>
         <View style={s.divider} />
 
@@ -405,6 +412,7 @@ export function BusinessOwnerRoadmapPDF() {
 
         <Text style={s.sectionTitle}>The Advisory Team</Text>
         <CheckItem bold="Do you have all four: financial planner, CPA, estate attorney, M&A advisor?" text="Each handles a different piece. If any one is missing, you have a gap. Coordination is the financial planner's job." />
+        <CheckItem bold="Are all four working from the same playbook — or operating in silos?" text="If your CPA hasn't spoken to your estate attorney this year, nobody is coordinating your full picture. That's the gap where money falls through." />
         <Footer />
       </Page>
 
@@ -479,6 +487,65 @@ export function W2EscapePlanPDF() {
         <CheckItem bold="Is your personal emergency fund separate from business runway?" text="Different accounts, different purposes. Don't raid one for the other." />
         <CheckItem bold="Have you had the conversation with your spouse or partner?" text="They need to understand the timeline, the plan, the risks, and their role. Alignment here prevents 90% of the stress." />
         <CheckItem bold="Do you have a written transition plan with specific dates?" text="'Someday' is not a plan. A timeline with milestones converts a dream into a project." />
+        <Footer />
+      </Page>
+
+      {/* Departure Timeline Worksheet */}
+      <Page size="LETTER" style={s.page}>
+        <Text style={s.sectionTitle}>Your Departure Timeline</Text>
+        <Text style={s.body}>
+          Use this worksheet to map your transition. Fill in target dates and
+          check each box as you complete it. A calculated departure has
+          milestones — not just a quit date.
+        </Text>
+        <View style={s.divider} />
+
+        <View style={{ marginBottom: 14 }}>
+          <Text style={{ fontWeight: 700, fontSize: 12, color: color.primary, marginBottom: 6 }}>
+            Month -12: Foundation
+          </Text>
+          <CheckItem bold="Calculate real monthly burn rate" text="(include 15% buffer): $________/mo" />
+          <CheckItem bold="Determine liquid runway" text="Savings ÷ burn rate = ________ months" />
+          <CheckItem bold="Research health insurance options" text="COBRA: $________/mo | Marketplace: $________/mo | Spouse plan: $________/mo" />
+        </View>
+
+        <View style={{ marginBottom: 14 }}>
+          <Text style={{ fontWeight: 700, fontSize: 12, color: color.primary, marginBottom: 6 }}>
+            Month -6: Architecture
+          </Text>
+          <CheckItem bold="Choose and form business entity" text="LLC / S-Corp / Sole Prop — filed in: ________________" />
+          <CheckItem bold="Open business bank account" text="Separate from personal. Non-negotiable." />
+          <CheckItem bold="Set up Solo 401(k) or SEP-IRA" text="Provider: ________________ | Contribution target: $________/yr" />
+          <CheckItem bold="Land first client or signed LOI" text="Client: ________________ | Revenue: $________/mo" />
+        </View>
+
+        <View style={{ marginBottom: 14 }}>
+          <Text style={{ fontWeight: 700, fontSize: 12, color: color.primary, marginBottom: 6 }}>
+            Month -3: Preparation
+          </Text>
+          <CheckItem bold="Calculate break-even revenue" text="Personal burn + business costs + quarterly taxes = $________/mo" />
+          <CheckItem bold="Review non-compete with attorney" text="Attorney: ________________ | Clear to proceed: Y / N" />
+          <CheckItem bold="Max out employer benefits" text="FSA balance used / prescriptions filled / dental + vision scheduled" />
+          <CheckItem bold="Have the conversation with your partner" text="Alignment on timeline, risks, and their role." />
+        </View>
+
+        <View style={{ marginBottom: 14 }}>
+          <Text style={{ fontWeight: 700, fontSize: 12, color: color.primary, marginBottom: 6 }}>
+            Month 0: Departure
+          </Text>
+          <CheckItem bold="Submit resignation" text="Target date: ________________" />
+          <CheckItem bold="Roll employer 401(k)" text="To: IRA / Solo 401(k) / Leave in place" />
+          <CheckItem bold="Activate health insurance" text="COBRA start / Marketplace enrollment / Spouse plan effective" />
+          <CheckItem bold="First quarterly estimated payment" text="Due date: ________ | Amount: $________" />
+        </View>
+
+        <View style={s.ctaBox}>
+          <Text style={{ fontSize: 10, color: color.primary, lineHeight: 1.5 }}>
+            Want help filling this in? Book a 15-minute call and we&apos;ll walk
+            through your specific numbers — runway, entity choice, tax
+            architecture, and timing. No pitch. Just math.
+          </Text>
+        </View>
         <Footer />
       </Page>
 

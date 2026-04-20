@@ -36,7 +36,7 @@ const checklistSections = [
     category: "Retirement Accounts",
     items: [
       "Do you have a plan for your employer 401(k) — rollover, leave, or Roth convert?",
-      "Have you evaluated a Solo 401(k) to shelter $60K+ per year from day one?",
+      "Have you evaluated a Solo 401(k) to shelter up to $72K per year from day one?",
     ],
   },
   {
