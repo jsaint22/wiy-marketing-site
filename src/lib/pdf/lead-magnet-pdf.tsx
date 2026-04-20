@@ -14,35 +14,24 @@ import {
 /*  Fonts (same as aum-math.tsx)                                       */
 /* ------------------------------------------------------------------ */
 
+import path from "path";
+
+const fontsDir = path.join(process.cwd(), "public", "fonts");
+
 Font.register({
   family: "Playfair Display",
   fonts: [
-    {
-      src: "https://fonts.gstatic.com/s/playfairdisplay/v40/nuFvD-vYSZviVYUb_rj3ij__anPXJzDwcbmjWBN2PKdFvUDQ.ttf",
-      fontWeight: 400,
-    },
-    {
-      src: "https://fonts.gstatic.com/s/playfairdisplay/v40/nuFvD-vYSZviVYUb_rj3ij__anPXJzDwcbmjWBN2PKeiukDQ.ttf",
-      fontWeight: 700,
-    },
+    { src: path.join(fontsDir, "PlayfairDisplay-Regular.ttf"), fontWeight: 400 },
+    { src: path.join(fontsDir, "PlayfairDisplay-Bold.ttf"), fontWeight: 700 },
   ],
 });
 
 Font.register({
   family: "Inter",
   fonts: [
-    {
-      src: "https://fonts.gstatic.com/s/inter/v20/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuLyfMZg.ttf",
-      fontWeight: 400,
-    },
-    {
-      src: "https://fonts.gstatic.com/s/inter/v20/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuGKYMZg.ttf",
-      fontWeight: 600,
-    },
-    {
-      src: "https://fonts.gstatic.com/s/inter/v20/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuFuYMZg.ttf",
-      fontWeight: 700,
-    },
+    { src: path.join(fontsDir, "Inter-Regular.ttf"), fontWeight: 400 },
+    { src: path.join(fontsDir, "Inter-SemiBold.ttf"), fontWeight: 600 },
+    { src: path.join(fontsDir, "Inter-Bold.ttf"), fontWeight: 700 },
   ],
 });
 

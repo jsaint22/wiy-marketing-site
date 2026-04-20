@@ -20,40 +20,23 @@ import {
 /*  Fonts                                                              */
 /* ------------------------------------------------------------------ */
 
+const fontsDir = path.join(process.cwd(), "public", "fonts");
+
 Font.register({
   family: "Playfair Display",
   fonts: [
-    {
-      src: "https://fonts.gstatic.com/s/playfairdisplay/v40/nuFvD-vYSZviVYUb_rj3ij__anPXJzDwcbmjWBN2PKdFvUDQ.ttf",
-      fontWeight: 400,
-    },
-    {
-      src: "https://fonts.gstatic.com/s/playfairdisplay/v40/nuFRD-vYSZviVYUb_rj3ij__anPXDTnCjmHKM4nYO7KN_qiTbtY.ttf",
-      fontWeight: 400,
-      fontStyle: "italic",
-    },
-    {
-      src: "https://fonts.gstatic.com/s/playfairdisplay/v40/nuFvD-vYSZviVYUb_rj3ij__anPXJzDwcbmjWBN2PKeiukDQ.ttf",
-      fontWeight: 700,
-    },
+    { src: path.join(fontsDir, "PlayfairDisplay-Regular.ttf"), fontWeight: 400 },
+    { src: path.join(fontsDir, "PlayfairDisplay-Italic.ttf"), fontWeight: 400, fontStyle: "italic" },
+    { src: path.join(fontsDir, "PlayfairDisplay-Bold.ttf"), fontWeight: 700 },
   ],
 });
 
 Font.register({
   family: "Inter",
   fonts: [
-    {
-      src: "https://fonts.gstatic.com/s/inter/v20/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuLyfMZg.ttf",
-      fontWeight: 400,
-    },
-    {
-      src: "https://fonts.gstatic.com/s/inter/v20/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuGKYMZg.ttf",
-      fontWeight: 600,
-    },
-    {
-      src: "https://fonts.gstatic.com/s/inter/v20/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuFuYMZg.ttf",
-      fontWeight: 700,
-    },
+    { src: path.join(fontsDir, "Inter-Regular.ttf"), fontWeight: 400 },
+    { src: path.join(fontsDir, "Inter-SemiBold.ttf"), fontWeight: 600 },
+    { src: path.join(fontsDir, "Inter-Bold.ttf"), fontWeight: 700 },
   ],
 });
 
@@ -468,7 +451,60 @@ export default function AumMathPDF() {
         </Text>
       </Page>
 
-      {/* ========== PAGE 2 — INTRODUCTION ========== */}
+      {/* ========== PAGE 2 — EXECUTIVE SUMMARY ========== */}
+      <Page size="LETTER" style={s.page}>
+        <Text style={s.h2}>Executive Summary</Text>
+        <View style={s.goldDivider} />
+
+        <Text style={s.body}>
+          A 1% AUM fee does not cost you 1%. It costs you the compounded growth
+          of that 1%, every year, for decades. This report shows the exact math.
+        </Text>
+
+        {/* Mini table */}
+        <View style={[s.tableHeader, { marginTop: 16 }]}>
+          <Text style={[s.tableHeaderCell, { flex: 1.2 }]}>Starting NW</Text>
+          <Text style={s.tableHeaderCell}>20-Year Benefit</Text>
+          <Text style={s.tableHeaderCell}>30-Year Benefit</Text>
+        </View>
+        {wealthLevels.map((nw, i) => {
+          const r20 = projectFees(nw, 20);
+          const r30 = projectFees(nw, 30);
+          return (
+            <View key={nw} style={i % 2 === 0 ? s.tableRow : s.tableRowAlt}>
+              <Text style={[s.tableCellBold, { flex: 1.2, color: color.primary }]}>
+                {wealthLabel(nw)}
+              </Text>
+              <Text style={[s.tableCell, { color: color.success, fontWeight: 700 }]}>
+                {formatUSD(r20.portfolioBenefit)}
+              </Text>
+              <Text style={[s.tableCell, { color: color.success, fontWeight: 700 }]}>
+                {formatUSD(r30.portfolioBenefit)}
+              </Text>
+            </View>
+          );
+        })}
+
+        <Text style={[s.bodySmall, { marginTop: 12, color: color.muted }]}>
+          Portfolio benefit = additional portfolio value you keep with flat fees vs. 1% AUM,
+          accounting for lost compounding on fees paid. 7% annual growth assumed.
+        </Text>
+
+        <View style={[s.cardAccent, { marginTop: 20 }]}>
+          <Text style={{ fontSize: 11, color: "#FFFFFFCC", textAlign: "center", lineHeight: 1.6 }}>
+            At $5M over 30 years, your portfolio is{" "}
+            <Text style={{ color: color.secondary, fontWeight: 700 }}>
+              {formatUSD(proj5M_30.portfolioBenefit)}
+            </Text>
+            {" "}larger with flat fees.{"\n"}
+            The rest of this report shows you how.
+          </Text>
+        </View>
+
+        <Footer pageNumber={2} />
+      </Page>
+
+      {/* ========== PAGE 3 — INTRODUCTION ========== */}
       <Page size="LETTER" style={s.page}>
         <Text style={s.h2}>Introduction</Text>
         <View style={s.goldDivider} />
@@ -519,7 +555,7 @@ export default function AumMathPDF() {
           </Text>
         </View>
 
-        <Footer pageNumber={2} />
+        <Footer pageNumber={3} />
       </Page>
 
       {/* ========== PAGE 3 — HOW AUM FEES WORK ========== */}
@@ -580,7 +616,7 @@ export default function AumMathPDF() {
           </Text>
         </View>
 
-        <Footer pageNumber={3} />
+        <Footer pageNumber={4} />
       </Page>
 
       {/* ========== PAGE 4 — YEAR 1 MATH ========== */}
@@ -649,7 +685,7 @@ export default function AumMathPDF() {
           </Text>
         </View>
 
-        <Footer pageNumber={4} />
+        <Footer pageNumber={5} />
       </Page>
 
       {/* ========== PAGE 5 — 20-YEAR COMPOUNDING ========== */}
@@ -745,7 +781,7 @@ export default function AumMathPDF() {
           figures pre-tax and illustrative.
         </Text>
 
-        <Footer pageNumber={5} />
+        <Footer pageNumber={6} />
       </Page>
 
       {/* ========== PAGE 6 — 30-YEAR OUTLOOK ========== */}
@@ -848,7 +884,7 @@ export default function AumMathPDF() {
           portfolio value annually.
         </Text>
 
-        <Footer pageNumber={6} />
+        <Footer pageNumber={7} />
       </Page>
 
       {/* ========== PAGE 7 — WHAT YOU COULD DO ========== */}
@@ -923,7 +959,7 @@ export default function AumMathPDF() {
           </Text>
         </View>
 
-        <Footer pageNumber={7} />
+        <Footer pageNumber={8} />
       </Page>
 
       {/* ========== PAGE 8 — WHY ADVISORS DON'T SHOW YOU THIS ========== */}
@@ -978,7 +1014,7 @@ export default function AumMathPDF() {
           </Text>
         </View>
 
-        <Footer pageNumber={8} />
+        <Footer pageNumber={9} />
       </Page>
 
       {/* ========== PAGE 9 — METHODOLOGY ========== */}
@@ -1050,7 +1086,7 @@ export default function AumMathPDF() {
           </View>
         </View>
 
-        <Footer pageNumber={9} />
+        <Footer pageNumber={10} />
       </Page>
 
       {/* ========== PAGE 10 — YOUR NUMBERS ========== */}
@@ -1171,7 +1207,7 @@ export default function AumMathPDF() {
           </View>
         </Link>
 
-        <Footer pageNumber={10} />
+        <Footer pageNumber={11} />
       </Page>
 
       {/* ========== PAGE 11 — ABOUT ========== */}
@@ -1237,7 +1273,7 @@ export default function AumMathPDF() {
           </Text>
         </View>
 
-        <Footer pageNumber={11} />
+        <Footer pageNumber={12} />
       </Page>
     </Document>
   );
