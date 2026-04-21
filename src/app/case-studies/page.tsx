@@ -20,13 +20,13 @@ const caseStudies = [
     challenge:
       "Leaving $69K+ of annual tax-advantaged retirement contributions on the table. C-Corp structure creating double taxation on distributions. No quarterly tax planning cadence with CPA.",
     approach: [
-      "Elected S-Corp status and set reasonable salary at $250K — reducing self-employment tax on remaining distributions",
+      "Coordinated S-Corp election with CPA and set reasonable salary at $250K — reducing self-employment tax on remaining distributions",
       "Established Solo 401(k) with $69,000 in combined employee/employer contributions (Year 1)",
       "Built quarterly tax projection cadence with coordinated CPA",
       "Rebalanced retirement allocation from 100% target-date fund to low-cost, tax-efficient index portfolio",
     ],
     outcome:
-      "$47,000 in year-one tax savings between S-Corp election and retirement contributions. Ongoing annual tax advantage of ~$35,000. WIY annual fee: $17,000 — paid for itself 2.7x in Year 1 alone.",
+      "$47,000 in year-one tax savings between S-Corp election and retirement contributions. Ongoing annual tax advantage of ~$35,000. WIY annual fee: $17,000.",
     icon: "M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4",
     segment: "Business Owners",
     segmentHref: "/for-business-owners",
@@ -43,11 +43,11 @@ const caseStudies = [
     approach: [
       "Coordinated cost segregation studies on 4 highest-basis properties (combined basis: $2.1M)",
       "Structured 1031 exchange for a pending $520K sale into two replacement properties",
-      "Established series LLC structure with each property in its own series for lawsuit isolation",
+      "Coordinated with qualified legal counsel to establish series LLC structure with each property in its own series",
       "Integrated accelerated depreciation into overall tax strategy to offset W-2 income via Real Estate Professional Status analysis",
     ],
     outcome:
-      "$62,000 in Year 1 tax deferral through cost segregation. Additional $80,000 deferred via 1031 exchange. Series LLC in place 8 months before a tenant slip-and-fall claim — liability isolated to a single property. WIY annual fee: $21,000.",
+      "$62,000 in Year 1 tax deferral through cost segregation. Additional $80,000 deferred via 1031 exchange. Working with qualified legal counsel, a series LLC structure was established — providing legal separation between properties. WIY annual fee: $21,000.",
     icon: "M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6",
     segment: "Real Estate Investors",
     segmentHref: "/for-real-estate-investors",
@@ -68,7 +68,7 @@ const caseStudies = [
       "Built healthcare bridge plan: ACA eligibility by managing MAGI below 400% FPL during conversion years, with expat insurance as backup",
     ],
     outcome:
-      "7 additional years of financial runway vs. their original plan (money lasts to 88, not 81). $150K+ in projected lifetime tax savings from the Roth conversion ladder. Clear month-by-month retirement income plan they can actually follow. WIY annual fee: $13,500.",
+      "7 additional years of projected financial runway vs. their original plan (money lasts to 88, not 81), based on Monte Carlo analysis with historical return assumptions. $150K+ in projected lifetime tax savings from the Roth conversion ladder, dependent on future tax rates and conversion timing. Clear month-by-month retirement income plan they can actually follow. WIY annual fee: $13,500.",
     icon: "M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z",
     segment: "FIRE Followers",
     segmentHref: "/for-fire-followers",
@@ -85,10 +85,10 @@ export default function CaseStudiesPage() {
             Case Studies
           </p>
           <h1 className="text-4xl sm:text-5xl font-bold text-primary">
-            The fee paid for itself. Every time.
+            Real planning. Real results.
           </h1>
           <p className="mt-6 text-lg text-neutral-dark/70 max-w-2xl mx-auto">
-            Three real planning scenarios. Three different financial lives. In each case, the value delivered in Year 1 exceeded the annual fee — and the benefits compound from there.
+            Three planning scenarios. Three different financial lives. Each illustrates how coordinated tax, investment, and life planning creates measurable value.
           </p>
         </div>
       </section>
@@ -189,7 +189,7 @@ export default function CaseStudiesPage() {
       <section className="bg-neutral-bg py-10">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-sm text-neutral-dark/70 text-center leading-relaxed">
-            These case studies are anonymized composites for illustrative purposes. Individual results vary based on personal financial circumstances. No guarantee of similar outcomes. Past results do not guarantee future performance. Tax savings and financial projections referenced are based on specific circumstances and should not be interpreted as typical or expected results.
+            These case studies are hypothetical composites created for illustrative purposes only. They do not represent the experience of any actual client. The scenarios, strategies, and outcomes described are based on specific assumed circumstances and may not be applicable to your situation. Tax savings figures are estimates based on tax law in effect at the time of analysis; tax laws change and individual results depend on personal circumstances, implementation, and applicable law at the time of filing. Financial projections involve assumptions about future market conditions, tax rates, and spending patterns that may not materialize. No guarantee of similar outcomes is made or implied. Past results — whether actual or illustrative — do not guarantee future performance. Wealth In Yourself is a registered investment adviser. This content does not constitute personalized investment, tax, or legal advice. Consult qualified professionals regarding your specific situation.
           </p>
         </div>
       </section>
