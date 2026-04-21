@@ -49,9 +49,7 @@ const color = {
   checkBorder: "#C9A449",
 };
 
-const LOGO_URL = process.env.NEXT_PUBLIC_ENVIRONMENT === "production"
-  ? "https://wealthinyourself.com/logos/wiy-logo-stacked.png"
-  : "https://wiy-marketing-site.vercel.app/logos/wiy-logo-stacked.png";
+const LOGO_WHITE = path.join(process.cwd(), "public", "logos", "wiy-logo-stacked-white.png");
 const BOOKING_URL = "https://links.wealthinyourself.com/widget/bookings/wiy-15-min-call";
 
 /* ------------------------------------------------------------------ */
@@ -264,7 +262,7 @@ export function REInvestorChecklistPDF() {
     <Document>
       {/* Cover */}
       <Page size="LETTER" style={s.coverPage}>
-        <Image src={LOGO_URL} style={{ width: 140, marginBottom: 30, opacity: 0.9 }} />
+        <Image src={LOGO_WHITE} style={{ width: 140, marginBottom: 30 }} />
         <Text style={s.coverTitle}>
           The Real Estate Investor&apos;s{"\n"}Tax Strategy Checklist
         </Text>
@@ -346,7 +344,7 @@ export function BusinessOwnerRoadmapPDF() {
   return (
     <Document>
       <Page size="LETTER" style={s.coverPage}>
-        <Image src={LOGO_URL} style={{ width: 140, marginBottom: 30, opacity: 0.9 }} />
+        <Image src={LOGO_WHITE} style={{ width: 140, marginBottom: 30 }} />
         <Text style={s.coverTitle}>
           The Entrepreneur&apos;s{"\n"}Wealth Extraction Roadmap
         </Text>
@@ -419,7 +417,7 @@ export function W2EscapePlanPDF() {
   return (
     <Document>
       <Page size="LETTER" style={s.coverPage}>
-        <Image src={LOGO_URL} style={{ width: 140, marginBottom: 30, opacity: 0.9 }} />
+        <Image src={LOGO_WHITE} style={{ width: 140, marginBottom: 30 }} />
         <Text style={s.coverTitle}>
           The W-2 Escape Plan
         </Text>
@@ -529,16 +527,29 @@ export function W2EscapePlanPDF() {
         </View>
 
         <View style={s.ctaBox}>
-          <Text style={{ fontSize: 10, color: color.primary, lineHeight: 1.5 }}>
-            Want help filling this in? Book a 15-minute call and we&apos;ll walk
-            through your specific numbers — runway, entity choice, tax
-            architecture, and timing. No pitch. Just math.
+          <Text style={s.ctaTitle}>Ready to build your escape plan?</Text>
+          <Text style={s.body}>
+            The difference between a stressful leap and a calculated transition
+            is a few hours of financial architecture work. Runway math, entity
+            setup, tax optimization, and income sequencing — that&apos;s what we
+            build together.
           </Text>
+          <Text style={s.body}>
+            Book a complimentary 15-minute intro call. We&apos;ll talk about
+            your timeline, your runway, and whether flat-fee planning is the
+            right fit.
+          </Text>
+          <Text style={{ fontSize: 9, color: color.muted, marginTop: 10, marginBottom: 10 }}>
+            Josh St. Laurent, CFP®, CFT™, APFC®, ACC, MS — Founder, Wealth In Yourself
+          </Text>
+          <Link src={BOOKING_URL}>
+            <Text style={s.ctaLink}>
+              Book a 15-minute intro call →
+            </Text>
+          </Link>
         </View>
         <Footer />
       </Page>
-
-      <CTAPage variant="w2-escape" />
     </Document>
   );
 }

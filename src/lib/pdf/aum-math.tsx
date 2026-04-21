@@ -344,6 +344,7 @@ function yearOneTable() {
 /* ------------------------------------------------------------------ */
 
 const logoPath = path.join(process.cwd(), "public", "logos", "wiy-logo-stacked.png");
+const logoWhitePath = path.join(process.cwd(), "public", "logos", "wiy-logo-stacked-white.png");
 
 export default function AumMathPDF() {
   const table = yearOneTable();
@@ -382,7 +383,7 @@ export default function AumMathPDF() {
           }}
         >
           <Image
-            src={logoPath}
+            src={logoWhitePath}
             style={{ width: 100, height: 100, marginBottom: 40 }}
           />
           <Text
@@ -424,7 +425,7 @@ export default function AumMathPDF() {
               marginBottom: 6,
             }}
           >
-            By Joshua St. Laurent, CFP®, CFT™
+            By Joshua St. Laurent, CFP®, CFT™, APFC®, ACC, MS
           </Text>
           <Text
             style={{
@@ -512,11 +513,10 @@ export default function AumMathPDF() {
         <View style={s.pullquote}>
           <Text style={s.pullquoteText}>
             &ldquo;When most advisors quote you a 1% AUM fee, they say something
-            like &lsquo;It&rsquo;s just one percent.&rsquo;{"\n"}
-            That&rsquo;s the line. &lsquo;Just one percent.&rsquo;{"\n"}
-            The math says otherwise. Over a 20-year career, 1% compounds into
-            something most clients have never seen laid out.{"\n"}
-            This report is the math.&rdquo;
+            like &lsquo;It&rsquo;s just one percent.&rsquo; That&rsquo;s the
+            line. &lsquo;Just one percent.&rsquo; The math says otherwise. Over
+            a 20-year career, 1% compounds into something most clients have
+            never seen laid out. This report is the math.&rdquo;
           </Text>
         </View>
 
@@ -1220,7 +1220,7 @@ export default function AumMathPDF() {
             Joshua St. Laurent is a CERTIFIED FINANCIAL PLANNER™ professional,
             Certified Financial Therapist™, Accredited Personal Financial
             Coach®, Associate Certified Coach, and holds a Master of Science
-            in Financial Planning. He founded Wealth In Yourself to deliver
+            in Advanced Financial Life Planning. He founded Wealth In Yourself to deliver
             institutional-quality financial planning at a flat fee — because
             Josh believes the way advisors get paid should never compromise the
             advice clients receive.
