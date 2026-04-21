@@ -1,13 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
-import { renderToBuffer } from "@react-pdf/renderer";
-import React from "react";
+import { readFileSync } from "fs";
+import { join } from "path";
 import { appendSubscriber } from "@/lib/subscribers";
-import {
-  REInvestorChecklistPDF,
-  BusinessOwnerRoadmapPDF,
-  W2EscapePlanPDF,
-} from "@/lib/pdf/lead-magnet-pdf";
 
 export const dynamic = "force-dynamic";
 
@@ -18,8 +13,6 @@ const LEAD_MAGNETS: Record<
     tag: string;
     description: string;
     filename: string;
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    pdf: () => React.ReactElement<any>;
   }
 > = {
   "re-investor-checklist": {
@@ -28,7 +21,6 @@ const LEAD_MAGNETS: Record<
     description:
       "The Real Estate Investor's Tax Strategy Checklist — 16 questions your advisory team should be answering about 1031 exchanges, cost segregation, entity structure, depreciation recapture, QBI, and more.",
     filename: "RE-Investor-Tax-Strategy-Checklist-WIY.pdf",
-    pdf: () => React.createElement(REInvestorChecklistPDF),
   },
   "business-owner-roadmap": {
     subject: "Your Entrepreneur's Wealth Extraction Roadmap",
@@ -36,7 +28,6 @@ const LEAD_MAGNETS: Record<
     description:
       "The Entrepreneur's Wealth Extraction Roadmap — covering valuation, entity structure, QSBS, cash flow modeling, succession planning, and the full advisory team you need before you exit.",
     filename: "Entrepreneurs-Wealth-Extraction-Roadmap-WIY.pdf",
-    pdf: () => React.createElement(BusinessOwnerRoadmapPDF),
   },
   "w2-escape-plan": {
     subject: "Your W-2 Escape Plan Checklist",
@@ -44,7 +35,6 @@ const LEAD_MAGNETS: Record<
     description:
       "The W-2 Escape Plan — a financial readiness checklist covering runway math, health insurance, entity setup, retirement accounts, income replacement, and the timeline to go independent.",
     filename: "W2-Escape-Plan-Financial-Checklist-WIY.pdf",
-    pdf: () => React.createElement(W2EscapePlanPDF),
   },
 };
 
@@ -74,8 +64,9 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Generate PDF
-    const pdfBuffer = await renderToBuffer(config.pdf());
+    // Load pre-generated static PDF (verified by test suite, not generated at runtime)
+    const pdfPath = join(process.cwd(), "public", "pdfs", config.filename);
+    const pdfBuffer = readFileSync(pdfPath);
 
     // Send email with PDF attached
     const resend = new Resend(process.env.RESEND_API_KEY);
@@ -100,7 +91,7 @@ This is educational content and is not tax, legal, or investment advice. Discuss
       attachments: [
         {
           filename: config.filename,
-          content: Buffer.from(pdfBuffer),
+          content: pdfBuffer,
         },
       ],
     });

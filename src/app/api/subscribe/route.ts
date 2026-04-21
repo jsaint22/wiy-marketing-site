@@ -1,8 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
-import { renderToBuffer } from "@react-pdf/renderer";
-import React from "react";
-import AumMathPDF from "@/lib/pdf/aum-math";
+import { readFileSync } from "fs";
+import { join } from "path";
 import { appendSubscriber } from "@/lib/subscribers";
 
 async function createGhlContact(email: string) {
@@ -39,10 +38,9 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Generate PDF
-    const pdfBuffer = await renderToBuffer(
-      React.createElement(AumMathPDF)
-    );
+    // Load pre-generated static PDF (verified by test suite, not generated at runtime)
+    const pdfPath = join(process.cwd(), "public", "pdfs", "aum-math.pdf");
+    const pdfBuffer = readFileSync(pdfPath);
 
     // Send email with PDF attached
     const resend = new Resend(process.env.RESEND_API_KEY);
@@ -65,7 +63,7 @@ Josh`,
       attachments: [
         {
           filename: "aum-math.pdf",
-          content: Buffer.from(pdfBuffer),
+          content: pdfBuffer,
         },
       ],
     });
