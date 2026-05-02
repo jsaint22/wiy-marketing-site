@@ -41,9 +41,9 @@ const comparisonRows = [
     wiy: "Zero. Fee is independent of asset allocation decisions.",
   },
   {
-    label: "CPA, attorney, insurance coordination",
+    label: "CPA, attorney, specialist coordination",
     aum: "You find and manage them yourself",
-    wiy: "Vetted VFO partner network — coordinated and included",
+    wiy: "Coordination with selected specialists — included when your situation calls for outside expertise",
   },
   {
     label: "Meeting frequency",
