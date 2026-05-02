@@ -3,202 +3,103 @@ import CTASection from "@/components/CTASection";
 import SectionHeading from "@/components/SectionHeading";
 
 export const metadata: Metadata = {
-  title: "Referral Partners \u2014 CPAs, Attorneys, and Financial Professionals",
+  title: "For Professional Partners",
   description:
-    "Partner with Wealth In Yourself to provide your clients with flat-fee, fiduciary financial planning. No referral fees. Coordinated planning. Your clients stay your clients.",
+    "Partner with Wealth In Yourself to provide your clients with coordinated, flat-fee, fiduciary financial planning. Direct relationships. No referral fees. Your clients stay your clients.",
 };
-
-const idealClients = [
-  {
-    title: "Entrepreneurs & Business Owners",
-    description:
-      "Founders with complex entity structures, tax situations, and exit planning needs who have outgrown basic financial advice.",
-  },
-  {
-    title: "Real Estate Investors",
-    description:
-      "Clients with multiple properties, 1031 exchange needs, cost segregation opportunities, and passive income classification questions.",
-  },
-  {
-    title: "High Net Worth Individuals",
-    description:
-      "Clients with $1M+ in net worth who need coordinated planning across tax, investments, estate, and insurance.",
-  },
-  {
-    title: "Complex Tax Situations",
-    description:
-      "Multi-entity owners, clients with stock compensation, Roth conversion opportunities, or charitable giving strategies that need proactive planning.",
-  },
-];
-
-const howWeWork = [
-  {
-    title: "No Referral Fees",
-    description:
-      "We don\u2019t pay referral fees and we don\u2019t accept them. Our only obligation is to the client. This keeps the relationship clean and the advice unconflicted.",
-  },
-  {
-    title: "Coordinated Planning",
-    description:
-      "We work directly with you. Tax projections, entity decisions, estate plans, and insurance reviews are coordinated \u2014 not made in a vacuum. You stay informed on the financial strategy that affects your work.",
-  },
-  {
-    title: "Shared Clients Stay Shared",
-    description:
-      "We don\u2019t compete with you. Your CPA relationship, your legal work, your insurance expertise \u2014 we respect the lanes. Clients get better outcomes when their advisors work together.",
-  },
-  {
-    title: "Regular Communication",
-    description:
-      "When we make a recommendation that touches your area \u2014 a Roth conversion, an entity restructure, a trust amendment \u2014 we loop you in before the client acts. No surprises.",
-  },
-];
-
-const services = [
-  "Life Planning",
-  "Tax Strategy",
-  "Investment Planning",
-  "Insurance Review",
-  "Estate Planning Coordination",
-  "Entity & Business Owner Planning",
-  "Real Estate Portfolio Coordination",
-  "Financial Therapy & Behavioral Coaching",
-  "Charitable Giving & Philanthropy Coordination",
-];
 
 export default function ForPartnersPage() {
   return (
     <>
       {/* Hero */}
       <section className="bg-white py-10 sm:py-16 lg:py-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-secondary font-semibold text-sm uppercase tracking-wider mb-4">
-            For CPAs, Attorneys & Financial Professionals
+            For Professional Partners
           </p>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary leading-tight">
-            A Planning Partner Your Clients Will Thank You For
+            For Professional Partners
           </h1>
           <p className="mt-6 text-lg sm:text-xl text-neutral-dark/70 leading-relaxed max-w-3xl mx-auto">
-            Your clients deserve financial planning that works with your
-            expertise, not around it. We coordinate directly with you to deliver
-            comprehensive, flat-fee fiduciary planning &mdash; so your clients
-            get better outcomes and you get a partner you can trust.
+            We work with a small set of trusted professionals &mdash; tax
+            preparers, estate attorneys, exit planning specialists, entity
+            formation services &mdash; to deliver coordinated financial planning
+            to our clients. The relationships are direct, informal, and based on
+            our experience working with each professional rather than formal
+            referral arrangements.
           </p>
         </div>
       </section>
 
-      {/* Who We're a Good Fit For */}
+      {/* Who We Serve */}
       <section className="bg-neutral-bg py-10 sm:py-14">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
-            eyebrow="Ideal Referrals"
-            title="Who we&apos;re a good fit for."
-            subtitle="If your client has any of these characteristics, we can help."
+            eyebrow="Our Clients"
+            title="Who we serve."
           />
-          <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            {idealClients.map((client) => (
-              <div
-                key={client.title}
-                className="bg-white rounded-xl p-6 border border-neutral-bg"
-              >
-                <h3 className="text-lg font-bold text-primary">
-                  {client.title}
-                </h3>
-                <p className="mt-2 text-sm text-neutral-dark/70 leading-relaxed">
-                  {client.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* How We Work Together */}
-      <section className="bg-white py-10 sm:py-14">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            eyebrow="Our Approach"
-            title="How we work together."
-            subtitle="We built our practice to complement yours &mdash; not compete with it."
-          />
-          <div className="mt-12 space-y-8 max-w-2xl mx-auto">
-            {howWeWork.map((item) => (
-              <div key={item.title} className="flex items-start gap-4">
-                <div className="flex-shrink-0 mt-1">
-                  <svg
-                    className="w-5 h-5 text-success"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                </div>
-                <div>
-                  <h3 className="font-bold text-primary">{item.title}</h3>
-                  <p className="mt-1 text-neutral-dark/70 leading-relaxed">
-                    {item.description}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* What Your Clients Get */}
-      <section className="bg-neutral-bg py-10 sm:py-14">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            eyebrow="Client Experience"
-            title="What your clients get."
-            subtitle="One flat fee. Nine services. A Virtual Family Office model that coordinates every piece of their financial life."
-          />
-          <div className="mt-10 max-w-2xl mx-auto">
-            <div className="bg-white rounded-xl p-6 border border-neutral-bg">
-              <h3 className="font-bold text-primary mb-4">
-                The Full VFO Service Suite
-              </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {services.map((service) => (
-                  <div key={service} className="flex items-center gap-2">
-                    <svg
-                      className="w-4 h-4 text-secondary flex-shrink-0"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                    <span className="text-sm text-neutral-dark/80">
-                      {service}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <p className="mt-6 text-center text-sm text-neutral-dark/70">
-              Every client gets access to a private portal, unlimited meetings,
-              and direct access to their planner. No call centers. No
-              hand-offs.
+          <div className="mt-10 text-neutral-dark/80 text-lg leading-relaxed">
+            <p>
+              If you&apos;re a professional who serves clients with overlap in
+              our space &mdash; first-generation entrepreneurs, real estate
+              investors, professionals building toward financial independence
+              &mdash; we&apos;d be glad to learn about your work and explore
+              whether collaboration makes sense.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Introduce a Client */}
+      {/* What We Look For */}
+      <section className="bg-white py-10 sm:py-14">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeading
+            eyebrow="Collaboration"
+            title="What we look for in collaborators."
+          />
+          <div className="mt-10 space-y-6 text-neutral-dark/80 text-lg leading-relaxed">
+            <p>
+              Direct, practitioner-level expertise in your specialty. A track
+              record with clients in our wealth tier. A communication style that
+              matches ours &mdash; clear, unhurried, decisive. The willingness
+              to coordinate rather than compete for client attention.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* What Collaboration Looks Like */}
+      <section className="bg-neutral-bg py-10 sm:py-14">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeading
+            eyebrow="The Process"
+            title="What collaboration looks like."
+          />
+          <div className="mt-10 space-y-6 text-neutral-dark/80 text-lg leading-relaxed">
+            <p>
+              Our clients come to you with the financial context already
+              prepared. You handle the specialty work. We coordinate the
+              introduction, brief you in advance, and stay involved throughout
+              the engagement so the client experiences a single coordinated
+              process rather than a handoff between disconnected professionals.
+            </p>
+            <p>
+              We do not currently maintain formal referral arrangements with our
+              collaborators. Compensation does not flow between us in either
+              direction. If your firm structure would benefit from a more formal
+              arrangement, we&apos;re open to the conversation, but it&apos;s
+              not the default.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
       <section className="bg-white py-10 sm:py-14">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <SectionHeading
             eyebrow="Get in Touch"
-            title="Introduce a client."
-            subtitle="If you have a client who could benefit from coordinated, flat-fee planning, we&apos;d love to connect."
+            title="If this resonates, let\u2019s talk."
           />
           <div className="mt-8 space-y-4">
             <p className="text-lg text-neutral-dark/70 leading-relaxed">
@@ -223,7 +124,6 @@ export default function ForPartnersPage() {
         </div>
       </section>
 
-      {/* CTA */}
       <CTASection
         headline="Let&apos;s build a better experience for your clients."
         subtext="No referral fees. No competition. Just coordinated planning that makes everyone&apos;s work better."

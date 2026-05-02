@@ -222,14 +222,14 @@ export default function HomePage() {
           <SectionHeading
             eyebrow="The Virtual Family Office"
             title="The planning infrastructure of the ultra-wealthy. Without the eight-figure price tag."
-            subtitle="A Virtual Family Office coordinates your tax strategy, investments, insurance, estate plan, and business structure into one system. Typically reserved for $50M+ families. We built it into every client engagement."
+            subtitle="A Virtual Family Office coordinates your tax strategy, investments, estate plan, and business structure into one system &mdash; bringing in outside specialists when your situation calls for them. Typically reserved for $50M+ families. We built it into every client engagement."
           />
           <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               { title: "Tax Strategy", desc: "Proactive tax planning, not just filing. We find the money your CPA leaves on the table." },
               { title: "Investment Planning", desc: "Low-cost, evidence-based portfolios. No proprietary products. No commissions." },
               { title: "Life Planning", desc: "We start with what you want your life to look like. The financial structure exists to serve that vision, not the other way around." },
-              { title: "Insurance & Estate", desc: "Coverage that actually protects your family. Estate documents that reflect your values." },
+              { title: "Estate & Risk Review", desc: "Estate documents that reflect your values. Coverage reviewed so nothing is overlooked." },
               { title: "Business Structure", desc: "Entity optimization, retirement plan design, and cash flow strategy for business owners." },
               { title: "One Flat Fee", desc: "All of this, coordinated. No AUM percentage. No hidden costs. One transparent monthly fee." },
             ].map((item) => (

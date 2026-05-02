@@ -37,7 +37,7 @@ const categories: FAQCategory[] = [
       {
         question: "What makes you different from other financial advisors?",
         answer:
-          "Three things. First, we charge a flat fee — not a percentage of your assets — so our incentive is the quality of our advice, not the size of your account. Second, we start with your life, not your money. Values-based planning and financial therapy come before spreadsheets. Third, we operate as a Virtual Family Office — you get a coordinated team (CPA, estate attorney, insurance specialist) instead of one advisor trying to do everything alone.",
+          "Three things. First, we charge a flat fee — not a percentage of your assets — so our incentive is the quality of our advice, not the size of your account. Second, we start with your life, not your money. Values-based planning and financial therapy come before spreadsheets. Third, we operate as a Virtual Family Office — we coordinate with selected specialists when your situation calls for outside expertise, so every part of your financial life works together.",
       },
       {
         question: "Are you a fiduciary?",
@@ -84,7 +84,7 @@ const categories: FAQCategory[] = [
       {
         question: "What's included in the fee?",
         answer:
-          "Everything. Life planning, tax strategy, investment management, insurance review, estate coordination, business planning, and real estate investor planning. One fee covers it all — no add-ons, no surprise invoices. If it touches your financial life, it's covered.",
+          "Everything. Life planning, tax strategy, investment management, estate coordination, business planning, and real estate investor planning. One fee covers it all — no add-ons, no surprise invoices. If it touches your financial life, it's covered.",
       },
     ],
   },
@@ -147,7 +147,7 @@ const categories: FAQCategory[] = [
         question:
           "What about insurance — do you sell policies?",
         answer:
-          "We don't sell insurance. We review what you have, identify gaps or overages, and recommend changes when they make sense. If you need a new policy, we'll connect you with an independent insurance specialist — not a captive agent trying to sell you the most expensive option.",
+          "We don't sell insurance and we don't earn commissions. We review what you have, identify gaps or overages, and recommend changes when they make sense. If you need a new policy, we help you evaluate your options independently.",
       },
     ],
   },

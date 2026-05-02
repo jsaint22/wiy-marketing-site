@@ -6,7 +6,7 @@ import FAQSection from "@/components/FAQSection";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Flat fee financial planning from a fiduciary advisor. Life planning, tax strategy, investment management, insurance review, estate coordination, and planning for business owners and real estate investors.",
+    "Flat fee financial planning from a fiduciary advisor. Life planning, tax strategy, investment management, estate coordination, and planning for business owners and real estate investors.",
 };
 
 const services = [
@@ -29,9 +29,9 @@ const services = [
     icon: "M13 7h8m0 0v8m0-8l-8 8-4-4-6 6",
   },
   {
-    title: "Insurance Review",
+    title: "Risk & Coverage Review",
     description:
-      "Most people are over-insured in the wrong places and exposed where it matters. We audit your coverage — life, disability, umbrella, long-term care — and tell you what you actually need. We don't sell insurance. We never earn a commission.",
+      "Most people are over-insured in the wrong places and exposed where it matters. We review your coverage — life, disability, umbrella, long-term care — and tell you what you actually need. We don't sell insurance and we never earn a commission.",
     icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z",
   },
   {
@@ -85,7 +85,7 @@ const faqs = [
   {
     question: "Do you sell insurance?",
     answer:
-      "We don't sell insurance. Within our Virtual Family Office model, we coordinate with independent insurance professionals to analyze coverage gaps and help you evaluate options. You pay them directly if you need coverage. We receive no commissions, ever.",
+      "We don't sell insurance and we don't earn commissions. We review your coverage, identify gaps or overages, and recommend changes when they make sense. If you need a new policy, we help you evaluate your options independently.",
   },
   {
     question: "How does the flat fee work?",
@@ -124,9 +124,8 @@ export default function ServicesPage() {
           <p className="mt-6 text-lg text-neutral-dark/70 max-w-2xl mx-auto">
             Every service below is included in your flat fee. No add-ons. No
             surprise invoices. Your tax strategy informs your investment plan.
-            Your estate plan reflects your business structure. Your insurance
-            coverage fills the gaps. Nothing operates in a silo because
-            everything is coordinated by one team.
+            Your estate plan reflects your business structure. Nothing
+            operates in a silo because everything is coordinated by one team.
           </p>
         </div>
       </section>
@@ -209,7 +208,7 @@ export default function ServicesPage() {
               {
                 step: "03",
                 title: "Your plan comes to life",
-                text: "A clear, actionable financial plan covering every relevant area — tax, investments, insurance, estate, business, real estate. Not a binder that collects dust. A living strategy you'll actually use, with every piece coordinated.",
+                text: "A clear, actionable financial plan covering every relevant area — tax, investments, estate, business, real estate. Not a binder that collects dust. A living strategy you'll actually use, with every piece coordinated.",
               },
               {
                 step: "04",
