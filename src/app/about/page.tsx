@@ -76,16 +76,16 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Origin Story — Fidelity */}
+      {/* Origin Story */}
       <section className="bg-neutral-bg py-10 sm:py-14">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="The Breaking Point"
-            title="Why I left Fidelity."
+            title="Why I walked away."
           />
           <div className="mt-8 space-y-6 text-neutral-dark/80 text-lg leading-relaxed">
             <p>
-              I spent years at Fidelity. I learned the craft. I also learned
+              I spent a decade in the industry. I learned the craft. I also learned
               how the system actually works &mdash; advisors incentivized to
               gather assets, push products, and keep clients in the dark about
               what they were really paying. The client&apos;s best interest

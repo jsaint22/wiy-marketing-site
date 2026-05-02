@@ -178,7 +178,7 @@ export default function HomePage() {
           </h2>
           <div className="mt-8 space-y-6 text-lg text-white/80 leading-relaxed">
             <p>
-              I spent a decade at Fidelity watching advisors legally switch
+              I spent a decade watching advisors legally switch
               between fiduciary and broker-dealer mode mid-conversation. They
               called it &ldquo;taking off your IA hat and putting on your BD
               hat.&rdquo; It&apos;s legal. It&apos;s common. And almost nobody
