@@ -15,7 +15,7 @@ export default function PrivacyPolicyPage() {
             Privacy Policy
           </h1>
           <p className="mt-4 text-lg text-white/80">
-            Last updated: April 20, 2026
+            Last updated: May 4, 2026
           </p>
         </div>
       </section>
@@ -25,8 +25,8 @@ export default function PrivacyPolicyPage() {
           {/* Section 1 */}
           <h2>1. Firm Identification</h2>
           <p>
-            Wealth In Yourself is a registered investment adviser with the State
-            of Nevada. CRD #322123.
+            Wealth In Yourself LLC is a registered investment adviser with the
+            State of Nevada. CRD #322123.
           </p>
           <ul>
             <li>
@@ -34,7 +34,8 @@ export default function PrivacyPolicyPage() {
               CFT&trade;, APFC&reg;, ACC
             </li>
             <li>
-              <strong>Principal Office:</strong> Lake Tahoe, Nevada
+              <strong>Principal Office:</strong> 195 Highway 50 STE 205, Zephyr
+              Cove, NV 89448
             </li>
             <li>
               <strong>Contact:</strong>{" "}
@@ -47,7 +48,7 @@ export default function PrivacyPolicyPage() {
           {/* Section 2 */}
           <h2>2. Purpose and Scope</h2>
           <p>
-            This Privacy Policy describes how Wealth In Yourself (&ldquo;the
+            This Privacy Policy describes how Wealth In Yourself LLC (&ldquo;the
             Firm,&rdquo; &ldquo;we,&rdquo; &ldquo;us,&rdquo; or
             &ldquo;our&rdquo;) collects, uses, discloses, and protects the
             nonpublic personal information (&ldquo;NPI&rdquo;) and personal
@@ -59,8 +60,10 @@ export default function PrivacyPolicyPage() {
           <p>
             This policy applies to all information collected through our advisory
             services, website (wealthinyourself.com), intake forms,
-            communications, meeting recordings, and technology systems used in
-            the delivery of advisory services.
+            communications, meeting recordings, technology systems used in the
+            delivery of advisory services, and automated and
+            artificial-intelligence-assisted systems used in our planning and
+            operational workflows.
           </p>
 
           {/* Section 3 */}
@@ -108,6 +111,18 @@ export default function PrivacyPolicyPage() {
             <li>Scheduling and calendar information</li>
             <li>Signed agreements and contracts</li>
             <li>Billing and payment information</li>
+            <li>
+              Structured data fields extracted automatically from your
+              communications and meeting transcripts (for example, action items,
+              scheduling commitments, financial figures referenced in
+              conversation, and life-event details mentioned during planning
+              sessions)
+            </li>
+            <li>
+              Operational context derived from interaction patterns (for example,
+              frequency and timing of communications, response patterns, and
+              engagement indicators that inform service delivery)
+            </li>
           </ul>
 
           <h3>3.3 Information We Receive From Third Parties</h3>
@@ -119,7 +134,13 @@ export default function PrivacyPolicyPage() {
               Credit and background information from reporting agencies (only
               with your consent)
             </li>
-            <li>Account aggregation data from linked financial accounts</li>
+            <li>
+              Account aggregation and transaction data from financial accounts
+              you authorize through Plaid-enabled services such as Monarch Money
+              (you authorize the data connection directly with the aggregation
+              service; we receive the resulting financial information for your
+              planning)
+            </li>
             <li>
               Referral information from professionals in your service network
             </li>
@@ -154,6 +175,23 @@ export default function PrivacyPolicyPage() {
               Complying with regulatory requirements, including recordkeeping
               obligations
             </li>
+            <li>
+              Aggregating context across our systems before client meetings to
+              support thorough preparation (for example, surfacing prior
+              conversations, prior decisions, and current account state in a
+              single advisor view)
+            </li>
+            <li>
+              Extracting structured information from communications and meetings
+              to populate client records and reduce manual entry (for example,
+              capturing action items, dates, and decisions in your client record
+              automatically)
+            </li>
+            <li>
+              Surfacing relationship-care moments based on patterns we observe in
+              your communications and engagement with us (for example, noticing a
+              friction point you mentioned and proactively addressing it)
+            </li>
             <li>Improving our advisory processes and client experience</li>
             <li>
               Marketing our services (only with aggregated, de-identified data;
@@ -165,27 +203,80 @@ export default function PrivacyPolicyPage() {
           <h2>5. Artificial Intelligence and Technology Disclosure</h2>
 
           <h3>5.1 Categories of AI Usage</h3>
+          <p>
+            We use artificial intelligence systems, primarily Anthropic&apos;s
+            Claude, to support the following advisory and operational functions:
+          </p>
           <ul>
-            <li>Meeting transcript summarization</li>
-            <li>Email triage</li>
-            <li>Content creation</li>
-            <li>Dashboard management</li>
-            <li>Scheduling automation</li>
-            <li>Financial plan prep support</li>
+            <li>
+              <strong>Meeting transcript summarization</strong> &mdash;
+              generating summaries of recorded meetings for advisor review and
+              client deliverables
+            </li>
+            <li>
+              <strong>Action item and structured data extraction</strong>{" "}
+              &mdash; identifying commitments, dates, decisions, and other
+              structured information from meeting transcripts and
+              communications, then populating your client record
+            </li>
+            <li>
+              <strong>Email triage and drafting</strong> &mdash; categorizing
+              inbound communications and drafting response options for advisor
+              review
+            </li>
+            <li>
+              <strong>Content creation and review support</strong> &mdash;
+              drafting marketing communications, blog posts, and educational
+              content for advisor review prior to publication
+            </li>
+            <li>
+              <strong>Dashboard and workflow management</strong> &mdash;
+              automating routine record-keeping operations and surfacing tasks
+              for advisor attention
+            </li>
+            <li>
+              <strong>Scheduling and calendar automation</strong> &mdash;
+              facilitating meeting coordination
+            </li>
+            <li>
+              <strong>Financial plan preparation support</strong> &mdash;
+              drafting components of financial plans and analyses for advisor
+              review and refinement
+            </li>
+            <li>
+              <strong>Pre-meeting context aggregation</strong> &mdash;
+              assembling relevant prior context from across firm systems to
+              support advisor preparation for upcoming client meetings
+            </li>
+            <li>
+              <strong>Hospitality moment surfacing</strong> &mdash; identifying
+              opportunities for relationship-care gestures based on patterns
+              observed in our interactions with you
+            </li>
           </ul>
 
           <h3>5.2 Human Oversight Commitment</h3>
           <p>
             All AI-generated outputs that are client-facing or that inform
             advisory recommendations are reviewed by Josh St. Laurent before
-            delivery.
+            delivery to you. AI systems do not autonomously send communications,
+            execute transactions, or render advice without advisor review.
           </p>
 
           <h3>5.3 AI Data Handling</h3>
           <p>
             Client data processed by AI systems is subject to the same
-            confidentiality protections. We do not use client data to train AI
-            models.
+            confidentiality protections that apply to all client data under this
+            policy. Our AI processing relationship with Anthropic operates under
+            contractual terms that prohibit use of customer inputs and outputs
+            for AI model training. Anthropic&apos;s commercial terms also limit
+            retention of inputs and outputs to a brief period for safety review,
+            after which the data is deleted from Anthropic&apos;s systems.
+          </p>
+          <p>
+            We do not use client data to train AI models. We do not sell, share,
+            or otherwise disclose client data to third parties for AI training or
+            development purposes.
           </p>
 
           {/* Section 6 */}
@@ -193,7 +284,9 @@ export default function PrivacyPolicyPage() {
           <p>
             We engage the following third-party service providers in the
             delivery of our advisory services. Each provider receives only the
-            minimum information necessary to perform its function.
+            minimum information necessary to perform its function. We
+            periodically review the security and privacy practices of our
+            service providers.
           </p>
           <div className="overflow-x-auto">
             <table className="min-w-full border border-neutral-300 text-base">
@@ -213,7 +306,7 @@ export default function PrivacyPolicyPage() {
               <tbody>
                 <tr>
                   <td className="border border-neutral-300 px-4 py-2">
-                    Custodian
+                    Custodian (Primary)
                   </td>
                   <td className="border border-neutral-300 px-4 py-2">
                     Altruist
@@ -224,24 +317,63 @@ export default function PrivacyPolicyPage() {
                 </tr>
                 <tr>
                   <td className="border border-neutral-300 px-4 py-2">
-                    CRM Platform
+                    Custodian (Secondary)
+                  </td>
+                  <td className="border border-neutral-300 px-4 py-2">
+                    Interactive Brokers
+                  </td>
+                  <td className="border border-neutral-300 px-4 py-2">
+                    Assets, PII, account data, transaction instructions for
+                    clients with accounts at this custodian
+                  </td>
+                </tr>
+                <tr>
+                  <td className="border border-neutral-300 px-4 py-2">
+                    Customer Relationship Management
                   </td>
                   <td className="border border-neutral-300 px-4 py-2">
                     GoHighLevel
                   </td>
                   <td className="border border-neutral-300 px-4 py-2">
-                    Contact information, communications, pipeline status
+                    Contact information, communication history, custom fields
+                    containing financial context, pipeline status, call
+                    recordings, SMS and email content
                   </td>
                 </tr>
                 <tr>
                   <td className="border border-neutral-300 px-4 py-2">
-                    Client Dashboard
+                    Internal Workspace
                   </td>
                   <td className="border border-neutral-300 px-4 py-2">
                     Notion
                   </td>
                   <td className="border border-neutral-300 px-4 py-2">
-                    Meeting notes, action items, deliverables
+                    Client names, meeting notes, action items, dashboard data
+                    used for advisor-internal record-keeping
+                  </td>
+                </tr>
+                <tr>
+                  <td className="border border-neutral-300 px-4 py-2">
+                    Cloud Workspace
+                  </td>
+                  <td className="border border-neutral-300 px-4 py-2">
+                    Google Workspace (Gmail, Calendar, Drive)
+                  </td>
+                  <td className="border border-neutral-300 px-4 py-2">
+                    Email communications, calendar events, document storage,
+                    file storage
+                  </td>
+                </tr>
+                <tr>
+                  <td className="border border-neutral-300 px-4 py-2">
+                    Database and Authentication Platform
+                  </td>
+                  <td className="border border-neutral-300 px-4 py-2">
+                    Supabase
+                  </td>
+                  <td className="border border-neutral-300 px-4 py-2">
+                    All client data, including PII, financial records, meeting
+                    records, action items, and audit logs
                   </td>
                 </tr>
                 <tr>
@@ -252,7 +384,8 @@ export default function PrivacyPolicyPage() {
                     RightCapital
                   </td>
                   <td className="border border-neutral-300 px-4 py-2">
-                    Financial data, goals, projections
+                    Financial data, goals, projections, financial plan
+                    deliverables
                   </td>
                 </tr>
                 <tr>
@@ -263,7 +396,8 @@ export default function PrivacyPolicyPage() {
                     Monarch Money
                   </td>
                   <td className="border border-neutral-300 px-4 py-2">
-                    Budget data, linked account aggregation
+                    Bank and credit account data, income, expenses,
+                    transaction-level activity
                   </td>
                 </tr>
                 <tr>
@@ -279,46 +413,39 @@ export default function PrivacyPolicyPage() {
                 </tr>
                 <tr>
                   <td className="border border-neutral-300 px-4 py-2">
-                    Cloud Workspace
-                  </td>
-                  <td className="border border-neutral-300 px-4 py-2">
-                    Google Workspace
-                  </td>
-                  <td className="border border-neutral-300 px-4 py-2">
-                    Email, calendar, documents, file storage
-                  </td>
-                </tr>
-                <tr>
-                  <td className="border border-neutral-300 px-4 py-2">
                     AI Processing
                   </td>
                   <td className="border border-neutral-300 px-4 py-2">
                     Anthropic (Claude)
                   </td>
                   <td className="border border-neutral-300 px-4 py-2">
-                    Transcript text, communication drafts, data organization
+                    Meeting transcripts, communication content, financial
+                    context provided in prompts, content drafts, structured data
+                    extraction inputs and outputs
                   </td>
                 </tr>
                 <tr>
                   <td className="border border-neutral-300 px-4 py-2">
-                    Video Conferencing
+                    Video Conferencing and Transcription
                   </td>
                   <td className="border border-neutral-300 px-4 py-2">
                     Zoom
                   </td>
                   <td className="border border-neutral-300 px-4 py-2">
-                    Meeting recordings, transcripts, calendar integration
+                    Meeting recordings (audio and video), VTT transcripts,
+                    participant identifiers, meeting metadata
                   </td>
                 </tr>
                 <tr>
                   <td className="border border-neutral-300 px-4 py-2">
-                    Digital Signatures
+                    Digital Signatures (transitioning)
                   </td>
                   <td className="border border-neutral-300 px-4 py-2">
                     Adobe Sign
                   </td>
                   <td className="border border-neutral-300 px-4 py-2">
-                    Contracts and agreements containing PII
+                    Historical signed agreements containing PII; new agreements
+                    transitioning to GoHighLevel Documents
                   </td>
                 </tr>
                 <tr>
@@ -340,7 +467,97 @@ export default function PrivacyPolicyPage() {
                     Involve.me
                   </td>
                   <td className="border border-neutral-300 px-4 py-2">
-                    Questionnaire responses containing financial data
+                    Questionnaire responses containing financial and personal
+                    data
+                  </td>
+                </tr>
+                <tr>
+                  <td className="border border-neutral-300 px-4 py-2">
+                    Newsletter Distribution
+                  </td>
+                  <td className="border border-neutral-300 px-4 py-2">
+                    Substack
+                  </td>
+                  <td className="border border-neutral-300 px-4 py-2">
+                    Email address and subscription engagement data for clients
+                    and prospects who subscribe to firm communications
+                  </td>
+                </tr>
+                <tr>
+                  <td className="border border-neutral-300 px-4 py-2">
+                    Web Hosting and Operational Portal Infrastructure
+                  </td>
+                  <td className="border border-neutral-300 px-4 py-2">
+                    Vercel
+                  </td>
+                  <td className="border border-neutral-300 px-4 py-2">
+                    Hosting infrastructure for firm websites, client portal
+                    session data, and operational portal infrastructure; client
+                    data flows through Vercel infrastructure when client portal
+                    is in active use
+                  </td>
+                </tr>
+                <tr>
+                  <td className="border border-neutral-300 px-4 py-2">
+                    Authentication Session Storage
+                  </td>
+                  <td className="border border-neutral-300 px-4 py-2">
+                    Upstash Redis
+                  </td>
+                  <td className="border border-neutral-300 px-4 py-2">
+                    Authentication session tokens for portal access; no client
+                    financial data stored
+                  </td>
+                </tr>
+                <tr>
+                  <td className="border border-neutral-300 px-4 py-2">
+                    Transactional and Workflow Email
+                  </td>
+                  <td className="border border-neutral-300 px-4 py-2">
+                    Resend
+                  </td>
+                  <td className="border border-neutral-300 px-4 py-2">
+                    Email addresses, email subject lines, and email content for
+                    firm-originated communications, including transactional
+                    alerts and automated workflow communications routed from our
+                    CRM (GoHighLevel) infrastructure
+                  </td>
+                </tr>
+                <tr>
+                  <td className="border border-neutral-300 px-4 py-2">
+                    Content Delivery and DNS
+                  </td>
+                  <td className="border border-neutral-300 px-4 py-2">
+                    Cloudflare
+                  </td>
+                  <td className="border border-neutral-300 px-4 py-2">
+                    DNS resolution, web property uptime monitoring; request
+                    metadata only, no client financial data
+                  </td>
+                </tr>
+                <tr>
+                  <td className="border border-neutral-300 px-4 py-2">
+                    Workflow Automation
+                  </td>
+                  <td className="border border-neutral-300 px-4 py-2">
+                    Zapier
+                  </td>
+                  <td className="border border-neutral-300 px-4 py-2">
+                    Limited transient data flow between firm systems and
+                    connected services
+                  </td>
+                </tr>
+                <tr>
+                  <td className="border border-neutral-300 px-4 py-2">
+                    Website Analytics
+                  </td>
+                  <td className="border border-neutral-300 px-4 py-2">
+                    Google Analytics (GA4)
+                  </td>
+                  <td className="border border-neutral-300 px-4 py-2">
+                    Aggregated website visitor data including IP address and
+                    pages viewed; visitor data is anonymized and does not
+                    identify individual visitors
                   </td>
                 </tr>
               </tbody>
@@ -357,7 +574,10 @@ export default function PrivacyPolicyPage() {
           </p>
 
           <h3>7.2 Permitted Disclosures</h3>
-          <p>We may disclose your information only in the following circumstances:</p>
+          <p>
+            We may disclose your information only in the following
+            circumstances:
+          </p>
           <ul>
             <li>
               To our custodian and service providers as necessary to deliver
@@ -407,6 +627,11 @@ export default function PrivacyPolicyPage() {
             <li>
               <strong>Right to Non-Discrimination:</strong> We will not
               discriminate against you for exercising any of your CCPA rights.
+            </li>
+            <li>
+              <strong>Right to Opt Out of AI Processing:</strong> You may
+              request that we suspend AI-assisted processing of your
+              information, as further described in Section 14 of this policy.
             </li>
           </ul>
 
@@ -470,7 +695,7 @@ export default function PrivacyPolicyPage() {
                     Client advisory records
                   </td>
                   <td className="border border-neutral-300 px-4 py-2">
-                    Minimum 5 years
+                    Minimum 5 years from last activity
                   </td>
                 </tr>
                 <tr>
@@ -483,7 +708,7 @@ export default function PrivacyPolicyPage() {
                 </tr>
                 <tr>
                   <td className="border border-neutral-300 px-4 py-2">
-                    Meeting recordings
+                    Meeting recordings and transcripts
                   </td>
                   <td className="border border-neutral-300 px-4 py-2">
                     Duration of engagement plus 5 years
@@ -491,10 +716,10 @@ export default function PrivacyPolicyPage() {
                 </tr>
                 <tr>
                   <td className="border border-neutral-300 px-4 py-2">
-                    Marketing records
+                    Marketing records and advertisements
                   </td>
                   <td className="border border-neutral-300 px-4 py-2">
-                    5 years
+                    5 years from last use
                   </td>
                 </tr>
                 <tr>
@@ -503,6 +728,35 @@ export default function PrivacyPolicyPage() {
                   </td>
                   <td className="border border-neutral-300 px-4 py-2">
                     7 years
+                  </td>
+                </tr>
+                <tr>
+                  <td className="border border-neutral-300 px-4 py-2">
+                    Communications (email, CRM-recorded interactions)
+                  </td>
+                  <td className="border border-neutral-300 px-4 py-2">
+                    5 years from creation, with first 2 years easily accessible
+                    per Books and Records Rule 204-2
+                  </td>
+                </tr>
+                <tr>
+                  <td className="border border-neutral-300 px-4 py-2">
+                    System audit logs
+                  </td>
+                  <td className="border border-neutral-300 px-4 py-2">
+                    5 years from creation
+                  </td>
+                </tr>
+                <tr>
+                  <td className="border border-neutral-300 px-4 py-2">
+                    AI processing inputs and outputs (Anthropic)
+                  </td>
+                  <td className="border border-neutral-300 px-4 py-2">
+                    Brief retention period per Anthropic&apos;s commercial terms
+                    (typically 30 days for safety review), then deleted from
+                    Anthropic&apos;s systems; firm-side retention applies to any
+                    AI outputs we incorporate into client deliverables,
+                    communications, or records
                   </td>
                 </tr>
               </tbody>
@@ -521,14 +775,34 @@ export default function PrivacyPolicyPage() {
               supported by our service providers
             </li>
             <li>
-              Multi-factor authentication on all systems containing client data
+              Encryption at rest within our primary database (Supabase) using
+              industry-standard encryption protocols
+            </li>
+            <li>
+              Multi-factor authentication on all systems containing client data,
+              mandatory for all firm personnel
             </li>
             <li>
               Role-based access controls limiting data access to authorized
               personnel
             </li>
             <li>
+              Database-level row-level security policies on client-data tables,
+              ensuring data is accessible only to authorized parties at the
+              database query layer
+            </li>
+            <li>
+              Application-level audit logging on read and write operations
+              affecting client data, with logs retained for compliance and
+              security review
+            </li>
+            <li>
               Regular review of third-party service provider security practices
+            </li>
+            <li>
+              Designed data residency: client data stored in Supabase
+              infrastructure in the United States; AI processing inputs and
+              outputs handled per Anthropic&apos;s contractual terms
             </li>
             <li>
               Secure disposal of records containing personal information
@@ -539,6 +813,11 @@ export default function PrivacyPolicyPage() {
             </li>
             <li>
               Ongoing monitoring for unauthorized access or suspicious activity
+            </li>
+            <li>
+              An incident response plan that specifies detection, containment,
+              notification, and remediation procedures in the event of a
+              security incident
             </li>
           </ul>
 
@@ -555,9 +834,13 @@ export default function PrivacyPolicyPage() {
           <h3>11.2 Notification Commitment</h3>
           <p>
             In the event of a data breach affecting your personal information,
-            we will notify you within 60 days of discovery. We will also notify
-            the Nevada Attorney General as required by Nevada Revised Statutes
-            Chapter 603A.
+            we will notify you within the timeframes required by applicable law,
+            including Nevada Revised Statutes Chapter 603A, the SEC&apos;s Reg
+            S-P amendments effective in 2026 governing notification timelines,
+            and any applicable state laws governing residents whose information
+            may have been affected. We will also notify the Nevada Attorney
+            General as required by Nevada Revised Statutes Chapter 603A and any
+            other regulators with notification rights.
           </p>
 
           {/* Section 12 */}
@@ -565,7 +848,15 @@ export default function PrivacyPolicyPage() {
           <p>
             We will provide you with a copy of this privacy policy annually, as
             required by Regulation S-P. The most current version is always
-            available on our website at wealthinyourself.com/privacy-policy.
+            available on our website at{" "}
+            <a
+              href="https://wealthinyourself.com/privacy-policy"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              wealthinyourself.com/privacy-policy
+            </a>
+            .
           </p>
 
           {/* Section 13 */}
@@ -573,9 +864,9 @@ export default function PrivacyPolicyPage() {
           <p>
             Our website may use cookies and similar tracking technologies to
             improve your browsing experience and analyze website traffic. We use
-            analytics tools to understand how visitors interact with our
-            website. This data is collected in aggregate and does not identify
-            individual visitors.
+            Google Analytics (GA4) and similar analytics tools to understand how
+            visitors interact with our website. This data is collected in
+            aggregate and does not identify individual visitors.
           </p>
           <p>
             When you submit your email address to receive a lead magnet or
@@ -594,12 +885,47 @@ export default function PrivacyPolicyPage() {
           <p>
             By engaging our advisory services, you consent to the use of
             artificial intelligence tools as described in Section 5 of this
-            policy. If you have questions or concerns about our use of AI, or if
-            you wish to opt out of certain AI processing, please contact us at{" "}
+            policy.
+          </p>
+
+          <h3>Your Right to Limit AI Processing</h3>
+          <p>
+            You may request that we suspend AI-assisted processing of your data
+            at any time by contacting us at{" "}
             <a href="mailto:josh@wealthinyourself.com">
               josh@wealthinyourself.com
             </a>
-            .
+            . Upon receipt of an opt-out request:
+          </p>
+          <ul>
+            <li>
+              Your client record will be flagged to exclude AI processing across
+              our systems
+            </li>
+            <li>
+              AI-touching workflows that handle your data &mdash; including
+              transcript processing, action item extraction, automated
+              communication drafting, content generation involving your
+              information, and pre-meeting context aggregation &mdash; will
+              respect this flag and exclude your data from automated processing
+            </li>
+            <li>
+              Manual handling will replace automated processing for your account
+            </li>
+            <li>
+              Continuation of advisory services will not be affected by your
+              decision to opt out
+            </li>
+            <li>
+              We will confirm receipt of your opt-out request within five
+              business days and confirm operational implementation within thirty
+              days
+            </li>
+          </ul>
+          <p>
+            You may revoke an opt-out at any time by contacting us. We will
+            resume AI processing of your data only after explicit confirmation
+            from you that the opt-out is withdrawn.
           </p>
 
           {/* Section 15 */}
@@ -621,9 +947,13 @@ export default function PrivacyPolicyPage() {
             any of your rights, please contact us:
           </p>
           <p>
-            <strong>Wealth In Yourself</strong>
+            <strong>Wealth In Yourself LLC</strong>
             <br />
-            Josh St. Laurent, CFP&reg;, CFT&trade;, APFC&reg;, ACC
+            Josh St. Laurent, MS, CFP&reg;, CFT&trade;, APFC&reg;, ACC
+            <br />
+            195 Highway 50 STE 205
+            <br />
+            Zephyr Cove, NV 89448
             <br />
             Email:{" "}
             <a href="mailto:josh@wealthinyourself.com">
@@ -639,6 +969,48 @@ export default function PrivacyPolicyPage() {
               wealthinyourself.com
             </a>
           </p>
+
+          {/* Section 17 */}
+          <h2>17. Automated Decisioning and Data Subject Rights</h2>
+          <p>
+            Our advisory services are delivered by Josh St. Laurent personally.
+            While AI systems support our operations as described in Section 5,
+            no decision affecting your account, your investments, your fees, or
+            your advisory relationship is rendered by an AI system without human
+            review and approval. AI systems extract structured information,
+            draft communications, summarize meetings, and surface tasks for
+            advisor attention; advisor judgment determines how to act on those
+            outputs in your interest.
+          </p>
+          <p>
+            You have the following rights with respect to AI-assisted processing
+            of your data:
+          </p>
+          <ul>
+            <li>
+              <strong>Right to know how AI is used:</strong> Section 5 of this
+              policy describes the categories of AI usage in our practice. You
+              may request additional detail by contacting us.
+            </li>
+            <li>
+              <strong>Right to opt out:</strong> You may exercise the AI opt-out
+              described in Section 14 at any time.
+            </li>
+            <li>
+              <strong>Right to human review:</strong> Any output that an AI
+              system produces about your account is reviewed by Josh St. Laurent
+              before it informs advisory recommendations or is delivered to you.
+              You may request additional information about the human review
+              process for any specific deliverable.
+            </li>
+            <li>
+              <strong>Right to challenge AI outputs:</strong> If you believe an
+              AI-generated output (for example, a meeting summary, a financial
+              plan draft, or a communication) inaccurately reflects your
+              situation or our discussion, you may request correction; we will
+              review and respond.
+            </li>
+          </ul>
         </div>
       </section>
     </>
