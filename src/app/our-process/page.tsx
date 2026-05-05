@@ -5,123 +5,93 @@ import CTASection from "@/components/CTASection";
 import SectionHeading from "@/components/SectionHeading";
 
 export const metadata: Metadata = {
-  title: "Our Process — 13 Meetings in Year One",
+  title: "Our Process — 9 Meetings + Annual Re-Vision",
   description:
-    "Most financial plans are a 90-minute meeting, a PDF, and an invoice. See exactly what a year of working with Wealth In Yourself looks like — 13 meetings across 4 phases.",
+    "Most financial plans are a 90-minute meeting, a PDF, and an invoice. See exactly what a year of working with Wealth In Yourself looks like — 9 meetings across 3 phases, plus an annual Re-Vision.",
 };
 
 const phases = [
   {
     name: "Ground",
-    timing: "Months 1-2",
+    timing: "Weeks 1–3",
     color: "border-secondary",
     bgAccent: "bg-secondary/10",
     textAccent: "text-secondary",
+    description: "Establish trust, surface the story, locate the client.",
     meetings: [
       {
         number: 1,
-        name: "Orientation & Cash Flow Mapping",
+        name: "Arrive",
         description:
-          "Meet, align on logistics, map income and expenses, set your financial baseline.",
+          "Meet, establish trust, review your Financial Satisfaction and Life Transition surveys, and set the foundation for everything that follows.",
       },
       {
         number: 2,
-        name: "Envision",
+        name: "Story",
         description:
-          "Life planning session using the Money Quotient framework. What does your ideal life look like?",
+          "Surface your money history — the experiences that built your current beliefs and behaviors. Guided autobiography, not an interview.",
       },
       {
         number: 3,
-        name: "Engage",
+        name: "Vision",
         description:
-          "Values deep dive. What matters most? What are you building toward?",
-      },
-      {
-        number: 4,
-        name: "Balance Sheet & Net Worth",
-        description:
-          "Full financial inventory. Assets, liabilities, and your net worth baseline.",
-      },
-    ],
-  },
-  {
-    name: "Design",
-    timing: "Months 3-5",
-    color: "border-success",
-    bgAccent: "bg-success/10",
-    textAccent: "text-success",
-    meetings: [
-      {
-        number: 5,
-        name: "Tax Strategy Session",
-        description:
-          "Proactive tax planning. Entity structure, Roth conversions, deductions, estimated payments.",
-      },
-      {
-        number: 6,
-        name: "Insurance & Risk Management",
-        description:
-          "Review all coverage. Life, disability, umbrella, property, long-term care.",
-      },
-      {
-        number: 7,
-        name: "Investment Strategy",
-        description:
-          "Portfolio review. Asset allocation, risk assessment, cost analysis, rebalancing plan.",
-      },
-      {
-        number: 8,
-        name: "Estate & Legacy Planning",
-        description:
-          "Wills, trusts, power of attorney, healthcare directive, beneficiary audit.",
+          "The turning point. Explore what you actually want from life through the Kinder Three Questions. Leave with a written Vision Statement.",
       },
     ],
   },
   {
     name: "Build",
-    timing: "Months 6-9",
-    color: "border-primary",
-    bgAccent: "bg-primary/10",
-    textAccent: "text-primary",
+    timing: "Weeks 4–12",
+    color: "border-success",
+    bgAccent: "bg-success/10",
+    textAccent: "text-success",
+    description: "Design the life, design the architecture.",
     meetings: [
       {
-        number: 9,
-        name: "Explore",
+        number: 4,
+        name: "Obstacles",
         description:
-          "Real estate portfolio integration, business planning, or a specialized topic based on your needs.",
+          "Name what stands between you and the Vision — internal, relational, structural, financial. Build a map to remove the top three.",
       },
       {
-        number: 10,
-        name: "Empower",
+        number: 5,
+        name: "Time & Cash",
         description:
-          "Financial therapy integration. Money scripts, behavioral patterns, decision-making frameworks.",
+          "Design your calendar and cash-flow architecture so your money buys you time, not the other way around.",
       },
       {
-        number: 11,
-        name: "Sequence Setup & Automation",
+        number: 6,
+        name: "Tax & Entity",
         description:
-          "Cash flow automation, account organization, and system setup so your plan runs itself.",
+          "Entity structure, tax-planning roadmap, and business architecture — every recommendation tied back to your Vision.",
+      },
+      {
+        number: 7,
+        name: "Capital",
+        description:
+          "Investment design in behavioral layers: what protects, what funds the Vision, what expresses who you are.",
+      },
+      {
+        number: 8,
+        name: "Protect",
+        description:
+          "Risk, insurance, estate, asset protection — framed as fortifying the upside your Vision requires.",
       },
     ],
   },
   {
-    name: "Evolve",
-    timing: "Months 10-12",
-    color: "border-warning",
-    bgAccent: "bg-warning/10",
-    textAccent: "text-warning",
+    name: "Live",
+    timing: "Week 13 + Annually",
+    color: "border-primary",
+    bgAccent: "bg-primary/10",
+    textAccent: "text-primary",
+    description: "Hand over the Blueprint, install the rhythm.",
     meetings: [
       {
-        number: 12,
-        name: "Enlighten",
+        number: 9,
+        name: "Blueprint",
         description:
-          "Year-one review. What worked, what changed, what comes next.",
-      },
-      {
-        number: 13,
-        name: "Annual Review",
-        description:
-          "Comprehensive review. Net worth update, fee reassessment, next-year priorities.",
+          "Receive your Blueprint — the designed artifact of your planning engagement. Walk through it section by section, install the implementation rhythm.",
       },
     ],
   },
@@ -169,7 +139,7 @@ export default function OurProcessPage() {
           </h1>
           <p className="mt-6 text-xl text-white/70 leading-relaxed max-w-2xl mx-auto">
             Here&apos;s what Wealth In Yourself actually looks like over a year.
-            Four phases. Thirteen meetings. One flat fee.
+            Three phases. Nine meetings. One flat fee.
           </p>
         </div>
       </section>
@@ -179,8 +149,8 @@ export default function OurProcessPage() {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="Year One"
-            title="13 meetings. 4 phases. Every area of your financial life."
-            subtitle="Each phase builds on the last. By the end of Year One, you have a complete, coordinated financial system — not a binder on a shelf."
+            title="9 meetings. 3 phases. Every area of your financial life."
+            subtitle="Each phase builds on the last. By the end of Year One, you have your Blueprint — a designed artifact of your financial life, not a binder on a shelf."
           />
 
           <div className="mt-14 space-y-16">
@@ -312,11 +282,11 @@ export default function OurProcessPage() {
                 </svg>
               </div>
               <h3 className="text-lg font-bold text-primary">
-                Quarterly Strategy Calls
+                Annual Re-Vision
               </h3>
               <p className="mt-2 text-sm text-neutral-dark/70 leading-relaxed">
-                Four focused check-ins per year. Adjust the plan as your life
-                and business evolve.
+                Reopen the Vision, refresh the Obstacle Map, update the Blueprint.
+                The meeting that prevents drift and re-energizes the engagement.
               </p>
             </div>
             <div className="bg-neutral-bg rounded-xl p-6 text-center">
@@ -336,11 +306,11 @@ export default function OurProcessPage() {
                 </svg>
               </div>
               <h3 className="text-lg font-bold text-primary">
-                Annual Comprehensive Review
+                Ongoing Coordination
               </h3>
               <p className="mt-2 text-sm text-neutral-dark/70 leading-relaxed">
-                Full net worth update, fee reassessment, and next-year
-                priorities. Your fee goes down as your wealth goes up.
+                Tax strategy, investment monitoring, insurance reviews, and
+                estate updates — coordinated across your VFO team year-round.
               </p>
             </div>
             <div className="bg-neutral-bg rounded-xl p-6 text-center">
@@ -376,7 +346,7 @@ export default function OurProcessPage() {
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <SectionHeading
             eyebrow="What This Costs"
-            title="All of this — 13 meetings, VFO coordination, unlimited access — is one flat fee."
+            title="All of this — 9 meetings, the Blueprint, VFO coordination, unlimited access — is one flat fee."
             dark
           />
           <p className="mt-6 text-lg text-white/70 leading-relaxed">
