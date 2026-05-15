@@ -222,14 +222,17 @@ export default function ForRealEstateInvestorsPage() {
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-secondary font-semibold text-sm uppercase tracking-wider mb-2">Case Study</p>
           <h2 className="text-2xl sm:text-3xl font-bold text-primary">
-            14 properties. $62K in tax deferral.
+            14 properties. $142K in tax deferral.
           </h2>
           <p className="mt-3 text-neutral-dark/70">
-            REPS qualification, cost segregation, and 1031 coordination — all under one flat fee.
+            REPS qualification, cost segregation ($62K Year 1), and 1031 coordination ($80K) — all under one flat fee.
           </p>
           <Link href="/case-studies" className="inline-block mt-6 text-primary font-semibold hover:text-secondary transition-colors">
             Read the full case study &rarr;
           </Link>
+          <p className="mt-4 text-[11px] text-neutral-dark/50 leading-snug max-w-md mx-auto">
+            Hypothetical composite for illustrative purposes only. Results based on specific client circumstances and are not a guarantee of future results.
+          </p>
         </div>
       </section>
 

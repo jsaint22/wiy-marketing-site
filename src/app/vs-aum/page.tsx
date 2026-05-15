@@ -102,7 +102,10 @@ export default function VsAumPage() {
             The 1% fee isn&apos;t 1%. It&apos;s much more.
           </h1>
           <p className="mt-6 text-lg sm:text-xl text-neutral-dark/70 leading-relaxed max-w-2xl mx-auto">
-            At $5M, a 1% AUM fee costs you {portfolioBenefit} in portfolio value over 20 years — and {formatCurrency(proj30.portfolioBenefit)} over 30. The math is simple. The impact is not.
+            At $5M, a 1% AUM fee costs you {portfolioBenefit} in portfolio value over 20 years — and {formatCurrency(proj30.portfolioBenefit)} over 30.<sup className="text-xs">*</sup> The math is simple. The impact is not.
+          </p>
+          <p className="mt-3 text-xs text-neutral-dark/50 max-w-2xl mx-auto leading-relaxed">
+            <sup>*</sup> Hypothetical and illustrative only. Assumes $5M starting portfolio, 7% annual portfolio growth, 1% AUM fee deducted annually vs. WIY declining flat fee schedule. Past performance is not indicative of future results. Individual results will vary based on portfolio size, market performance, and applicable fees. See full assumptions below.
           </p>
         </div>
       </section>

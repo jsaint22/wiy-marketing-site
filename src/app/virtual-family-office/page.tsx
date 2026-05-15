@@ -49,7 +49,7 @@ export default function VirtualFamilyOfficePage() {
       <section className="bg-white py-10 sm:py-16 lg:py-20">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-secondary font-semibold text-sm uppercase tracking-wider mb-4">
-            The Model
+            The Model — The Life Architecture
           </p>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary leading-tight">
             The Virtual Family Office Approach
@@ -59,6 +59,7 @@ export default function VirtualFamilyOfficePage() {
             often hire a family office &mdash; a dedicated team of professionals
             who coordinate every aspect of their financial life. Most clients we
             work with do not need that overhead. They need the coordination.
+            That coordinated system is <em>The Life Architecture</em>.
           </p>
         </div>
       </section>
@@ -147,61 +148,6 @@ export default function VirtualFamilyOfficePage() {
               the right fit.
             </p>
           </div>
-        </div>
-      </section>
-
-      {/* Client Portal */}
-      <section className="bg-white py-10 sm:py-14">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            eyebrow="Your Command Center"
-            title="Everything lives in one place — your private client portal."
-            subtitle="No chasing emails. No digging through PDFs. Your entire financial life — dashboard, journey map, action items, and wins — all in one secure portal you can access anytime."
-          />
-          <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-6">
-            {[
-              {
-                title: "Live Dashboard",
-                desc: "See your net worth, upcoming meetings, and open action items at a glance. Updated in real time.",
-                icon: "M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5",
-              },
-              {
-                title: "Journey Map",
-                desc: "Track your progress through every phase of your financial plan. Know exactly where you are and what comes next.",
-                icon: "M9 6.75V15m0 0l3-3m-3 3l-3-3m12 0a9 9 0 11-18 0 9 9 0 0118 0z",
-              },
-              {
-                title: "Wins Tracker",
-                desc: "Every tax saved, every strategy implemented, every milestone hit — documented and visible so you can see the value compounding.",
-                icon: "M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.562.562 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.562.562 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z",
-              },
-            ].map((item) => (
-              <div
-                key={item.title}
-                className="bg-neutral-bg rounded-xl p-6 border border-transparent hover:border-secondary/20 hover:shadow-lg transition-all"
-              >
-                <div className="w-10 h-10 rounded-lg bg-secondary/10 flex items-center justify-center mb-4">
-                  <svg
-                    className="w-5 h-5 text-secondary"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={1.5}
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" d={item.icon} />
-                  </svg>
-                </div>
-                <h3 className="text-lg font-bold text-primary">{item.title}</h3>
-                <p className="mt-2 text-sm text-neutral-dark/70 leading-relaxed">
-                  {item.desc}
-                </p>
-              </div>
-            ))}
-          </div>
-          <p className="mt-8 text-center text-sm text-neutral-dark/70">
-            Existing clients log in at{" "}
-            <a href="https://portal.wealthinyourself.com" target="_blank" rel="noopener noreferrer" className="font-medium text-primary hover:text-secondary transition-colors underline">portal.wealthinyourself.com</a>.
-          </p>
         </div>
       </section>
 

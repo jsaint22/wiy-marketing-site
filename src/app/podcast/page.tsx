@@ -4,9 +4,9 @@ import { getAllEpisodes, formatDuration, PODCAST_LINKS } from "@/lib/podcast";
 import NewsletterCTA from "@/components/NewsletterCTA";
 
 export const metadata: Metadata = {
-  title: "Podcast — The Wealth In Yourself Podcast",
+  title: "Podcast Archive — The Wealth In Yourself Podcast",
   description:
-    "Conversations about money, life planning, and what the advisory industry doesn't want you to know. Hosted by Josh St. Laurent, CFP, CFT.",
+    "A 35-episode catalog of conversations about money, life planning, and what the advisory industry doesn't want you to say out loud. Hosted by Josh St. Laurent. No longer producing new episodes — browse the archive.",
 };
 
 const platforms = [
@@ -24,14 +24,14 @@ export default function PodcastPage() {
       <section className="bg-primary py-12 sm:py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-xs font-semibold text-secondary uppercase tracking-widest mb-4">
-            35 Episodes and Counting
+            35-Episode Archive
           </p>
           <h1 className="text-4xl sm:text-5xl font-bold text-white leading-tight">
             The Wealth In Yourself Podcast
           </h1>
           <p className="mt-4 text-lg text-white/80 leading-relaxed max-w-2xl mx-auto">
             Conversations about money, life planning, and the things most
-            advisors won&apos;t say out loud. Hosted by Josh St. Laurent.
+            advisors won&apos;t say out loud. Hosted by Josh St. Laurent. The show is no longer producing new episodes — the full 35-episode catalog is preserved below.
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
             {platforms.map((p) => (

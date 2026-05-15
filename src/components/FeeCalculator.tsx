@@ -223,7 +223,7 @@ export default function FeeCalculator({ standalone = false }: { standalone?: boo
                   </div>
                 </div>
                 <div className="mt-4 bg-primary/5 rounded-xl p-4 text-center">
-                  <p className="text-sm text-neutral-dark/70">Estimated portfolio benefit</p>
+                  <p className="text-sm text-neutral-dark/70">Estimated portfolio benefit<sup className="text-xs">*</sup></p>
                   <p className="text-3xl font-bold text-primary">
                     {formatCurrency(portfolioBenefit)}
                   </p>
@@ -232,6 +232,9 @@ export default function FeeCalculator({ standalone = false }: { standalone?: boo
                   </p>
                   <p className="text-xs text-neutral-dark/70 mt-1">
                     ({formatCurrency(delta)} in fee savings, compounded at the assumed growth rate)
+                  </p>
+                  <p className="text-[10px] text-neutral-dark/50 mt-2 leading-snug">
+                    <sup>*</sup> Hypothetical and illustrative only. Assumes 7% annual portfolio growth, 1% AUM fee vs. WIY declining flat fee. Past performance is not indicative of future results.
                   </p>
                 </div>
 

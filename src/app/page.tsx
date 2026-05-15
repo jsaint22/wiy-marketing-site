@@ -19,7 +19,7 @@ const clientPaths = [
     description:
       "1031 exchanges, depreciation strategies, entity structures, passive vs. active rules. Your portfolio is complex. Your planning should match.",
     href: "/for-real-estate-investors",
-    caseStudyLabel: "See how a RE investor deferred $62K in taxes",
+    caseStudyLabel: "See how a RE investor deferred $142K in taxes",
     icon: "M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6",
   },
   {
@@ -57,11 +57,6 @@ const partners = [
     name: "Monarch Money",
     logo: "/logos/partners/monarch.png",
     description: "Cash flow tracking — real-time visibility into your income, spending, and net worth.",
-  },
-  {
-    name: "Interactive Brokers",
-    logo: "/logos/partners/interactive-brokers.svg",
-    description: "Secondary custodian — institutional-grade access for complex portfolios and alternative strategies.",
   },
 ];
 
@@ -220,9 +215,9 @@ export default function HomePage() {
       <section className="bg-white py-10 sm:py-14">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
-            eyebrow="The Virtual Family Office"
+            eyebrow="The Life Architecture · Virtual Family Office"
             title="The planning infrastructure of the ultra-wealthy. Without the eight-figure price tag."
-            subtitle="A Virtual Family Office coordinates your tax strategy, investments, estate plan, and business structure into one system &mdash; bringing in outside specialists when your situation calls for them. Typically reserved for $50M+ families. We built it into every client engagement."
+            subtitle="A Virtual Family Office coordinates your tax strategy, investments, estate plan, and business structure into one system &mdash; bringing in outside specialists when your situation calls for them. We call the coordinated system The Life Architecture. Typically reserved for $50M+ families. We built it into every client engagement."
           />
           <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
@@ -252,169 +247,6 @@ export default function HomePage() {
               Learn more about the VFO model &rarr;
             </Link>
           </div>
-        </div>
-      </section>
-
-      {/* Your WIY Experience — Client Portal Preview (A2) */}
-      <section className="bg-white py-10 sm:py-14">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            eyebrow="Your Wealth In Yourself Experience"
-            title="Most advisors send PDFs. We built you a portal."
-            subtitle="Your dashboard, journey map, and wins tracker — live from Day 1. No PDFs. No guessing where you stand."
-          />
-          <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* Dashboard Preview */}
-            <div className="rounded-2xl border border-neutral-bg overflow-hidden hover:shadow-lg transition-shadow">
-              <div className="bg-primary px-4 py-2 flex items-center gap-2">
-                <div className="flex gap-1.5">
-                  <div className="w-2.5 h-2.5 rounded-full bg-white/20" />
-                  <div className="w-2.5 h-2.5 rounded-full bg-white/20" />
-                  <div className="w-2.5 h-2.5 rounded-full bg-white/20" />
-                </div>
-                <a href="https://portal.wealthinyourself.com" target="_blank" rel="noopener noreferrer" className="text-xs text-white/60 ml-2 hover:text-white/80 transition-colors">portal.wealthinyourself.com</a>
-              </div>
-              <div className="bg-neutral-bg p-6">
-                <div className="bg-white rounded-lg p-4 mb-3">
-                  <p className="text-xs font-semibold text-neutral-dark/70 uppercase tracking-wider">Dashboard</p>
-                  <p className="text-lg font-bold text-primary mt-1">Welcome, Sarah</p>
-                  <p className="text-sm text-neutral-dark/70 mt-1">Your next meeting is April 22</p>
-                </div>
-                <div className="grid grid-cols-2 gap-2">
-                  <div className="bg-white rounded-lg p-3">
-                    <p className="text-xs text-neutral-dark/70">Net Worth</p>
-                    <p className="text-sm font-bold text-primary">$3.2M</p>
-                  </div>
-                  <div className="bg-white rounded-lg p-3">
-                    <p className="text-xs text-neutral-dark/70">Phase</p>
-                    <p className="text-sm font-bold text-success">Build</p>
-                  </div>
-                </div>
-                <div className="bg-white rounded-lg p-3 mt-2">
-                  <p className="text-xs text-neutral-dark/70">Action Items</p>
-                  <div className="mt-1 space-y-1">
-                    <div className="flex items-center gap-2">
-                      <div className="w-3 h-3 rounded border border-secondary" />
-                      <p className="text-xs text-neutral-dark/70">Sign estate documents</p>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <div className="w-3 h-3 rounded bg-success/20 border border-success flex items-center justify-center">
-                        <span className="text-[8px] text-success">&#10003;</span>
-                      </div>
-                      <p className="text-xs text-neutral-dark/70 line-through">Fund Solo 401(k)</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Journey Preview */}
-            <div className="rounded-2xl border border-neutral-bg overflow-hidden hover:shadow-lg transition-shadow">
-              <div className="bg-primary px-4 py-2 flex items-center gap-2">
-                <div className="flex gap-1.5">
-                  <div className="w-2.5 h-2.5 rounded-full bg-white/20" />
-                  <div className="w-2.5 h-2.5 rounded-full bg-white/20" />
-                  <div className="w-2.5 h-2.5 rounded-full bg-white/20" />
-                </div>
-                <span className="text-xs text-white/60 ml-2">My Plan Journey</span>
-              </div>
-              <div className="bg-neutral-bg p-6">
-                <div className="space-y-3">
-                  {[
-                    { phase: "Ground", status: "complete", meetings: "3/3" },
-                    { phase: "Design", status: "complete", meetings: "4/4" },
-                    { phase: "Build", status: "active", meetings: "2/3" },
-                    { phase: "Evolve", status: "upcoming", meetings: "0/3" },
-                  ].map((p) => (
-                    <div
-                      key={p.phase}
-                      className={`bg-white rounded-lg p-3 flex items-center justify-between ${
-                        p.status === "active" ? "border-2 border-secondary" : ""
-                      }`}
-                    >
-                      <div className="flex items-center gap-3">
-                        <div
-                          className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold ${
-                            p.status === "complete"
-                              ? "bg-success/10 text-success"
-                              : p.status === "active"
-                              ? "bg-secondary/10 text-secondary"
-                              : "bg-neutral-bg text-neutral-dark/30"
-                          }`}
-                        >
-                          {p.status === "complete" ? "\u2713" : p.phase[0]}
-                        </div>
-                        <div>
-                          <p className={`text-sm font-semibold ${
-                            p.status === "upcoming" ? "text-neutral-dark/30" : "text-primary"
-                          }`}>
-                            {p.phase}
-                          </p>
-                        </div>
-                      </div>
-                      <p className="text-xs text-neutral-dark/70">{p.meetings}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            {/* Wins Preview */}
-            <div className="rounded-2xl border border-neutral-bg overflow-hidden hover:shadow-lg transition-shadow">
-              <div className="bg-primary px-4 py-2 flex items-center gap-2">
-                <div className="flex gap-1.5">
-                  <div className="w-2.5 h-2.5 rounded-full bg-white/20" />
-                  <div className="w-2.5 h-2.5 rounded-full bg-white/20" />
-                  <div className="w-2.5 h-2.5 rounded-full bg-white/20" />
-                </div>
-                <span className="text-xs text-white/60 ml-2">My Wins</span>
-              </div>
-              <div className="bg-neutral-bg p-6">
-                <div className="space-y-3">
-                  <div className="bg-white rounded-lg p-4">
-                    <div className="flex items-start gap-3">
-                      <div className="w-8 h-8 rounded-full bg-success/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <span className="text-success text-sm">$</span>
-                      </div>
-                      <div>
-                        <p className="text-sm font-semibold text-primary">S-Corp Election Savings</p>
-                        <p className="text-xs text-neutral-dark/70 mt-0.5">Saved $18,400 in self-employment tax</p>
-                        <p className="text-[10px] text-neutral-dark/30 mt-1">March 2026</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="bg-white rounded-lg p-4">
-                    <div className="flex items-start gap-3">
-                      <div className="w-8 h-8 rounded-full bg-success/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <span className="text-success text-sm">$</span>
-                      </div>
-                      <div>
-                        <p className="text-sm font-semibold text-primary">Roth Conversion Ladder</p>
-                        <p className="text-xs text-neutral-dark/70 mt-0.5">Converted $85K at 12% bracket</p>
-                        <p className="text-[10px] text-neutral-dark/30 mt-1">February 2026</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="bg-white rounded-lg p-4">
-                    <div className="flex items-start gap-3">
-                      <div className="w-8 h-8 rounded-full bg-secondary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <span className="text-secondary text-sm">&#9733;</span>
-                      </div>
-                      <div>
-                        <p className="text-sm font-semibold text-primary">Estate Plan Complete</p>
-                        <p className="text-xs text-neutral-dark/70 mt-0.5">Trust, will, POA, and healthcare directive</p>
-                        <p className="text-[10px] text-neutral-dark/30 mt-1">January 2026</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <p className="mt-8 text-center text-sm text-neutral-dark/70">
-            Clients only. Existing clients log in at{" "}
-            <a href="https://portal.wealthinyourself.com" target="_blank" rel="noopener noreferrer" className="font-medium text-primary hover:text-secondary transition-colors underline">portal.wealthinyourself.com</a>.
-          </p>
         </div>
       </section>
 
@@ -510,6 +342,9 @@ export default function HomePage() {
                   >
                     {path.caseStudyLabel} &rarr;
                   </Link>
+                  <p className="text-[10px] text-white/50 leading-snug mt-1">
+                    Hypothetical composite for illustrative purposes only. Results based on specific client circumstances and are not a guarantee of future results.
+                  </p>
                 </div>
               </div>
             ))}

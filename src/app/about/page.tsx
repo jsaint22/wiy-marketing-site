@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import CTASection from "@/components/CTASection";
 import SectionHeading from "@/components/SectionHeading";
 
@@ -296,10 +297,14 @@ export default function AboutPage() {
               Our daughter is due September 2026.
             </p>
             <p>
-              I host a podcast where I talk about the things most advisors
-              won&apos;t say out loud &mdash; fee conflicts, industry
+              I hosted a 35-episode podcast where I talked about the things most
+              advisors won&apos;t say out loud &mdash; fee conflicts, industry
               incentives, and what real financial planning actually looks like
-              when you strip away the sales pitch.
+              when you strip away the sales pitch. The catalog is preserved at{" "}
+              <Link href="/podcast" className="text-secondary hover:text-secondary/80 underline">
+                /podcast
+              </Link>
+              .
             </p>
             <p>
               I also own Lake Tahoe Motorcycle Rentals and CA Homes In The

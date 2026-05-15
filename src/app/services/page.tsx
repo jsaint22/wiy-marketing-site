@@ -116,13 +116,14 @@ export default function ServicesPage() {
       <section className="bg-neutral-bg py-10 sm:py-14">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-secondary font-semibold text-sm uppercase tracking-wider mb-3">
-            What We Do
+            The Life Architecture
           </p>
           <h1 className="text-4xl sm:text-5xl font-bold text-primary">
             Nine services. One fee. Zero silos.
           </h1>
           <p className="mt-6 text-lg text-neutral-dark/70 max-w-2xl mx-auto">
-            Every service below is included in your flat fee. No add-ons. No
+            Every service below is included in your flat fee. Nine pieces, one
+            coordinated system: <em>The Life Architecture</em>. No add-ons. No
             surprise invoices. Your tax strategy informs your investment plan.
             Your estate plan reflects your business structure. Nothing
             operates in a silo because everything is coordinated by one team.

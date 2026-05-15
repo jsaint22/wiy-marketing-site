@@ -232,6 +232,9 @@ export default function ForBusinessOwnersPage() {
           <Link href="/case-studies" className="inline-block mt-6 text-primary font-semibold hover:text-secondary transition-colors">
             Read the full case study &rarr;
           </Link>
+          <p className="mt-4 text-[11px] text-neutral-dark/50 leading-snug max-w-md mx-auto">
+            Hypothetical composite for illustrative purposes only. Results based on specific client circumstances and are not a guarantee of future results.
+          </p>
         </div>
       </section>
 
