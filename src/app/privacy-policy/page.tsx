@@ -15,7 +15,7 @@ export default function PrivacyPolicyPage() {
             Privacy Policy
           </h1>
           <p className="mt-4 text-lg text-white/80">
-            Last updated: May 4, 2026
+            Posted: May 16, 2026 &middot; Effective: May 30, 2026
           </p>
         </div>
       </section>
@@ -112,11 +112,21 @@ export default function PrivacyPolicyPage() {
             <li>Signed agreements and contracts</li>
             <li>Billing and payment information</li>
             <li>
-              Structured data fields extracted automatically from your
-              communications and meeting transcripts (for example, action items,
-              scheduling commitments, financial figures referenced in
-              conversation, and life-event details mentioned during planning
-              sessions)
+              Structured data fields and signal patterns extracted automatically
+              from your communications and meeting transcripts &mdash; these
+              include action items, scheduling commitments, and financial figures
+              referenced in conversation; life-event details and personal
+              preferences mentioned during sessions (for example, family
+              milestones, recreational interests, or personal details that
+              support relationship care); and financial life planning signals
+              (for example, the specific language you use when discussing money,
+              values-related statements, planning-relevant disclosures, and
+              behavioral patterns that inform our advisory methodology). Where
+              the precise language matters for planning purposes, verbatim quotes
+              may be preserved alongside the structured signal. These signals are
+              classified by type, stored in your client record, and subject to
+              access controls limiting downstream use to advisory and
+              relationship management functions.
             </li>
             <li>
               Operational context derived from interaction patterns (for example,
@@ -188,9 +198,14 @@ export default function PrivacyPolicyPage() {
               automatically)
             </li>
             <li>
-              Surfacing relationship-care moments based on patterns we observe in
-              your communications and engagement with us (for example, noticing a
-              friction point you mentioned and proactively addressing it)
+              Surfacing relationship-care moments based on patterns and personal
+              details we observe in your communications and meetings &mdash;
+              including life milestones, personal preferences, and relationship
+              details you share &mdash; to support thoughtful, personalized
+              advisory service and, where appropriate, relationship-care
+              gestures. This includes an automated process that queues candidate
+              relationship-care moments for advisor review before any action is
+              taken; no gesture is sent without Josh&apos;s direct authorization.
             </li>
             <li>Improving our advisory processes and client experience</li>
             <li>
@@ -249,6 +264,21 @@ export default function PrivacyPolicyPage() {
               support advisor preparation for upcoming client meetings
             </li>
             <li>
+              <strong>Real-time in-meeting advisory query</strong> &mdash; during
+              live client meetings, Josh may query an AI system with short,
+              advisor-facing questions to surface relevant prior signals,
+              planning angles, and methodology prompts from your client record.
+              This surface is operator-facing only (displayed on Josh&apos;s
+              secondary device or screen, not visible to you); you do not
+              interact with the AI system directly. Queries are limited in
+              number per meeting session, and each query generates an audit log
+              entry recording that the query occurred and the volume of client
+              data referenced (no raw query text or response text is retained in
+              audit logs). This surface is subject to your AI processing consent
+              status under Section 14; if you have requested an AI opt-out, this
+              surface will not process your data.
+            </li>
+            <li>
               <strong>Hospitality moment surfacing</strong> &mdash; identifying
               opportunities for relationship-care gestures based on patterns
               observed in our interactions with you
@@ -286,7 +316,10 @@ export default function PrivacyPolicyPage() {
             delivery of our advisory services. Each provider receives only the
             minimum information necessary to perform its function. We
             periodically review the security and privacy practices of our
-            service providers.
+            service providers, and we maintain written agreements with service
+            providers who handle nonpublic personal information that include
+            contractual data protection requirements consistent with applicable
+            regulations, including amended Regulation S-P.
           </p>
           <div className="overflow-x-auto">
             <table className="min-w-full border border-neutral-300 text-base">
@@ -834,13 +867,16 @@ export default function PrivacyPolicyPage() {
           <h3>11.2 Notification Commitment</h3>
           <p>
             In the event of a data breach affecting your personal information,
-            we will notify you within the timeframes required by applicable law,
-            including Nevada Revised Statutes Chapter 603A, the SEC&apos;s Reg
-            S-P amendments effective in 2026 governing notification timelines,
-            and any applicable state laws governing residents whose information
-            may have been affected. We will also notify the Nevada Attorney
-            General as required by Nevada Revised Statutes Chapter 603A and any
-            other regulators with notification rights.
+            we will notify you as promptly as practicable and in no case later
+            than 30 days after we determine a breach has occurred that requires
+            notification, in accordance with the SEC&apos;s amended Regulation
+            S-P (effective June 3, 2026) and Nevada Revised Statutes Chapter
+            603A. This notification obligation extends to prospective clients
+            whose nonpublic personal information may have been affected by a
+            breach, consistent with amended Regulation S-P coverage of customer
+            information. We will also notify the Nevada Attorney General as
+            required by Nevada Revised Statutes Chapter 603A and any other
+            regulators with notification rights.
           </p>
 
           {/* Section 12 */}
