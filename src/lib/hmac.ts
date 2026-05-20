@@ -14,11 +14,13 @@ import { createHmac } from "node:crypto";
  *
  * The lead-magnet webhook contract sister to this helper uses:
  *   - Header: `x-wiy-signature`
- *   - Secret env var: `LEAD_MAGNET_WEBHOOK_SECRET`
+ *   - Secret env var: `INTAKE_WEBHOOK_SECRET` (reused per Josh 2026-05-20
+ *     PM10 — accepting per-surface secret rotation tradeoff for operational
+ *     simplicity; previously a dedicated LEAD_MAGNET_WEBHOOK_SECRET)
  *
- * (Intake webhook uses `x-intake-signature` + `INTAKE_WEBHOOK_SECRET` — keep
- * the secrets isolated per Op-debt LM-INNGEST-LEAD-MAGNET-WEBHOOK-SECRET
- * decision: per-surface secret rotation isolation.)
+ * (The intake webhook also uses `INTAKE_WEBHOOK_SECRET`; both surfaces now
+ * share the same secret. Header names still differ per receiver to keep the
+ * route contracts explicit.)
  */
 export function signWebhookBody(rawBody: string, secret: string): string {
   const digest = createHmac("sha256", secret).update(rawBody).digest("hex");

@@ -10,7 +10,9 @@ import { signWebhookBody } from "@/lib/hmac";
  * contract here MUST match the receiver byte-for-byte:
  *   - Header:  `x-wiy-signature: sha256=<hex>`
  *   - Algo:    HMAC-SHA256 over the raw body string
- *   - Secret:  LEAD_MAGNET_WEBHOOK_SECRET (must be byte-identical on both sides)
+ *   - Secret:  INTAKE_WEBHOOK_SECRET (reused per Josh 2026-05-20 PM10 —
+ *     accepting per-surface secret rotation tradeoff for operational
+ *     simplicity; must be byte-identical on both sides)
  *   - Endpoint: LEAD_MAGNET_WEBHOOK_URL (env-driven; e.g.
  *     https://ops.wealthinyourself.com/api/webhooks/lead-magnet in prod)
  *
@@ -58,11 +60,11 @@ export async function emitLeadMagnetWebhook(
   payload: LeadMagnetWebhookPayload
 ): Promise<EmitResult> {
   const url = process.env.LEAD_MAGNET_WEBHOOK_URL;
-  const secret = process.env.LEAD_MAGNET_WEBHOOK_SECRET;
+  const secret = process.env.INTAKE_WEBHOOK_SECRET;
 
   if (!url || !secret) {
     console.warn(
-      "[LeadMagnetWebhook] LEAD_MAGNET_WEBHOOK_URL or LEAD_MAGNET_WEBHOOK_SECRET not set — skipping emit (Inngest event will NOT fire)"
+      "[LeadMagnetWebhook] LEAD_MAGNET_WEBHOOK_URL or INTAKE_WEBHOOK_SECRET not set — skipping emit (Inngest event will NOT fire)"
     );
     return { ok: false, error: "missing env" };
   }
