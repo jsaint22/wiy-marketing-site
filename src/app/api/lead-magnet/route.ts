@@ -2,9 +2,27 @@ import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 import { readFileSync } from "fs";
 import { join } from "path";
+import { randomUUID } from "node:crypto";
 import { appendSubscriber } from "@/lib/subscribers";
+import {
+  emitLeadMagnetWebhook,
+  type LeadMagnetSlug,
+} from "@/lib/lead-magnet-webhook";
 
 export const dynamic = "force-dynamic";
+
+/**
+ * Privacy Policy consent version stamped onto every webhook emit.
+ *
+ * Mirrors the "Effective" / "Last updated" date displayed on the published
+ * Privacy Policy page (src/app/privacy-policy/page.tsx). Bump in lockstep
+ * with any Privacy Policy amendment so the receiver-side audit row records
+ * which policy version the prospect consented to.
+ *
+ * Locked 2026-05-20 per the Privacy Policy §14 amendment + booking-gate
+ * supersession (op-debt AI-CONSENT-BOOKING-GATE-ENFORCEMENT-1).
+ */
+const PRIVACY_POLICY_CONSENT_VERSION = "2026-05-20";
 
 const LEAD_MAGNETS: Record<
   string,
@@ -40,7 +58,13 @@ const LEAD_MAGNETS: Record<
 
 export async function POST(request: NextRequest) {
   try {
-    const { email, firstName, magnet } = await request.json();
+    const {
+      email,
+      firstName,
+      lastName,
+      magnet,
+      privacyPolicyConsent,
+    } = await request.json();
 
     if (!email || typeof email !== "string" || !email.includes("@")) {
       return NextResponse.json(
@@ -52,6 +76,21 @@ export async function POST(request: NextRequest) {
     if (!firstName || typeof firstName !== "string") {
       return NextResponse.json(
         { error: "First name is required." },
+        { status: 400 }
+      );
+    }
+
+    // SERVER-SIDE Privacy Policy + SMS consent gate.
+    // Per Josh 2026-05-20 booking-gate lock + amended Privacy Policy: client-
+    // side validation is insufficient — must re-verify server-side per
+    // ai-consent-booking-gate-LOCKED-2026-05-19.md §3 ("server-side check
+    // that the consent flag is true on submission").
+    if (privacyPolicyConsent !== true) {
+      return NextResponse.json(
+        {
+          error:
+            "Privacy Policy and SMS consent acceptance is required to download.",
+        },
         { status: 400 }
       );
     }
@@ -112,6 +151,34 @@ This is educational content and is not tax, legal, or investment advice. Discuss
       console.error("[LeadMagnet] GHL contact creation failed:", err)
     );
 
+    // Fire-and-forget HMAC-signed POST to ops-portal webhook receiver.
+    // Powers Spec 1 (lead-magnet Inngest nurture). The receiver dedupes on
+    // external_request_id; emitter is fire-and-forget per spec §1 so a
+    // receiver outage does NOT block the user's PDF download (which already
+    // succeeded above).
+    const sourceIp = extractSourceIp(request);
+    const sourceUserAgent = request.headers.get("user-agent") ?? "";
+    const consentTimestamp = new Date().toISOString();
+    const externalRequestId = randomUUID();
+
+    emitLeadMagnetWebhook({
+      email,
+      first_name: typeof firstName === "string" ? firstName : undefined,
+      last_name: typeof lastName === "string" && lastName ? lastName : undefined,
+      magnet_slug: magnet as LeadMagnetSlug,
+      download_source: "wiy-marketing-site",
+      privacy_policy_consent_version: PRIVACY_POLICY_CONSENT_VERSION,
+      privacy_policy_consent_timestamp: consentTimestamp,
+      source_ip: sourceIp,
+      source_user_agent: sourceUserAgent,
+      external_request_id: externalRequestId,
+    }).catch((err) =>
+      // Belt-and-suspenders — emitLeadMagnetWebhook already catches internally,
+      // but a defensive .catch ensures any unexpected sync-thrown error never
+      // bubbles to block the user's response.
+      console.error("[LeadMagnet] ops-portal emit threw unexpectedly:", err)
+    );
+
     return NextResponse.json({
       success: true,
       message: "Sent! Check your inbox.",
@@ -123,6 +190,20 @@ This is educational content and is not tax, legal, or investment advice. Discuss
       { status: 500 }
     );
   }
+}
+
+/**
+ * Best-effort source IP extraction. Vercel sets `x-forwarded-for`; fall back
+ * to `x-real-ip` then "unknown". The receiver records this in the
+ * lead_magnet_downloaded audit row for Books-and-Records (ARCH-6).
+ */
+function extractSourceIp(request: NextRequest): string {
+  const xff = request.headers.get("x-forwarded-for");
+  if (xff) {
+    // x-forwarded-for can be a comma-separated chain; first entry is the client.
+    return xff.split(",")[0]?.trim() || "unknown";
+  }
+  return request.headers.get("x-real-ip") ?? "unknown";
 }
 
 /**
