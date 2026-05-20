@@ -15,7 +15,7 @@ export default function PrivacyPolicyPage() {
             Privacy Policy
           </h1>
           <p className="mt-4 text-lg text-white/80">
-            Posted: May 16, 2026 &middot; Effective: May 30, 2026
+            Posted: May 20, 2026 &middot; Effective: May 20, 2026
           </p>
         </div>
       </section>
@@ -274,9 +274,10 @@ export default function PrivacyPolicyPage() {
               number per meeting session, and each query generates an audit log
               entry recording that the query occurred and the volume of client
               data referenced (no raw query text or response text is retained in
-              audit logs). This surface is subject to your AI processing consent
-              status under Section 14; if you have requested an AI opt-out, this
-              surface will not process your data.
+              audit logs). This surface processes data for clients with active
+              advisory engagements per the AI processing consent described in
+              Section 14. A request to opt out of AI processing under Section
+              14 initiates service termination as described therein.
             </li>
             <li>
               <strong>Hospitality moment surfacing</strong> &mdash; identifying
@@ -664,7 +665,10 @@ export default function PrivacyPolicyPage() {
             <li>
               <strong>Right to Opt Out of AI Processing:</strong> You may
               request that we suspend AI-assisted processing of your
-              information, as further described in Section 14 of this policy.
+              information. Because AI processing is structurally integral to
+              our advisory methodology, this request is operationalized as
+              service termination per the engagement letter, as further
+              described in Section 14 of this policy.
             </li>
           </ul>
 
@@ -919,49 +923,74 @@ export default function PrivacyPolicyPage() {
           {/* Section 14 */}
           <h2>14. Your Consent to AI Processing</h2>
           <p>
-            By engaging our advisory services, you consent to the use of
-            artificial intelligence tools as described in Section 5 of this
-            policy.
+            Wealth In Yourself&apos;s advisory methodology depends on
+            artificial intelligence-assisted processing as described in Section
+            5 of this policy. AI processing is integral to the planning
+            workflow, deliverable preparation, meeting documentation, and
+            Books-and-Records retention discipline that comprise our service.
+          </p>
+          <p>
+            When you engage our advisory services &mdash; beginning with
+            booking a consultation through our intake surfaces &mdash; you
+            consent to the AI processing described in Section 5. Acceptance of
+            this Privacy Policy is a prerequisite to scheduling a consultation;
+            the advisory relationship does not begin without this consent.
           </p>
 
-          <h3>Your Right to Limit AI Processing</h3>
+          <h3>Your Right to Limit AI Processing and Operational Consequence</h3>
           <p>
-            You may request that we suspend AI-assisted processing of your data
-            at any time by contacting us at{" "}
+            You retain your statutory right under the California Consumer
+            Privacy Act and Nevada Revised Statutes Chapter 603A to request
+            that we suspend AI-assisted processing of your data at any time by
+            contacting us at{" "}
             <a href="mailto:josh@wealthinyourself.com">
               josh@wealthinyourself.com
             </a>
-            . Upon receipt of an opt-out request:
+            . We will honor this request promptly.
+          </p>
+          <p>
+            Because AI processing is structurally integral to our advisory
+            methodology, a request to suspend AI processing is operationalized
+            as a request to end the advisory relationship under the termination
+            clause of your engagement letter. We do not maintain a parallel
+            manual-only service path. Upon receipt of an opt-out request:
           </p>
           <ul>
             <li>
-              Your client record will be flagged to exclude AI processing across
-              our systems
+              We will confirm receipt within five business days
             </li>
             <li>
-              AI-touching workflows that handle your data &mdash; including
-              transcript processing, action item extraction, automated
-              communication drafting, content generation involving your
-              information, and pre-meeting context aggregation &mdash; will
-              respect this flag and exclude your data from automated processing
+              Your client record will be flagged to exclude AI processing
+              across our systems
             </li>
             <li>
-              Manual handling will replace automated processing for your account
+              Service termination procedures will commence per the termination
+              clause of your engagement letter, without fee or penalty upon
+              written notice
             </li>
             <li>
-              Continuation of advisory services will not be affected by your
-              decision to opt out
+              Manual handling will replace automated processing during the
+              thirty-day operational implementation window required to close
+              out any in-flight work and arrange the orderly transition of your
+              records
             </li>
             <li>
-              We will confirm receipt of your opt-out request within five
-              business days and confirm operational implementation within thirty
-              days
+              We will confirm operational implementation within thirty days
+            </li>
+            <li>
+              Your right to non-discrimination under the CCPA is preserved: the
+              decision to opt out does not affect any other right you hold,
+              including your rights to know, access, and request deletion of
+              your information
             </li>
           </ul>
           <p>
-            You may revoke an opt-out at any time by contacting us. We will
-            resume AI processing of your data only after explicit confirmation
-            from you that the opt-out is withdrawn.
+            You may revoke an opt-out request at any time prior to the
+            completion of service termination by contacting us. We will resume
+            AI processing of your data only after explicit confirmation from
+            you that the opt-out is withdrawn. If service termination has
+            completed, re-engagement requires a new engagement letter and a
+            fresh acceptance of this Privacy Policy.
           </p>
 
           {/* Section 15 */}
@@ -1029,8 +1058,11 @@ export default function PrivacyPolicyPage() {
               may request additional detail by contacting us.
             </li>
             <li>
-              <strong>Right to opt out:</strong> You may exercise the AI opt-out
-              described in Section 14 at any time.
+              <strong>Right to opt out:</strong> You may exercise the AI
+              opt-out described in Section 14 at any time. Because AI
+              processing is structurally integral to our methodology, an
+              opt-out request is operationalized as service termination, as
+              described in Section 14.
             </li>
             <li>
               <strong>Right to human review:</strong> Any output that an AI
