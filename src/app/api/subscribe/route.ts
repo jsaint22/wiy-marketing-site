@@ -45,7 +45,7 @@ export async function POST(request: NextRequest) {
     // Send email with PDF attached
     const resend = new Resend(process.env.RESEND_API_KEY);
     const { error } = await resend.emails.send({
-      from: "Josh at WIY <josh@go.wealthinyourself.com>",
+      from: process.env.LEAD_MAGNET_FROM ?? "Josh at WIY <josh@wealthinyourself.com>",
       to: email,
       subject:
         "Your AUM Math (and what your advisor probably won't show you)",
