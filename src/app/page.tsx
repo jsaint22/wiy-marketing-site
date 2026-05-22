@@ -145,6 +145,7 @@ export default function HomePage() {
                   width={240}
                   height={64}
                   className="object-contain max-h-14 w-auto opacity-80 hover:opacity-100 transition-opacity"
+                  style={{ mixBlendMode: "multiply" }}
                 />
               </div>
             ))}
