@@ -127,24 +127,24 @@ export default function HomePage() {
 
 
       {/* As Featured In */}
-      <section className="bg-primary py-6 sm:py-8">
+      <section className="bg-neutral-bg py-10 sm:py-12 border-y border-neutral-dark/5">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-center text-xs font-semibold text-white/80 uppercase tracking-widest mb-5">
+          <p className="text-center text-xs font-semibold text-neutral-dark/60 uppercase tracking-[0.2em] mb-7">
             As Featured In
           </p>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-5">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 sm:gap-10 items-center">
             {pressFeatures.map((press) => (
               <div
                 key={press.name}
-                className="bg-white rounded-xl flex items-center justify-center p-4"
-                style={{ height: 80 }}
+                className="flex items-center justify-center"
+                style={{ height: 56 }}
               >
                 <Image
                   src={press.logo}
                   alt={press.name}
                   width={240}
                   height={64}
-                  className="object-contain w-full h-full"
+                  className="object-contain max-h-14 w-auto opacity-80 hover:opacity-100 transition-opacity"
                 />
               </div>
             ))}
