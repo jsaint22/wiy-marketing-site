@@ -3,6 +3,9 @@ import Link from "next/link";
 import Image from "next/image";
 import CTASection from "@/components/CTASection";
 import SectionHeading from "@/components/SectionHeading";
+import { CinematicHero } from "@/components/cinematic/CinematicHero";
+import { ScrollPinnedCinema } from "@/components/cinematic/ScrollPinnedCinema";
+import { RevealOnScroll } from "@/components/cinematic/RevealOnScroll";
 
 export const metadata: Metadata = {
   title: "Our Process — 9 Meetings + Annual Re-Vision",
@@ -125,26 +128,57 @@ const vfoPartners = [
   },
 ];
 
+// Cinema chapters — 3 phases verbatim (Ground / Build / Live)
+// Body text = each phase's `description` field, preserved verbatim from canon.
+const cinemaChapters = [
+  {
+    number: "01",
+    title: "Ground",
+    body: "Establish trust, surface the story, locate the client.",
+  },
+  {
+    number: "02",
+    title: "Build",
+    body: "Design the life, design the architecture.",
+  },
+  {
+    number: "03",
+    title: "Live",
+    body: "Hand over the Blueprint, install the rhythm.",
+  },
+];
+
+// Flattened meeting list for the post-cinema grid — preserves order + verbatim copy.
+const allMeetings = phases.flatMap((phase) =>
+  phase.meetings.map((meeting) => ({
+    ...meeting,
+    phaseName: phase.name,
+    phaseColor: phase.color,
+    phaseBgAccent: phase.bgAccent,
+    phaseTextAccent: phase.textAccent,
+  }))
+);
+
 export default function OurProcessPage() {
   return (
     <>
-      {/* Hero */}
-      <section className="bg-primary py-14 sm:py-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-secondary font-semibold text-sm uppercase tracking-wider mb-4">
-            Our Process
-          </p>
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight">
-            Most financial plans are a 90-minute meeting, a PDF, and an invoice.
-          </h1>
-          <p className="mt-6 text-xl text-white/70 leading-relaxed max-w-2xl mx-auto">
-            Here&apos;s what Wealth In Yourself actually looks like over a year.
-            Three phases. Nine meetings. One flat fee.
-          </p>
-        </div>
-      </section>
+      {/* Hero — Cinematic shell. Original page had no primary CTA; using canonical
+          15-min booking link as a sensible default (CinematicHero requires primaryCta). */}
+      <CinematicHero
+        eyebrow="Our Process"
+        headline="Most financial plans are a 90-minute meeting, a PDF, and an invoice."
+        subhead="Here's what Wealth In Yourself actually looks like over a year. Three phases. Nine meetings. One flat fee."
+        primaryCta={{
+          label: "Book your 15-minute intro call",
+          href: "https://links.wealthinyourself.com/widget/bookings/wiy-15-min-call",
+          external: true,
+        }}
+      />
 
-      {/* Year One Timeline */}
+      {/* Pinned scroll cinema — 3 phases (Ground / Build / Live) */}
+      <ScrollPinnedCinema chapters={cinemaChapters} />
+
+      {/* 9 Meetings — wrapped grid */}
       <section className="bg-white py-14 sm:py-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
@@ -177,30 +211,40 @@ export default function OurProcessPage() {
                   </div>
                 </div>
 
-                {/* Meeting Cards */}
+                {/* Meeting Cards — each wrapped in RevealOnScroll */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {phase.meetings.map((meeting) => (
-                    <div
-                      key={meeting.number}
-                      className={`border-l-4 ${phase.color} bg-neutral-bg rounded-xl p-6 hover:shadow-md transition-shadow`}
-                    >
-                      <div className="flex items-start gap-4">
-                        <span
-                          className={`flex-shrink-0 w-8 h-8 rounded-full ${phase.bgAccent} flex items-center justify-center text-sm font-bold ${phase.textAccent}`}
+                  {phase.meetings.map((meeting) => {
+                    // Compute the meeting's index in the flat list for stagger.
+                    const flatIdx = allMeetings.findIndex(
+                      (m) => m.number === meeting.number
+                    );
+                    return (
+                      <RevealOnScroll
+                        key={meeting.number}
+                        delay={flatIdx * 0.05}
+                      >
+                        <div
+                          className={`border-l-4 ${phase.color} bg-neutral-bg rounded-xl p-6 hover:shadow-md transition-shadow h-full`}
                         >
-                          {meeting.number}
-                        </span>
-                        <div>
-                          <h4 className="font-bold text-primary">
-                            {meeting.name}
-                          </h4>
-                          <p className="mt-1 text-sm text-neutral-dark/70 leading-relaxed">
-                            {meeting.description}
-                          </p>
+                          <div className="flex items-start gap-4">
+                            <span
+                              className={`flex-shrink-0 w-8 h-8 rounded-full ${phase.bgAccent} flex items-center justify-center text-sm font-bold ${phase.textAccent}`}
+                            >
+                              {meeting.number}
+                            </span>
+                            <div>
+                              <h4 className="font-bold text-primary">
+                                {meeting.name}
+                              </h4>
+                              <p className="mt-1 text-sm text-neutral-dark/70 leading-relaxed">
+                                {meeting.description}
+                              </p>
+                            </div>
+                          </div>
                         </div>
-                      </div>
-                    </div>
-                  ))}
+                      </RevealOnScroll>
+                    );
+                  })}
                 </div>
               </div>
             ))}
@@ -209,53 +253,55 @@ export default function OurProcessPage() {
       </section>
 
       {/* VFO In Action */}
-      <section className="bg-primary py-14 sm:py-20">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            eyebrow="The Virtual Family Office in Action"
-            title="You don't coordinate the team. We do."
-            dark
-          />
-          <p className="mt-6 text-lg text-white/80 leading-relaxed max-w-3xl mx-auto text-center">
-            When you need a cost segregation study, I don&apos;t send you to
-            Google &mdash; I introduce you to the right partner, manage the
-            handoff, review the output with you, and coordinate the tax and
-            investment implications.
-          </p>
+      <RevealOnScroll>
+        <section className="bg-primary py-14 sm:py-20">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <SectionHeading
+              eyebrow="The Virtual Family Office in Action"
+              title="You don't coordinate the team. We do."
+              dark
+            />
+            <p className="mt-6 text-lg text-white/80 leading-relaxed max-w-3xl mx-auto text-center">
+              When you need a cost segregation study, I don&apos;t send you to
+              Google &mdash; I introduce you to the right partner, manage the
+              handoff, review the output with you, and coordinate the tax and
+              investment implications.
+            </p>
 
-          <div className="mt-12 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
-            {vfoPartners.map((partner) => (
-              <div
-                key={partner.name}
-                className="bg-white/10 backdrop-blur rounded-xl p-5 text-center border border-white/10 hover:border-secondary/30 transition-all"
-              >
-                <div className="h-10 flex items-center justify-center mb-3">
-                  <Image
-                    src={partner.logo}
-                    alt={partner.name}
-                    width={120}
-                    height={40}
-                    className="max-h-10 w-auto object-contain brightness-0 invert"
-                  />
+            <div className="mt-12 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+              {vfoPartners.map((partner) => (
+                <div
+                  key={partner.name}
+                  className="bg-white/10 backdrop-blur rounded-xl p-5 text-center border border-white/10 hover:border-secondary/30 transition-all"
+                >
+                  <div className="h-10 flex items-center justify-center mb-3">
+                    <Image
+                      src={partner.logo}
+                      alt={partner.name}
+                      width={120}
+                      height={40}
+                      className="max-h-10 w-auto object-contain brightness-0 invert"
+                    />
+                  </div>
+                  <p className="text-sm font-semibold text-white">
+                    {partner.name}
+                  </p>
+                  <p className="text-xs text-white/70 mt-1">{partner.role}</p>
                 </div>
-                <p className="text-sm font-semibold text-white">
-                  {partner.name}
-                </p>
-                <p className="text-xs text-white/70 mt-1">{partner.role}</p>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
 
-          <div className="mt-8 text-center">
-            <Link
-              href="/virtual-family-office"
-              className="text-secondary font-semibold hover:text-secondary/80 transition-colors"
-            >
-              Learn more about the VFO model &rarr;
-            </Link>
+            <div className="mt-8 text-center">
+              <Link
+                href="/virtual-family-office"
+                className="text-secondary font-semibold hover:text-secondary/80 transition-colors"
+              >
+                Learn more about the VFO model &rarr;
+              </Link>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </RevealOnScroll>
 
       {/* Year Two and Beyond */}
       <section className="bg-white py-14 sm:py-20">
@@ -265,78 +311,84 @@ export default function OurProcessPage() {
             title="After the first year, the rhythm changes."
           />
           <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-6">
-            <div className="bg-neutral-bg rounded-xl p-6 text-center">
-              <div className="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center mx-auto mb-4">
-                <svg
-                  className="w-6 h-6 text-secondary"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={1.5}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                  />
-                </svg>
+            <RevealOnScroll delay={0}>
+              <div className="bg-neutral-bg rounded-xl p-6 text-center h-full">
+                <div className="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center mx-auto mb-4">
+                  <svg
+                    className="w-6 h-6 text-secondary"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth={1.5}
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                    />
+                  </svg>
+                </div>
+                <h3 className="text-lg font-bold text-primary">
+                  Annual Re-Vision
+                </h3>
+                <p className="mt-2 text-sm text-neutral-dark/70 leading-relaxed">
+                  Reopen the Vision, refresh the Obstacle Map, update the Blueprint.
+                  The meeting that prevents drift and re-energizes the engagement.
+                </p>
               </div>
-              <h3 className="text-lg font-bold text-primary">
-                Annual Re-Vision
-              </h3>
-              <p className="mt-2 text-sm text-neutral-dark/70 leading-relaxed">
-                Reopen the Vision, refresh the Obstacle Map, update the Blueprint.
-                The meeting that prevents drift and re-energizes the engagement.
-              </p>
-            </div>
-            <div className="bg-neutral-bg rounded-xl p-6 text-center">
-              <div className="w-12 h-12 rounded-full bg-success/10 flex items-center justify-center mx-auto mb-4">
-                <svg
-                  className="w-6 h-6 text-success"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={1.5}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                  />
-                </svg>
+            </RevealOnScroll>
+            <RevealOnScroll delay={0.1}>
+              <div className="bg-neutral-bg rounded-xl p-6 text-center h-full">
+                <div className="w-12 h-12 rounded-full bg-success/10 flex items-center justify-center mx-auto mb-4">
+                  <svg
+                    className="w-6 h-6 text-success"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth={1.5}
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                </div>
+                <h3 className="text-lg font-bold text-primary">
+                  Ongoing Coordination
+                </h3>
+                <p className="mt-2 text-sm text-neutral-dark/70 leading-relaxed">
+                  Tax strategy, investment monitoring, insurance reviews, and
+                  estate updates — coordinated across your VFO team year-round.
+                </p>
               </div>
-              <h3 className="text-lg font-bold text-primary">
-                Ongoing Coordination
-              </h3>
-              <p className="mt-2 text-sm text-neutral-dark/70 leading-relaxed">
-                Tax strategy, investment monitoring, insurance reviews, and
-                estate updates — coordinated across your VFO team year-round.
-              </p>
-            </div>
-            <div className="bg-neutral-bg rounded-xl p-6 text-center">
-              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                <svg
-                  className="w-6 h-6 text-primary"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={1.5}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M13 10V3L4 14h7v7l9-11h-7z"
-                  />
-                </svg>
+            </RevealOnScroll>
+            <RevealOnScroll delay={0.2}>
+              <div className="bg-neutral-bg rounded-xl p-6 text-center h-full">
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                  <svg
+                    className="w-6 h-6 text-primary"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth={1.5}
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M13 10V3L4 14h7v7l9-11h-7z"
+                    />
+                  </svg>
+                </div>
+                <h3 className="text-lg font-bold text-primary">
+                  Event-Driven Planning
+                </h3>
+                <p className="mt-2 text-sm text-neutral-dark/70 leading-relaxed">
+                  A business sale, a new property, a baby, a career change. When
+                  life happens, your plan adapts.
+                </p>
               </div>
-              <h3 className="text-lg font-bold text-primary">
-                Event-Driven Planning
-              </h3>
-              <p className="mt-2 text-sm text-neutral-dark/70 leading-relaxed">
-                A business sale, a new property, a baby, a career change. When
-                life happens, your plan adapts.
-              </p>
-            </div>
+            </RevealOnScroll>
           </div>
         </div>
       </section>
