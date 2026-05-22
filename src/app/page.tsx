@@ -178,6 +178,14 @@ export default function HomePage() {
               person, working in the same direction, paid the same way no matter
               what your account does next quarter.
             </p>
+            <p>
+              I also run a short-term rental business and a motorcycle rental
+              business out near Lake Tahoe. I file the same K-1s you do. I run
+              the same cost-segregation studies. I make the same entity and
+              retirement-plan decisions. The advice I give clients is the advice
+              I take myself &mdash; because I&apos;m doing this work alongside
+              you, not analyzing it from outside.
+            </p>
             <p className="text-secondary font-semibold">
               That&apos;s Wealth In Yourself. The standard here is{" "}
               <a href="/fiduciary" className="text-secondary hover:text-secondary/80 underline">FIAT &mdash; Fiduciary In All Things</a>.
@@ -190,7 +198,7 @@ export default function HomePage() {
       <section className="bg-neutral-bg py-8 sm:py-10">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-neutral-dark/70 text-lg">
-            Not ready to book a call? Start with the 5 questions every $3M+ household should be asking their advisor.
+            Five questions every $3M+ household should ask their advisor &mdash; including ours. Use them at your next review meeting, with us or with anyone.
           </p>
           <a
             href="/5-questions"
@@ -245,7 +253,7 @@ export default function HomePage() {
           <SectionHeading
             eyebrow="Your Team Under One Fee"
             title="You don't coordinate the team. We do."
-            subtitle="Your flat fee covers the coordination. You pay partners directly only when their service is engaged. No markups. No middlemen."
+            subtitle="Your fee covers the coordination. You only pay these specialists when their work is actually engaged &mdash; no markups, no middlemen, no surprise invoices from people you've never met."
           />
           <div className="mt-10 grid grid-cols-2 sm:grid-cols-3 gap-4 max-w-4xl mx-auto">
             {partners.map((partner) => (

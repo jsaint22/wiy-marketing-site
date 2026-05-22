@@ -44,7 +44,7 @@ const edgeCases = [
   {
     title: "International relocation + tax-treaty optimization",
     description:
-      "Moving abroad in early retirement triggers a different ruleset: foreign earned income exclusion vs. tax-treaty paths, FATCA + FBAR reporting, residency severance documentation that survives a US audit, healthcare coordination across jurisdictions, and Roth conversion sequencing while the income window stays low and your new country’s tax treatment cooperates. Italy’s 7% retiree regime, Puerto Rico Act 60, and Caribbean residency programs each have specific qualification windows and ongoing compliance burdens that most DIY relocators miss.",
+      "Moving abroad in early retirement triggers a different ruleset: foreign earned income exclusion vs. tax-treaty paths, FATCA + FBAR reporting, residency severance that survives a US audit, and Roth conversion sequencing under a new tax regime. Italy’s 7% retiree, Puerto Rico Act 60, and Caribbean residency programs each have qualification windows most DIY relocators miss.",
     icon: "M21 12a9 9 0 11-18 0 9 9 0 0118 0z M3 12h18 M12 3a9 9 0 010 18 M12 3a9 9 0 000 18",
   },
 ];

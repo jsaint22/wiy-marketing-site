@@ -80,6 +80,11 @@ const includedServices = [
 
 const faqs = [
   {
+    question: "Do you charge for the intro call?",
+    answer:
+      "No. Your initial 15-minute intro call is free, and if we\u2019re a mutual fit, we\u2019ll schedule a 45-minute Strategy & Vision meeting that\u2019s also at no cost. You get a full hour with us to decide whether this is the right partnership \u2014 no pressure, no hidden fees, no strings.",
+  },
+  {
     question: "What's included in the flat fee?",
     answer:
       "Everything. Life planning, tax strategy, investment management, insurance review, estate coordination, business planning, and real estate investor planning. One fee. No add-ons. No surprise invoices. If it touches your financial life, it's covered.",
@@ -88,11 +93,6 @@ const faqs = [
     question: "How is net worth calculated?",
     answer:
       "We calculate net worth by totaling your assets (investments, business equity, real estate holdings, cash) minus your liabilities. Your primary residence is excluded from the calculation. We reassess your net worth on your anniversary date each year — the date we began working together.",
-  },
-  {
-    question: "Do you charge for the intro call?",
-    answer:
-      "No. Your initial 15-minute intro call is free, and if we\u2019re a mutual fit, we\u2019ll schedule a 45-minute Strategy & Vision meeting that\u2019s also at no cost. You get a full hour with us to decide whether this is the right partnership \u2014 no pressure, no hidden fees, no strings.",
   },
   {
     question: "How does this compare to a typical AUM advisor?",

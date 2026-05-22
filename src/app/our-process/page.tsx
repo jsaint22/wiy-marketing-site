@@ -138,17 +138,17 @@ const cinemaChapters = [
   {
     number: "01",
     title: "Ground",
-    body: "Get clear on who you are, what you've built, and where you actually want this to go.",
+    body: "Three meetings across the first three weeks. We surface your money history, work through the Kinder Three Questions, and end with a written Vision Statement of the life this engagement is designed to fund.",
   },
   {
     number: "02",
     title: "Build",
-    body: "Design the architecture — tax, capital, entity, estate — around the life you just named.",
+    body: "Five meetings across the next nine weeks. Obstacles, cash architecture, tax + entity, capital design, and risk + estate — every recommendation tied back to the Vision, not built around a portfolio benchmark.",
   },
   {
     number: "03",
     title: "Live",
-    body: "Receive your Blueprint and step into the rhythm that runs the next 12 months.",
+    body: "One meeting to hand over your Blueprint — the designed artifact of your planning year — then an Annual Re-Vision plus unlimited event-driven planning when life happens.",
   },
 ];
 
