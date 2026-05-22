@@ -11,7 +11,7 @@ import { FeeTierReveal } from "@/components/cinematic/FeeTierReveal";
 export const metadata: Metadata = {
   title: "Pricing",
   description:
-    "Transparent, declining flat fee fiduciary financial advisor. One fee covers everything — tax strategy, investment management, estate coordination, and more. No AUM percentage. No surprises.",
+    "One transparent flat fee — declining as your wealth grows — covers life planning, tax strategy, investment management, estate coordination, business planning, and unlimited meetings. Published in full on this page.",
 };
 
 const tiers = [
@@ -97,7 +97,7 @@ const faqs = [
   {
     question: "How does this compare to a typical AUM advisor?",
     answer:
-      "Most AUM advisors charge 1% of assets under management. At $3M, that's $30,000 per year. Our fee at $3M is $17,000 per year — $13,000 less annually. At $5M, the gap is $29,000 per year in the first year alone, and it widens as a 1% AUM fee compounds on a growing portfolio while our flat fee stays the same. We built an entire page that walks through the math — see our full AUM comparison.",
+      "A typical AUM advisor charges 1% of assets under management. At $3M, that's $30,000 per year. Our fee at $3M is $17,000 per year — $13,000 less annually. At $5M, the gap is $29,000 per year in the first year alone, and it widens as a 1% AUM fee compounds on a growing portfolio while our flat fee stays the same. We built an entire page that walks through the math — see our full AUM comparison.",
   },
   {
     question: "Is there a minimum net worth requirement?",
@@ -130,8 +130,8 @@ export default function PricingPage() {
           15-min booking link as a sensible default (CinematicHero requires primaryCta). */}
       <CinematicHero
         eyebrow="Transparent Pricing"
-        headline="Your fee goes down as your wealth goes up."
-        subhead="Most advisors charge 1% of your portfolio — forever. We charge a declining flat fee based on net worth. The wealthier you get, the less you pay as a percentage. That's the point."
+        headline="One flat fee. Everything included."
+        subhead="Life planning, tax strategy, investment management, estate coordination, business planning, RE investor planning, unlimited meetings — all coordinated by one advisor for one transparent monthly fee. Your fee scales with complexity, not with how well your portfolio does."
         primaryCta={{
           label: "Book your 15-minute intro call",
           href: "https://links.wealthinyourself.com/widget/bookings/wiy-15-min-call",
@@ -221,7 +221,7 @@ export default function PricingPage() {
               We publish our fees because we have nothing to hide.
             </h3>
             <p className="mt-4 text-white/80 text-lg leading-relaxed">
-              Most firms serving high-net-worth clients hide their fees. You&apos;ll sit through multiple sales calls before anyone tells you what you&apos;re actually paying. And then you find out they&apos;re charging 1% of your assets annually — for portfolio management they&apos;ve mostly automated.
+              Every line of our pricing is on this page. The formula. The tier breakdown. The interactive calculator. The math at $5M over 20 years. No sales calls required before you know what you&apos;d pay.
             </p>
             <p className="mt-4 text-white/80 text-lg leading-relaxed">
               Our pricing is flat, fair, and aligned with your success — not your account balance.
@@ -304,7 +304,7 @@ export default function PricingPage() {
             How does this compare to a 1% AUM advisor?
           </h2>
           <p className="mt-3 text-neutral-dark/70">
-            At $5M over 20 years: our flat fee costs {formatUSD(proj20.cumulativeWiyFees)}. A typical 1% AUM advisor costs {formatUSD(proj20.cumulativeAumFees)} — a difference of {formatUSD(proj20.feeDelta)} in fees alone, or {formatUSD(proj20.portfolioBenefit)} when you account for the growth those fees would have earned you.
+            At $5M over 20 years, the math is straightforward: our flat fee costs {formatUSD(proj20.cumulativeWiyFees)}. A 1% AUM fee on the same portfolio costs {formatUSD(proj20.cumulativeAumFees)} — a difference of {formatUSD(proj20.feeDelta)} in fees alone, or {formatUSD(proj20.portfolioBenefit)} when you account for the growth those fees would have earned you.
           </p>
           <Link href="/vs-aum" className="inline-block mt-6 px-8 py-3.5 bg-primary text-white font-semibold rounded-lg hover:bg-primary/90 transition-colors">
             See the full comparison &rarr;
