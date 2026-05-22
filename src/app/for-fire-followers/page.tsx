@@ -41,6 +41,12 @@ const edgeCases = [
       "The 4% rule is built on average outcomes. Real early retirees who hit a bad first decade (think 2000-2010) needed bond tents, dynamic withdrawal floors, and CAPE-based adjustments to avoid running out at 80. Most FIRE calculators don’t stress-test this.",
     icon: "M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3",
   },
+  {
+    title: "International relocation + tax-treaty optimization",
+    description:
+      "Moving abroad in early retirement triggers a different ruleset: foreign earned income exclusion vs. tax-treaty paths, FATCA + FBAR reporting, residency severance documentation that survives a US audit, healthcare coordination across jurisdictions, and Roth conversion sequencing while the income window stays low and your new country’s tax treatment cooperates. Italy’s 7% retiree regime, Puerto Rico Act 60, and Caribbean residency programs each have specific qualification windows and ongoing compliance burdens that most DIY relocators miss.",
+    icon: "M21 12a9 9 0 11-18 0 9 9 0 0118 0z M3 12h18 M12 3a9 9 0 010 18 M12 3a9 9 0 000 18",
+  },
 ];
 
 const howWeWork = [
