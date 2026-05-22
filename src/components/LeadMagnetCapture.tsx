@@ -23,26 +23,17 @@ export default function LeadMagnetCapture({
   const [email, setEmail] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
-  // Privacy Policy + SMS consent — required, unchecked by default per the
-  // 2026-05-20 booking-gate lock supersession (op-debt
-  // AI-CONSENT-BOOKING-GATE-ENFORCEMENT-1). Submit button is disabled until
-  // checked. Server-side re-verification in
-  // src/app/api/lead-magnet/route.ts guards against any DOM bypass.
-  const [privacyPolicyConsent, setPrivacyPolicyConsent] = useState(false);
   const [status, setStatus] = useState<
     "idle" | "loading" | "success" | "error"
   >("idle");
   const [message, setMessage] = useState("");
 
   const canSubmit =
-    email.length > 0 &&
-    firstName.length > 0 &&
-    privacyPolicyConsent &&
-    status !== "loading";
+    email.length > 0 && firstName.length > 0 && status !== "loading";
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    if (!email || !firstName || !privacyPolicyConsent) return;
+    if (!email || !firstName) return;
 
     setStatus("loading");
     try {
@@ -54,7 +45,6 @@ export default function LeadMagnetCapture({
           firstName,
           lastName,
           magnet,
-          privacyPolicyConsent,
         }),
       });
       const data = await res.json();
@@ -65,7 +55,6 @@ export default function LeadMagnetCapture({
         setEmail("");
         setFirstName("");
         setLastName("");
-        setPrivacyPolicyConsent(false);
       } else {
         setStatus("error");
         setMessage(data.error || "Something went wrong.");
@@ -157,52 +146,30 @@ export default function LeadMagnetCapture({
                   {status === "loading" ? "Sending..." : buttonText}
                 </button>
               </div>
-              {/*
-                Privacy Policy + SMS consent gate.
-
-                LOCKED 2026-05-20 — verbatim copy from
-                op-debt AI-CONSENT-BOOKING-GATE-ENFORCEMENT-1 (Status update
-                2026-05-20) which supersedes the LOCK doc §4 explicit-AI
-                language. Required, unchecked by default. Submit button is
-                disabled until checked. Standing Rule 8 99% Compliance
-                Confidence applies — any edit to this string requires
-                Compliance Officer re-attestation.
-              */}
-              <label className="mt-2 flex items-start gap-3 text-left text-white/80 text-xs sm:text-sm">
-                <input
-                  type="checkbox"
-                  checked={privacyPolicyConsent}
-                  onChange={(e) => setPrivacyPolicyConsent(e.target.checked)}
-                  required
-                  aria-required="true"
-                  disabled={status === "loading"}
-                  className="mt-1 h-4 w-4 flex-shrink-0 rounded border-white/40 bg-white/10 text-secondary focus:ring-2 focus:ring-secondary focus:ring-offset-0"
-                />
-                <span>
-                  By checking this box, I agree to Wealth In Yourself&apos;s
-                  Privacy Policy (
-                  <a
-                    href="https://wealthinyourself.com/privacy-policy"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="underline text-secondary hover:text-white"
-                  >
-                    https://wealthinyourself.com/privacy-policy
-                  </a>
-                  ). I also consent to receive text messages from Wealth In
-                  Yourself, including appointment reminders, responses to my
-                  questions, event announcements, and financial education
-                  resources. Message frequency varies. Message and data rates
-                  may apply. Text HELP for help or STOP to opt out.
-                </span>
-              </label>
             </div>
             {status === "error" && (
               <p className="mt-3 text-warning text-sm">{message}</p>
             )}
-            <p className="mt-4 text-white/70 text-xs">
-              We don&apos;t share your email. Unsubscribe anytime. This is not
-              financial advice.
+            {/*
+              Privacy Policy notice — CCPA §1798.100(b) notice-at-collection
+              pattern. Compliance Officer attestation 2026-05-22 confirmed
+              lead-magnet capture is OUT of scope of the 2026-05-20
+              booking-gate LOCK; SMS consent remains scoped to booking
+              surfaces only. See compliance-log.md 2026-05-22 entry
+              "Lead-magnet capture forms — SCOPE CLARIFICATION."
+            */}
+            <p className="mt-4 text-white/70 text-xs leading-relaxed">
+              By submitting this form, you agree to our{" "}
+              <a
+                href="https://wealthinyourself.com/privacy-policy"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline text-secondary hover:text-white"
+              >
+                Privacy Policy
+              </a>
+              . You&apos;ll receive the requested resource and occasional emails
+              from Josh. Unsubscribe anytime. This is not financial advice.
             </p>
           </form>
         )}

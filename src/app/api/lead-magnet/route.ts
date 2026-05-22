@@ -66,13 +66,7 @@ const LEAD_MAGNETS: Record<
 
 export async function POST(request: NextRequest) {
   try {
-    const {
-      email,
-      firstName,
-      lastName,
-      magnet,
-      privacyPolicyConsent,
-    } = await request.json();
+    const { email, firstName, lastName, magnet } = await request.json();
 
     if (!email || typeof email !== "string" || !email.includes("@")) {
       return NextResponse.json(
@@ -88,20 +82,16 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // SERVER-SIDE Privacy Policy + SMS consent gate.
-    // Per Josh 2026-05-20 booking-gate lock + amended Privacy Policy: client-
-    // side validation is insufficient — must re-verify server-side per
-    // ai-consent-booking-gate-LOCKED-2026-05-19.md §3 ("server-side check
-    // that the consent flag is true on submission").
-    if (privacyPolicyConsent !== true) {
-      return NextResponse.json(
-        {
-          error:
-            "Privacy Policy and SMS consent acceptance is required to download.",
-        },
-        { status: 400 }
-      );
-    }
+    // Privacy Policy consent: implicit at form submission via the one-line
+    // notice under the submit button ("By submitting this form, you agree
+    // to our Privacy Policy"). Compliance Officer attestation 2026-05-22
+    // confirmed lead-magnet capture is OUT of scope of the 2026-05-20
+    // booking-gate LOCK (which is scoped to GHL / Vercel intake / cal.com
+    // booking surfaces only). SMS consent remains scoped to booking
+    // surfaces; lead-magnet contacts get email-only nurture. The
+    // privacy_policy_consent_version + _timestamp fields below stamp the
+    // implicit-consent event for Books-and-Records discipline (Rule 204-2)
+    // even though no checkbox gate is enforced.
 
     const config = LEAD_MAGNETS[magnet];
     if (!config) {
