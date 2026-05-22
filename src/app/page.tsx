@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import CTASection from "@/components/CTASection";
 import SectionHeading from "@/components/SectionHeading";
-import EmailCapture from "@/components/EmailCapture";
+import LeadMagnetCapture from "@/components/LeadMagnetCapture";
 import { CinematicHero } from "@/components/cinematic/CinematicHero";
 import { RevealOnScroll } from "@/components/cinematic/RevealOnScroll";
 import { getAllPosts } from "@/lib/blog";
@@ -339,8 +339,15 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Email Capture */}
-      <EmailCapture />
+      {/* Email Capture — 5 Questions lead magnet */}
+      <LeadMagnetCapture
+        magnet="five-questions"
+        headline="The 5 questions a $3M+ household should be asking their advisor."
+        subheadline="(Free PDF)"
+        description="Most households at this net worth can't answer these five questions about their current advisor relationship. We can — so can any advisor worth their fee. Use this list before your next review meeting."
+        buttonText="Send me the 5 questions"
+        successMessage="Sent. Check your inbox for The 5 Questions."
+      />
 
       {/* Fee model overview */}
       <section className="bg-white py-10 sm:py-14">
