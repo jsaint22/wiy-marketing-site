@@ -84,7 +84,7 @@ export default function CaseStudiesPage() {
             Case Studies
           </p>
           <h1 className="text-4xl sm:text-5xl font-bold text-primary">
-            Real planning. Real results.
+            Three numbers that didn&apos;t have to be left on the table.
           </h1>
           <p className="mt-6 text-lg text-neutral-dark/70 max-w-2xl mx-auto">
             Three planning scenarios. Three different financial lives. Each illustrates how coordinated tax, investment, and life planning creates measurable value.

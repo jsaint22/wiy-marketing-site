@@ -101,7 +101,7 @@ export default function HomePage() {
             {" "}Not the other way around.
           </>
         }
-        subhead="Wealth In Yourself is a flat-fee, fiduciary financial life planning firm for entrepreneurs and real estate investors. No commissions. No AUM fees. Just honest advice built around the life you want to create."
+        subhead="I'm Josh. I built a flat-fee, fiduciary firm for households between $3M and $30M who want one advisor coordinating tax strategy, investment design, estate planning, and the dozen life decisions that happen in between."
         primaryCta={{
           label: 'Book your 15-minute intro call',
           href: 'https://links.wealthinyourself.com/widget/bookings/wiy-15-min-call',

@@ -9,7 +9,7 @@ interface CTASectionProps {
 }
 
 export default function CTASection({
-  headline = "Ready to stop overpaying and start designing your life?",
+  headline = "Ready to design the life this money is supposed to fund?",
   subtext = "Book a 15-minute intro call. No pitch. No pressure. Just a conversation about what matters to you.",
   buttonText = "Book Your Intro Call",
   buttonHref = "https://links.wealthinyourself.com/widget/bookings/wiy-15-min-call",
