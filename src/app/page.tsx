@@ -51,6 +51,11 @@ const partners = [
     description: "Estate planning — wills, trusts, and powers of attorney coordinated with your financial plan.",
   },
   {
+    name: "Equity Trust",
+    logo: "/logos/partners/equity-trust.png",
+    description: "Self-directed retirement custody — IRAs, Solo 401(k)s, and HSAs structured to hold alternative assets coordinated with your plan.",
+  },
+  {
     name: "Valur",
     logo: "/logos/partners/valur.svg",
     description: "Advanced tax strategies — Charitable Remainder Trusts, OZ funds, and more.",
@@ -291,8 +296,8 @@ export default function HomePage() {
           />
           <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-8">
             {clientPaths.map((path, index) => (
-              <RevealOnScroll key={path.title} delay={index * 0.1}>
-                <div className="group bg-white/10 rounded-xl p-6 sm:p-8 hover:shadow-lg transition-all border border-white/10 hover:border-secondary/30">
+              <RevealOnScroll key={path.title} delay={index * 0.1} className="h-full">
+                <div className="group bg-white/10 rounded-xl p-6 sm:p-8 hover:shadow-lg transition-all border border-white/10 hover:border-secondary/30 h-full flex flex-col">
                   <div className="w-12 h-12 rounded-lg bg-white/10 flex items-center justify-center mb-4">
                     <svg
                       className="w-6 h-6 text-secondary"
@@ -311,7 +316,7 @@ export default function HomePage() {
                   <p className="mt-3 text-white/70 text-sm leading-relaxed">
                     {path.description}
                   </p>
-                  <div className="mt-4 flex flex-col gap-2">
+                  <div className="mt-auto pt-4 flex flex-col gap-2">
                     <Link
                       href={path.href}
                       className="text-sm font-semibold text-secondary hover:text-secondary/80 transition-colors"
