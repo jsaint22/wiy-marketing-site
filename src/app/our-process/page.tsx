@@ -10,7 +10,7 @@ import { RevealOnScroll } from "@/components/cinematic/RevealOnScroll";
 export const metadata: Metadata = {
   title: "Our Process — 9 Meetings + Annual Re-Vision",
   description:
-    "Most financial plans are a 90-minute meeting, a PDF, and an invoice. See exactly what a year of working with Wealth In Yourself looks like — 9 meetings across 3 phases, plus an annual Re-Vision.",
+    "Twelve months. Nine conversations. One designed life. See exactly what a year of working with Wealth In Yourself looks like — 9 meetings across 3 phases, plus an annual Re-Vision.",
 };
 
 const phases = [
@@ -166,8 +166,8 @@ export default function OurProcessPage() {
           15-min booking link as a sensible default (CinematicHero requires primaryCta). */}
       <CinematicHero
         eyebrow="Our Process"
-        headline="Most financial plans are a 90-minute meeting, a PDF, and an invoice."
-        subhead="Here's what Wealth In Yourself actually looks like over a year. Three phases. Nine meetings. One flat fee."
+        headline="Twelve months. Nine conversations. One designed life."
+        subhead="The Life Architecture is what we call the year-long engagement that takes a household from 'we have money but not clarity' to 'we know exactly where this is going.' Three phases. Nine meetings. One flat fee."
         primaryCta={{
           label: "Book your 15-minute intro call",
           href: "https://links.wealthinyourself.com/widget/bookings/wiy-15-min-call",
@@ -402,8 +402,8 @@ export default function OurProcessPage() {
             dark
           />
           <p className="mt-6 text-lg text-white/70 leading-relaxed">
-            No AUM percentage. No commissions. No surprise invoices. Your fee is
-            based on net worth and declines as your wealth grows.
+            No commissions. No surprise invoices. Your fee is based on net worth
+            and declines as your wealth grows.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
             <Link
