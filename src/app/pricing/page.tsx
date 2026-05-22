@@ -5,6 +5,8 @@ import FeeCalculator from "@/components/FeeCalculator";
 import FAQSection from "@/components/FAQSection";
 import CTASection from "@/components/CTASection";
 import { projectFees, formatUSD } from "@/lib/pdf/fee-math";
+import { CinematicHero } from "@/components/cinematic/CinematicHero";
+import { FeeTierReveal } from "@/components/cinematic/FeeTierReveal";
 
 export const metadata: Metadata = {
   title: "Pricing",
@@ -124,20 +126,18 @@ export default function PricingPage() {
 
   return (
     <>
-      {/* Hero */}
-      <section className="bg-white py-10 sm:py-16 lg:py-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-secondary font-semibold text-sm uppercase tracking-wider mb-4">
-            Transparent Pricing
-          </p>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary leading-tight">
-            Your fee goes down as your wealth goes up.
-          </h1>
-          <p className="mt-6 text-lg sm:text-xl text-neutral-dark/70 leading-relaxed max-w-2xl mx-auto">
-            Most advisors charge 1% of your portfolio — forever. We charge a declining flat fee based on net worth. The wealthier you get, the less you pay as a percentage. That&apos;s the point.
-          </p>
-        </div>
-      </section>
+      {/* Hero — Cinematic shell. Original page had no primary CTA; using canonical
+          15-min booking link as a sensible default (CinematicHero requires primaryCta). */}
+      <CinematicHero
+        eyebrow="Transparent Pricing"
+        headline="Your fee goes down as your wealth goes up."
+        subhead="Most advisors charge 1% of your portfolio — forever. We charge a declining flat fee based on net worth. The wealthier you get, the less you pay as a percentage. That's the point."
+        primaryCta={{
+          label: "Book your 15-minute intro call",
+          href: "https://links.wealthinyourself.com/widget/bookings/wiy-15-min-call",
+          external: true,
+        }}
+      />
 
       {/* Primary residence callout */}
       <section className="bg-success/5 border-y border-success/20">
@@ -194,30 +194,20 @@ export default function PricingPage() {
             </p>
           </div>
 
-          {/* Example milestones */}
+          {/* Example milestones — animated CountUp reveal. Values preserved verbatim
+              from the original milestones array (formula-derived, Compliance-attested). */}
           <div className="mt-12">
             <h3 className="text-center text-xl sm:text-2xl font-bold text-primary mb-6">
               What that looks like in practice
             </h3>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 max-w-5xl mx-auto">
-              {milestones.map((m) => (
-                <div
-                  key={m.nw}
-                  className="bg-white rounded-xl p-5 border border-neutral-bg text-center"
-                >
-                  <p className="text-xs font-semibold text-neutral-dark/70 uppercase tracking-wider">
-                    Net Worth
-                  </p>
-                  <p className="text-lg sm:text-xl font-bold text-primary mt-1">
-                    {m.nw}
-                  </p>
-                  <hr className="my-3 border-neutral-bg" />
-                  <p className="text-lg font-bold text-secondary">{m.fee}</p>
-                  <p className="text-xs text-neutral-dark/70 mt-1">
-                    Effective: {m.effective}
-                  </p>
-                </div>
-              ))}
+            <div className="max-w-3xl mx-auto">
+              <FeeTierReveal
+                tiers={milestones.map((m) => ({
+                  netWorth: m.nw,
+                  monthly: parseInt(m.fee.replace(/[^0-9]/g, ""), 10),
+                  effectiveRate: m.effective,
+                }))}
+              />
             </div>
           </div>
         </div>

@@ -3,6 +3,8 @@ import Image from "next/image";
 import CTASection from "@/components/CTASection";
 import SectionHeading from "@/components/SectionHeading";
 import EmailCapture from "@/components/EmailCapture";
+import { CinematicHero } from "@/components/cinematic/CinematicHero";
+import { RevealOnScroll } from "@/components/cinematic/RevealOnScroll";
 import { getAllPosts } from "@/lib/blog";
 
 const clientPaths = [
@@ -49,6 +51,11 @@ const partners = [
     description: "Estate planning — wills, trusts, and powers of attorney coordinated with your financial plan.",
   },
   {
+    name: "Equity Trust",
+    logo: "/logos/partners/equity-trust.png",
+    description: "Self-directed retirement custody — IRAs, Solo 401(k)s, and HSAs structured to hold alternative assets coordinated with your plan.",
+  },
+  {
     name: "Valur",
     logo: "/logos/partners/valur.svg",
     description: "Advanced tax strategies — Charitable Remainder Trusts, OZ funds, and more.",
@@ -84,57 +91,40 @@ export default function HomePage() {
 
   return (
     <>
-      {/* Hero */}
-      <section className="bg-gradient-to-br from-white via-neutral-bg/30 to-neutral-bg/60 pt-4 pb-6 sm:pt-6 sm:pb-8 lg:pt-8 lg:pb-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-            <div>
-              <p className="text-secondary font-semibold text-sm uppercase tracking-wider mb-4">
-                Flat-Fee Fiduciary Advisory
-              </p>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary leading-tight">
-                Your money should buy you time.
-                <br className="hidden sm:block" />
-                Not the other way around.
-              </h1>
-              <p className="mt-6 text-lg text-neutral-dark/70 leading-relaxed max-w-xl">
-                Wealth In Yourself is a flat-fee, fiduciary financial life
-                planning firm for entrepreneurs and real estate investors. No
-                commissions. No AUM fees. Just honest advice built around the
-                life you want to create.
-              </p>
-              <div className="mt-8 flex flex-col sm:flex-row gap-4">
-                <a
-                  href="https://links.wealthinyourself.com/widget/bookings/wiy-15-min-call"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-8 py-3.5 bg-primary text-white font-semibold rounded-lg hover:bg-primary/90 transition-colors text-center"
-                >
-                  Book your 15-minute intro call
-                </a>
-                <Link
-                  href="/pricing#calculator"
-                  className="text-primary font-medium underline underline-offset-4 hover:text-secondary transition-colors py-2"
-                >
-                  Or see what you&apos;d pay &rarr;
-                </Link>
-              </div>
-            </div>
-            <div className="relative">
-              <div className="aspect-[3/4] max-w-sm mx-auto lg:mx-0 rounded-2xl bg-neutral-bg overflow-hidden shadow-lg">
-                <Image
-                  src="/team/josh-headshot-v2.jpg"
-                  alt="Joshua St. Laurent, CFP, CFT — Founder of Wealth In Yourself"
-                  width={420}
-                  height={560}
-                  className="w-full h-full object-cover"
-                  priority
-                />
-              </div>
-            </div>
+      {/* Hero — Cinematic Hybrid */}
+      <CinematicHero
+        eyebrow="Flat-Fee Fiduciary Advisory"
+        headline={
+          <>
+            Your money should buy you time.
+            <br className="hidden sm:block" />
+            {" "}Not the other way around.
+          </>
+        }
+        subhead="Wealth In Yourself is a flat-fee, fiduciary financial life planning firm for entrepreneurs and real estate investors. No commissions. No AUM fees. Just honest advice built around the life you want to create."
+        primaryCta={{
+          label: 'Book your 15-minute intro call',
+          href: 'https://links.wealthinyourself.com/widget/bookings/wiy-15-min-call',
+          external: true,
+        }}
+        secondaryCta={{
+          label: "Or see what you'd pay →",
+          href: '/pricing#calculator',
+        }}
+        rightColumn={
+          <div className="relative aspect-[3/4] max-w-[380px] mx-auto rounded-xl overflow-hidden shadow-xl">
+            <Image
+              src="/team/josh-headshot-v2.jpg"
+              alt="Joshua St. Laurent, CFP, CFT — Founder of Wealth In Yourself"
+              width={420}
+              height={560}
+              className="w-full h-full object-cover"
+              priority
+            />
           </div>
-        </div>
-      </section>
+        }
+      />
+
 
       {/* As Featured In */}
       <section className="bg-primary py-6 sm:py-8">
@@ -227,16 +217,15 @@ export default function HomePage() {
               { title: "Estate & Risk Review", desc: "Estate documents that reflect your values. Coverage reviewed so nothing is overlooked." },
               { title: "Business Structure", desc: "Entity optimization, retirement plan design, and cash flow strategy for business owners." },
               { title: "One Flat Fee", desc: "All of this, coordinated. No AUM percentage. No hidden costs. One transparent monthly fee." },
-            ].map((item) => (
-              <div
-                key={item.title}
-                className="bg-neutral-bg rounded-xl p-6 border border-neutral-bg"
-              >
-                <h3 className="text-lg font-bold text-primary">{item.title}</h3>
-                <p className="mt-2 text-sm text-neutral-dark/70 leading-relaxed">
-                  {item.desc}
-                </p>
-              </div>
+            ].map((item, index) => (
+              <RevealOnScroll key={item.title} delay={index * 0.07}>
+                <div className="bg-neutral-bg rounded-xl p-6 border border-neutral-bg">
+                  <h3 className="text-lg font-bold text-primary">{item.title}</h3>
+                  <p className="mt-2 text-sm text-neutral-dark/70 leading-relaxed">
+                    {item.desc}
+                  </p>
+                </div>
+              </RevealOnScroll>
             ))}
           </div>
           <div className="mt-8 text-center">
@@ -306,47 +295,46 @@ export default function HomePage() {
             dark
           />
           <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-8">
-            {clientPaths.map((path) => (
-              <div
-                key={path.title}
-                className="group bg-white/10 rounded-xl p-6 sm:p-8 hover:shadow-lg transition-all border border-white/10 hover:border-secondary/30"
-              >
-                <div className="w-12 h-12 rounded-lg bg-white/10 flex items-center justify-center mb-4">
-                  <svg
-                    className="w-6 h-6 text-secondary"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={1.5}
-                    aria-hidden="true"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" d={path.icon} />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-bold text-white group-hover:text-secondary transition-colors">
-                  {path.title}
-                </h3>
-                <p className="mt-3 text-white/70 text-sm leading-relaxed">
-                  {path.description}
-                </p>
-                <div className="mt-4 flex flex-col gap-2">
-                  <Link
-                    href={path.href}
-                    className="text-sm font-semibold text-secondary hover:text-secondary/80 transition-colors"
-                  >
-                    Learn more &rarr;
-                  </Link>
-                  <Link
-                    href="/case-studies"
-                    className="text-xs text-white/70 hover:text-secondary transition-colors"
-                  >
-                    {path.caseStudyLabel} &rarr;
-                  </Link>
-                  <p className="text-[10px] text-white/50 leading-snug mt-1">
-                    Hypothetical composite for illustrative purposes only. Results based on specific client circumstances and are not a guarantee of future results.
+            {clientPaths.map((path, index) => (
+              <RevealOnScroll key={path.title} delay={index * 0.1} className="h-full">
+                <div className="group bg-white/10 rounded-xl p-6 sm:p-8 hover:shadow-lg transition-all border border-white/10 hover:border-secondary/30 h-full flex flex-col">
+                  <div className="w-12 h-12 rounded-lg bg-white/10 flex items-center justify-center mb-4">
+                    <svg
+                      className="w-6 h-6 text-secondary"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth={1.5}
+                      aria-hidden="true"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" d={path.icon} />
+                    </svg>
+                  </div>
+                  <h3 className="text-xl font-bold text-white group-hover:text-secondary transition-colors">
+                    {path.title}
+                  </h3>
+                  <p className="mt-3 text-white/70 text-sm leading-relaxed">
+                    {path.description}
                   </p>
+                  <div className="mt-auto pt-4 flex flex-col gap-2">
+                    <Link
+                      href={path.href}
+                      className="text-sm font-semibold text-secondary hover:text-secondary/80 transition-colors"
+                    >
+                      Learn more &rarr;
+                    </Link>
+                    <Link
+                      href="/case-studies"
+                      className="text-xs text-white/70 hover:text-secondary transition-colors"
+                    >
+                      {path.caseStudyLabel} &rarr;
+                    </Link>
+                    <p className="text-[10px] text-white/50 leading-snug mt-1">
+                      Hypothetical composite for illustrative purposes only. Results based on specific client circumstances and are not a guarantee of future results.
+                    </p>
+                  </div>
                 </div>
-              </div>
+              </RevealOnScroll>
             ))}
           </div>
         </div>

@@ -4,6 +4,7 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
+import { LenisProvider } from "@/components/cinematic/LenisProvider";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -140,10 +141,12 @@ export default function RootLayout({
         >
           Skip to main content
         </a>
-        <ScrollToTop />
-        <Navigation />
-        <main id="main-content" className="flex-1">{children}</main>
-        <Footer />
+        <LenisProvider>
+          <ScrollToTop />
+          <Navigation />
+          <main id="main-content" className="flex-1">{children}</main>
+          <Footer />
+        </LenisProvider>
         <GoogleAnalytics gaId="G-0BE9T7ZX38" />
         <script
           dangerouslySetInnerHTML={{

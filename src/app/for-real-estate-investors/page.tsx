@@ -4,6 +4,8 @@ import Image from "next/image";
 import CTASection from "@/components/CTASection";
 import SectionHeading from "@/components/SectionHeading";
 import FAQSection from "@/components/FAQSection";
+import { CinematicHero } from "@/components/cinematic/CinematicHero";
+import { EditorialPullQuote } from "@/components/cinematic/EditorialPullQuote";
 
 export const metadata: Metadata = {
   title: "Financial Planning for Real Estate Investors",
@@ -94,22 +96,18 @@ const faqs = [
 export default function ForRealEstateInvestorsPage() {
   return (
     <main>
-      {/* Hero */}
-      <section className="bg-neutral-bg py-10 sm:py-14">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-secondary font-semibold text-sm uppercase tracking-wider mb-3">
-            For Real Estate Investors
-          </p>
-          <h1 className="text-4xl sm:text-5xl font-bold text-primary">
-            Real estate made you wealthy. Now protect it.
-          </h1>
-          <p className="mt-6 text-lg text-neutral-dark/70 max-w-2xl mx-auto">
-            Most advisors see real estate as an alternative asset class. We see
-            it as the engine of your financial life — and we plan around it
-            accordingly.
-          </p>
-        </div>
-      </section>
+      {/* Hero — CinematicHero shared shell. Copy verbatim from prior hero;
+          15-min booking link as default primaryCta. */}
+      <CinematicHero
+        eyebrow="For Real Estate Investors"
+        headline="Real estate made you wealthy. Now protect it."
+        subhead="Most advisors see real estate as an alternative asset class. We see it as the engine of your financial life — and we plan around it accordingly."
+        primaryCta={{
+          label: "Book your 15-minute intro call",
+          href: "https://links.wealthinyourself.com/widget/bookings/wiy-15-min-call",
+          external: true,
+        }}
+      />
 
       {/* Pain Points */}
       <section className="py-10 sm:py-14 bg-white">
@@ -153,6 +151,11 @@ export default function ForRealEstateInvestorsPage() {
         </div>
       </section>
 
+      {/* Editorial pull-quote — verbatim from Depreciation Strategy pain-point card */}
+      <EditorialPullQuote>
+        These aren&apos;t optional conversations — they&apos;re the difference between keeping and losing six figures.
+      </EditorialPullQuote>
+
       {/* How We Work */}
       <section className="py-10 sm:py-14 bg-neutral-bg">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -192,6 +195,11 @@ export default function ForRealEstateInvestorsPage() {
         </div>
       </section>
 
+      {/* Editorial pull-quote — verbatim from Entity Structures pain-point card */}
+      <EditorialPullQuote>
+        Every property in your personal name is a lawsuit away from threatening everything else you own.
+      </EditorialPullQuote>
+
       {/* BiggerPockets Featured Financial Advisor Badge */}
       <section className="bg-neutral-bg py-10 sm:py-14">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center">
@@ -216,6 +224,11 @@ export default function ForRealEstateInvestorsPage() {
         faqs={faqs}
         title="Questions From Real Estate Investors"
       />
+
+      {/* Editorial pull-quote — verbatim from Portfolio Integration pain-point card */}
+      <EditorialPullQuote>
+        Because 80% of your net worth in one asset class is a plan. It&rsquo;s just not a complete one.
+      </EditorialPullQuote>
 
       {/* Case Study Link */}
       <section className="bg-white py-10 sm:py-14">
