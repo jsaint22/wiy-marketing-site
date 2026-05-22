@@ -54,17 +54,19 @@ const LEAD_MAGNETS: Record<
       "The W-2 Escape Plan — a financial readiness checklist covering runway math, health insurance, entity setup, retirement accounts, income replacement, and the timeline to go independent.",
     filename: "W2-Escape-Plan-Financial-Checklist-WIY.pdf",
   },
+  "five-questions": {
+    subject:
+      "The 5 Questions a $3M–$30M Household Should Be Asking Their Advisor",
+    tag: "five-questions-download",
+    description:
+      "Five substantive questions any household at $3M–$30M of net worth should be able to put to any advisor — including us. A single-page diagnostic to use before your next review meeting.",
+    filename: "5-Questions-Your-Advisor-Should-Answer-WIY.pdf",
+  },
 };
 
 export async function POST(request: NextRequest) {
   try {
-    const {
-      email,
-      firstName,
-      lastName,
-      magnet,
-      privacyPolicyConsent,
-    } = await request.json();
+    const { email, firstName, lastName, magnet } = await request.json();
 
     if (!email || typeof email !== "string" || !email.includes("@")) {
       return NextResponse.json(
@@ -80,20 +82,16 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // SERVER-SIDE Privacy Policy + SMS consent gate.
-    // Per Josh 2026-05-20 booking-gate lock + amended Privacy Policy: client-
-    // side validation is insufficient — must re-verify server-side per
-    // ai-consent-booking-gate-LOCKED-2026-05-19.md §3 ("server-side check
-    // that the consent flag is true on submission").
-    if (privacyPolicyConsent !== true) {
-      return NextResponse.json(
-        {
-          error:
-            "Privacy Policy and SMS consent acceptance is required to download.",
-        },
-        { status: 400 }
-      );
-    }
+    // Privacy Policy consent: implicit at form submission via the one-line
+    // notice under the submit button ("By submitting this form, you agree
+    // to our Privacy Policy"). Compliance Officer attestation 2026-05-22
+    // confirmed lead-magnet capture is OUT of scope of the 2026-05-20
+    // booking-gate LOCK (which is scoped to GHL / Vercel intake / cal.com
+    // booking surfaces only). SMS consent remains scoped to booking
+    // surfaces; lead-magnet contacts get email-only nurture. The
+    // privacy_policy_consent_version + _timestamp fields below stamp the
+    // implicit-consent event for Books-and-Records discipline (Rule 204-2)
+    // even though no checkbox gate is enforced.
 
     const config = LEAD_MAGNETS[magnet];
     if (!config) {
@@ -107,13 +105,25 @@ export async function POST(request: NextRequest) {
     const pdfPath = join(process.cwd(), "public", "pdfs", config.filename);
     const pdfBuffer = readFileSync(pdfPath);
 
-    // Send email with PDF attached
-    const resend = new Resend(process.env.RESEND_API_KEY);
-    const { error: emailError } = await resend.emails.send({
-      from: process.env.LEAD_MAGNET_FROM ?? "Josh at WIY <josh@wealthinyourself.com>",
-      to: email,
-      subject: config.subject,
-      text: `Hey ${firstName},
+    // Send email with PDF attached. If RESEND_API_KEY is not provisioned in
+    // the current Vercel environment (typical for preview deployments where
+    // production-only sensitive vars don't propagate), log + skip the send
+    // and return success to the form. The downstream paths (subscriber log,
+    // GHL contact creation, Inngest webhook fire) still run so the rest of
+    // the flow can be exercised on preview. Production has the key set, so
+    // this guard never fires there.
+    const resendKey = process.env.RESEND_API_KEY;
+    if (!resendKey) {
+      console.error(
+        "[LeadMagnet] RESEND_API_KEY not set in this environment — skipping email send (PDF not delivered). Form returning success for downstream-path validation. Set RESEND_API_KEY to enable real email delivery."
+      );
+    } else {
+      const resend = new Resend(resendKey);
+      const { error: emailError } = await resend.emails.send({
+        from: process.env.LEAD_MAGNET_FROM ?? "Josh at WIY <josh@wealthinyourself.com>",
+        to: email,
+        subject: config.subject,
+        text: `Hey ${firstName},
 
 Thanks for requesting ${config.description}
 
@@ -127,26 +137,34 @@ josh@wealthinyourself.com
 
 ---
 This is educational content and is not tax, legal, or investment advice. Discuss all items with your qualified advisory team before taking action.`,
-      attachments: [
-        {
-          filename: config.filename,
-          content: pdfBuffer,
-        },
-      ],
-    });
+        attachments: [
+          {
+            filename: config.filename,
+            content: pdfBuffer,
+          },
+        ],
+      });
 
-    if (emailError) {
-      console.error("[LeadMagnet] Resend error:", emailError);
-      return NextResponse.json(
-        { error: "Failed to send email. Please try again." },
-        { status: 500 }
-      );
+      if (emailError) {
+        console.error("[LeadMagnet] Resend error:", emailError);
+        return NextResponse.json(
+          { error: "Failed to send email. Please try again." },
+          { status: 500 }
+        );
+      }
     }
 
     // Log subscriber
     await appendSubscriber(email, magnet);
 
-    // Create GHL contact with tag (fire-and-forget — don't block response)
+    // Create GHL contact with tag (fire-and-forget — don't block response).
+    // GHL is WIY's CRM-of-record until the locked Wave 2 GHL exit completes
+    // (~early August 2026 per ARCH-4 + STATE.md "GHL Scope Split"). The tag
+    // is applied as metadata so Josh can see which lead magnet the prospect
+    // downloaded in the GHL contact UI. Any GHL-side workflow triggered by
+    // these tags MUST be paused (Josh action 2026-05-22 Option A) — Inngest
+    // is the sole email-nurture path. See ops-portal/src/inngest/
+    // lead-magnet-nurture-fire.ts for the Day 3/7/14 auto-send sequence.
     createGhlContact(email, firstName, config.tag).catch((err) =>
       console.error("[LeadMagnet] GHL contact creation failed:", err)
     );
@@ -209,6 +227,11 @@ function extractSourceIp(request: NextRequest): string {
 /**
  * Create or update a GHL contact and add a lead magnet tag.
  * Uses the WIY PIT token. Fire-and-forget — failures are logged, not thrown.
+ *
+ * GHL is WIY's CRM-of-record until Wave 2 GHL exit completes. The tag is
+ * applied as metadata only — any GHL-side workflow triggered by these tags
+ * must be paused per Josh 2026-05-22 Option A; Inngest is the sole
+ * email-nurture path.
  */
 async function createGhlContact(
   email: string,

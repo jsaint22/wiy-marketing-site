@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import CTASection from "@/components/CTASection";
 import { projectFees, formatUSD } from "@/lib/pdf/fee-math";
 
 export const metadata: Metadata = {
-  title: "Flat Fee vs. AUM Advisors — The Math Most Advisors Won't Show You",
+  title: "Flat Fee vs. AUM: The Math, For People Who Ask",
   description:
-    "See the side-by-side comparison between a traditional 1% AUM advisor and Wealth In Yourself's flat-fee model. The math shows the true cost of percentage-based fees over 20 and 30 years.",
+    "A side-by-side comparison of a traditional 1% AUM advisor and Wealth In Yourself's flat-fee model, with 20- and 30-year fee projections at a $5M portfolio.",
 };
 
 const comparisonRows = [
@@ -26,19 +25,19 @@ const comparisonRows = [
     wiy: "Tax, investments, estate, insurance, business planning, RE investor planning, financial therapy",
   },
   {
-    label: "Fee grows when portfolio grows",
-    aum: "Yes — automatically, even if they did nothing",
+    label: "Fee scales with portfolio",
+    aum: "Yes — fee grows as portfolio value grows",
     wiy: "Rate declines as your net worth grows",
   },
   {
-    label: "Incentive to keep assets in your account",
-    aum: "Yes — moving money out reduces their fee",
-    wiy: "None. Your fee doesn't change based on where assets are held.",
+    label: "Fee changes if you move money out of the account",
+    aum: "Yes — fee is tied to assets in the account",
+    wiy: "No. Fee is based on net worth, not where assets are held.",
   },
   {
-    label: "Conflicts of interest",
-    aum: "Incentive to discourage paying down debt, gifting, real estate purchases, or starting a business",
-    wiy: "Zero. Fee is independent of asset allocation decisions.",
+    label: "Fee tied to allocation decisions",
+    aum: "Yes — paying down debt, gifting, buying real estate, or funding a business reduces the fee base",
+    wiy: "No. Fee is independent of allocation decisions.",
   },
   {
     label: "CPA, attorney, specialist coordination",
@@ -99,12 +98,17 @@ export default function VsAumPage() {
             Wealth In Yourself vs. AUM
           </p>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary leading-tight">
-            The 1% fee isn&apos;t 1%. It&apos;s much more.
+            How our fee compares to a 1% AUM advisor.
           </h1>
-          <p className="mt-6 text-lg sm:text-xl text-neutral-dark/70 leading-relaxed max-w-2xl mx-auto">
-            At $5M, a 1% AUM fee costs you {portfolioBenefit} in portfolio value over 20 years — and {formatCurrency(proj30.portfolioBenefit)} over 30.<sup className="text-xs">*</sup> The math is simple. The impact is not.
-          </p>
-          <p className="mt-3 text-xs text-neutral-dark/50 max-w-2xl mx-auto leading-relaxed">
+          <div className="mt-6 space-y-4 text-lg sm:text-xl text-neutral-dark/70 leading-relaxed max-w-2xl mx-auto">
+            <p>
+              We don&apos;t lead with this. The reason this page exists is that if you&apos;re shopping between Wealth In Yourself and an AUM advisor charging 1% of your portfolio, you deserve to see the math without sitting through a sales presentation.
+            </p>
+            <p>
+              So here it is — the comparison, the projection over 20 and 30 years, and a link to our process once you&apos;re done with the math.<sup className="text-xs">*</sup>
+            </p>
+          </div>
+          <p className="mt-4 text-xs text-neutral-dark/50 max-w-2xl mx-auto leading-relaxed">
             <sup>*</sup> Hypothetical and illustrative only. Assumes $5M starting portfolio, 7% annual portfolio growth, 1% AUM fee deducted annually vs. WIY declining flat fee schedule. Past performance is not indicative of future results. Individual results will vary based on portfolio size, market performance, and applicable fees. See full assumptions below.
           </p>
         </div>
@@ -163,18 +167,6 @@ export default function VsAumPage() {
         </div>
       </section>
 
-      {/* Pull Quote */}
-      <section className="bg-primary py-10 sm:py-14">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <blockquote className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-tight font-[family-name:var(--font-playfair)]">
-            &ldquo;The AUM model was designed in the 1980s. Better than commissions. But &lsquo;better than commissions&rsquo; is a low bar.&rdquo;
-          </blockquote>
-          <p className="mt-4 text-secondary font-semibold text-sm">
-            &mdash; Josh St. Laurent
-          </p>
-        </div>
-      </section>
-
       {/* The Math at $5M */}
       <section className="bg-white py-10 sm:py-14">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -183,10 +175,10 @@ export default function VsAumPage() {
               The Math
             </p>
             <h2 className="text-3xl sm:text-4xl font-bold text-primary">
-              The math at $5M over 20 years.
+              How the two fee structures compound over 20 years on a $5M portfolio.
             </h2>
             <p className="mt-4 text-lg text-neutral-dark/70 max-w-2xl mx-auto">
-              Fees are paid from the portfolio each year, reducing the base for future growth.
+              Both fees are paid from the portfolio each year, which reduces the base for future growth.
             </p>
           </div>
 
@@ -271,43 +263,38 @@ export default function VsAumPage() {
         </div>
       </section>
 
-      {/* The Philosophy */}
-      <section className="bg-neutral-bg py-10 sm:py-14">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-8">
-            Why AUM fees are a structural problem.
-          </h2>
-          <div className="space-y-6 text-lg text-neutral-dark/80 leading-relaxed">
-            <p>
-              The AUM model was designed in the 1980s as a step up from commissions.
-              It was better. But &quot;better than commissions&quot; is a low bar.
-            </p>
-            <p>
-              The structural problem: your advisor earns more when your investable
-              account balance grows. That creates a quiet incentive to keep assets
-              parked — even when moving them is the right call.
-            </p>
-            <p>
-              Should you pay off the mortgage? Buy a rental property? Fund a
-              business? Gift to your kids? Start a donor-advised fund? These are
-              often the best financial decisions you can make. Every one of them
-              reduces your advisor&apos;s paycheck.
-            </p>
-            <p>
-              A flat fee based on net worth removes that conflict entirely. We get
-              paid the same whether you invest it, spend it, gift it, or deploy it
-              into real estate. Our only job is to help you make the right decision.
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* Compliance Disclaimer */}
       <section className="bg-white py-8">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-sm text-neutral-dark/70 text-center leading-relaxed">
             This comparison uses hypothetical examples for illustrative purposes only. Past performance is not indicative of future results. Individual results will vary. Assumes 7% annual portfolio growth with fees deducted annually. Actual returns, fees, and outcomes depend on individual circumstances and market conditions.
           </p>
+        </div>
+      </section>
+
+      {/* What we'd rather talk about */}
+      <section className="bg-neutral-bg py-14 sm:py-20">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-secondary font-semibold text-sm uppercase tracking-wider mb-4">
+            What we&apos;d rather talk about
+          </p>
+          <h2 className="text-2xl sm:text-3xl font-bold text-primary leading-tight">
+            The math is a tiebreaker. The work is the point.
+          </h2>
+          <div className="mt-8 space-y-6 text-lg text-neutral-dark/80 leading-relaxed">
+            <p>
+              You can save tens of thousands of dollars in fees over a decade by working with us instead of an AUM firm. That&apos;s real money. But it&apos;s not the most interesting thing about working with us.
+            </p>
+            <p>
+              The interesting thing is what we actually do — life planning, tax strategy, entity coordination, estate design, real estate planning, and the unlimited meetings to coordinate it all. The fee structure makes it possible. The work is the point.
+            </p>
+          </div>
+          <a
+            href="/our-process"
+            className="inline-block mt-8 px-8 py-3.5 bg-primary text-white font-semibold rounded-lg hover:bg-primary/90 transition-colors"
+          >
+            See our process →
+          </a>
         </div>
       </section>
 

@@ -7,14 +7,14 @@ import FAQSection from "@/components/FAQSection";
 export const metadata: Metadata = {
   title: "Financial Planning for Business Owners",
   description:
-    "Fee-only financial planner for entrepreneurs and fiduciary financial advisor for business owners. Flat-fee, tax-focused planning for S-Corp, LLC, and C-Corp owners — no AUM fees, no conflicts.",
+    "Flat-fee, fiduciary financial planning for $2M–$10M revenue founders. Coordinated tax, entity, retirement, cash flow, and exit strategy for S-Corp, LLC, and C-Corp owners.",
 };
 
 const painPoints = [
   {
     title: "Uneven Income",
     description:
-      "A $400K year followed by a $150K year. Distributions in Q4 that don\u2019t show up in your personal account until January. Planning around irregular cash flow requires an advisor who\u2019s seen it before — not one who tells you to \u201Cjust save 20%.\u201D",
+      "A $400K year followed by a $150K year. Distributions in Q4 that don’t show up in your personal account until January. We build cash-flow plans that bend with your revenue — variable contribution schedules, reserve thresholds, and tax projections across multiple income scenarios.",
     icon: (
       <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M3 7.5L7.5 3m0 0L12 7.5M7.5 3v13.5m13.5-6L16.5 16m0 0L12 10.5m4.5 5.5V3" />
@@ -28,7 +28,7 @@ const painPoints = [
     icon: (
       <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
-      </svg>
+    </svg>
     ),
   },
   {
@@ -44,7 +44,7 @@ const painPoints = [
   {
     title: "Retirement Plan Design",
     description:
-      "Solo 401(k), SEP IRA, Defined Benefit plans, cash balance plans. Most advisors default to a SEP because it\u2019s easy. We run the numbers on every option and find the structure that lets you shelter the most income from taxes — sometimes $100K+ per year.",
+      "Solo 401(k), SEP IRA, Defined Benefit plans, cash balance plans. Each shelters a different ceiling of income; the right structure for your entity and revenue can defer $100K+ per year. We run the numbers on every option and design the plan that fits.",
     icon: (
       <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -54,7 +54,7 @@ const painPoints = [
   {
     title: "Exit Planning",
     description:
-      "Whether you\u2019re selling in 2 years or 20, your exit strategy should start now. Valuation strategy, deal structure, installment sale analysis, and the question nobody asks until it\u2019s too late: what does your life look like after the wire hits?",
+      "Whether you’re selling in 2 years or 20, your exit strategy should start now. Valuation strategy, deal structure, §1202 / QSBS qualification, installment sale analysis, and the question nobody asks until it’s too late: what does your life look like after the wire hits?",
     icon: (
       <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9" />
@@ -74,43 +74,58 @@ const painPoints = [
 ];
 
 const howWeWork = [
-  "We coordinate with your CPA and attorney so every decision is informed by your full picture — not made in a vacuum",
-  "We build multi-year tax projections, not just this year\u2019s return. You\u2019ll see the 3-year and 5-year impact before you make a move",
-  "We stress-test your plan against business downturns, because a good plan doesn\u2019t break when revenue dips 30%",
-  "We design compensation strategies — salary, distributions, retirement contributions — that minimize your total tax burden across federal, state, and self-employment taxes",
-  "One flat fee. No AUM percentage eating into your growth. Your success doesn\u2019t increase our cost",
+  {
+    title: "The week a $400K invoice clears.",
+    body: "We model the tax hit, decide whether to defer estimated payments, and plan the cash deployment between operating account, retirement contribution, and personal savings — before the money sits idle.",
+  },
+  {
+    title: "The month you’re considering a retirement plan restatement.",
+    body: "We model Solo 401(k) vs. SEP IRA vs. cash balance vs. Defined Benefit, project the 5-year tax savings against the administrative cost, and coordinate with the TPA to get the structure built and funded on time.",
+  },
+  {
+    title: "The quarter your business throws off more cash than your salary can absorb.",
+    body: "We design the personal-and-business cash flow architecture so excess capital deploys to its highest-return purpose — debt reduction, real estate, market investment, or strategic retained business cash — with the tax timing handled.",
+  },
+  {
+    title: "The year you start thinking about exit.",
+    body: "We structure the entity for §1202 / QSBS exemption qualification, model the tax burden of a stock vs. asset sale, coordinate with M&A counsel, and bring in the right tax attorney before the LOI lands — not after.",
+  },
+  {
+    title: "Every April, October, and December.",
+    body: "Multi-year tax projections, not just this year’s return. Compensation strategy across federal, state, and self-employment taxes. Stress-tests against a 30% revenue dip. One flat fee, coordinated with your CPA and attorney so every decision is informed by the full picture.",
+  },
 ];
 
 const faqs = [
   {
     question: "Do you replace my CPA or attorney?",
     answer:
-      "No. We work alongside them. Your CPA handles compliance and filing. Your attorney handles legal structure. We sit in the middle and make sure every decision is coordinated \u2014 so your tax strategy, entity structure, retirement plan, and investment approach actually work together instead of in silos.",
+      "No. We work alongside them. Your CPA handles compliance and filing. Your attorney handles legal structure. We sit in the middle and make sure every decision is coordinated — so your tax strategy, entity structure, retirement plan, and investment approach actually work together instead of in silos.",
   },
   {
     question: "What types of business owners do you work with?",
     answer:
-      "We work with founders, solo operators, and small business owners across industries \u2014 typically earning $200K+ through their business. S-Corp owners, LLC members, C-Corp shareholders. If your financial life is intertwined with your business, that\u2019s exactly who we built this for.",
+      "We work with founders, solo operators, and small business owners across industries — typically $2M–$10M in revenue and earning $200K+ through the business. S-Corp owners, LLC members, C-Corp shareholders. If your financial life is intertwined with your business, that’s exactly who we built this for.",
   },
   {
-    question: "How is a flat fee better than AUM for business owners?",
+    question: "How does your flat fee work as my business and net worth grow?",
     answer:
-      "When your net worth is growing because your business is scaling, an AUM advisor\u2019s fee grows with it \u2014 even if the work doesn\u2019t change. A flat fee means your cost is tied to the complexity of your situation, not the size of your portfolio. You keep more of what you build.",
+      "Your fee is tied to the complexity of your situation, not the size of your portfolio. We set it based on the scope of work — entity strategy, multi-year tax projections, retirement plan design, exit planning, investment coordination — and revisit annually as your situation evolves. When your business scales, your planning gets more sophisticated, not arbitrarily more expensive.",
   },
   {
     question: "Can you help me set up a retirement plan for my business?",
     answer:
-      "Absolutely. We design retirement plans \u2014 Solo 401(k), SEP IRA, Defined Benefit, and cash balance plans \u2014 based on your income, entity type, and how aggressively you want to defer taxes. Most advisors default to a SEP IRA because it\u2019s easy. We do the math to find the structure that actually saves you the most.",
+      "Absolutely. We design retirement plans — Solo 401(k), SEP IRA, Defined Benefit, and cash balance plans — based on your income, entity type, and how aggressively you want to defer taxes. We run the math across every structure and recommend the one that shelters the most income for your specific situation.",
   },
   {
-    question: "I\u2019m thinking about selling my business. When should I start planning?",
+    question: "I’m thinking about selling my business. When should I start planning?",
     answer:
-      "Yesterday. But today works too. Exit planning isn\u2019t a six-month project \u2014 it\u2019s a multi-year process that involves valuation strategy, tax-efficient deal structure, and figuring out what your financial life looks like after the sale. The earlier you start, the more options you have.",
+      "Yesterday. But today works too. Exit planning isn’t a six-month project — it’s a multi-year process that involves valuation strategy, §1202 / QSBS qualification, tax-efficient deal structure, and figuring out what your financial life looks like after the sale. The earlier you start, the more options you have.",
   },
   {
     question: "What if my income is unpredictable year to year?",
     answer:
-      "That\u2019s normal for business owners, and it\u2019s exactly why cookie-cutter financial plans fail. We build flexible plans with cash reserve strategies, variable contribution schedules, and tax projections across multiple income scenarios. Your plan should bend with your business \u2014 not break.",
+      "That’s normal for business owners, and it’s exactly why generic financial plans fail. We build flexible plans with cash reserve strategies, variable contribution schedules, and tax projections across multiple income scenarios. Your plan should bend with your business — not break.",
   },
 ];
 
@@ -124,13 +139,13 @@ export default function ForBusinessOwnersPage() {
             For Business Owners
           </p>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary leading-tight">
-            Your business is your biggest asset. Most advisors don&apos;t know
-            what to do with it.
+            Your business is growing. Your planning should be growing with it.
           </h1>
           <p className="mt-6 text-lg sm:text-xl text-neutral-dark/70 leading-relaxed max-w-3xl mx-auto">
-            You didn&apos;t build your business to watch an advisor charge you 1%
-            to put your money in index funds. You need coordinated planning
-            across your business, your taxes, and your life.
+            You have an entity, a CPA, a 401(k), and a brokerage account. What
+            you don&apos;t have is one person coordinating the tax, entity,
+            retirement, cash flow, and exit-planning decisions that compound
+            over your next 5–10 years.
           </p>
         </div>
       </section>
@@ -140,7 +155,7 @@ export default function ForBusinessOwnersPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="The Real Challenges"
-            title="Business owner finances aren&apos;t simple. Your advisor shouldn&apos;t pretend they are."
+            title="Business owner finances aren&apos;t simple. Your planning shouldn&apos;t be either."
             subtitle="These are the problems we solve every day &mdash; because we&apos;ve seen what happens when they go unaddressed."
           />
           <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -167,10 +182,10 @@ export default function ForBusinessOwnersPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="Our Approach"
-            title="How we work with business owners."
-            subtitle="We&apos;ve built our process around the reality of running a business &mdash; not a textbook version of it."
+            title="Here&apos;s what we actually do, by the calendar."
+            subtitle="We&apos;ve built our process around the real moments that drive your tax, cash flow, and wealth outcomes &mdash; not a generic annual review cycle."
           />
-          <div className="mt-12 space-y-5 max-w-2xl mx-auto">
+          <div className="mt-12 space-y-6 max-w-2xl mx-auto">
             {howWeWork.map((item, i) => (
               <div key={i} className="flex items-start gap-4">
                 <div className="flex-shrink-0 mt-1">
@@ -186,9 +201,14 @@ export default function ForBusinessOwnersPage() {
                     />
                   </svg>
                 </div>
-                <p className="text-lg text-neutral-dark/80 leading-relaxed">
-                  {item}
-                </p>
+                <div>
+                  <p className="text-lg font-semibold text-primary leading-snug">
+                    {item.title}
+                  </p>
+                  <p className="mt-1 text-base text-neutral-dark/80 leading-relaxed">
+                    {item.body}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
@@ -204,11 +224,10 @@ export default function ForBusinessOwnersPage() {
             same thing.&rdquo;
           </blockquote>
           <p className="mt-6 text-neutral-dark/70 text-lg leading-relaxed">
-            If you&apos;ve been told to &ldquo;max out your SEP IRA&rdquo; and
-            call it a day, you&apos;re leaving serious money on the table. The
-            difference between a generic advisor and one who understands
-            business ownership is six figures over a career &mdash; in taxes
-            alone.
+            A real plan ties together entity structure, retirement plan design,
+            cash flow architecture, investment strategy, and exit prep —
+            under one coordinated framework. Done well, proactive tax strategy
+            alone compounds into six figures over a career.
           </p>
         </div>
       </section>
@@ -260,8 +279,8 @@ export default function ForBusinessOwnersPage() {
 
       {/* CTA */}
       <CTASection
-        headline="Ready for an advisor who understands what you&apos;re building?"
-        subtext="Book a 15-minute intro call. No pitch. No AUM proposal. Just a conversation about your business, your taxes, and what comes next."
+        headline="Ready to coordinate the planning your business actually needs?"
+        subtext="Book your 15-minute intro call. Just a conversation about your business, your taxes, and what comes next."
       />
     </>
   );

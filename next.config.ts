@@ -66,6 +66,11 @@ const nextConfig: NextConfig = {
       { source: "/see-a-sample-financial-plan/", destination: "/virtual-family-office", permanent: true },
       { source: "/ep07-josh-stlaurent", destination: "/about", permanent: true },
       { source: "/ep07-josh-stlaurent/", destination: "/about", permanent: true },
+      // Lead-magnet swap 2026-05-22: /aum-math retired in favor of /5-questions
+      // (positive-framed advisor-diagnostic lead magnet). 301 preserves any
+      // existing inbound links / SEO juice.
+      { source: "/aum-math", destination: "/5-questions", permanent: true },
+      { source: "/aum-math/", destination: "/5-questions", permanent: true },
     ];
   },
 };

@@ -10,7 +10,7 @@ import { RevealOnScroll } from "@/components/cinematic/RevealOnScroll";
 export const metadata: Metadata = {
   title: "Our Process — 9 Meetings + Annual Re-Vision",
   description:
-    "Most financial plans are a 90-minute meeting, a PDF, and an invoice. See exactly what a year of working with Wealth In Yourself looks like — 9 meetings across 3 phases, plus an annual Re-Vision.",
+    "Twelve months. Nine conversations. One designed life. See exactly what a year of working with Wealth In Yourself looks like — 9 meetings across 3 phases, plus an annual Re-Vision.",
 };
 
 const phases = [
@@ -20,7 +20,7 @@ const phases = [
     color: "border-secondary",
     bgAccent: "bg-secondary/10",
     textAccent: "text-secondary",
-    description: "Establish trust, surface the story, locate the client.",
+    description: "Get clear on who you are, what you've built, and where you actually want this to go.",
     meetings: [
       {
         number: 1,
@@ -48,7 +48,7 @@ const phases = [
     color: "border-success",
     bgAccent: "bg-success/10",
     textAccent: "text-success",
-    description: "Design the life, design the architecture.",
+    description: "Design the architecture — tax, capital, entity, estate — around the life you just named.",
     meetings: [
       {
         number: 4,
@@ -88,7 +88,7 @@ const phases = [
     color: "border-primary",
     bgAccent: "bg-primary/10",
     textAccent: "text-primary",
-    description: "Hand over the Blueprint, install the rhythm.",
+    description: "Receive your Blueprint and step into the rhythm that runs the next 12 months.",
     meetings: [
       {
         number: 9,
@@ -126,25 +126,29 @@ const vfoPartners = [
     logo: "/logos/partners/monarch.png",
     role: "Cash Flow Tracking",
   },
+  {
+    name: "Equity Trust",
+    logo: "/logos/partners/equity-trust.png",
+    role: "Self-Directed IRA Custodian",
+  },
 ];
 
-// Cinema chapters — 3 phases verbatim (Ground / Build / Live)
-// Body text = each phase's `description` field, preserved verbatim from canon.
+// Cinema chapters — 3 phases (Ground / Build / Live), client-voice descriptions.
 const cinemaChapters = [
   {
     number: "01",
     title: "Ground",
-    body: "Establish trust, surface the story, locate the client.",
+    body: "Three meetings across the first three weeks. We surface your money history, work through the Kinder Three Questions, and end with a written Vision Statement of the life this engagement is designed to fund.",
   },
   {
     number: "02",
     title: "Build",
-    body: "Design the life, design the architecture.",
+    body: "Five meetings across the next nine weeks. Obstacles, cash architecture, tax + entity, capital design, and risk + estate — every recommendation tied back to the Vision, not built around a portfolio benchmark.",
   },
   {
     number: "03",
     title: "Live",
-    body: "Hand over the Blueprint, install the rhythm.",
+    body: "One meeting to hand over your Blueprint — the designed artifact of your planning year — then an Annual Re-Vision plus unlimited event-driven planning when life happens.",
   },
 ];
 
@@ -166,8 +170,8 @@ export default function OurProcessPage() {
           15-min booking link as a sensible default (CinematicHero requires primaryCta). */}
       <CinematicHero
         eyebrow="Our Process"
-        headline="Most financial plans are a 90-minute meeting, a PDF, and an invoice."
-        subhead="Here's what Wealth In Yourself actually looks like over a year. Three phases. Nine meetings. One flat fee."
+        headline="Twelve months. Nine conversations. One designed life."
+        subhead="The Life Architecture is what we call the year-long engagement that takes a household from 'we have money but not clarity' to 'we know exactly where this is going.' Three phases. Nine meetings. One flat fee."
         primaryCta={{
           label: "Book your 15-minute intro call",
           href: "https://links.wealthinyourself.com/widget/bookings/wiy-15-min-call",
@@ -268,11 +272,11 @@ export default function OurProcessPage() {
               investment implications.
             </p>
 
-            <div className="mt-12 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+            <div className="mt-12 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
               {vfoPartners.map((partner) => (
                 <div
                   key={partner.name}
-                  className="bg-white/10 backdrop-blur rounded-xl p-5 text-center border border-white/10 hover:border-secondary/30 transition-all"
+                  className="bg-white rounded-xl p-5 text-center border border-white/20 hover:border-secondary/40 transition-all"
                 >
                   <div className="h-10 flex items-center justify-center mb-3">
                     <Image
@@ -280,13 +284,13 @@ export default function OurProcessPage() {
                       alt={partner.name}
                       width={120}
                       height={40}
-                      className="max-h-10 w-auto object-contain brightness-0 invert"
+                      className="max-h-10 w-auto object-contain"
                     />
                   </div>
-                  <p className="text-sm font-semibold text-white">
+                  <p className="text-sm font-semibold text-primary">
                     {partner.name}
                   </p>
-                  <p className="text-xs text-white/70 mt-1">{partner.role}</p>
+                  <p className="text-xs text-neutral-dark/70 mt-1">{partner.role}</p>
                 </div>
               ))}
             </div>
@@ -393,7 +397,7 @@ export default function OurProcessPage() {
         </div>
       </section>
 
-      {/* What This Costs */}
+      {/* What This Costs — informational; pricing link is inline, single close via CTASection below */}
       <section className="bg-primary py-14 sm:py-20">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <SectionHeading
@@ -402,23 +406,16 @@ export default function OurProcessPage() {
             dark
           />
           <p className="mt-6 text-lg text-white/70 leading-relaxed">
-            No AUM percentage. No commissions. No surprise invoices. Your fee is
-            based on net worth and declines as your wealth grows.
-          </p>
-          <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+            No commissions. No surprise invoices. Your fee is based on net worth
+            and declines as your wealth grows.{" "}
             <Link
               href="/pricing"
-              className="inline-block px-8 py-3.5 bg-secondary text-primary font-semibold rounded-lg hover:bg-secondary/90 transition-colors"
+              className="text-secondary font-semibold hover:text-secondary/80 underline underline-offset-4 transition-colors"
             >
-              See Full Pricing
+              See the full pricing page
             </Link>
-            <Link
-              href="/calculator"
-              className="inline-block px-8 py-3.5 border-2 border-white/30 text-white font-semibold rounded-lg hover:border-white/60 transition-colors"
-            >
-              Calculate Your Fee
-            </Link>
-          </div>
+            .
+          </p>
         </div>
       </section>
 

@@ -47,9 +47,9 @@
   --ease-out-expo: var(--ease-out-expo);
 }
 
-html {
-  scroll-behavior: smooth;
-}
+/* Note: scroll-behavior: smooth removed 2026-05-22 — conflicted with LenisProvider's
+   smooth-scroll engine and caused scroll-stuck states on long pages (e.g. /pricing
+   past the 9-card "What You Get" grid). Lenis owns smooth scrolling now. */
 
 body {
   background: var(--color-neutral-light);

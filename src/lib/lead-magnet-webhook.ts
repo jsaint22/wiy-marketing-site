@@ -28,6 +28,7 @@ export const LEAD_MAGNET_SLUGS = [
   "re-investor-checklist",
   "business-owner-roadmap",
   "w2-escape-plan",
+  "five-questions",
 ] as const;
 
 export type LeadMagnetSlug = (typeof LEAD_MAGNET_SLUGS)[number];

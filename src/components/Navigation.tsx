@@ -33,6 +33,7 @@ const navLinks: NavItem[] = [
   {
     label: "Insights",
     children: [
+      { href: "/5-questions", label: "5 Questions to Ask Your Advisor" },
       { href: "/blog", label: "Blog" },
       { href: "/podcast", label: "Podcast" },
       { href: "/case-studies", label: "Case Studies" },

@@ -71,7 +71,7 @@ export function ScrollPinnedCinema({ chapters }: Props) {
         <section
           key={ch.number}
           data-cinema-slide
-          className="min-h-screen flex items-center px-6 md:px-12"
+          className="min-h-[55vh] flex items-center px-6 md:px-12 py-16"
         >
           <div className="max-w-4xl mx-auto">
             <p data-cinema-anim className="font-display text-secondary font-bold mb-6" style={{ fontSize: 'clamp(48px, 9vw, 120px)', lineHeight: 1 }}>

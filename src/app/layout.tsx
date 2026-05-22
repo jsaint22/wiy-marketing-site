@@ -66,9 +66,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${playfair.variable} ${inter.variable} h-full`}
+      className={`${playfair.variable} ${inter.variable}`}
     >
-      <body className="min-h-full flex flex-col antialiased">
+      <body className="min-h-screen flex flex-col antialiased">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
