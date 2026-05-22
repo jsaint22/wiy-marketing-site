@@ -20,7 +20,7 @@ const phases = [
     color: "border-secondary",
     bgAccent: "bg-secondary/10",
     textAccent: "text-secondary",
-    description: "Establish trust, surface the story, locate the client.",
+    description: "Get clear on who you are, what you've built, and where you actually want this to go.",
     meetings: [
       {
         number: 1,
@@ -48,7 +48,7 @@ const phases = [
     color: "border-success",
     bgAccent: "bg-success/10",
     textAccent: "text-success",
-    description: "Design the life, design the architecture.",
+    description: "Design the architecture — tax, capital, entity, estate — around the life you just named.",
     meetings: [
       {
         number: 4,
@@ -88,7 +88,7 @@ const phases = [
     color: "border-primary",
     bgAccent: "bg-primary/10",
     textAccent: "text-primary",
-    description: "Hand over the Blueprint, install the rhythm.",
+    description: "Receive your Blueprint and step into the rhythm that runs the next 12 months.",
     meetings: [
       {
         number: 9,
@@ -128,23 +128,22 @@ const vfoPartners = [
   },
 ];
 
-// Cinema chapters — 3 phases verbatim (Ground / Build / Live)
-// Body text = each phase's `description` field, preserved verbatim from canon.
+// Cinema chapters — 3 phases (Ground / Build / Live), client-voice descriptions.
 const cinemaChapters = [
   {
     number: "01",
     title: "Ground",
-    body: "Establish trust, surface the story, locate the client.",
+    body: "Get clear on who you are, what you've built, and where you actually want this to go.",
   },
   {
     number: "02",
     title: "Build",
-    body: "Design the life, design the architecture.",
+    body: "Design the architecture — tax, capital, entity, estate — around the life you just named.",
   },
   {
     number: "03",
     title: "Live",
-    body: "Hand over the Blueprint, install the rhythm.",
+    body: "Receive your Blueprint and step into the rhythm that runs the next 12 months.",
   },
 ];
 
@@ -272,7 +271,7 @@ export default function OurProcessPage() {
               {vfoPartners.map((partner) => (
                 <div
                   key={partner.name}
-                  className="bg-white/10 backdrop-blur rounded-xl p-5 text-center border border-white/10 hover:border-secondary/30 transition-all"
+                  className="bg-white rounded-xl p-5 text-center border border-white/20 hover:border-secondary/40 transition-all"
                 >
                   <div className="h-10 flex items-center justify-center mb-3">
                     <Image
@@ -280,13 +279,13 @@ export default function OurProcessPage() {
                       alt={partner.name}
                       width={120}
                       height={40}
-                      className="max-h-10 w-auto object-contain brightness-0 invert"
+                      className="max-h-10 w-auto object-contain"
                     />
                   </div>
-                  <p className="text-sm font-semibold text-white">
+                  <p className="text-sm font-semibold text-primary">
                     {partner.name}
                   </p>
-                  <p className="text-xs text-white/70 mt-1">{partner.role}</p>
+                  <p className="text-xs text-neutral-dark/70 mt-1">{partner.role}</p>
                 </div>
               ))}
             </div>
