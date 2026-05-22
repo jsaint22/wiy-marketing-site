@@ -3,7 +3,7 @@ import path from "path";
 
 const SUBSCRIBERS_FILE = path.join(process.cwd(), "data", "subscribers.csv");
 
-export async function appendSubscriber(email: string, source: string = "aum-math"): Promise<void> {
+export async function appendSubscriber(email: string, source: string = "lead-magnet"): Promise<void> {
   const timestamp = new Date().toISOString();
   const line = `${email},${timestamp},${source}\n`;
 
