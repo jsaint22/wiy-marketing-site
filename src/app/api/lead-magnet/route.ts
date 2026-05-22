@@ -144,6 +144,18 @@ This is educational content and is not tax, legal, or investment advice. Discuss
     // Log subscriber
     await appendSubscriber(email, magnet);
 
+    // Create GHL contact with tag (fire-and-forget — don't block response).
+    // GHL is WIY's CRM-of-record until the locked Wave 2 GHL exit completes
+    // (~early August 2026 per ARCH-4 + STATE.md "GHL Scope Split"). The tag
+    // is applied as metadata so Josh can see which lead magnet the prospect
+    // downloaded in the GHL contact UI. Any GHL-side workflow triggered by
+    // these tags MUST be paused (Josh action 2026-05-22 Option A) — Inngest
+    // is the sole email-nurture path. See ops-portal/src/inngest/
+    // lead-magnet-nurture-fire.ts for the Day 3/7/14 auto-send sequence.
+    createGhlContact(email, firstName, config.tag).catch((err) =>
+      console.error("[LeadMagnet] GHL contact creation failed:", err)
+    );
+
     // Fire-and-forget HMAC-signed POST to ops-portal webhook receiver.
     // Powers Spec 1 (lead-magnet Inngest nurture). The receiver dedupes on
     // external_request_id; emitter is fire-and-forget per spec §1 so a
@@ -197,4 +209,50 @@ function extractSourceIp(request: NextRequest): string {
     return xff.split(",")[0]?.trim() || "unknown";
   }
   return request.headers.get("x-real-ip") ?? "unknown";
+}
+
+/**
+ * Create or update a GHL contact and add a lead magnet tag.
+ * Uses the WIY PIT token. Fire-and-forget — failures are logged, not thrown.
+ *
+ * GHL is WIY's CRM-of-record until Wave 2 GHL exit completes. The tag is
+ * applied as metadata only — any GHL-side workflow triggered by these tags
+ * must be paused per Josh 2026-05-22 Option A; Inngest is the sole
+ * email-nurture path.
+ */
+async function createGhlContact(
+  email: string,
+  firstName: string,
+  tag: string
+) {
+  const token = process.env.GHL_API_TOKEN;
+  const locationId = process.env.GHL_LOCATION_ID;
+  if (!token || !locationId) {
+    console.warn("[GHL] GHL_API_TOKEN or GHL_LOCATION_ID not set — skipping contact creation");
+    return;
+  }
+
+  const res = await fetch(
+    "https://services.leadconnectorhq.com/contacts/upsert",
+    {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+        Version: "2021-07-28",
+      },
+      body: JSON.stringify({
+        firstName,
+        email,
+        locationId,
+        tags: [tag],
+        source: "Website Lead Magnet",
+      }),
+    }
+  );
+
+  if (!res.ok) {
+    const text = await res.text();
+    console.error(`[GHL] Contact upsert failed (${res.status}):`, text);
+  }
 }
