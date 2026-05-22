@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import CTASection from "@/components/CTASection";
-import SectionHeading from "@/components/SectionHeading";
 
 export const metadata: Metadata = {
   title: "Case Studies",
@@ -191,30 +190,6 @@ export default function CaseStudiesPage() {
           <p className="text-sm text-neutral-dark/70 text-center leading-relaxed">
             These case studies are hypothetical composites created for illustrative purposes only. They do not represent the experience of any actual client. The scenarios, strategies, and outcomes described are based on specific assumed circumstances and may not be applicable to your situation. Tax savings figures are estimates based on tax law in effect at the time of analysis; tax laws change and individual results depend on personal circumstances, implementation, and applicable law at the time of filing. Financial projections involve assumptions about future market conditions, tax rates, and spending patterns that may not materialize. No guarantee of similar outcomes is made or implied. Past results — whether actual or illustrative — do not guarantee future performance. Wealth In Yourself is a registered investment adviser. This content does not constitute personalized investment, tax, or legal advice. Consult qualified professionals regarding your specific situation.
           </p>
-        </div>
-      </section>
-
-      {/* See Your Math CTA */}
-      <section className="bg-white py-10 sm:py-14">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <SectionHeading
-            eyebrow="Your Turn"
-            title="See what the math looks like for you."
-          />
-          <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/pricing#calculator"
-              className="px-8 py-3.5 bg-primary text-white font-semibold rounded-lg hover:bg-primary/90 transition-colors"
-            >
-              Open the Fee Calculator
-            </Link>
-            <Link
-              href="/vs-aum"
-              className="px-8 py-3.5 border-2 border-primary text-primary font-semibold rounded-lg hover:bg-primary/5 transition-colors"
-            >
-              Compare Wealth In Yourself vs. AUM
-            </Link>
-          </div>
         </div>
       </section>
 
