@@ -126,6 +126,11 @@ const vfoPartners = [
     logo: "/logos/partners/monarch.png",
     role: "Cash Flow Tracking",
   },
+  {
+    name: "Equity Trust",
+    logo: "/logos/partners/equity-trust.png",
+    role: "Self-Directed IRA Custodian",
+  },
 ];
 
 // Cinema chapters — 3 phases (Ground / Build / Live), client-voice descriptions.
@@ -267,7 +272,7 @@ export default function OurProcessPage() {
               investment implications.
             </p>
 
-            <div className="mt-12 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+            <div className="mt-12 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
               {vfoPartners.map((partner) => (
                 <div
                   key={partner.name}
@@ -392,7 +397,7 @@ export default function OurProcessPage() {
         </div>
       </section>
 
-      {/* What This Costs */}
+      {/* What This Costs — informational; pricing link is inline, single close via CTASection below */}
       <section className="bg-primary py-14 sm:py-20">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <SectionHeading
@@ -402,22 +407,15 @@ export default function OurProcessPage() {
           />
           <p className="mt-6 text-lg text-white/70 leading-relaxed">
             No commissions. No surprise invoices. Your fee is based on net worth
-            and declines as your wealth grows.
-          </p>
-          <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+            and declines as your wealth grows.{" "}
             <Link
               href="/pricing"
-              className="inline-block px-8 py-3.5 bg-secondary text-primary font-semibold rounded-lg hover:bg-secondary/90 transition-colors"
+              className="text-secondary font-semibold hover:text-secondary/80 underline underline-offset-4 transition-colors"
             >
-              See Full Pricing
+              See the full pricing page
             </Link>
-            <Link
-              href="/calculator"
-              className="inline-block px-8 py-3.5 border-2 border-white/30 text-white font-semibold rounded-lg hover:border-white/60 transition-colors"
-            >
-              Calculate Your Fee
-            </Link>
-          </div>
+            .
+          </p>
         </div>
       </section>
 

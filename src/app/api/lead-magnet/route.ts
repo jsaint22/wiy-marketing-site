@@ -105,13 +105,25 @@ export async function POST(request: NextRequest) {
     const pdfPath = join(process.cwd(), "public", "pdfs", config.filename);
     const pdfBuffer = readFileSync(pdfPath);
 
-    // Send email with PDF attached
-    const resend = new Resend(process.env.RESEND_API_KEY);
-    const { error: emailError } = await resend.emails.send({
-      from: process.env.LEAD_MAGNET_FROM ?? "Josh at WIY <josh@wealthinyourself.com>",
-      to: email,
-      subject: config.subject,
-      text: `Hey ${firstName},
+    // Send email with PDF attached. If RESEND_API_KEY is not provisioned in
+    // the current Vercel environment (typical for preview deployments where
+    // production-only sensitive vars don't propagate), log + skip the send
+    // and return success to the form. The downstream paths (subscriber log,
+    // GHL contact creation, Inngest webhook fire) still run so the rest of
+    // the flow can be exercised on preview. Production has the key set, so
+    // this guard never fires there.
+    const resendKey = process.env.RESEND_API_KEY;
+    if (!resendKey) {
+      console.error(
+        "[LeadMagnet] RESEND_API_KEY not set in this environment — skipping email send (PDF not delivered). Form returning success for downstream-path validation. Set RESEND_API_KEY to enable real email delivery."
+      );
+    } else {
+      const resend = new Resend(resendKey);
+      const { error: emailError } = await resend.emails.send({
+        from: process.env.LEAD_MAGNET_FROM ?? "Josh at WIY <josh@wealthinyourself.com>",
+        to: email,
+        subject: config.subject,
+        text: `Hey ${firstName},
 
 Thanks for requesting ${config.description}
 
@@ -125,20 +137,21 @@ josh@wealthinyourself.com
 
 ---
 This is educational content and is not tax, legal, or investment advice. Discuss all items with your qualified advisory team before taking action.`,
-      attachments: [
-        {
-          filename: config.filename,
-          content: pdfBuffer,
-        },
-      ],
-    });
+        attachments: [
+          {
+            filename: config.filename,
+            content: pdfBuffer,
+          },
+        ],
+      });
 
-    if (emailError) {
-      console.error("[LeadMagnet] Resend error:", emailError);
-      return NextResponse.json(
-        { error: "Failed to send email. Please try again." },
-        { status: 500 }
-      );
+      if (emailError) {
+        console.error("[LeadMagnet] Resend error:", emailError);
+        return NextResponse.json(
+          { error: "Failed to send email. Please try again." },
+          { status: 500 }
+        );
+      }
     }
 
     // Log subscriber
