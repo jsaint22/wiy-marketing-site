@@ -17,10 +17,10 @@ const caseStudies = [
     situation:
       "Founder of a B2B SaaS company, $4M net worth, $800K W-2-equivalent income, operating as a Delaware C-Corp with no employer-sponsored retirement plan. Paying 37% federal + 3.8% NIIT on nearly all income.",
     challenge:
-      "Leaving $69K+ of annual tax-advantaged retirement contributions on the table. C-Corp structure creating double taxation on distributions. No quarterly tax planning cadence with CPA.",
+      "Leaving $72K+ of annual tax-advantaged retirement contributions on the table. C-Corp structure creating double taxation on distributions. No quarterly tax planning cadence with CPA.",
     approach: [
       "Coordinated S-Corp election with CPA and set reasonable salary at $250K — reducing self-employment tax on remaining distributions",
-      "Established Solo 401(k) with $69,000 in combined employee/employer contributions (Year 1)",
+      "Established Solo 401(k) with $72,000 in combined employee/employer contributions (Year 1, 2026 §415(c) limit)",
       "Built quarterly tax projection cadence with coordinated CPA",
       "Rebalanced retirement allocation from 100% target-date fund to low-cost, tax-efficient index portfolio",
     ],
