@@ -54,10 +54,10 @@ export default function FiveQuestionsPage() {
         eyebrow="Free Resource"
         headline={
           <>
-            The 5 Questions a $3M–$30M Household Should Be Asking Their Advisor
+            5 Questions Every High-Net-Worth Household Should Be Asking Their Advisor
           </>
         }
-        subhead="Most households at this net worth can't answer these five questions about their current advisor relationship. We can. So can any advisor worth their fee. Use this list before your next review meeting — with us or with anyone."
+        subhead="Most households at three to thirty million in net worth can't answer these five questions about their current advisor relationship. We can. So can any advisor worth their fee. Use this list before your next review meeting — with us or with anyone."
         primaryCta={{
           label: "Get the PDF",
           href: "#get-the-pdf",
