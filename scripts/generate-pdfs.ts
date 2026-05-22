@@ -25,6 +25,7 @@ import {
   W2EscapePlanPDF,
 } from "../src/lib/pdf/lead-magnet-pdf";
 import AumMathPDF from "../src/lib/pdf/aum-math";
+import FiveQuestionsPDF from "../src/lib/pdf/five-questions-pdf";
 
 const OUT_DIR = join(process.cwd(), "public", "pdfs");
 
@@ -32,7 +33,10 @@ const pdfs = [
   { name: "RE-Investor-Tax-Strategy-Checklist-WIY.pdf", component: REInvestorChecklistPDF },
   { name: "Entrepreneurs-Wealth-Extraction-Roadmap-WIY.pdf", component: BusinessOwnerRoadmapPDF },
   { name: "W2-Escape-Plan-Financial-Checklist-WIY.pdf", component: W2EscapePlanPDF },
+  // aum-math PDF retained until homepage EmailCapture is migrated off `/api/subscribe`
+  // (Task 11/12 — Task 10 scope is /aum-math page retirement + /5-questions add).
   { name: "aum-math.pdf", component: AumMathPDF },
+  { name: "5-Questions-Your-Advisor-Should-Answer-WIY.pdf", component: FiveQuestionsPDF },
 ];
 
 async function main() {

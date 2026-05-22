@@ -30,7 +30,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/for-partners",
     "/financial-planner-lake-tahoe",
     "/our-process",
-    "/aum-math",
+    "/5-questions",
     "/disclosures",
     "/privacy-policy",
     "/w2-escape-plan",

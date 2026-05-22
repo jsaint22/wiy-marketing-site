@@ -54,6 +54,14 @@ const LEAD_MAGNETS: Record<
       "The W-2 Escape Plan — a financial readiness checklist covering runway math, health insurance, entity setup, retirement accounts, income replacement, and the timeline to go independent.",
     filename: "W2-Escape-Plan-Financial-Checklist-WIY.pdf",
   },
+  "five-questions": {
+    subject:
+      "The 5 Questions a $3M–$30M Household Should Be Asking Their Advisor",
+    tag: "five-questions-download",
+    description:
+      "Five substantive questions any household at $3M–$30M of net worth should be able to put to any advisor — including us. A single-page diagnostic to use before your next review meeting.",
+    filename: "5-Questions-Your-Advisor-Should-Answer-WIY.pdf",
+  },
 };
 
 export async function POST(request: NextRequest) {
