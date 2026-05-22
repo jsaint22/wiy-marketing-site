@@ -20,7 +20,8 @@ interface CtaProps {
 
 interface Props {
   eyebrow: string;
-  headline: string;
+  /** Headline accepts string OR ReactNode (use ReactNode to force line breaks via <br />) */
+  headline: ReactNode;
   subhead: string;
   primaryCta: CtaProps;
   secondaryCta?: CtaProps;
@@ -59,7 +60,7 @@ export function CinematicHero({
             {eyebrow}
           </p>
           <h1
-            className="font-display text-primary font-bold leading-[1.04] tracking-tight mb-7 max-w-[14ch]"
+            className="font-display text-primary font-bold leading-[1.04] tracking-tight mb-7"
             style={{ fontSize: 'clamp(40px, 5.2vw, 76px)' }}
           >
             {headline}

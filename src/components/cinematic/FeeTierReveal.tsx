@@ -104,7 +104,7 @@ function TierRow({
       <span className="text-sm text-neutral-dark font-medium">{tier.netWorth} net worth</span>
       <span>
         <span className="font-bold text-primary text-base">
-          ~${val.toLocaleString()}/mo
+          ${val.toLocaleString()}/mo
         </span>
         <span className="text-xs text-neutral-dark/60 ml-2">({tier.effectiveRate})</span>
       </span>

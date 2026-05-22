@@ -89,7 +89,13 @@ export default function HomePage() {
       {/* Hero — Cinematic Hybrid */}
       <CinematicHero
         eyebrow="Flat-Fee Fiduciary Advisory"
-        headline="Your money should buy you time. Not the other way around."
+        headline={
+          <>
+            Your money should buy you time.
+            <br className="hidden sm:block" />
+            {" "}Not the other way around.
+          </>
+        }
         subhead="Wealth In Yourself is a flat-fee, fiduciary financial life planning firm for entrepreneurs and real estate investors. No commissions. No AUM fees. Just honest advice built around the life you want to create."
         primaryCta={{
           label: 'Book your 15-minute intro call',
