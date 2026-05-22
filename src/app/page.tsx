@@ -19,7 +19,7 @@ const clientPaths = [
   {
     title: "Real Estate Investors",
     description:
-      "1031 exchanges, depreciation strategies, entity structures, passive vs. active rules. Your portfolio is complex. Your planning should match.",
+      "1031 exchanges, cost segregation, REPS qualification, passive activity loss rules, depreciation recapture. The kind of tax + entity coordination that pays for itself in Year 1.",
     href: "/for-real-estate-investors",
     caseStudyLabel: "See how a RE investor deferred $142K in taxes",
     icon: "M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6",
@@ -152,29 +152,30 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Why This Exists */}
+      {/* Why I Built This */}
       <section className="bg-primary py-10 sm:py-14">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-secondary font-semibold text-sm uppercase tracking-wider mb-4">
-            Why This Exists
+            Why I Built This
           </p>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-tight">
-            I watched advisors take off their fiduciary hat and put on their sales hat in the same conversation.
+            I built this so my clients can stop wondering if their advisor is on their side.
           </h2>
           <div className="mt-8 space-y-6 text-lg text-white/80 leading-relaxed">
             <p>
-              I spent a decade watching advisors legally switch
-              between fiduciary and broker-dealer mode mid-conversation. They
-              called it &ldquo;taking off your IA hat and putting on your BD
-              hat.&rdquo; It&apos;s legal. It&apos;s common. And almost nobody
-              outside the industry knows it&apos;s happening.
+              I spent a decade inside the industry watching incentive structures
+              that tilted away from the client. Fees that grew when the portfolio
+              grew, regardless of what work was being done. Commissions on products
+              the client didn&apos;t need. Coordination that fell through the cracks
+              between advisors, CPAs, and estate attorneys who were never
+              actually talking to each other.
             </p>
             <p>
-              So I built a firm where fiduciary isn&apos;t a hat you put on
-              when it&apos;s convenient. Where your fee doesn&apos;t grow just
-              because your account did. Where the person sitting across from
-              you is building businesses, owning real estate, and designing
-              their own life &mdash; not just managing yours.
+              So I built a firm where one advisor coordinates everything for one
+              flat fee. Where your tax strategy, investment plan, estate documents,
+              entity structure, and life vision are all designed by the same
+              person, working in the same direction, paid the same way no matter
+              what your account does next quarter.
             </p>
             <p className="text-secondary font-semibold">
               That&apos;s Wealth In Yourself. The standard here is{" "}
@@ -188,15 +189,13 @@ export default function HomePage() {
       <section className="bg-neutral-bg py-8 sm:py-10">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-neutral-dark/70 text-lg">
-            Not ready to book a call? Read Josh&apos;s most popular essay.
+            Not ready to book a call? Start with the 5 questions every $3M+ household should be asking their advisor.
           </p>
           <a
-            href="https://joshstlaurent.com/writing/the-hat-trick-nobody-talks-about"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/5-questions"
             className="inline-block mt-4 px-8 py-3.5 border-2 border-primary text-primary font-semibold rounded-lg hover:bg-primary/5 transition-colors"
           >
-            Read &ldquo;The Hat Trick Nobody Talks About&rdquo;
+            Get the 5 questions &rarr;
           </a>
         </div>
       </section>
@@ -211,12 +210,12 @@ export default function HomePage() {
           />
           <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { title: "Tax Strategy", desc: "Proactive tax planning, not just filing. We find the money your CPA leaves on the table." },
+              { title: "Tax Strategy", desc: "Proactive tax planning that coordinates with your CPA. Roth conversions, entity optimization, harvesting — quarterly, not at filing time." },
               { title: "Investment Planning", desc: "Low-cost, evidence-based portfolios. No proprietary products. No commissions." },
               { title: "Life Planning", desc: "We start with what you want your life to look like. The financial structure exists to serve that vision, not the other way around." },
               { title: "Estate & Risk Review", desc: "Estate documents that reflect your values. Coverage reviewed so nothing is overlooked." },
-              { title: "Business Structure", desc: "Entity optimization, retirement plan design, and cash flow strategy for business owners." },
-              { title: "One Flat Fee", desc: "All of this, coordinated. No AUM percentage. No hidden costs. One transparent monthly fee." },
+              { title: "Business Structure", desc: "Entity optimization (S-Corp vs LLC), retirement plan design (Solo 401(k), defined benefit), and cash flow strategy that scales with your business." },
+              { title: "One Flat Fee", desc: "All of this, coordinated. One transparent monthly fee. No commissions. No add-ons." },
             ].map((item, index) => (
               <RevealOnScroll key={item.title} delay={index * 0.07}>
                 <div className="bg-neutral-bg rounded-xl p-6 border border-neutral-bg">
@@ -351,7 +350,7 @@ export default function HomePage() {
               <SectionHeading
                 eyebrow="Transparent Pricing"
                 title="A fee that goes down as your wealth goes up."
-                subtitle="AUM advisors charge more as you succeed. Our declining flat fee means the wealthier you get, the less you pay as a percentage. That's how incentives should work."
+                subtitle="Our declining flat fee means the wealthier you get, the less you pay as a percentage. Aligned incentives, not extraction."
                 centered={false}
               />
               <div className="mt-8 space-y-4">
@@ -506,8 +505,8 @@ export default function HomePage() {
             One real idea, every week
           </h2>
           <p className="mt-4 text-lg text-white/80 leading-relaxed max-w-xl mx-auto">
-            Money, life planning, and what the advisory industry doesn&apos;t want
-            you to know. Written by Josh — not a marketing team. No spam. No fluff.
+            Money, life planning, and the questions most advisors aren&apos;t
+            trained to answer. Written by Josh — not a marketing team. No spam. No fluff.
           </p>
           <a
             href="https://joshstlaurent.substack.com/subscribe"
@@ -529,7 +528,7 @@ export default function HomePage() {
           <SectionHeading
             eyebrow="Latest Episode"
             title="The Wealth In Yourself Podcast"
-            subtitle="Conversations about money, life planning, and the things most advisors won't say out loud."
+            subtitle="Conversations about money, life planning, and the questions that don't fit in a 30-minute review meeting."
           />
           <div className="mt-8">
             <iframe
