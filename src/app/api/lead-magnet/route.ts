@@ -64,11 +64,27 @@ const LEAD_MAGNETS: Record<
   },
 };
 
+// RFC 5322 conformant-enough regex for catching the common abuse patterns
+// (`"@"`, leading/trailing dots, missing TLD). Not perfect — the real check
+// happens when the email actually receives the magnet link.
+const EMAIL_REGEX = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*\.[a-zA-Z]{2,}$/;
+
 export async function POST(request: NextRequest) {
   try {
-    const { email, firstName, lastName, magnet } = await request.json();
+    const body = await request.json();
+    const { email: rawEmail, firstName, lastName, magnet, website } = body;
 
-    if (!email || typeof email !== "string" || !email.includes("@")) {
+    // Honeypot: legitimate form has a hidden `website` field that humans
+    // never fill. Bots fill every field. If non-empty, return 200 OK without
+    // doing any work — don't reveal that we caught them.
+    if (typeof website === "string" && website.trim().length > 0) {
+      return NextResponse.json({ ok: true }, { status: 200 });
+    }
+
+    const email =
+      typeof rawEmail === "string" ? rawEmail.trim().toLowerCase() : "";
+
+    if (!email || !EMAIL_REGEX.test(email) || email.length > 254) {
       return NextResponse.json(
         { error: "A valid email address is required." },
         { status: 400 }
