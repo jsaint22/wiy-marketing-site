@@ -3,6 +3,8 @@ import { Resend } from "resend";
 import { readFileSync } from "fs";
 import { join } from "path";
 import { randomUUID } from "node:crypto";
+import { Ratelimit } from "@upstash/ratelimit";
+import { Redis } from "@upstash/redis";
 import { appendSubscriber } from "@/lib/subscribers";
 import {
   emitLeadMagnetWebhook,
@@ -10,6 +12,33 @@ import {
 } from "@/lib/lead-magnet-webhook";
 
 export const dynamic = "force-dynamic";
+
+// Per-IP rate limit for lead-magnet abuse defense. Backed by Upstash KV
+// (shared with ops-portal + client-portal). If KV env vars are missing
+// (local dev without KV provisioned), the limiter is a no-op and the
+// honeypot + email regex are the only defenses. 5 submissions per IP per
+// 15 minutes is well above any legitimate use pattern.
+const ratelimit =
+  process.env.KV_REST_API_URL && process.env.KV_REST_API_TOKEN
+    ? new Ratelimit({
+        redis: new Redis({
+          url: process.env.KV_REST_API_URL,
+          token: process.env.KV_REST_API_TOKEN,
+        }),
+        limiter: Ratelimit.slidingWindow(5, "15 m"),
+        analytics: false,
+        prefix: "lead-magnet",
+      })
+    : null;
+
+function getClientIp(request: NextRequest): string {
+  // Vercel sets x-forwarded-for; first value is the client.
+  const fwd = request.headers.get("x-forwarded-for");
+  if (fwd) return fwd.split(",")[0].trim();
+  const real = request.headers.get("x-real-ip");
+  if (real) return real.trim();
+  return "unknown";
+}
 
 /**
  * Privacy Policy consent version stamped onto every webhook emit.
@@ -71,6 +100,28 @@ const EMAIL_REGEX = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z
 
 export async function POST(request: NextRequest) {
   try {
+    // Rate limit by IP before any body parsing. Failure-mode: if Upstash
+    // itself errors, fall through and let downstream checks run — we'd
+    // rather let through some abuse than block real prospects during a
+    // KV outage. (Different from the magic-link verify path on the client
+    // portal, where the analogous failure must be fail-closed because
+    // the protected resource is a financial portal.)
+    if (ratelimit) {
+      const ip = getClientIp(request);
+      try {
+        const { success } = await ratelimit.limit(ip);
+        if (!success) {
+          return NextResponse.json(
+            { error: "Too many requests. Please try again later." },
+            { status: 429 }
+          );
+        }
+      } catch (e) {
+        console.error("[lead-magnet] rate-limit check failed:", e);
+        // Fall through to honeypot + email regex.
+      }
+    }
+
     const body = await request.json();
     const { email: rawEmail, firstName, lastName, magnet, website } = body;
 
