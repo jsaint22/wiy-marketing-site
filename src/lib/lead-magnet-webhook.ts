@@ -61,11 +61,17 @@ export async function emitLeadMagnetWebhook(
   payload: LeadMagnetWebhookPayload
 ): Promise<EmitResult> {
   const url = process.env.LEAD_MAGNET_WEBHOOK_URL;
-  const secret = process.env.INTAKE_WEBHOOK_SECRET;
+  // 2026-05-24 security split (SEC-AUDIT-T5): lead-magnet now has its own
+  // secret distinct from the intake webhook secret. Falls back to the
+  // shared INTAKE_WEBHOOK_SECRET during the transition deploy window so
+  // either deploy order (sender-first or receiver-first) works.
+  const secret =
+    process.env.LEAD_MAGNET_WEBHOOK_SECRET ||
+    process.env.INTAKE_WEBHOOK_SECRET;
 
   if (!url || !secret) {
     console.warn(
-      "[LeadMagnetWebhook] LEAD_MAGNET_WEBHOOK_URL or INTAKE_WEBHOOK_SECRET not set — skipping emit (Inngest event will NOT fire)"
+      "[LeadMagnetWebhook] LEAD_MAGNET_WEBHOOK_URL or LEAD_MAGNET_WEBHOOK_SECRET / INTAKE_WEBHOOK_SECRET not set — skipping emit (Inngest event will NOT fire)"
     );
     return { ok: false, error: "missing env" };
   }
