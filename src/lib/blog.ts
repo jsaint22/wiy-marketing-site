@@ -21,6 +21,7 @@ export function getAllPosts(): BlogPost[] {
 
   const posts = files.map((file) => {
     const slug = file.replace(/\.mdx$/, "");
+    // nosemgrep: javascript.lang.security.audit.path-traversal.path-join-resolve-traversal.path-join-resolve-traversal -- file from readdirSync of fixed BLOG_DIR, filtered to .mdx; not user input
     const raw = fs.readFileSync(path.join(BLOG_DIR, file), "utf-8");
     const { data, content } = matter(raw);
 
@@ -41,19 +42,5 @@ export function getAllPosts(): BlogPost[] {
 }
 
 export function getPostBySlug(slug: string): BlogPost | null {
-  const filePath = path.join(BLOG_DIR, `${slug}.mdx`);
-  if (!fs.existsSync(filePath)) return null;
-
-  const raw = fs.readFileSync(filePath, "utf-8");
-  const { data, content } = matter(raw);
-
-  return {
-    slug,
-    title: data.title || slug,
-    description: data.description || "",
-    date: data.date || "",
-    author: data.author || "Joshua St. Laurent",
-    tags: data.tags || [],
-    content,
-  };
+  return getAllPosts().find((p) => p.slug === slug) ?? null;
 }
