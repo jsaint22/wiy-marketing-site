@@ -95,12 +95,12 @@ const categories: FAQCategory[] = [
       {
         question: "What happens on the 15-minute intro call?",
         answer:
-          "We talk about your situation, what's on your mind, and whether there's a mutual fit. No pitch. No pressure. No awkward sales script. If it makes sense for both of us, we'll schedule a deeper Strategy & Vision meeting — also free. You get a full hour with us before you spend a dollar.",
+          "We talk about your situation, what's on your mind, and whether there's a mutual fit. No pitch. No pressure. No awkward sales script. If it makes sense for both of us, we'll schedule a deeper Getting Acquainted meeting — also free. You get a full hour with us before you spend a dollar.",
       },
       {
         question: "What happens after the intro call if we're a fit?",
         answer:
-          "If we're a fit, we build a prospect portal customized to you and your family's situation. You get immediate access — your own dashboard showing the scope of work we'd do, your estimated fee, your onboarding timeline, and what Year One together would look like. From there we schedule a Strategy & Vision call to go deeper. The portal means you don't leave the intro call with 'I'll follow up' — you leave with a clear picture of what working together actually involves.",
+          "If we're a fit, we build a prospect portal customized to you and your family's situation. You get immediate access — your own dashboard showing the scope of work we'd do, your estimated fee, your onboarding timeline, and what Year One together would look like. From there we schedule a Getting Acquainted call to go deeper. The portal means you don't leave the intro call with 'I'll follow up' — you leave with a clear picture of what working together actually involves.",
       },
       {
         question: "How long does onboarding take?",
