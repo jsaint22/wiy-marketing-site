@@ -82,7 +82,7 @@ const faqs = [
   {
     question: "Do you charge for the intro call?",
     answer:
-      "No. Your initial 15-minute intro call is free, and if we\u2019re a mutual fit, we\u2019ll schedule a 45-minute Strategy & Vision meeting that\u2019s also at no cost. You get a full hour with us to decide whether this is the right partnership \u2014 no pressure, no hidden fees, no strings.",
+      "No. Your initial 15-minute intro call is free, and if we\u2019re a mutual fit, we\u2019ll schedule a Getting Acquainted meeting that\u2019s also at no cost. You get over an hour with us to decide whether this is the right partnership \u2014 no pressure, no hidden fees, no strings.",
   },
   {
     question: "What's included in the flat fee?",

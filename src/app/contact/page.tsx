@@ -121,7 +121,7 @@ export default function ContactPage() {
               <h2 className="text-2xl font-bold text-primary">What happens after</h2>
               <div className="mt-4 space-y-3 text-neutral-dark/70">
                 <p>
-                  If we both decide it&rsquo;s a fit, the next step is a Strategy &amp; Vision meeting &mdash; a deeper conversation about your full financial picture. No commitment until you&rsquo;re ready.
+                  If we both decide it&rsquo;s a fit, the next step is our Getting Acquainted meeting &mdash; a deeper conversation about your full financial picture. No commitment until you&rsquo;re ready.
                 </p>
                 <p>
                   If we&rsquo;re not the right firm for you, we&rsquo;ll tell you honestly and point you to someone who is. No pressure. No follow-up spam.
