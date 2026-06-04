@@ -196,7 +196,7 @@ Thanks for requesting ${config.description}
 
 The checklist is attached to this email. Take your time with it — these aren't quick wins, they're the conversations that separate good planning from great planning.
 
-If you want to talk about how any of these apply to your specific situation, here's my calendar: https://links.wealthinyourself.com/widget/bookings/wiy-15-min-call
+If you want to talk about how any of these apply to your specific situation, here's my calendar: https://cal.com/jsaint/intro-call
 
 Josh
 Wealth In Yourself

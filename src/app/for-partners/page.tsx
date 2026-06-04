@@ -113,7 +113,7 @@ export default function ForPartnersPage() {
               or book a 15-minute call to discuss how we can work together.
             </p>
             <a
-              href="https://links.wealthinyourself.com/widget/bookings/wiy-15-min-call"
+              href="https://cal.com/jsaint/intro-call"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block mt-4 px-8 py-3.5 bg-primary text-white font-semibold rounded-lg hover:bg-primary/90 transition-colors"

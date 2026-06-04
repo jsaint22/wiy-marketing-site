@@ -54,7 +54,7 @@ const LOGO_WHITE = path.join(
   "wiy-logo-stacked-white.png"
 );
 const BOOKING_URL =
-  "https://links.wealthinyourself.com/widget/bookings/wiy-15-min-call";
+  "https://cal.com/jsaint/intro-call";
 
 /* ------------------------------------------------------------------ */
 /*  Styles                                                             */

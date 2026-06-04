@@ -212,7 +212,7 @@ export default function Navigation() {
               Client Login
             </a>
             <a
-              href="https://links.wealthinyourself.com/widget/bookings/wiy-15-min-call"
+              href="https://cal.com/jsaint/intro-call"
               target="_blank"
               rel="noopener noreferrer"
               className="ml-2 px-5 py-2.5 bg-primary text-white text-sm font-semibold rounded-lg hover:bg-primary/90 transition-colors"
@@ -268,7 +268,7 @@ export default function Navigation() {
                 )
               )}
               <a
-                href="https://links.wealthinyourself.com/widget/bookings/wiy-15-min-call"
+                href="https://cal.com/jsaint/intro-call"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setMobileOpen(false)}

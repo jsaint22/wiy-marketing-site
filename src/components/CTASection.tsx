@@ -12,7 +12,7 @@ export default function CTASection({
   headline = "Ready to design the life this money is supposed to fund?",
   subtext = "Book a 15-minute intro call. No pitch. No pressure. Just a conversation about what matters to you.",
   buttonText = "Book Your Intro Call",
-  buttonHref = "https://links.wealthinyourself.com/widget/bookings/wiy-15-min-call",
+  buttonHref = "https://cal.com/jsaint/intro-call",
   variant = "primary",
 }: CTASectionProps) {
   const isPrimary = variant === "primary";

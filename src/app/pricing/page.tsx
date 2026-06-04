@@ -134,7 +134,7 @@ export default function PricingPage() {
         subhead="Life planning, tax strategy, investment management, estate coordination, business planning, RE investor planning, unlimited meetings — all coordinated by one advisor for one transparent monthly fee. Your fee scales with complexity, not with how well your portfolio does."
         primaryCta={{
           label: "Book your 15-minute intro call",
-          href: "https://links.wealthinyourself.com/widget/bookings/wiy-15-min-call",
+          href: "https://cal.com/jsaint/intro-call",
           external: true,
         }}
       />

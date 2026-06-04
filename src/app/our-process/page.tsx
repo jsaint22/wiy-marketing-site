@@ -174,7 +174,7 @@ export default function OurProcessPage() {
         subhead="The Life Architecture is what we call the year-long engagement that takes a household from 'we have money but not clarity' to 'we know exactly where this is going.' Three phases. Nine meetings. One flat fee."
         primaryCta={{
           label: "Book your 15-minute intro call",
-          href: "https://links.wealthinyourself.com/widget/bookings/wiy-15-min-call",
+          href: "https://cal.com/jsaint/intro-call",
           external: true,
         }}
       />

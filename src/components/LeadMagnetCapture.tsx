@@ -91,7 +91,7 @@ export default function LeadMagnetCapture({
                 Want to talk through how this applies to your situation?
               </p>
               <a
-                href="https://links.wealthinyourself.com/widget/bookings/wiy-15-min-call"
+                href="https://cal.com/jsaint/intro-call"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block mt-3 px-6 py-2.5 bg-secondary text-primary text-sm font-semibold rounded-lg hover:bg-secondary/90 transition-colors"

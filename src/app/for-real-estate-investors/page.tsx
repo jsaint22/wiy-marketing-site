@@ -104,7 +104,7 @@ export default function ForRealEstateInvestorsPage() {
         subhead="You’ve built positions in LTRs, syndications, maybe some STR or commercial. You have a CPA who files and a brokerage account no one is integrating. What you don’t have is one advisor coordinating the tax strategy, entity structure, estate plan, and exit timing across every property."
         primaryCta={{
           label: "Book your 15-minute intro call",
-          href: "https://links.wealthinyourself.com/widget/bookings/wiy-15-min-call",
+          href: "https://cal.com/jsaint/intro-call",
           external: true,
         }}
       />
