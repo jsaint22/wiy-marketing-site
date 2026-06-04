@@ -73,7 +73,7 @@ export default function ContactPage() {
                 spam.
               </p>
               <a
-                href="https://links.wealthinyourself.com/widget/bookings/wiy-15-min-call"
+                href="https://cal.com/jsaint/intro-call"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block mt-8 w-full sm:w-auto px-10 py-4 bg-secondary text-primary font-semibold text-lg rounded-lg hover:bg-secondary/90 transition-colors"

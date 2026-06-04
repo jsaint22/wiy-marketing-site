@@ -104,7 +104,7 @@ export default function HomePage() {
         subhead="I'm Josh. I built a flat-fee, fiduciary firm for households between $3M and $30M who want one advisor coordinating tax strategy, investment design, estate planning, and the dozen life decisions that happen in between."
         primaryCta={{
           label: 'Book your 15-minute intro call',
-          href: 'https://links.wealthinyourself.com/widget/bookings/wiy-15-min-call',
+          href: 'https://cal.com/jsaint/intro-call',
           external: true,
         }}
         secondaryCta={{
