@@ -15,7 +15,7 @@ export default function PrivacyPolicyPage() {
             Privacy Policy
           </h1>
           <p className="mt-4 text-lg text-white/80">
-            Posted: May 20, 2026 &middot; Effective: May 20, 2026
+            Posted: June 8, 2026 &middot; Effective: June 8, 2026
           </p>
         </div>
       </section>
@@ -900,7 +900,9 @@ export default function PrivacyPolicyPage() {
           </p>
 
           {/* Section 13 */}
-          <h2>13. Website Cookies and Tracking</h2>
+          <h2>13. Website Cookies, Tracking, and Text Messaging</h2>
+
+          <h3>13.1 Website Cookies and Tracking</h3>
           <p>
             Our website may use cookies and similar tracking technologies to
             improve your browsing experience and analyze website traffic. We use
@@ -918,6 +920,22 @@ export default function PrivacyPolicyPage() {
             You may disable cookies in your browser settings. Doing so may
             affect your experience on our website but will not affect your
             access to our advisory services.
+          </p>
+
+          <h3>13.2 Text Messaging (SMS)</h3>
+          <p>
+            Text Messaging (SMS). With your consent, we send SMS/text messages
+            related to your relationship with the Firm, including appointment
+            confirmations and reminders, onboarding and account notifications,
+            event announcements, financial education resources, and responses
+            to your questions. Message frequency varies. Message and data rates
+            may apply. You can opt out at any time by replying STOP, or reply
+            HELP for help. We do not share or sell your mobile phone number,
+            SMS opt-in, or consent with any third parties or affiliates for
+            their own marketing or promotional purposes. Mobile information
+            disclosed to our service providers (for example, our messaging
+            provider) is used solely to deliver the messaging service on our
+            behalf and for no other purpose.
           </p>
 
           {/* Section 14 */}

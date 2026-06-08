@@ -148,6 +148,29 @@ export default function DisclosuresPage() {
             disclosures.
           </p>
 
+          <h2>SMS / Text Messaging Terms</h2>
+          <p>
+            SMS / Text Messaging Terms. By providing your mobile number and
+            opting in, you agree to receive recurring text messages from Wealth
+            In Yourself, including appointment confirmations and reminders,
+            onboarding and account notifications, event announcements,
+            financial education resources, and responses to your inquiries.
+            Message frequency varies. Message and data rates may apply. Reply
+            HELP for help or STOP to opt out at any time; after you reply STOP
+            we will send a single confirmation and no further messages unless
+            you re-subscribe. Carriers are not liable for delayed or
+            undelivered messages. Your information is handled in accordance
+            with our Privacy Policy at{" "}
+            <a
+              href="https://wealthinyourself.com/privacy-policy"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              wealthinyourself.com/privacy-policy
+            </a>
+            .
+          </p>
+
           <h2>Contact</h2>
           <p>
             Wealth In Yourself

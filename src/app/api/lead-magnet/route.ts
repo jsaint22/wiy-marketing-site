@@ -48,10 +48,11 @@ function getClientIp(request: NextRequest): string {
  * with any Privacy Policy amendment so the receiver-side audit row records
  * which policy version the prospect consented to.
  *
- * Locked 2026-05-20 per the Privacy Policy §14 amendment + booking-gate
+ * Bumped 2026-06-08 for SMS/A2P clause addition (Section 13.2 Text Messaging).
+ * Prior lock 2026-05-20 per the Privacy Policy §14 amendment + booking-gate
  * supersession (op-debt AI-CONSENT-BOOKING-GATE-ENFORCEMENT-1).
  */
-const PRIVACY_POLICY_CONSENT_VERSION = "2026-05-20";
+const PRIVACY_POLICY_CONSENT_VERSION = "2026-06-08";
 
 const LEAD_MAGNETS: Record<
   string,
