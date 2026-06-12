@@ -126,7 +126,7 @@ const categories: FAQCategory[] = [
       {
         question: "Do you manage my investments directly?",
         answer:
-          "Yes — investment management is fully included in your flat fee. No separate AUM charge, no performance fee, no trading commissions. Our primary custodian is Altruist, who I selected specifically because their fee structure and technology align with how we work. For edge cases that Altruist can't accommodate, I'm also set up on Interactive Brokers as a secondary platform. You always know where your money is and what's being done with it — our fee doesn't change whether you have $1M or $20M invested with us.",
+          "Yes — investment management is fully included in your flat fee. No separate AUM charge, no performance fee, no trading commissions. Our custodian is Altruist, who I selected specifically because their fee structure and technology align with how we work. You always know where your money is and what's being done with it — our fee doesn't change whether you have $1M or $20M invested with us.",
       },
       {
         question: "Do you prepare my taxes?",
