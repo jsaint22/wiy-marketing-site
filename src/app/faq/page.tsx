@@ -69,7 +69,7 @@ const categories: FAQCategory[] = [
       {
         question: "What's the minimum net worth to work with you?",
         answer:
-          "Our minimum annual fee is $10,000, which typically makes sense for clients with a net worth of $1M or higher (excluding primary residence). Below that threshold, a flat-fee model likely isn't cost-effective for you yet — and we'd rather tell you that upfront than sign you up anyway.",
+          "Our minimum annual fee is $15,000, which typically makes sense for clients with a net worth of $1M or higher (excluding primary residence). Below that threshold, a flat-fee model likely isn't cost-effective for you yet — and we'd rather tell you that upfront than sign you up anyway.",
       },
       {
         question: "What happens to my fee as my net worth grows?",

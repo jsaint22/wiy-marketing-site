@@ -30,7 +30,7 @@ export function calculateWiyAnnualFee(netWorth: number): number {
     remaining -= taxable;
   }
 
-  return Math.max(annualFee, 10_000);
+  return Math.max(annualFee, 15_000);
 }
 
 export function formatUSD(value: number): string {
