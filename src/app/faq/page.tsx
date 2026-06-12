@@ -110,7 +110,7 @@ const categories: FAQCategory[] = [
       {
         question: "How often will we meet once I'm a client?",
         answer:
-          "Our planning process is built around 13 structured meetings across four phases — Ground, Design, Build, and Evolve. After the initial planning year, most clients meet quarterly with ad-hoc calls whenever something comes up. You'll never feel like you're waiting for a scheduled meeting to get an answer.",
+          "Our planning process is built around nine structured meetings across six phases, plus an annual Re-Vision. After the initial planning year, most clients meet quarterly with ad-hoc calls whenever something comes up. You'll never feel like you're waiting for a scheduled meeting to get an answer.",
       },
       {
         question: "How do I access my plan and documents?",
