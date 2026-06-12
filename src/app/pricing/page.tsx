@@ -22,7 +22,7 @@ const tiers = [
 ];
 
 const milestones = [
-  { nw: "$1M", fee: "$833/mo", effective: "1.00%" },
+  { nw: "$1M", fee: "$1,250/mo", effective: "1.50%" },
   { nw: "$3M", fee: "$1,417/mo", effective: "0.57%" },
   { nw: "$5M", fee: "$1,750/mo", effective: "0.42%" },
   { nw: "$10M", fee: "$2,583/mo", effective: "0.31%" },
@@ -102,7 +102,7 @@ const faqs = [
   {
     question: "Is there a minimum net worth requirement?",
     answer:
-      "Our minimum annual fee is $10,000, which typically makes sense for clients with a net worth of $1M or higher (excluding primary residence). We can work with clients starting at $500K in net worth, but at that level you'd pay the $10,000 annual flat fee. Below $500K, a flat-fee model likely isn't the most cost-effective option for you, and we'd rather be honest about that upfront.",
+      "Our minimum annual fee is $15,000, which typically makes sense for clients with a net worth of $1M or higher (excluding primary residence). We can work with clients starting at $500K in net worth, but at that level you'd pay the $15,000 annual flat fee. Below $500K, a flat-fee model likely isn't the most cost-effective option for you, and we'd rather be honest about that upfront.",
   },
   {
     question: "Can I cancel at any time?",
@@ -190,7 +190,7 @@ export default function PricingPage() {
               ))}
             </div>
             <p className="mt-4 text-center text-sm text-neutral-dark/70">
-              $10,000 annual minimum fee applies at all net worth levels.
+              $15,000 annual minimum fee applies at all net worth levels.
             </p>
           </div>
 

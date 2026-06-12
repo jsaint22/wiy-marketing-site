@@ -24,11 +24,11 @@ describe("WIY Fee Formula", () => {
   });
 
   test("$500K returns $10,000 (minimum applies)", () => {
-    expect(calculateWiyAnnualFee(500_000)).toBe(10_000);
+    expect(calculateWiyAnnualFee(500_000)).toBe(15_000);
   });
 
   test("$1M = $10,000/year (1% on first $1M)", () => {
-    expect(calculateWiyAnnualFee(1_000_000)).toBe(10_000);
+    expect(calculateWiyAnnualFee(1_000_000)).toBe(15_000);
   });
 
   test("$3M = $17,000/year", () => {
@@ -62,7 +62,7 @@ describe("WIY Fee Formula", () => {
 
 describe("Monthly Fee (Pricing Page Verification)", () => {
   const cases: [number, string, string][] = [
-    [1_000_000, "$833", "1.00%"],
+    [1_000_000, "$1,250", "1.50%"],
     [3_000_000, "$1,417", "0.57%"],
     [5_000_000, "$1,750", "0.42%"],
     [10_000_000, "$2,583", "0.31%"],
@@ -83,7 +83,7 @@ describe("Monthly Fee (Pricing Page Verification)", () => {
 describe("Year 1 Fee Comparison (AUM Math PDF Page 4)", () => {
   test("$1M: AUM=$10,000, WIY=$10,000, Save=$0", () => {
     expect(1_000_000 * 0.01).toBe(10_000);
-    expect(calculateWiyAnnualFee(1_000_000)).toBe(10_000);
+    expect(calculateWiyAnnualFee(1_000_000)).toBe(15_000);
   });
 
   test("$5M: AUM=$50,000, WIY=$21,000, Save=$29,000", () => {
@@ -161,7 +161,7 @@ describe("30-Year Projections (AUM Math PDF Page 6)", () => {
 describe("All Wealth Levels — Portfolio Benefit (Cross-reference)", () => {
   // These numbers are from MATH-METHODOLOGY.md, verified by Python
   const expected: Record<string, { yr20: number; yr30: number }> = {
-    "1M": { yr20: 187_585, yr30: 683_161 },
+    "1M": { yr20: 81_314, yr30: 478_253 },
     "5M": { yr20: 2_369_210, yr30: 6_992_247 },
     "10M": { yr20: 5_428_885, yr30: 15_617_906 },
     "25M": { yr20: 14_848_583, yr30: 41_963_608 },
@@ -205,8 +205,8 @@ describe("Email Body Hardcoded Numbers (subscribe/route.ts)", () => {
 });
 
 describe("Sanity Checks", () => {
-  test("WIY fee never exceeds AUM fee at $1M+ (minimum applies below)", () => {
-    for (let nw = 1_000_000; nw <= 50_000_000; nw += 500_000) {
+  test("WIY fee never exceeds AUM fee at $1.5M+ ($15K floor binds below that)", () => {
+    for (let nw = 1_500_000; nw <= 50_000_000; nw += 500_000) {
       const aumFee = nw * 0.01;
       const wiyFee = calculateWiyAnnualFee(nw);
       expect(wiyFee).toBeLessThanOrEqual(aumFee);

@@ -48,7 +48,7 @@ export default function CalculatorPage() {
             <p>
               That means the more wealth you build, the less you pay as a
               percentage. Your fee never scales against you the way a flat 1%
-              AUM fee does. The minimum annual fee is $10,000.
+              AUM fee does. The minimum annual fee is $15,000.
             </p>
           </div>
           <div className="mt-8 flex flex-col sm:flex-row gap-4">

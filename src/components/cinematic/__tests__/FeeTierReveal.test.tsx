@@ -7,7 +7,7 @@ describe('FeeTierReveal', () => {
     const { getByText } = render(
       <FeeTierReveal
         tiers={[
-          { netWorth: '$1M', monthly: 833, effectiveRate: '1.00%' },
+          { netWorth: '$1M', monthly: 1250, effectiveRate: '1.50%' },
           { netWorth: '$3M', monthly: 1417, effectiveRate: '0.57%' },
         ]}
       />

@@ -100,7 +100,7 @@ const faqs = [
   {
     question: "How often do we meet?",
     answer:
-      "During onboarding, we meet frequently — 13 meetings across four phases to build your plan with real depth. After that, we meet quarterly at minimum and anytime you need us in between. We don't schedule meetings to justify our fee. We meet when there's something worth discussing.",
+      "During onboarding, we meet frequently — nine meetings across six phases to build your plan with real depth, plus an annual Re-Vision. After that, we meet quarterly at minimum and anytime you need us in between. We don't schedule meetings to justify our fee. We meet when there's something worth discussing.",
   },
   {
     question: "What if I only need help with one area?",

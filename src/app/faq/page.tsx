@@ -69,7 +69,7 @@ const categories: FAQCategory[] = [
       {
         question: "What's the minimum net worth to work with you?",
         answer:
-          "Our minimum annual fee is $10,000, which typically makes sense for clients with a net worth of $1M or higher (excluding primary residence). Below that threshold, a flat-fee model likely isn't cost-effective for you yet — and we'd rather tell you that upfront than sign you up anyway.",
+          "Our minimum annual fee is $15,000, which typically makes sense for clients with a net worth of $1M or higher (excluding primary residence). Below that threshold, a flat-fee model likely isn't cost-effective for you yet — and we'd rather tell you that upfront than sign you up anyway.",
       },
       {
         question: "What happens to my fee as my net worth grows?",
@@ -110,7 +110,7 @@ const categories: FAQCategory[] = [
       {
         question: "How often will we meet once I'm a client?",
         answer:
-          "Our planning process is built around 13 structured meetings across four phases — Ground, Design, Build, and Evolve. After the initial planning year, most clients meet quarterly with ad-hoc calls whenever something comes up. You'll never feel like you're waiting for a scheduled meeting to get an answer.",
+          "Our planning process is built around nine structured meetings across six phases, plus an annual Re-Vision. After the initial planning year, most clients meet quarterly with ad-hoc calls whenever something comes up. You'll never feel like you're waiting for a scheduled meeting to get an answer.",
       },
       {
         question: "How do I access my plan and documents?",
@@ -126,7 +126,7 @@ const categories: FAQCategory[] = [
       {
         question: "Do you manage my investments directly?",
         answer:
-          "Yes — investment management is fully included in your flat fee. No separate AUM charge, no performance fee, no trading commissions. Our primary custodian is Altruist, who I selected specifically because their fee structure and technology align with how we work. For edge cases that Altruist can't accommodate, I'm also set up on Interactive Brokers as a secondary platform. You always know where your money is and what's being done with it — our fee doesn't change whether you have $1M or $20M invested with us.",
+          "Yes — investment management is fully included in your flat fee. No separate AUM charge, no performance fee, no trading commissions. Our custodian is Altruist, who I selected specifically because their fee structure and technology align with how we work. You always know where your money is and what's being done with it — our fee doesn't change whether you have $1M or $20M invested with us.",
       },
       {
         question: "Do you prepare my taxes?",

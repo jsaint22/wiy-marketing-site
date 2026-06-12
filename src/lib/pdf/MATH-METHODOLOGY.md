@@ -21,7 +21,7 @@ Verified via Python audit on April 18, 2026.
 | 3 | Next $7,000,000 ($3M–$10M) | 0.20% |
 | 4 | Above $10,000,000 | 0.10% |
 
-**Annual minimum:** $10,000
+**Annual minimum:** $15,000
 **Below $500K:** Not eligible (fee = $0)
 
 Example at $5M:

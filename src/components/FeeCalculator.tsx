@@ -25,8 +25,8 @@ function calculateAnnualFee(netWorth: number): number {
     remaining -= taxable;
   }
 
-  // Enforce $10,000 annual minimum
-  return Math.max(annualFee, 10_000);
+  // Enforce $15,000 annual minimum
+  return Math.max(annualFee, 15_000);
 }
 
 function formatCurrency(value: number): string {

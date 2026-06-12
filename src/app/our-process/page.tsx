@@ -10,45 +10,67 @@ import { RevealOnScroll } from "@/components/cinematic/RevealOnScroll";
 export const metadata: Metadata = {
   title: "Our Process — 9 Meetings + Annual Re-Vision",
   description:
-    "Twelve months. Nine conversations. One designed life. See exactly what a year of working with Wealth In Yourself looks like — 9 meetings across 3 phases, plus an annual Re-Vision.",
+    "Twelve months. Nine conversations. One designed life. See exactly what a year of working with Wealth In Yourself looks like — 9 meetings across 6 phases, plus an annual Re-Vision.",
 };
 
+// Canonical 6-phase Life Architecture — mirrors wiy-client-portal/config/meetings.ts
+// PHASES: Arrive · Story · Vision · Build · Blueprint · On Cadence.
 const phases = [
   {
-    name: "Ground",
-    timing: "Weeks 1–3",
+    name: "Arrive",
+    timing: "Week 1",
     color: "border-secondary",
     bgAccent: "bg-secondary/10",
     textAccent: "text-secondary",
-    description: "Get clear on who you are, what you've built, and where you actually want this to go.",
+    description: "Establish trust. The orientation conversation.",
     meetings: [
       {
         number: 1,
         name: "Arrive",
         description:
-          "Meet, establish trust, review your Financial Satisfaction and Life Transition surveys, and set the foundation for everything that follows.",
+          "Meet, establish trust, review your intro forms — Your Financial Life Right Now and What's Shifting Right Now — and set the foundation for everything that follows.",
       },
+    ],
+  },
+  {
+    name: "Story",
+    timing: "Week 2",
+    color: "border-success",
+    bgAccent: "bg-success/10",
+    textAccent: "text-success",
+    description: "Surface your money history without making it feel like therapy.",
+    meetings: [
       {
         number: 2,
         name: "Story",
         description:
-          "Surface your money history — the experiences that built your current beliefs and behaviors. Guided autobiography, not an interview.",
+          "Surface your money history — the experiences that built your current beliefs and behaviors. The Money Story exercise. Guided autobiography, not an interview.",
       },
+    ],
+  },
+  {
+    name: "Vision",
+    timing: "Week 3",
+    color: "border-primary",
+    bgAccent: "bg-primary/10",
+    textAccent: "text-primary",
+    description: "Light the torch. The most important meeting in the engagement.",
+    meetings: [
       {
         number: 3,
         name: "Vision",
         description:
-          "The turning point. Explore what you actually want from life through the Kinder Three Questions. Leave with a written Vision Statement.",
+          "The turning point. Explore what you actually want from life through The Three Questions — a sequence inspired by the life-planning tradition of George Kinder; the questions are Wealth In Yourself's own. Leave with a written Vision Statement.",
       },
     ],
   },
   {
     name: "Build",
-    timing: "Weeks 4–12",
-    color: "border-success",
-    bgAccent: "bg-success/10",
-    textAccent: "text-success",
-    description: "Design the architecture — tax, capital, entity, estate — around the life you just named.",
+    timing: "Weeks 4–8",
+    color: "border-secondary",
+    bgAccent: "bg-secondary/10",
+    textAccent: "text-secondary",
+    description: "Name what's in the way, then design the architecture around it.",
     meetings: [
       {
         number: 4,
@@ -83,18 +105,34 @@ const phases = [
     ],
   },
   {
-    name: "Live",
-    timing: "Week 13 + Annually",
-    color: "border-primary",
-    bgAccent: "bg-primary/10",
-    textAccent: "text-primary",
-    description: "Receive your Blueprint and step into the rhythm that runs the next 12 months.",
+    name: "Blueprint",
+    timing: "Week 9",
+    color: "border-success",
+    bgAccent: "bg-success/10",
+    textAccent: "text-success",
+    description: "Receive the designed artifact. Install the rhythm.",
     meetings: [
       {
         number: 9,
         name: "Blueprint",
         description:
           "Receive your Blueprint — the designed artifact of your planning engagement. Walk through it section by section, install the implementation rhythm.",
+      },
+    ],
+  },
+  {
+    name: "On Cadence",
+    timing: "Ongoing + Annually",
+    color: "border-primary",
+    bgAccent: "bg-primary/10",
+    textAccent: "text-primary",
+    description: "Reopen the Vision each year. Keep the plan alive.",
+    meetings: [
+      {
+        number: 10,
+        name: "Re-Vision",
+        description:
+          "Reopen the Vision, refresh the Obstacle Map, update the Blueprint. The annual meeting that prevents drift and re-energizes the engagement.",
       },
     ],
   },
@@ -133,22 +171,38 @@ const vfoPartners = [
   },
 ];
 
-// Cinema chapters — 3 phases (Ground / Build / Live), client-voice descriptions.
+// Cinema chapters — canonical 6 phases (Arrive / Story / Vision / Build / Blueprint / On Cadence),
+// client-voice descriptions.
 const cinemaChapters = [
   {
     number: "01",
-    title: "Ground",
-    body: "Three meetings across the first three weeks. We surface your money history, work through the Kinder Three Questions, and end with a written Vision Statement of the life this engagement is designed to fund.",
+    title: "Arrive",
+    body: "One meeting in week one. We meet, establish trust, review your intro forms — Your Financial Life Right Now and What's Shifting Right Now — and set the foundation for everything that follows.",
   },
   {
     number: "02",
-    title: "Build",
-    body: "Five meetings across the next nine weeks. Obstacles, cash architecture, tax + entity, capital design, and risk + estate — every recommendation tied back to the Vision, not built around a portfolio benchmark.",
+    title: "Story",
+    body: "One meeting to surface your money history — the experiences that built your current beliefs and behaviors. Guided autobiography, not an interview.",
   },
   {
     number: "03",
-    title: "Live",
-    body: "One meeting to hand over your Blueprint — the designed artifact of your planning year — then an Annual Re-Vision plus unlimited event-driven planning when life happens.",
+    title: "Vision",
+    body: "The turning point. We work through The Three Questions and end with a written Vision Statement of the life this engagement is designed to fund.",
+  },
+  {
+    number: "04",
+    title: "Build",
+    body: "Five meetings across the next five weeks. Obstacles, cash architecture, tax + entity, capital design, and risk + estate — every recommendation tied back to the Vision, not built around a portfolio benchmark.",
+  },
+  {
+    number: "05",
+    title: "Blueprint",
+    body: "One meeting to hand over your Blueprint — the designed artifact of your planning year — and install the implementation rhythm.",
+  },
+  {
+    number: "06",
+    title: "On Cadence",
+    body: "An Annual Re-Vision reopens the Vision and keeps the plan alive — plus unlimited event-driven planning when life happens.",
   },
 ];
 
@@ -171,7 +225,7 @@ export default function OurProcessPage() {
       <CinematicHero
         eyebrow="Our Process"
         headline="Twelve months. Nine conversations. One designed life."
-        subhead="The Life Architecture is what we call the year-long engagement that takes a household from 'we have money but not clarity' to 'we know exactly where this is going.' Three phases. Nine meetings. One flat fee."
+        subhead="The Life Architecture is what we call the year-long engagement that takes a household from 'we have money but not clarity' to 'we know exactly where this is going.' Six phases. Nine meetings, plus an annual Re-Vision. One flat fee."
         primaryCta={{
           label: "Book your 15-minute intro call",
           href: "https://cal.com/jsaint/intro-call",
@@ -179,15 +233,15 @@ export default function OurProcessPage() {
         }}
       />
 
-      {/* Pinned scroll cinema — 3 phases (Ground / Build / Live) */}
+      {/* Pinned scroll cinema — canonical 6 phases */}
       <ScrollPinnedCinema chapters={cinemaChapters} />
 
       {/* 9 Meetings — wrapped grid */}
       <section className="bg-white py-14 sm:py-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
-            eyebrow="Year One"
-            title="9 meetings. 3 phases. Every area of your financial life."
+            eyebrow="Year One and Beyond"
+            title="Six phases. Nine meetings, plus an annual Re-Vision. Every area of your financial life."
             subtitle="Each phase builds on the last. By the end of Year One, you have your Blueprint — a designed artifact of your financial life, not a binder on a shelf."
           />
 
