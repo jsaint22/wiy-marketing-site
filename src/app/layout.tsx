@@ -35,16 +35,8 @@ export const metadata: Metadata = {
       : "https://wealthinyourself.com"
   ),
   robots: isStaging ? { index: false, follow: false } : { index: true, follow: true },
-  icons: {
-    icon: [
-      { url: "/favicon.ico", sizes: "32x32", type: "image/x-icon" },
-      { url: "/icon-16.png", sizes: "16x16", type: "image/png" },
-      { url: "/icon-32.png", sizes: "32x32", type: "image/png" },
-      { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
-      { url: "/icon-512.png", sizes: "512x512", type: "image/png" },
-    ],
-    apple: { url: "/apple-icon.png", sizes: "180x180", type: "image/png" },
-  },
+  // Icons ship via app-dir file conventions: src/app/favicon.ico + icon.png + apple-icon.png.
+  // Canonical source: wiy-operating-system/brands/assets/wiy/favicon/ — regenerate there, copy here.
   alternates: {
     canonical: isStaging ? undefined : "https://wealthinyourself.com",
   },
