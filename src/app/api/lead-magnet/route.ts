@@ -5,7 +5,6 @@ import { join } from "path";
 import { randomUUID } from "node:crypto";
 import { Ratelimit } from "@upstash/ratelimit";
 import { Redis } from "@upstash/redis";
-import { appendSubscriber } from "@/lib/subscribers";
 import {
   emitLeadMagnetWebhook,
   type LeadMagnetSlug,
@@ -222,8 +221,9 @@ This is educational content and is not tax, legal, or investment advice. Discuss
       }
     }
 
-    // Log subscriber
-    await appendSubscriber(email, magnet);
+    // (Removed 2026-06-25: appendSubscriber wrote a local CSV under data/, which
+    // fails on Vercel's read-only filesystem [ENOENT mkdir /var/task/data] and is
+    // obsolete — the lead_magnet_downloads DB row is the system of record.)
 
     // Create GHL contact with tag (fire-and-forget — don't block response).
     // GHL is WIY's CRM-of-record until the locked Wave 2 GHL exit completes
