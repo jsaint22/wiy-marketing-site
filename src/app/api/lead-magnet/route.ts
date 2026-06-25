@@ -233,9 +233,15 @@ This is educational content and is not tax, legal, or investment advice. Discuss
     // these tags MUST be paused (Josh action 2026-05-22 Option A) — Inngest
     // is the sole email-nurture path. See ops-portal/src/inngest/
     // lead-magnet-nurture-fire.ts for the Day 3/7/14 auto-send sequence.
-    createGhlContact(email, firstName, config.tag).catch((err) =>
-      console.error("[LeadMagnet] GHL contact creation failed:", err)
-    );
+    // AWAITED (2026-06-25): previously fire-and-forget, which Vercel serverless
+    // terminates when the function freezes after the response returns — the
+    // contact upsert never completed. Awaiting guarantees it runs; failures are
+    // logged and swallowed so they never block the user's PDF response.
+    try {
+      await createGhlContact(email, firstName, config.tag);
+    } catch (err) {
+      console.error("[LeadMagnet] GHL contact creation failed:", err);
+    }
 
     // Fire-and-forget HMAC-signed POST to ops-portal webhook receiver.
     // Powers Spec 1 (lead-magnet Inngest nurture). The receiver dedupes on
@@ -247,7 +253,12 @@ This is educational content and is not tax, legal, or investment advice. Discuss
     const consentTimestamp = new Date().toISOString();
     const externalRequestId = randomUUID();
 
-    emitLeadMagnetWebhook({
+    // AWAITED (2026-06-25): previously fire-and-forget, which Vercel serverless
+    // killed before the fetch completed — the webhook never reached the ops-portal
+    // receiver, so no lead_magnet_downloads row / nurture ever fired. Awaiting adds
+    // one fast internal POST of latency and guarantees delivery. emitLeadMagnetWebhook
+    // never throws (returns an EmitResult), so no try/catch needed.
+    const emitResult = await emitLeadMagnetWebhook({
       email,
       first_name: typeof firstName === "string" ? firstName : undefined,
       last_name: typeof lastName === "string" && lastName ? lastName : undefined,
@@ -258,12 +269,12 @@ This is educational content and is not tax, legal, or investment advice. Discuss
       source_ip: sourceIp,
       source_user_agent: sourceUserAgent,
       external_request_id: externalRequestId,
-    }).catch((err) =>
-      // Belt-and-suspenders — emitLeadMagnetWebhook already catches internally,
-      // but a defensive .catch ensures any unexpected sync-thrown error never
-      // bubbles to block the user's response.
-      console.error("[LeadMagnet] ops-portal emit threw unexpectedly:", err)
-    );
+    });
+    if (!emitResult.ok) {
+      console.error(
+        `[LeadMagnet] ops-portal emit failed: status=${emitResult.status ?? "n/a"} error=${emitResult.error ?? "n/a"}`
+      );
+    }
 
     return NextResponse.json({
       success: true,
