@@ -340,25 +340,13 @@ export default function PrivacyPolicyPage() {
               <tbody>
                 <tr>
                   <td className="border border-neutral-300 px-4 py-2">
-                    Custodian (Primary)
+                    Custodian
                   </td>
                   <td className="border border-neutral-300 px-4 py-2">
                     Altruist
                   </td>
                   <td className="border border-neutral-300 px-4 py-2">
                     Assets, PII, account data, transaction instructions
-                  </td>
-                </tr>
-                <tr>
-                  <td className="border border-neutral-300 px-4 py-2">
-                    Custodian (Secondary)
-                  </td>
-                  <td className="border border-neutral-300 px-4 py-2">
-                    Interactive Brokers
-                  </td>
-                  <td className="border border-neutral-300 px-4 py-2">
-                    Assets, PII, account data, transaction instructions for
-                    clients with accounts at this custodian
                   </td>
                 </tr>
                 <tr>
@@ -372,18 +360,6 @@ export default function PrivacyPolicyPage() {
                     Contact information, communication history, custom fields
                     containing financial context, pipeline status, call
                     recordings, SMS and email content
-                  </td>
-                </tr>
-                <tr>
-                  <td className="border border-neutral-300 px-4 py-2">
-                    Internal Workspace
-                  </td>
-                  <td className="border border-neutral-300 px-4 py-2">
-                    Notion
-                  </td>
-                  <td className="border border-neutral-300 px-4 py-2">
-                    Client names, meeting notes, action items, dashboard data
-                    used for advisor-internal record-keeping
                   </td>
                 </tr>
                 <tr>
