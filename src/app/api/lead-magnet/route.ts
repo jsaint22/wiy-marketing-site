@@ -204,6 +204,18 @@ josh@wealthinyourself.com
 
 ---
 This is educational content and is not tax, legal, or investment advice. Discuss all items with your qualified advisory team before taking action.`,
+        // HTML version: CTA renders as a styled button, never a raw URL
+        // (Josh standing preference 2026-06-25). firstName is HTML-escaped.
+        html: `<div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;color:#1f2a2e;line-height:1.6;font-size:15px;">
+  <p>Hey ${firstName.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")},</p>
+  <p>Thanks for requesting ${config.description}</p>
+  <p>The checklist is attached to this email. Take your time with it — these aren't quick wins, they're the conversations that separate good planning from great planning.</p>
+  <p>If you want to talk about how any of these apply to your specific situation:</p>
+  <p><a href="https://cal.com/jsaint/intro-call" style="display:inline-block;background:#1a4d5c;color:#ffffff;text-decoration:none;padding:12px 22px;border-radius:6px;font-weight:600;">Book a 15-minute call →</a></p>
+  <p>Josh<br>Wealth In Yourself<br>josh@wealthinyourself.com</p>
+  <hr style="border:none;border-top:1px solid #dfe6e7;margin:18px 0;">
+  <p style="font-size:12px;color:#5d6b70;">This is educational content and is not tax, legal, or investment advice. Discuss all items with your qualified advisory team before taking action.</p>
+</div>`,
         attachments: [
           {
             filename: config.filename,
