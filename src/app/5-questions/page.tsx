@@ -9,41 +9,34 @@ export const metadata: Metadata = {
     "A free single-page diagnostic. Five substantive questions any household at $3M–$30M of net worth should be able to put to any advisor — including us. Use it before your next review meeting.",
 };
 
+// On-page we show only the questions themselves. The "what a good answer looks
+// like" benchmark for each + the score-yourself diagnostic live in the gated PDF
+// (src/lib/pdf/five-questions-pdf.tsx) — that's the value the email earns.
 const questions = [
   {
     number: 1,
     question:
       "How does my fee change as my net worth grows? Show me the math at $3M, $10M, and $20M — in dollars, not percentages.",
-    goodAnswer:
-      "A concrete dollar figure at each net worth tier, with the methodology explained. If they can't give you a number without \"it depends,\" ask them to walk through their fee structure on the spot using your actual net worth.",
   },
   {
     number: 2,
     question:
       "What specifically do you do for me that I couldn't reasonably do myself with 4 hours per quarter and good software?",
-    goodAnswer:
-      "A list of specific services that require professional judgment — entity structure design, multi-year tax modeling, estate document coordination, insurance strategy across vehicles. If the answer is \"we manage your portfolio,\" ask what their portfolio management adds beyond what a low-cost diversified strategy would deliver — and listen for a specific answer.",
   },
   {
     number: 3,
     question:
       "When was the last time you proactively brought me a tax-savings opportunity I wasn't already aware of?",
-    goodAnswer:
-      "A specific example with a date. \"Last March I flagged that your Roth conversion ladder would push you over the ACA subsidy cliff\" — that's proactive. \"We always look for opportunities\" — that's marketing language. Tax planning happens in October, not April.",
   },
   {
     number: 4,
     question:
       "If I died tomorrow, who would my spouse call first — and is that person on speed dial in your office?",
-    goodAnswer:
-      "A named person, a relationship that already exists, and a documented protocol. The answer should NOT be \"we'd help your spouse find an estate attorney.\" The estate attorney should already be in the workflow before the death happens.",
   },
   {
     number: 5,
     question:
       "How do you coordinate with my CPA, estate attorney, and insurance broker — and who's responsible when that coordination fails?",
-    goodAnswer:
-      "A specific coordination cadence (quarterly tax reviews, annual estate reviews, etc.) and a clear answer about accountability. \"Coordination\" that means \"we email them when needed\" is not coordination — it's referral. Real coordination is one team working off one plan.",
   },
 ];
 
@@ -101,26 +94,25 @@ export default function FiveQuestionsPage() {
           <h2 className="text-2xl sm:text-3xl font-bold text-primary mb-10">
             The five questions
           </h2>
-          <div className="space-y-12">
+          <div className="space-y-8">
             {questions.map((q) => (
               <div key={q.number} className="border-l-4 border-secondary pl-6">
                 <p className="text-xs font-semibold text-secondary uppercase tracking-wider mb-3">
                   Question {q.number} of 5
                 </p>
-                <h3 className="text-xl sm:text-2xl font-bold text-primary leading-snug mb-5">
+                <h3 className="text-xl sm:text-2xl font-bold text-primary leading-snug">
                   {q.question}
                 </h3>
-                <div className="bg-white rounded-lg p-5 sm:p-6 border border-neutral-dark/10">
-                  <p className="text-sm font-semibold text-primary uppercase tracking-wide mb-2">
-                    What a good answer looks like
-                  </p>
-                  <p className="text-neutral-dark/85 leading-relaxed">
-                    {q.goodAnswer}
-                  </p>
-                </div>
               </div>
             ))}
           </div>
+          <p className="mt-12 text-lg text-neutral-dark/85 leading-relaxed">
+            Knowing the questions is the easy half. The harder half is knowing
+            what a strong answer to each one actually sounds like — so you can
+            tell real substance from a polished deflection. That&apos;s in the
+            free one-page PDF below, along with a simple way to score where your
+            current advisor stands.
+          </p>
         </div>
       </section>
 
@@ -128,9 +120,9 @@ export default function FiveQuestionsPage() {
       <div id="get-the-pdf">
         <LeadMagnetCapture
           magnet="five-questions"
-          headline="Get the printable PDF."
-          subheadline="Five questions. One page. Bring it to your next review."
-          description="Enter your name and email. You'll get the single-page PDF in your inbox within 60 seconds. No spam. No sales pitch. Use it however you want."
+          headline="What does a good answer actually sound like?"
+          subheadline="The free one-page PDF gives you a strong-answer benchmark for all five questions — plus a quick way to score where your current advisor stands."
+          description="Enter your name and email and I'll send the single-page PDF to your inbox within 60 seconds. No spam. No sales pitch. Bring it to your next review."
           buttonText="Send me the PDF"
           successMessage="Sent! Check your inbox for the 5 Questions PDF."
         />
