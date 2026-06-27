@@ -15,7 +15,15 @@ export interface BlogPost {
   draft?: boolean;
 }
 
-const showDrafts = process.env.NEXT_PUBLIC_ENVIRONMENT !== "production";
+// Fail CLOSED: drafts are hidden if ANY signal says we're in production.
+// VERCEL_ENV is reliably "production" on Vercel prod deploys even when
+// NEXT_PUBLIC_ENVIRONMENT is unset — so an un-cleared draft can never leak to
+// the public site by relying on a single env var being configured.
+const isProduction =
+  process.env.NEXT_PUBLIC_ENVIRONMENT === "production" ||
+  process.env.VERCEL_ENV === "production" ||
+  process.env.NODE_ENV === "production";
+const showDrafts = !isProduction;
 
 export function getAllPosts(): BlogPost[] {
   if (!fs.existsSync(BLOG_DIR)) return [];
