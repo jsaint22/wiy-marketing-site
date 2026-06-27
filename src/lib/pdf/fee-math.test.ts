@@ -23,11 +23,11 @@ describe("WIY Fee Formula", () => {
     expect(calculateWiyAnnualFee(499_999)).toBe(0);
   });
 
-  test("$500K returns $10,000 (minimum applies)", () => {
+  test("$500K returns $15,000 (annual minimum applies)", () => {
     expect(calculateWiyAnnualFee(500_000)).toBe(15_000);
   });
 
-  test("$1M = $10,000/year (1% on first $1M)", () => {
+  test("$1M = $15,000/year (annual minimum bites — raw 1% calc $10K, $15K floor applies)", () => {
     expect(calculateWiyAnnualFee(1_000_000)).toBe(15_000);
   });
 
@@ -81,7 +81,7 @@ describe("Monthly Fee (Pricing Page Verification)", () => {
 });
 
 describe("Year 1 Fee Comparison (AUM Math PDF Page 4)", () => {
-  test("$1M: AUM=$10,000, WIY=$10,000, Save=$0", () => {
+  test("$1M: AUM=$10,000, WIY=$15,000 (floor bites — WIY costs MORE here; advantage flips as portfolio grows)", () => {
     expect(1_000_000 * 0.01).toBe(10_000);
     expect(calculateWiyAnnualFee(1_000_000)).toBe(15_000);
   });

@@ -61,10 +61,14 @@ This captures both the direct fee savings AND the lost compounding on those fees
 
 ### $1M Starting Portfolio
 
+Note: WIY's $15K annual minimum is HIGHER than 1% AUM at $1M ($10K). WIY becomes
+cheaper only after the portfolio grows past ~$1.5M. Long-term the lower tiers win,
+but year-1 cost is higher for WIY at this level.
+
 | Metric | 20 Years | 30 Years |
 |--------|----------|----------|
-| Fee delta | $121,181 | $359,240 |
-| Portfolio benefit | $187,585 | $683,161 |
+| Fee delta (AUM − WIY cumulative) | $82,993 | $324,164 |
+| Portfolio benefit | $81,314 | $478,253 |
 
 ### $10M Starting Portfolio
 
@@ -83,7 +87,7 @@ This captures both the direct fee savings AND the lost compounding on those fees
 ## Implementation
 
 - **Core engine:** `src/lib/pdf/fee-math.ts` — `projectFees()` function
-- **PDF:** `src/lib/pdf/aum-math.tsx` — uses `projectFees()` for all projections
+- **PDF:** (no dedicated AUM math PDF; projections surface via /vs-aum page)
 - **Website /vs-aum:** `src/app/vs-aum/page.tsx` — uses `projectFees()` for all projections
 - **Calculator:** `src/components/FeeCalculator.tsx` — inline implementation of same algorithm
 - **Email:** `src/app/api/subscribe/route.ts` — references portfolio benefit numbers
