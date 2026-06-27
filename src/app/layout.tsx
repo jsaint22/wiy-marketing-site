@@ -67,9 +67,14 @@ export default function RootLayout({
             __html: JSON.stringify([
               {
                 "@context": "https://schema.org",
-                "@type": "FinancialService",
+                "@type": ["FinancialService", "Organization"],
+                "@id": "https://wealthinyourself.com/#organization",
                 name: "Wealth In Yourself",
                 url: "https://wealthinyourself.com",
+                sameAs: [
+                  "https://wealthinyourself.com",
+                  "https://www.linkedin.com/company/wealth-in-yourself/",
+                ],
                 logo: "https://wealthinyourself.com/logos/wiy-logo-stacked.png",
                 description:
                   "A flat-fee fiduciary financial life planning firm for entrepreneurs, real estate investors, and people designing their lives on their own terms.",
@@ -123,6 +128,16 @@ export default function RootLayout({
                   "https://www.biggerpockets.com/users/jsaint",
                 ],
                 url: "https://joshstlaurent.com",
+              },
+              {
+                "@context": "https://schema.org",
+                "@type": "WebSite",
+                "@id": "https://wealthinyourself.com/#website",
+                name: "Wealth In Yourself",
+                url: "https://wealthinyourself.com",
+                publisher: {
+                  "@id": "https://wealthinyourself.com/#organization",
+                },
               },
             ]),
           }}

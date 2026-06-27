@@ -95,7 +95,21 @@ const faqs = [
 
 export default function ForRealEstateInvestorsPage() {
   return (
-    <main>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://wealthinyourself.com" },
+              { "@type": "ListItem", position: 2, name: "Financial Planning for Real Estate Investors", item: "https://wealthinyourself.com/for-real-estate-investors" },
+            ],
+          }),
+        }}
+      />
+      <main>
       {/* Hero — CinematicHero shared shell. Copy verbatim from prior hero;
           15-min booking link as default primaryCta. */}
       <CinematicHero
@@ -276,5 +290,6 @@ export default function ForRealEstateInvestorsPage() {
         subtext="Book a 15-minute intro call. We'll talk about your properties, your goals, and whether we're the right fit."
       />
     </main>
+    </>
   );
 }

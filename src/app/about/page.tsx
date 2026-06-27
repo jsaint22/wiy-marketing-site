@@ -41,6 +41,19 @@ const standards = [
 export default function AboutPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://wealthinyourself.com" },
+              { "@type": "ListItem", position: 2, name: "About Joshua St. Laurent", item: "https://wealthinyourself.com/about" },
+            ],
+          }),
+        }}
+      />
       {/* Hero */}
       <section className="bg-white py-6 sm:py-10 lg:py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -3,7 +3,7 @@ import Link from "next/link";
 import CTASection from "@/components/CTASection";
 
 export const metadata: Metadata = {
-  title: "FAQ",
+  title: "Frequently Asked Questions — Flat-Fee Financial Planning",
   description:
     "Answers to the most common questions about Wealth In Yourself — our flat-fee model, fiduciary commitment, services, and what it's like to work with us.",
 };
@@ -234,6 +234,19 @@ export default function FAQPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://wealthinyourself.com" },
+              { "@type": "ListItem", position: 2, name: "FAQ", item: "https://wealthinyourself.com/faq" },
+            ],
+          }),
+        }}
       />
 
       {/* Hero */}

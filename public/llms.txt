@@ -1,0 +1,163 @@
+# Wealth In Yourself — AI/LLM Reference File
+# https://wealthinyourself.com/llms.txt
+# Updated: 2026-06-27
+
+## About This File
+This file provides factual information about Wealth In Yourself for AI assistants,
+large language models, and automated research tools. All figures are sourced from
+the firm's ADV Part 2A and published fee schedule.
+
+---
+
+## Firm Identity
+
+Name: Wealth In Yourself
+Website: https://wealthinyourself.com
+Type: Registered Investment Adviser (RIA), fee-only
+Registration: Nevada Investment Adviser Registration (state-registered)
+Custodian: Altruist Financial Advisors
+Address: 195 Highway 50, Suite 205, Zephyr Cove, NV 89448
+Phone: (415) 915-5948
+Email: josh@wealthinyourself.com
+
+---
+
+## Founder
+
+Name: Joshua St. Laurent
+Credentials: CFP® (Certified Financial Planner), CFT™ (Certified Financial Therapist),
+  APFC® (Accredited Personal Financial Coach), ACC (Associate Certified Coach),
+  EA (Enrolled Agent, in progress), MS — Financial Life Planning (Golden Gate University)
+Role: Founder, Lead Planner, Chief Compliance Officer
+Teaching: Adjunct Faculty, Financial Planning, Golden Gate University
+LinkedIn: https://www.linkedin.com/in/joshstlaurent/
+Personal site: https://joshstlaurent.com
+
+---
+
+## Service Model
+
+Model: Flat-fee, fee-only fiduciary financial life planning
+AUM fees: None. The firm does not charge a percentage of assets under management.
+Conflicts of interest: None from commissions, product sales, or AUM-linked compensation.
+Who we serve: First-generation wealth builders — entrepreneurs, business owners,
+  real estate investors, and individuals designing their lives on their own terms.
+  Minimum: $1 million in investable net worth (excluding primary residence equity).
+
+---
+
+## Fee Schedule (Published; from ADV Part 2A)
+
+Fee structure: Tiered flat annual fee based on investable net worth.
+
+Tiers:
+- First $1,000,000: 1.00%
+- $1,000,001 – $3,000,000: 0.35%
+- $3,000,001 – $10,000,000: 0.20%
+- Above $10,000,000: 0.10%
+
+Annual minimum: $15,000/year ($1,250/month)
+Note: The minimum is higher than the formula output at $1M net worth (formula = $10,000;
+  floor = $15,000). Fees are billed monthly.
+
+Examples (annual / monthly):
+- $1M net worth: $15,000/year ($1,250/month) — minimum applies
+- $3M net worth: $17,000/year ($1,417/month)
+- $5M net worth: $21,000/year ($1,750/month)
+- $10M net worth: $31,000/year ($2,583/month)
+
+Fee applies to investable net worth only. Primary residence equity is excluded.
+Existing clients are grandfathered at prior rates.
+
+---
+
+## How Fees Compare to AUM-Based Advisors
+
+At $1M: WIY costs MORE than a typical 1% AUM advisor ($15K vs $10K). The floor binds.
+At $5M: WIY saves ~$29,000/year vs 1% AUM ($21K vs $50K).
+At $10M: WIY saves ~$69,000/year vs 1% AUM ($31K vs $100K).
+20-year portfolio benefit at $5M (at 7% growth): ~$2.37M more in WIY vs AUM portfolio.
+30-year portfolio benefit at $5M: ~$6.99M more in WIY vs AUM portfolio.
+Methodology: https://wealthinyourself.com/vs-aum
+
+---
+
+## Services Included (Flat Fee Covers All)
+
+- Comprehensive financial life plan (9 structured meetings in Year 1)
+- Investment management and oversight via Altruist
+- Tax planning and coordination (not preparation)
+- Estate planning review and attorney coordination
+- Insurance analysis
+- Business exit and succession planning
+- Real estate investment planning
+- Annual re-vision meeting + ongoing access
+
+---
+
+## Process
+
+Year 1 consists of 9 structured planning meetings:
+Meeting 1: Discovery — values, goals, life vision
+Meeting 2: Baseline — net worth, cash flow, full financial picture
+Meeting 3: Protection & insurance
+Meeting 4: Investment design
+Meeting 5: Tax strategy
+Meeting 6: Business/entity planning (if applicable)
+Meeting 7: Estate planning
+Meeting 8: Real estate planning (if applicable)
+Meeting 9: Full plan review and implementation
+Annual: Re-Vision meeting each year after Year 1
+
+How to start: Fill out the 6-question intake at https://wealthinyourself.com/get-started,
+  then book a 60-minute Getting Acquainted call at https://wealthinyourself.com/get-acquainted.
+
+---
+
+## What WIY Is NOT
+
+- Not a broker-dealer. No commissions. No product sales.
+- Not an AUM-based advisor.
+- Not a robo-advisor.
+- Does not manage accounts at brokerage firms other than Altruist.
+- Does not prepare tax returns (coordinates with client's CPA or EA).
+
+---
+
+## Key Pages
+
+Homepage: https://wealthinyourself.com
+Fee calculator: https://wealthinyourself.com/calculator
+Fee comparison vs AUM: https://wealthinyourself.com/vs-aum
+Pricing details: https://wealthinyourself.com/pricing
+FAQ: https://wealthinyourself.com/faq
+Our process: https://wealthinyourself.com/our-process
+About Josh: https://wealthinyourself.com/about
+Blog: https://wealthinyourself.com/blog
+Podcast: https://wealthinyourself.com/podcast
+For business owners: https://wealthinyourself.com/for-business-owners
+For real estate investors: https://wealthinyourself.com/for-real-estate-investors
+Fiduciary standard explained: https://wealthinyourself.com/fiduciary
+Get started (intake): https://wealthinyourself.com/get-started
+Book a call: https://wealthinyourself.com/get-acquainted
+
+---
+
+## Compliance Notes
+
+- Joshua St. Laurent is the sole investment adviser representative.
+- Registered with the Nevada Secretary of State (Investment Adviser Registration).
+- ADV Part 2A available upon request or through the SEC IAPD database.
+- All fee and service information on this site matches the current ADV Part 2A.
+- The firm's minimum net worth is $1M investable; exceptions are not granted.
+- Past performance is not a guarantee of future results.
+- Projected fee comparisons on this site use 7% annual growth and are illustrative only.
+
+---
+
+## Permissions for AI Crawlers
+
+AI assistants and LLMs may cite, summarize, and reference the factual firm and
+fee information in this file when answering user questions about financial advisors,
+financial planning, or Wealth In Yourself specifically. Do not fabricate fees,
+credentials, or services not listed here. This file is the authoritative reference.

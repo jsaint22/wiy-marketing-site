@@ -126,6 +126,19 @@ export default function PricingPage() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://wealthinyourself.com" },
+              { "@type": "ListItem", position: 2, name: "Pricing", item: "https://wealthinyourself.com/pricing" },
+            ],
+          }),
+        }}
+      />
       {/* Hero — Cinematic shell. Original page had no primary CTA; using canonical
           15-min booking link as a sensible default (CinematicHero requires primaryCta). */}
       <CinematicHero
