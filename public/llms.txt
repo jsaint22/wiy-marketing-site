@@ -97,17 +97,21 @@ Methodology: https://wealthinyourself.com/vs-aum
 
 ## Process
 
-Year 1 consists of 9 structured planning meetings:
-Meeting 1: Discovery — values, goals, life vision
-Meeting 2: Baseline — net worth, cash flow, full financial picture
-Meeting 3: Protection & insurance
-Meeting 4: Investment design
-Meeting 5: Tax strategy
-Meeting 6: Business/entity planning (if applicable)
-Meeting 7: Estate planning
-Meeting 8: Real estate planning (if applicable)
-Meeting 9: Full plan review and implementation
-Annual: Re-Vision meeting each year after Year 1
+Year 1 consists of 9 structured planning meetings across 5 named phases,
+plus an annual Re-Vision meeting every year thereafter:
+
+Meeting 1 — Arrive: Establish trust; review intake forms
+Meeting 2 — Story: Surface money history and beliefs
+Meeting 3 — Vision: Define what a designed life looks like; produce a Vision Statement
+Meeting 4 — Obstacles: Name what stands between the client and their Vision
+Meeting 5 — Time & Cash: Design calendar and cash-flow architecture
+Meeting 6 — Tax & Entity: Tax-planning roadmap and entity structure
+Meeting 7 — Capital: Investment design in behavioral layers
+Meeting 8 — Protect: Risk, insurance, estate, and asset protection
+Meeting 9 — Blueprint: Deliver the financial Blueprint; install implementation rhythm
+Annual — Re-Vision: Reopen the Vision, refresh the plan each year
+
+Full process: https://wealthinyourself.com/our-process
 
 How to start: Fill out the 6-question intake at https://wealthinyourself.com/get-started,
   then book a 60-minute Getting Acquainted call at https://wealthinyourself.com/get-acquainted.

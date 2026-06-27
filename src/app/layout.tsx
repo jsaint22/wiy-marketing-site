@@ -71,10 +71,6 @@ export default function RootLayout({
                 "@id": "https://wealthinyourself.com/#organization",
                 name: "Wealth In Yourself",
                 url: "https://wealthinyourself.com",
-                sameAs: [
-                  "https://wealthinyourself.com",
-                  "https://www.linkedin.com/company/wealth-in-yourself/",
-                ],
                 logo: "https://wealthinyourself.com/logos/wiy-logo-stacked.png",
                 description:
                   "A flat-fee fiduciary financial life planning firm for entrepreneurs, real estate investors, and people designing their lives on their own terms.",
