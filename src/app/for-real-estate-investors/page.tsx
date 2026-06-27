@@ -284,6 +284,19 @@ export default function ForRealEstateInvestorsPage() {
         </div>
       </section>
 
+      {/* Related Reading */}
+      <section className="bg-white py-8 sm:py-10 border-t border-neutral-bg">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-sm font-semibold text-neutral-dark/50 uppercase tracking-wider mb-4">Related</p>
+          <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm">
+            <Link href="/pricing" className="text-primary hover:text-secondary font-medium transition-colors">See the full fee schedule →</Link>
+            <Link href="/vs-aum" className="text-primary hover:text-secondary font-medium transition-colors">Flat fee vs. 1% AUM — the numbers →</Link>
+            <Link href="/faq" className="text-primary hover:text-secondary font-medium transition-colors">Common questions →</Link>
+            <Link href="/our-process" className="text-primary hover:text-secondary font-medium transition-colors">How the planning works →</Link>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <CTASection
         headline="Your portfolio deserves planning that fits it."

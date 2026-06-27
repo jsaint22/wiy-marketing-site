@@ -9,7 +9,7 @@ import { CinematicHero } from "@/components/cinematic/CinematicHero";
 import { FeeTierReveal } from "@/components/cinematic/FeeTierReveal";
 
 export const metadata: Metadata = {
-  title: "Pricing",
+  title: "Flat-Fee Financial Planning Pricing",
   description:
     "One transparent flat fee — declining as your wealth grows — covers life planning, tax strategy, investment management, estate coordination, business planning, and unlimited meetings. Published in full on this page.",
 };

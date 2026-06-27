@@ -3,7 +3,7 @@ import Link from "next/link";
 import CTASection from "@/components/CTASection";
 
 export const metadata: Metadata = {
-  title: "Case Studies",
+  title: "Client Planning Case Studies",
   description:
     "Anonymized case studies showing how Wealth In Yourself approaches complex financial planning situations — from tech exits and real estate portfolios to FIRE planning.",
 };

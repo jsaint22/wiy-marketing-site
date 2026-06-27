@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import CTASection from "@/components/CTASection";
 import SectionHeading from "@/components/SectionHeading";
 import FAQSection from "@/components/FAQSection";
 
 export const metadata: Metadata = {
-  title: "Services",
+  title: "Financial Life Planning Services",
   description:
     "Flat fee financial planning from a fiduciary advisor. Life planning, tax strategy, investment management, estate coordination, and planning for business owners and real estate investors.",
 };
@@ -239,6 +240,19 @@ export default function ServicesPage() {
 
       {/* FAQ */}
       <FAQSection faqs={faqs} title="Questions About Our Services" />
+
+      {/* Related Reading */}
+      <section className="bg-white py-8 sm:py-10 border-t border-neutral-bg">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-sm font-semibold text-neutral-dark/50 uppercase tracking-wider mb-4">Related</p>
+          <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm">
+            <Link href="/pricing" className="text-primary hover:text-secondary font-medium transition-colors">See the full fee schedule →</Link>
+            <Link href="/vs-aum" className="text-primary hover:text-secondary font-medium transition-colors">How our fees compare to AUM advisors →</Link>
+            <Link href="/our-process" className="text-primary hover:text-secondary font-medium transition-colors">How the 9-meeting process works →</Link>
+            <Link href="/fiduciary" className="text-primary hover:text-secondary font-medium transition-colors">Our fiduciary standard →</Link>
+          </div>
+        </div>
+      </section>
 
       {/* CTA */}
       <CTASection />

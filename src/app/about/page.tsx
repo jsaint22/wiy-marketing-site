@@ -332,6 +332,19 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Related Reading */}
+      <section className="bg-white py-8 sm:py-10 border-t border-neutral-bg">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-sm font-semibold text-neutral-dark/50 uppercase tracking-wider mb-4">Related</p>
+          <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm">
+            <Link href="/pricing" className="text-primary hover:text-secondary font-medium transition-colors">See our fee schedule →</Link>
+            <Link href="/our-process" className="text-primary hover:text-secondary font-medium transition-colors">How the planning process works →</Link>
+            <Link href="/faq" className="text-primary hover:text-secondary font-medium transition-colors">Common questions →</Link>
+            <Link href="/fiduciary" className="text-primary hover:text-secondary font-medium transition-colors">Our fiduciary standard →</Link>
+          </div>
+        </div>
+      </section>
+
       <CTASection
         headline="Looking for an advisor who lives the work, not just sells it?"
         subtext="Book a 15-minute intro call. No pitch. No pressure. Just a conversation about what matters to you."

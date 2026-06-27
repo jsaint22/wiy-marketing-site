@@ -311,6 +311,19 @@ export default function VsAumPage() {
         </div>
       </section>
 
+      {/* Related Reading */}
+      <section className="bg-white py-8 sm:py-10 border-t border-neutral-bg">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-sm font-semibold text-neutral-dark/50 uppercase tracking-wider mb-4">Related</p>
+          <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm">
+            <a href="/pricing" className="text-primary hover:text-secondary font-medium transition-colors">Full pricing breakdown →</a>
+            <a href="/calculator" className="text-primary hover:text-secondary font-medium transition-colors">Fee calculator →</a>
+            <a href="/services" className="text-primary hover:text-secondary font-medium transition-colors">What's included →</a>
+            <a href="/faq" className="text-primary hover:text-secondary font-medium transition-colors">Common questions →</a>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <CTASection
         headline="See what your fee would actually be at Wealth In Yourself."

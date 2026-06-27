@@ -4,7 +4,7 @@ import SectionHeading from "@/components/SectionHeading";
 import FAQSection from "@/components/FAQSection";
 
 export const metadata: Metadata = {
-  title: "Virtual Family Office",
+  title: "Virtual Family Office — Coordinated Wealth Planning",
   description:
     "The Virtual Family Office approach delivers coordinated financial planning through one flat-fee advisor who brings in outside specialists when your situation calls for them. One point of contact. The complexity stays on our side.",
 };

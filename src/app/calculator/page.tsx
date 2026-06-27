@@ -4,7 +4,7 @@ import FeeCalculator from "@/components/FeeCalculator";
 import CTASection from "@/components/CTASection";
 
 export const metadata: Metadata = {
-  title: "Fee Calculator",
+  title: "Flat-Fee Financial Planning Cost Calculator",
   description:
     "See exactly what you would pay with the Wealth In Yourself declining flat-fee model — and how it compares to a traditional 1% AUM advisor over 30 years.",
 };
