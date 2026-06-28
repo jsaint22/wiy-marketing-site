@@ -33,7 +33,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/5-questions",
     "/disclosures",
     "/privacy-policy",
-    "/w2-escape-plan",
+    "/get-acquainted",
+    "/get-started",
   ];
 
   const posts = getAllPosts();

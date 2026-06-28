@@ -67,7 +67,8 @@ export default function RootLayout({
             __html: JSON.stringify([
               {
                 "@context": "https://schema.org",
-                "@type": "FinancialService",
+                "@type": ["FinancialService", "Organization"],
+                "@id": "https://wealthinyourself.com/#organization",
                 name: "Wealth In Yourself",
                 url: "https://wealthinyourself.com",
                 logo: "https://wealthinyourself.com/logos/wiy-logo-stacked.png",
@@ -123,6 +124,16 @@ export default function RootLayout({
                   "https://www.biggerpockets.com/users/jsaint",
                 ],
                 url: "https://joshstlaurent.com",
+              },
+              {
+                "@context": "https://schema.org",
+                "@type": "WebSite",
+                "@id": "https://wealthinyourself.com/#website",
+                name: "Wealth In Yourself",
+                url: "https://wealthinyourself.com",
+                publisher: {
+                  "@id": "https://wealthinyourself.com/#organization",
+                },
               },
             ]),
           }}

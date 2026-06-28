@@ -132,6 +132,19 @@ const faqs = [
 export default function ForBusinessOwnersPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://wealthinyourself.com" },
+              { "@type": "ListItem", position: 2, name: "Financial Planning for Business Owners", item: "https://wealthinyourself.com/for-business-owners" },
+            ],
+          }),
+        }}
+      />
       {/* Hero */}
       <section className="bg-white py-10 sm:py-16 lg:py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -274,6 +287,19 @@ export default function ForBusinessOwnersPage() {
           >
             Get the free roadmap
           </Link>
+        </div>
+      </section>
+
+      {/* Related Reading */}
+      <section className="bg-white py-8 sm:py-10 border-t border-neutral-bg">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-sm font-semibold text-neutral-dark/50 uppercase tracking-wider mb-4">Related</p>
+          <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm">
+            <Link href="/pricing" className="text-primary hover:text-secondary font-medium transition-colors">See the full fee schedule →</Link>
+            <Link href="/vs-aum" className="text-primary hover:text-secondary font-medium transition-colors">Flat fee vs. 1% AUM — the numbers →</Link>
+            <Link href="/faq" className="text-primary hover:text-secondary font-medium transition-colors">Common questions →</Link>
+            <Link href="/our-process" className="text-primary hover:text-secondary font-medium transition-colors">How the planning works →</Link>
+          </div>
         </div>
       </section>
 

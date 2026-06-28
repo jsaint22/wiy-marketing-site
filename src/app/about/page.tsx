@@ -41,6 +41,19 @@ const standards = [
 export default function AboutPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://wealthinyourself.com" },
+              { "@type": "ListItem", position: 2, name: "About Joshua St. Laurent", item: "https://wealthinyourself.com/about" },
+            ],
+          }),
+        }}
+      />
       {/* Hero */}
       <section className="bg-white py-6 sm:py-10 lg:py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -315,6 +328,19 @@ export default function AboutPage() {
               toward my private pilot&apos;s license &mdash; slower than
               I&apos;d like, but the hours add up.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Related Reading */}
+      <section className="bg-white py-8 sm:py-10 border-t border-neutral-bg">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-sm font-semibold text-neutral-dark/50 uppercase tracking-wider mb-4">Related</p>
+          <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm">
+            <Link href="/pricing" className="text-primary hover:text-secondary font-medium transition-colors">See our fee schedule →</Link>
+            <Link href="/our-process" className="text-primary hover:text-secondary font-medium transition-colors">How the planning process works →</Link>
+            <Link href="/faq" className="text-primary hover:text-secondary font-medium transition-colors">Common questions →</Link>
+            <Link href="/fiduciary" className="text-primary hover:text-secondary font-medium transition-colors">Our fiduciary standard →</Link>
           </div>
         </div>
       </section>

@@ -4,7 +4,7 @@ import NewsletterCTA from "@/components/NewsletterCTA";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Blog",
+  title: "Financial Planning Blog",
   description:
     "Insights on flat-fee financial planning, tax strategy, real estate investing, and designing your life on your own terms.",
 };

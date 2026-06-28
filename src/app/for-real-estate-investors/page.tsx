@@ -95,7 +95,21 @@ const faqs = [
 
 export default function ForRealEstateInvestorsPage() {
   return (
-    <main>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://wealthinyourself.com" },
+              { "@type": "ListItem", position: 2, name: "Financial Planning for Real Estate Investors", item: "https://wealthinyourself.com/for-real-estate-investors" },
+            ],
+          }),
+        }}
+      />
+      <main>
       {/* Hero — CinematicHero shared shell. Copy verbatim from prior hero;
           15-min booking link as default primaryCta. */}
       <CinematicHero
@@ -270,11 +284,25 @@ export default function ForRealEstateInvestorsPage() {
         </div>
       </section>
 
+      {/* Related Reading */}
+      <section className="bg-white py-8 sm:py-10 border-t border-neutral-bg">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-sm font-semibold text-neutral-dark/50 uppercase tracking-wider mb-4">Related</p>
+          <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm">
+            <Link href="/pricing" className="text-primary hover:text-secondary font-medium transition-colors">See the full fee schedule →</Link>
+            <Link href="/vs-aum" className="text-primary hover:text-secondary font-medium transition-colors">Flat fee vs. 1% AUM — the numbers →</Link>
+            <Link href="/faq" className="text-primary hover:text-secondary font-medium transition-colors">Common questions →</Link>
+            <Link href="/our-process" className="text-primary hover:text-secondary font-medium transition-colors">How the planning works →</Link>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <CTASection
         headline="Your portfolio deserves planning that fits it."
         subtext="Book a 15-minute intro call. We'll talk about your properties, your goals, and whether we're the right fit."
       />
     </main>
+    </>
   );
 }
