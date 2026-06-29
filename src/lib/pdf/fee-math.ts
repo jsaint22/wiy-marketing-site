@@ -1,6 +1,11 @@
 /**
- * Fee calculation logic shared between the website calculator and the PDF.
- * Mirrors src/components/FeeCalculator.tsx — keep in sync.
+ * Fee calculation logic shared between the website calculator (FeeCalculator.tsx
+ * imports from here), the pricing/vs-AUM pages, and the lead-magnet PDFs.
+ *
+ * The tier rates + $15k minimum are NOT defined here — they come from the
+ * single source of truth `src/lib/fee-canon.ts` (which mirrors the canonical
+ * wiy-client-portal/lib/fees.ts). This file only adds the marketing-specific
+ * display floor + the multi-year projection model on top of canon.
  *
  * METHODOLOGY (see MATH-METHODOLOGY.md for full documentation):
  * - Portfolio grows at 7% annually (configurable)
@@ -10,27 +15,25 @@
  * - Two separate portfolio tracks are maintained: one for AUM, one for WIY
  */
 
+import { tieredAnnualFee } from "../fee-canon";
+
+/**
+ * NEEDS-JOSH (display decision, NOT canon): the marketing calculator shows $0
+ * for a net worth below this threshold, instead of the canonical $15k minimum.
+ * The canonical portal logic (wiy-client-portal/lib/fees.ts) has NO such floor —
+ * the $15k minimum applies to everyone. This constant single-sources that
+ * marketing-only floor so the fee function + the calculator's "Below our
+ * minimum" card cannot drift apart. Behavior is intentionally left unchanged
+ * pending Josh's call on whether sub-$500k should show $0 or the $15k minimum.
+ */
+export const DISPLAY_FLOOR_NET_WORTH = 500_000;
+
 export function calculateWiyAnnualFee(netWorth: number): number {
-  if (netWorth < 500_000) return 0;
+  // Marketing display floor (see DISPLAY_FLOOR_NET_WORTH — NEEDS-JOSH).
+  if (netWorth < DISPLAY_FLOOR_NET_WORTH) return 0;
 
-  let annualFee = 0;
-  let remaining = netWorth;
-
-  const tiers = [
-    { limit: 1_000_000, rate: 0.01 },
-    { limit: 2_000_000, rate: 0.0035 },
-    { limit: 7_000_000, rate: 0.002 },
-    { limit: Infinity, rate: 0.001 },
-  ];
-
-  for (const tier of tiers) {
-    if (remaining <= 0) break;
-    const taxable = Math.min(remaining, tier.limit);
-    annualFee += taxable * tier.rate;
-    remaining -= taxable;
-  }
-
-  return Math.max(annualFee, 15_000);
+  // Tiers + $15k minimum come from canon (src/lib/fee-canon.ts).
+  return tieredAnnualFee(netWorth);
 }
 
 export function formatUSD(value: number): string {
