@@ -2,41 +2,14 @@
 
 import { useState, useMemo, useRef, useCallback } from "react";
 import { trackCalculatorInteract } from "@/lib/analytics";
-
-function calculateAnnualFee(netWorth: number): number {
-  if (netWorth < 500_000) return 0;
-
-  // Declining percentage fee model
-  // First $1M at 1.00%, next $2M at 0.35%, next $7M at 0.20%, above $10M at 0.10%
-  let annualFee = 0;
-  let remaining = netWorth;
-
-  const tiers = [
-    { limit: 1_000_000, rate: 0.01 },
-    { limit: 2_000_000, rate: 0.0035 },
-    { limit: 7_000_000, rate: 0.002 },
-    { limit: Infinity, rate: 0.001 },
-  ];
-
-  for (const tier of tiers) {
-    if (remaining <= 0) break;
-    const taxable = Math.min(remaining, tier.limit);
-    annualFee += taxable * tier.rate;
-    remaining -= taxable;
-  }
-
-  // Enforce $15,000 annual minimum
-  return Math.max(annualFee, 15_000);
-}
-
-function formatCurrency(value: number): string {
-  return new Intl.NumberFormat("en-US", {
-    style: "currency",
-    currency: "USD",
-    minimumFractionDigits: 0,
-    maximumFractionDigits: 0,
-  }).format(value);
-}
+// Fee math is single-sourced: the tier rates + $15k minimum live in
+// src/lib/fee-canon.ts (mirroring wiy-client-portal/lib/fees.ts), surfaced
+// through fee-math.ts. Do not re-implement the formula or hardcode 15_000 here.
+import {
+  calculateWiyAnnualFee,
+  formatUSD,
+  DISPLAY_FLOOR_NET_WORTH,
+} from "@/lib/pdf/fee-math";
 
 function formatNetWorth(value: number): string {
   if (value >= 1_000_000) {
@@ -45,7 +18,7 @@ function formatNetWorth(value: number): string {
     const s = m.toFixed(2).replace(/0+$/, "").replace(/\.$/, "");
     return `$${s}M`;
   }
-  return formatCurrency(value);
+  return formatUSD(value);
 }
 
 export default function FeeCalculator({ standalone = false }: { standalone?: boolean }) {
@@ -58,8 +31,8 @@ export default function FeeCalculator({ standalone = false }: { standalone?: boo
     trackTimeout.current = setTimeout(() => trackCalculatorInteract(value), 2000);
   }, []);
 
-  const isBelowMinimum = netWorth < 500_000;
-  const annual = useMemo(() => calculateAnnualFee(netWorth), [netWorth]);
+  const isBelowMinimum = netWorth < DISPLAY_FLOOR_NET_WORTH;
+  const annual = useMemo(() => calculateWiyAnnualFee(netWorth), [netWorth]);
   const monthly = Math.round(annual / 12);
   const effectiveRate = netWorth > 0 ? ((annual / netWorth) * 100).toFixed(2) : "0.00";
 
@@ -88,7 +61,7 @@ export default function FeeCalculator({ standalone = false }: { standalone?: boo
     // AUM fee: 1% of current portfolio value
     const aumFee = aumPortfolio * 0.01;
     // WIY fee: reassessed annually on current portfolio value using tiered rates
-    const wiyFee = calculateAnnualFee(wiyPortfolio);
+    const wiyFee = calculateWiyAnnualFee(wiyPortfolio);
     aumTotal += aumFee;
     wiyTotal += wiyFee;
     aumPortfolio -= aumFee;
@@ -147,7 +120,7 @@ export default function FeeCalculator({ standalone = false }: { standalone?: boo
                   Monthly Fee
                 </p>
                 <p className="text-2xl font-bold text-primary mt-1">
-                  {formatCurrency(monthly)}
+                  {formatUSD(monthly)}
                 </p>
               </div>
               <div className="bg-neutral-bg rounded-xl p-4">
@@ -155,7 +128,7 @@ export default function FeeCalculator({ standalone = false }: { standalone?: boo
                   Annual Fee
                 </p>
                 <p className="text-2xl font-bold text-primary mt-1">
-                  {formatCurrency(annual)}
+                  {formatUSD(annual)}
                 </p>
               </div>
               <div className="bg-neutral-bg rounded-xl p-4">
@@ -173,11 +146,11 @@ export default function FeeCalculator({ standalone = false }: { standalone?: boo
                 <div className="flex items-center justify-between bg-neutral-bg rounded-xl p-4 text-sm">
                   <div>
                     <span className="text-neutral-dark/70">1% AUM advisor: </span>
-                    <span className="font-semibold text-neutral-dark">{formatCurrency(aumMonthly)}/mo</span>
+                    <span className="font-semibold text-neutral-dark">{formatUSD(aumMonthly)}/mo</span>
                   </div>
                   <div>
                     <span className="text-neutral-dark/70">WIY flat fee: </span>
-                    <span className="font-semibold text-primary">{formatCurrency(monthly)}/mo</span>
+                    <span className="font-semibold text-primary">{formatUSD(monthly)}/mo</span>
                   </div>
                 </div>
                 <div className="mt-4 bg-neutral-bg rounded-xl p-5 text-center">
@@ -185,7 +158,7 @@ export default function FeeCalculator({ standalone = false }: { standalone?: boo
                     Honest math: at {formatNetWorth(netWorth)}, a 1% AUM advisor costs less per year.
                   </p>
                   <p className="text-sm text-neutral-dark/70 mt-2 leading-relaxed">
-                    Our {formatCurrency(annual)}/year minimum is designed for clients with
+                    Our {formatUSD(annual)}/year minimum is designed for clients with
                     $1M+ in net worth, where the flat fee saves you money every year
                     — and the gap grows as your wealth grows. Below $1M, percentage-based
                     pricing may be more cost-effective.
@@ -204,7 +177,7 @@ export default function FeeCalculator({ standalone = false }: { standalone?: boo
                       With Wealth In Yourself (Flat Fee)
                     </p>
                     <p className="text-2xl font-bold text-success mt-1">
-                      {formatCurrency(wiyTotal)}
+                      {formatUSD(wiyTotal)}
                     </p>
                     <p className="text-xs text-neutral-dark/70 mt-1">
                       Total fees over 30 years
@@ -215,7 +188,7 @@ export default function FeeCalculator({ standalone = false }: { standalone?: boo
                       At 1% AUM Advisor
                     </p>
                     <p className="text-2xl font-bold text-warning mt-1">
-                      {formatCurrency(aumTotal)}
+                      {formatUSD(aumTotal)}
                     </p>
                     <p className="text-xs text-neutral-dark/70 mt-1">
                       Total fees over 30 years
@@ -225,13 +198,13 @@ export default function FeeCalculator({ standalone = false }: { standalone?: boo
                 <div className="mt-4 bg-primary/5 rounded-xl p-4 text-center">
                   <p className="text-sm text-neutral-dark/70">Estimated portfolio benefit<sup className="text-xs">*</sup></p>
                   <p className="text-3xl font-bold text-primary">
-                    {formatCurrency(portfolioBenefit)}
+                    {formatUSD(portfolioBenefit)}
                   </p>
                   <p className="text-sm text-neutral-dark/70">
                     more in your portfolio over 30 years
                   </p>
                   <p className="text-xs text-neutral-dark/70 mt-1">
-                    ({formatCurrency(delta)} in fee savings, compounded at the assumed growth rate)
+                    ({formatUSD(delta)} in fee savings, compounded at the assumed growth rate)
                   </p>
                   <p className="text-[10px] text-neutral-dark/50 mt-2 leading-snug">
                     <sup>*</sup> Hypothetical and illustrative only. Assumes 7% annual portfolio growth, 1% AUM fee vs. WIY declining flat fee. Past performance is not indicative of future results.
@@ -242,11 +215,11 @@ export default function FeeCalculator({ standalone = false }: { standalone?: boo
                 <div className="mt-4 flex items-center justify-between bg-neutral-bg rounded-xl p-4 text-sm">
                   <div>
                     <span className="text-neutral-dark/70">AUM advisor monthly: </span>
-                    <span className="font-semibold text-warning">{formatCurrency(aumMonthly)}</span>
+                    <span className="font-semibold text-warning">{formatUSD(aumMonthly)}</span>
                   </div>
                   <div>
                     <span className="text-neutral-dark/70">Your flat fee: </span>
-                    <span className="font-semibold text-success">{formatCurrency(monthly)}</span>
+                    <span className="font-semibold text-success">{formatUSD(monthly)}</span>
                   </div>
                 </div>
               </div>
