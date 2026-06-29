@@ -84,19 +84,19 @@ export default function FeeCalculator({ standalone = false }: { standalone?: boo
           </div>
           <input
             type="range"
-            min={500_000}
+            min={1_500_000}
             max={35_000_000}
             step={50_000}
             value={netWorth}
             onChange={(e) => handleSliderChange(Number(e.target.value))}
             aria-label="Net worth slider"
-            aria-valuemin={500_000}
+            aria-valuemin={1_500_000}
             aria-valuemax={35_000_000}
             aria-valuenow={netWorth}
             className="w-full h-2 bg-neutral-bg rounded-lg appearance-none cursor-pointer accent-primary"
           />
           <div className="flex justify-between text-xs text-neutral-dark/70 mt-1">
-            <span>$500K</span>
+            <span>$1.5M</span>
             <span>$35M</span>
           </div>
         </div>
