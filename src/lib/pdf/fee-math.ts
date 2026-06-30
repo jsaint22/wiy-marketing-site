@@ -5,7 +5,7 @@
  * The tier rates + $15k minimum are NOT defined here — they come from the
  * single source of truth `src/lib/fee-canon.ts` (which mirrors the canonical
  * wiy-client-portal/lib/fees.ts). This file only adds the marketing-specific
- * display floor + the multi-year projection model on top of canon.
+ * display-message threshold + the multi-year projection model on top of canon.
  *
  * METHODOLOGY (see MATH-METHODOLOGY.md for full documentation):
  * - Portfolio grows at 7% annually (configurable)
@@ -18,21 +18,28 @@
 import { tieredAnnualFee } from "../fee-canon";
 
 /**
- * NEEDS-JOSH (display decision, NOT canon): the marketing calculator shows $0
- * for a net worth below this threshold, instead of the canonical $15k minimum.
- * The canonical portal logic (wiy-client-portal/lib/fees.ts) has NO such floor —
- * the $15k minimum applies to everyone. This constant single-sources that
- * marketing-only floor so the fee function + the calculator's "Below our
- * minimum" card cannot drift apart. Behavior is intentionally left unchanged
- * pending Josh's call on whether sub-$500k should show $0 or the $15k minimum.
+ * Net-worth threshold below which the public calculator shows a "Below our
+ * minimum — let's talk" MESSAGE instead of a fee figure (FeeCalculator.tsx),
+ * matching the published pricing FAQ ("Below $500K, a flat-fee model likely
+ * isn't the most cost-effective option for you"). This is a DISPLAY/messaging
+ * threshold ONLY — it is NOT a fee floor. The fee function below always returns
+ * the canonical fee (>= the $15k minimum, which per canon applies at every net
+ * worth); it never returns $0.
+ *
+ * Decided 2026-06-30 (Option 3, /compliance-cleared): the prior
+ * "< $500k -> return $0" branch was REMOVED. A $0 fee contradicts the published
+ * "$15,000 minimum applies at all net worth levels" canon and is a
+ * misleading-price exposure; the function now honors canon at every input, and
+ * the sub-minimum case is handled in the display layer as a message, not a $0.
  */
 export const DISPLAY_FLOOR_NET_WORTH = 500_000;
 
 export function calculateWiyAnnualFee(netWorth: number): number {
-  // Marketing display floor (see DISPLAY_FLOOR_NET_WORTH — NEEDS-JOSH).
-  if (netWorth < DISPLAY_FLOOR_NET_WORTH) return 0;
-
-  // Tiers + $15k minimum come from canon (src/lib/fee-canon.ts).
+  // Always the canonical declining-tier fee with the $15k minimum applied
+  // (src/lib/fee-canon.ts). NEVER returns $0 — the $15k minimum applies at every
+  // net worth per the published schedule. The "below our minimum" MESSAGE (not a
+  // $0 fee) is a display-layer concern in FeeCalculator.tsx, gated on
+  // DISPLAY_FLOOR_NET_WORTH above.
   return tieredAnnualFee(netWorth);
 }
 
