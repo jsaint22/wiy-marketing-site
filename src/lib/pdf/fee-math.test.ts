@@ -19,8 +19,12 @@ function expectWithinDollar(actual: number, expected: number) {
 }
 
 describe("WIY Fee Formula", () => {
-  test("$500K minimum threshold — below returns $0", () => {
-    expect(calculateWiyAnnualFee(499_999)).toBe(0);
+  test("below $500K returns the $15K minimum, never $0 (Option 3, 2026-06-30 /compliance-cleared)", () => {
+    // The fee function honors canon at every net worth ($15k minimum applies to
+    // everyone). The sub-$500k "below our minimum — let's talk" treatment is a
+    // display-layer MESSAGE in FeeCalculator.tsx, not a $0 fee.
+    expect(calculateWiyAnnualFee(499_999)).toBe(15_000);
+    expect(calculateWiyAnnualFee(1)).toBe(15_000);
   });
 
   test("$500K returns $15,000 (annual minimum applies)", () => {

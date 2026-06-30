@@ -18,10 +18,13 @@
  *   $15,000 / year minimum (applies at every net worth)
  *
  * NOTE: Canon has NO "below $X → $0" floor — the $15k minimum applies to
- * everyone. The marketing calculator currently layers a `< $500k → $0` DISPLAY
- * floor on top of this canon (see calculateWiyAnnualFee + DISPLAY_FLOOR_NET_WORTH
- * in src/lib/pdf/fee-math.ts). That floor is a marketing display decision pending
- * review (NEEDS-JOSH) and is deliberately NOT encoded here.
+ * everyone, and the marketing fee function honors that: calculateWiyAnnualFee
+ * in src/lib/pdf/fee-math.ts always returns >= the $15k minimum and never $0.
+ * (The prior "< $500k → $0" floor was REMOVED 2026-06-30 — Option 3,
+ * /compliance-cleared — because $0 contradicts the published "minimum applies
+ * at all net worth levels" canon.) DISPLAY_FLOOR_NET_WORTH there is now only a
+ * UI threshold for showing a "below our minimum — let's talk" message, not a
+ * fee floor.
  */
 
 /**
