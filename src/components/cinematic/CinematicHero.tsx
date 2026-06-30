@@ -38,6 +38,33 @@ interface Props {
  * - Editorial Playfair headline, Inter body
  * - All copy passed as props — page files own copy verbatim
  */
+// Renders a hero CTA. Same-page hash anchors (href="#...") use a plain <a> for
+// reliable native scrolling — Next.js <Link> to a hash does not consistently
+// scroll in the App Router, which is why the "Get the PDF" / "See the questions"
+// buttons did nothing. External links open in a new tab; other internal links
+// keep <Link> for client-side navigation.
+function HeroCta({ cta, className }: { cta: CtaProps; className: string }) {
+  if (cta.external) {
+    return (
+      <a href={cta.href} target="_blank" rel="noopener noreferrer" className={className}>
+        {cta.label}
+      </a>
+    );
+  }
+  if (cta.href.startsWith('#')) {
+    return (
+      <a href={cta.href} className={className}>
+        {cta.label}
+      </a>
+    );
+  }
+  return (
+    <Link href={cta.href} className={className}>
+      {cta.label}
+    </Link>
+  );
+}
+
 export function CinematicHero({
   eyebrow,
   headline,
@@ -72,30 +99,15 @@ export function CinematicHero({
             {subhead}
           </p>
           <div className="flex flex-wrap items-center gap-6">
-            {primaryCta.external ? (
-              <a
-                href={primaryCta.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-primary text-white px-7 py-3.5 rounded-md font-semibold text-sm tracking-wide shadow-md transition-all duration-300 hover:bg-primary/90 hover:-translate-y-0.5"
-              >
-                {primaryCta.label}
-              </a>
-            ) : (
-              <Link
-                href={primaryCta.href}
-                className="bg-primary text-white px-7 py-3.5 rounded-md font-semibold text-sm tracking-wide shadow-md transition-all duration-300 hover:bg-primary/90 hover:-translate-y-0.5"
-              >
-                {primaryCta.label}
-              </Link>
-            )}
+            <HeroCta
+              cta={primaryCta}
+              className="bg-primary text-white px-7 py-3.5 rounded-md font-semibold text-sm tracking-wide shadow-md transition-all duration-300 hover:bg-primary/90 hover:-translate-y-0.5"
+            />
             {secondaryCta && (
-              <Link
-                href={secondaryCta.href}
+              <HeroCta
+                cta={secondaryCta}
                 className="text-primary font-semibold text-sm border-b-2 border-secondary py-1 transition-colors hover:text-secondary"
-              >
-                {secondaryCta.label}
-              </Link>
+              />
             )}
           </div>
         </div>
