@@ -34,7 +34,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/disclosures",
     "/privacy-policy",
     "/get-acquainted",
-    "/get-started",
   ];
 
   const posts = getAllPosts();
