@@ -112,12 +112,6 @@ export default function Footer() {
             >
               Form ADV &amp; firm disclosures on SEC.gov
             </a>
-            <a
-              href="/form-crs"
-              className="hover:text-white/70 transition-colors"
-            >
-              Form CRS (ADV Part 3)
-            </a>
             <Link
               href="/privacy-policy"
               className="hover:text-white/70 transition-colors"
