@@ -25,6 +25,7 @@ import {
   W2EscapePlanPDF,
 } from "../src/lib/pdf/lead-magnet-pdf";
 import FiveQuestionsPDF from "../src/lib/pdf/five-questions-pdf";
+import ThreeQuestionsPDF from "../src/lib/pdf/three-questions-pdf";
 
 const OUT_DIR = join(process.cwd(), "public", "pdfs");
 
@@ -33,6 +34,11 @@ const pdfs = [
   { name: "Entrepreneurs-Wealth-Extraction-Roadmap-WIY.pdf", component: BusinessOwnerRoadmapPDF },
   { name: "W2-Escape-Plan-Financial-Checklist-WIY.pdf", component: W2EscapePlanPDF },
   { name: "5-Questions-Your-Advisor-Should-Answer-WIY.pdf", component: FiveQuestionsPDF },
+  // DRAFT — compliance review required before publish (Play-4, open NV exam
+  // CIC26-050). Generated here so the /three-questions dark route + email-copy
+  // API have a file to serve, but the route itself stays unlinked/noindex
+  // until Josh + compliance clear it.
+  { name: "The-Three-Questions-Worksheet-WIY.pdf", component: ThreeQuestionsPDF },
 ];
 
 async function main() {
