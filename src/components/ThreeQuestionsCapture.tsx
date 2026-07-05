@@ -6,8 +6,9 @@ import { trackLeadCapture } from "@/lib/analytics";
 const SUBSTACK_URL = "https://joshstlaurent.substack.com/subscribe";
 
 /**
- * DRAFT — compliance review required before publish (Play-4, open NV exam
- * CIC26-050). Backs the dark /three-questions route.
+ * Compliance-cleared to publish 2026-07-04 (CLEAR WITH CHANGES — Reg S-P
+ * privacy notice added to opt-in #1's form below). Backs the /three-questions
+ * route. Open NV exam CIC26-050.
  *
  * Two SEPARATED, optional, post-value opt-ins per
  * references/content-factory-audit-and-plan-2026-07-04.md §4b:
@@ -119,6 +120,19 @@ export default function ThreeQuestionsCapture() {
             <p className="text-neutral-dark/50 text-xs leading-relaxed">
               One email, one PDF. No newsletter, no drip sequence — that&apos;s
               the separate option to the right, if you want it.
+            </p>
+            <p className="text-neutral-dark/50 text-xs leading-relaxed">
+              By submitting this form, you agree to our{" "}
+              <a
+                href="https://wealthinyourself.com/privacy-policy"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline"
+              >
+                Privacy Policy
+              </a>
+              . This is a one-time email — no newsletter, no nurture sequence.
+              This is not financial advice.
             </p>
           </form>
         )}

@@ -6,10 +6,9 @@ import { Ratelimit } from "@upstash/ratelimit";
 import { Redis } from "@upstash/redis";
 
 /**
- * DRAFT — compliance review required before publish (Play-4 funnel plumbing,
- * open NV exam CIC26-050). This route backs the /three-questions dark route,
- * which is not linked or indexed. Do not wire this endpoint to any
- * publicly-reachable surface until Josh + compliance clear the page.
+ * Compliance-cleared to publish 2026-07-04 (CLEAR WITH CHANGES; open NV exam
+ * CIC26-050). This route backs the now-public /three-questions page and is the
+ * transactional "email me my copy" opt-in (opt-in #1).
  *
  * Per references/content-factory-audit-and-plan-2026-07-04.md §4b, the
  * Three Questions worksheet is a FREE, UNGATED download — this endpoint is

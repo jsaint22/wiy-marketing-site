@@ -31,6 +31,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/financial-planner-lake-tahoe",
     "/our-process",
     "/5-questions",
+    "/three-questions",
     "/disclosures",
     "/privacy-policy",
     "/get-acquainted",

@@ -4,19 +4,14 @@ import ThreeQuestionsCapture from "@/components/ThreeQuestionsCapture";
 
 /**
  * ============================================================
- * [DRAFT — COMPLIANCE REVIEW REQUIRED BEFORE PUBLISH]
- * ============================================================
- * Play-4 lead-magnet funnel plumbing for the WIY "Three Questions" worksheet.
+ * Play-4 lead-magnet funnel for the WIY "Three Questions" worksheet.
  * References/content-factory-audit-and-plan-2026-07-04.md §4b.
  *
- * This route is built DARK on purpose:
- *   - robots: noindex, nofollow (below)
- *   - NOT added to src/app/Navigation.tsx
- *   - NOT added to src/app/sitemap.ts
- * Do not link this page from anywhere public, email it to a prospect, or
- * post it on social until Josh has reviewed the copy AND it has cleared
- * /consult compliance. Open NV exam CIC26-050 makes this client-facing
- * surface especially sensitive right now.
+ * Compliance-cleared to publish 2026-07-04 (CLEAR WITH CHANGES — 3 fixes
+ * applied: Reg S-P privacy notice on the email-copy opt-in, updated NV
+ * registration disclaimer, Books-and-Records archive-on-publish). Open NV
+ * exam CIC26-050 — archive snapshot at
+ * wiy-operating-system/marketing/site-archives/three-questions-worksheet-2026-07-04/.
  *
  * Copy source (verbatim — edit there, not here):
  *   references/wiy-three-questions-worksheet-DRAFT-2026-07-04.md
@@ -28,8 +23,7 @@ import ThreeQuestionsCapture from "@/components/ThreeQuestionsCapture";
 export const metadata: Metadata = {
   title: "The Three Questions — A Worksheet from Wealth In Yourself",
   description:
-    "DRAFT — not yet published. A self-administrable worksheet from Wealth In Yourself: three questions about the life this money is supposed to fund.",
-  robots: { index: false, follow: false },
+    "A self-administrable worksheet from Wealth In Yourself: three questions about the life this money is supposed to fund.",
 };
 
 const BOOKING_URL =
@@ -40,12 +34,6 @@ const PDF_URL = "/pdfs/The-Three-Questions-Worksheet-WIY.pdf";
 export default function ThreeQuestionsPage() {
   return (
     <main>
-      {/* Visible draft banner — stays until Josh + compliance clear this page */}
-      <div className="bg-warning text-black text-center text-sm font-semibold py-2 px-4">
-        [DRAFT — compliance review required before publish. Not for
-        distribution.]
-      </div>
-
       {/* Hero */}
       <section className="bg-primary py-16 sm:py-24">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -249,10 +237,11 @@ export default function ThreeQuestionsPage() {
           <ThreeQuestionsCapture />
 
           <p className="mt-10 text-xs text-neutral-dark/50 italic text-center leading-relaxed">
-            Wealth In Yourself LLC is a Nevada state-registered investment
-            adviser. This worksheet is a self-reflection exercise, not
-            financial, tax, or legal advice, and does not describe or
-            recommend any specific investment strategy or outcome.
+            Wealth In Yourself LLC is a registered investment adviser with the
+            State of Nevada. Registration does not imply a certain level of
+            skill or training. This worksheet is a self-reflection exercise, not
+            financial, tax, or legal advice, and does not describe or recommend
+            any specific investment strategy or outcome.
           </p>
         </div>
       </section>
