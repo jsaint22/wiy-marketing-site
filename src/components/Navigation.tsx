@@ -23,6 +23,7 @@ const navLinks: NavItem[] = [
     children: [
       { href: "/services", label: "All Services" },
       { href: "/virtual-family-office", label: "Virtual Family Office" },
+      { href: "/coordinated-expertise", label: "Who's On Your Team" },
       { href: "/for-business-owners", label: "For Business Owners" },
       { href: "/for-real-estate-investors", label: "For RE Investors" },
       { href: "/for-fire-followers", label: "For FIRE Followers" },
