@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import CTASection from "@/components/CTASection";
 import SectionHeading from "@/components/SectionHeading";
 import FAQSection from "@/components/FAQSection";
@@ -146,6 +147,14 @@ export default function VirtualFamilyOfficePage() {
               you, we make the introduction. If your situation calls for someone
               outside our existing relationships, we say so and help you find
               the right fit.
+            </p>
+            <p>
+              <Link
+                href="/coordinated-expertise"
+                className="text-primary font-semibold hover:text-secondary transition-colors"
+              >
+                See the actual bench, seat by seat &rarr;
+              </Link>
             </p>
           </div>
         </div>

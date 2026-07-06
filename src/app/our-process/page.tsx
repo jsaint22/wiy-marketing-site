@@ -349,12 +349,18 @@ export default function OurProcessPage() {
               ))}
             </div>
 
-            <div className="mt-8 text-center">
+            <div className="mt-8 text-center space-x-6">
               <Link
                 href="/virtual-family-office"
                 className="text-secondary font-semibold hover:text-secondary/80 transition-colors"
               >
                 Learn more about the VFO model &rarr;
+              </Link>
+              <Link
+                href="/coordinated-expertise"
+                className="text-secondary font-semibold hover:text-secondary/80 transition-colors"
+              >
+                See who&apos;s actually on the bench &rarr;
               </Link>
             </div>
           </div>

@@ -15,6 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/calculator",
     "/contact",
     "/virtual-family-office",
+    "/coordinated-expertise",
     "/for-business-owners",
     "/for-real-estate-investors",
     "/for-fire-followers",
