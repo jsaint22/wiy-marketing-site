@@ -11,6 +11,11 @@ const nextConfig: NextConfig = {
       // Client portal shortcut
       { source: "/portal", destination: "https://portal.wealthinyourself.com", permanent: false },
       { source: "/login", destination: "https://portal.wealthinyourself.com", permanent: false },
+      // A2P 30882/30908 fix 2026-07-06: alias /terms + /terms-and-conditions to the
+      // existing approved disclosures page (same content, no new legal copy — no
+      // Jake gate). Non-permanent (307) so it's reversible without cache poisoning.
+      { source: "/terms", destination: "/disclosures", permanent: false },
+      { source: "/terms-and-conditions", destination: "/disclosures", permanent: false },
       // WordPress core page redirects
       { source: "/home", destination: "/", permanent: true },
       { source: "/home/", destination: "/", permanent: true },
