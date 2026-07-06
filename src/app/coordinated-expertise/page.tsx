@@ -12,15 +12,12 @@ export const metadata: Metadata = {
     "The actual bench behind the Virtual Family Office model: who Josh coordinates with, what each specialist does, and where that bench still has an open seat. No in-house staff. No referral fees. Just the honest answer to who actually does the work.",
 };
 
-type ConfirmNote = string;
-
 interface BenchSeat {
   category: string;
-  status: "ACTIVE" | "PER-CLIENT" | "NAMED — ONE RELATIONSHIP" | "OPEN SEAT";
+  status: "ACTIVE" | "VETTED NETWORK" | "NAMED — ONE RELATIONSHIP" | "OPEN SEAT";
   statusColor: "success" | "warning" | "primary";
   icon: string;
   body: string[];
-  confirm?: ConfirmNote;
 }
 
 const benchSeats: BenchSeat[] = [
@@ -33,20 +30,16 @@ const benchSeats: BenchSeat[] = [
       "When a client needs a trust drafted, a will updated, or an existing estate plan reviewed, I coordinate with Encore Estate Plans — the estate planning firm I use directly with clients today.",
       "I brief them on your situation before you're introduced, sit in on the review, and make sure the documents that come back actually reflect the plan we built together — not a generic template.",
     ],
-    confirm:
-      "Encore Estate Plans is already named elsewhere on the site. May we name the specific attorney(s) you work with there — or does this stay at the firm level?",
   },
   {
     category: "Tax Strategy",
-    status: "PER-CLIENT",
-    statusColor: "warning",
+    status: "VETTED NETWORK",
+    statusColor: "success",
     icon: "M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z",
     body: [
-      "I don't have one firm-wide tax partner, and I'm not going to pretend I do. Every client keeps the CPA they already trust — or I help them find one who fits a coordinated model.",
-      "My job is the strategy that happens between filing seasons: the Roth conversion, the entity election, the multi-year projection. I coordinate that directly with whoever prepares your return, so the strategy and the filing agree with each other.",
+      "I don't hand every client to the same CPA — I keep a vetted network and match you to the one who actually fits your situation: business-tax specialists for entity owners, exit-planning CPAs for owners heading toward a sale, and Tahoe-local preparers for straightforward state returns.",
+      "My job is the strategy that happens between filing seasons: the Roth conversion, the entity election, the multi-year projection. I coordinate that directly with whichever CPA is preparing your return, so the strategy and the filing agree with each other.",
     ],
-    confirm:
-      "Is there a CPA relationship we can name here at the firm level yet — or does this stay generic (“your own CPA”) until the per-client roster is actually filled in?",
   },
   {
     category: "Entity Formation",
@@ -64,10 +57,8 @@ const benchSeats: BenchSeat[] = [
     statusColor: "primary",
     icon: "M13 7h8m0 0v8m0-8l-8 8-4-4-6 6",
     body: [
-      "When a business-owner client starts thinking seriously about an exit, I bring in Eric Cooper, a Certified Exit Planning Advisor (CEPA).",
+      "When a business-owner client starts thinking seriously about an exit, I bring in Eric Cooper, CEPA — WIY's exit-planning partner and consultant, brought in specifically for that work.",
     ],
-    confirm:
-      "This would be the first time Eric is named publicly on the site. OK to name him here? Separately — Eric is also the person designated to hold continuity/succession responsibility for this practice, which isn't public yet. Should that second relationship be disclosed on this page too, live only in the ADV / continuity disclosures, or wait until the succession agreement is formally signed?",
   },
   {
     category: "Insurance & Risk",
@@ -78,8 +69,6 @@ const benchSeats: BenchSeat[] = [
       "This is the one seat on the bench I haven't filled. I'll review your coverage — life, disability, umbrella, long-term care — and tell you directly where you're over-insured or exposed.",
       "But I don't yet have a named insurance specialist I bring in for placement. I'd rather tell you that plainly than imply a relationship that doesn't exist.",
     ],
-    confirm:
-      "Is there an insurance specialist relationship in progress we can preview here — or should this stay an honest “not yet” until one actually exists?",
   },
 ];
 
@@ -155,24 +144,13 @@ function StatusPill({ status, color }: { status: BenchSeat["status"]; color: Ben
   );
 }
 
-function ConfirmFlag({ children }: { children: string }) {
-  return (
-    <div className="mt-5 rounded-lg border border-dashed border-warning/50 bg-warning/5 p-4">
-      <p className="text-xs font-bold uppercase tracking-wider text-warning mb-1.5">
-        Josh Confirm — before this page can publish
-      </p>
-      <p className="text-sm text-neutral-dark/80 leading-relaxed">{children}</p>
-    </div>
-  );
-}
-
 export default function CoordinatedExpertisePage() {
   return (
     <>
       {/* Draft banner — internal only, strip before publish */}
       <div className="bg-warning text-white text-center text-sm font-semibold py-2 px-4">
-        INTERNAL DRAFT — not published. Every &ldquo;Josh Confirm&rdquo; box
-        below is a real decision this page is waiting on before it can go live.
+        INTERNAL DRAFT — not published. Content decisions are resolved; awaiting
+        Josh&apos;s final review before this goes live.
       </div>
 
       {/* Hero */}
@@ -227,7 +205,7 @@ export default function CoordinatedExpertisePage() {
           <SectionHeading
             eyebrow="The Bench"
             title="Five seats. Here's exactly who's in each one — and who isn't, yet."
-            subtitle="No vetted network. No twelve-person team. Five categories, named honestly, one at a time."
+            subtitle="No twelve-person team. Five categories, named honestly, one at a time."
           />
           <div className="mt-12 space-y-6">
             {benchSeats.map((seat, i) => (
@@ -255,7 +233,6 @@ export default function CoordinatedExpertisePage() {
                       <p key={pi}>{p}</p>
                     ))}
                   </div>
-                  {seat.confirm && <ConfirmFlag>{seat.confirm}</ConfirmFlag>}
                 </div>
               </RevealOnScroll>
             ))}
@@ -297,29 +274,21 @@ export default function CoordinatedExpertisePage() {
         </section>
       </RevealOnScroll>
 
-      {/* What Comes Next */}
+      {/* How It's Tracked */}
       <section className="bg-neutral-bg py-10 sm:py-14">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
-            eyebrow="Building in Public"
-            title="The next honest step: showing my work, not just describing it."
+            eyebrow="How It's Tracked"
+            title="Today, the coordination lives in a conversation and your case file."
           />
           <div className="mt-8 space-y-6 text-neutral-dark/80 text-lg leading-relaxed">
             <p>
-              Right now, when I brief a specialist or review what came back, that
-              happens in a conversation and a case file — not in something
-              you can see. I&apos;m building a habit into how I run your file:
-              log what got briefed, what came back, and when — so
-              &ldquo;the coordination is the work&rdquo; isn&apos;t just
-              something I say. It&apos;s something you can ask to see.
+              When I brief a specialist or review what comes back, I note it in
+              your file — what was shared, what came back, and when. It
+              isn&apos;t a client-facing dashboard today; it&apos;s how I make
+              sure nothing about your plan gets lost between conversations.
             </p>
           </div>
-          <ConfirmFlag>
-            Is this the right level of commitment to publish now, or does describing
-            an in-progress internal practice belong on this page at all — versus
-            waiting until the habit is actually running for every handoff, not just
-            designed for one?
-          </ConfirmFlag>
         </div>
       </section>
 
