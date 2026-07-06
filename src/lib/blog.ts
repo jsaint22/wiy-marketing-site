@@ -4,6 +4,11 @@ import matter from "gray-matter";
 
 const BLOG_DIR = path.join(process.cwd(), "content/blog");
 
+export interface BlogFaq {
+  question: string;
+  answer: string;
+}
+
 export interface BlogPost {
   slug: string;
   title: string;
@@ -13,6 +18,8 @@ export interface BlogPost {
   tags: string[];
   content: string;
   draft?: boolean;
+  /** Optional FAQ pairs from frontmatter — rendered as FAQPage JSON-LD on the post page. */
+  faqs?: BlogFaq[];
 }
 
 // Fail CLOSED: drafts are hidden if ANY signal says we're in production.
@@ -23,7 +30,12 @@ const isProduction =
   process.env.NEXT_PUBLIC_ENVIRONMENT === "production" ||
   process.env.VERCEL_ENV === "production" ||
   process.env.NODE_ENV === "production";
-const showDrafts = !isProduction;
+// Preview deployments build with NODE_ENV=production, which used to hide
+// drafts there too. VERCEL_ENV === "preview" is set by Vercel ONLY on
+// preview deploys (never on production promotions), so this keeps prod
+// fail-closed while letting PR previews render draft posts for review
+// (blog-pipeline review flow, 2026-07-06).
+const showDrafts = process.env.VERCEL_ENV === "preview" || !isProduction;
 
 export function getAllPosts(): BlogPost[] {
   if (!fs.existsSync(BLOG_DIR)) return [];
@@ -45,6 +57,12 @@ export function getAllPosts(): BlogPost[] {
       tags: data.tags || [],
       content,
       draft: data.draft === true,
+      faqs: Array.isArray(data.faqs)
+        ? data.faqs.filter(
+            (f: BlogFaq) =>
+              f && typeof f.question === "string" && typeof f.answer === "string"
+          )
+        : undefined,
     };
   });
 
