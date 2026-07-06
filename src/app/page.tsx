@@ -371,10 +371,10 @@ export default function HomePage() {
               />
               <div className="mt-8 space-y-4">
                 {[
-                  ["$1M net worth", "~$1,250/mo", "1.50%"],
                   ["$3M net worth", "~$1,417/mo", "0.57%"],
                   ["$5M net worth", "~$1,750/mo", "0.42%"],
                   ["$10M net worth", "~$2,583/mo", "0.31%"],
+                  ["$1M net worth", "~$1,250/mo", "1.50%"],
                 ].map(([nw, fee, rate]) => (
                   <div
                     key={nw}

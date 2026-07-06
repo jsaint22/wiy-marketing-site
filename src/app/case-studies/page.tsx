@@ -67,7 +67,7 @@ const caseStudies = [
       "Built healthcare bridge plan: ACA eligibility by managing MAGI below 400% FPL during conversion years, with expat insurance as backup",
     ],
     outcome:
-      "7 additional years of projected financial runway vs. their original plan (money lasts to 88, not 81), based on Monte Carlo analysis with historical return assumptions. $150K+ in projected lifetime tax savings from the Roth conversion ladder, dependent on future tax rates and conversion timing. Clear month-by-month retirement income plan they can actually follow. WIY annual fee: $13,500.",
+      "7 additional years of projected financial runway vs. their original plan (money lasts to 88, not 81), based on Monte Carlo analysis with historical return assumptions. $150K+ in projected lifetime tax savings from the Roth conversion ladder, dependent on future tax rates and conversion timing. Clear month-by-month retirement income plan they can actually follow. WIY annual fee: $15,000.",
     icon: "M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z",
     segment: "FIRE Followers",
     segmentHref: "/for-fire-followers",
