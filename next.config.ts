@@ -16,6 +16,11 @@ const nextConfig: NextConfig = {
       // Jake gate). Non-permanent (307) so it's reversible without cache poisoning.
       { source: "/terms", destination: "/disclosures", permanent: false },
       { source: "/terms-and-conditions", destination: "/disclosures", permanent: false },
+      // A2P hardening 2026-07-07: additional conventional-path aliases TCR/carrier
+      // reviewers may probe. Same-domain, non-permanent (307), no new legal copy.
+      { source: "/terms-of-service", destination: "/disclosures", permanent: false },
+      { source: "/tos", destination: "/disclosures", permanent: false },
+      { source: "/privacy", destination: "/privacy-policy", permanent: false },
       // WordPress core page redirects
       { source: "/home", destination: "/", permanent: true },
       { source: "/home/", destination: "/", permanent: true },
