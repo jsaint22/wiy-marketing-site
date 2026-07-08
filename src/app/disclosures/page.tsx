@@ -150,17 +150,23 @@ export default function DisclosuresPage() {
 
           <h2>SMS / Text Messaging Terms</h2>
           <p>
-            SMS / Text Messaging Terms. By providing your mobile number and
-            opting in, you agree to receive recurring text messages from Wealth
-            In Yourself, including appointment confirmations and reminders,
-            onboarding and account notifications, event announcements,
-            financial education resources, and responses to your inquiries.
-            Message frequency varies. Message and data rates may apply. Reply
-            HELP for help or STOP to opt out at any time; after you reply STOP
-            we will send a single confirmation and no further messages unless
-            you re-subscribe. Carriers are not liable for delayed or
-            undelivered messages. Your information is handled in accordance
-            with our Privacy Policy at{" "}
+            <strong>Program:</strong> Wealth In Yourself LLC. When you book a
+            consultation with us and provide your mobile number, you opt in to
+            receive recurring text messages from Wealth In Yourself related to
+            that consultation and your onboarding, specifically appointment
+            confirmations, appointment reminders, and onboarding
+            notifications. Message frequency varies. Message and data rates
+            may apply. <strong>Reply HELP for help or STOP to opt out</strong>{" "}
+            at any time; after you reply STOP we will send a single
+            confirmation and no further messages unless you re-subscribe.
+            Consent to receive text messages is not a condition of purchasing
+            any services. Carriers are not liable for delayed or undelivered
+            messages. For support, contact us at{" "}
+            <a href="mailto:josh@wealthinyourself.com">
+              josh@wealthinyourself.com
+            </a>{" "}
+            or (415) 915-5948. Your information is handled in accordance with
+            our Privacy Policy at{" "}
             <a
               href="https://wealthinyourself.com/privacy-policy"
               target="_blank"
