@@ -150,13 +150,12 @@ export default function DisclosuresPage() {
 
           <h2>SMS / Text Messaging Terms</h2>
           <p>
-            <strong>Program:</strong> Wealth In Yourself LLC. By providing
-            your mobile number and opting in (including at the time you book
-            a consultation), you agree to receive recurring text messages
-            from Wealth In Yourself, including appointment confirmations and
-            reminders, onboarding and account notifications, event
-            announcements, financial education resources, and responses to
-            your inquiries. Message frequency varies. Message and data rates
+            <strong>Program:</strong> Wealth In Yourself LLC. When you book a
+            consultation with us and provide your mobile number, you opt in to
+            receive recurring text messages from Wealth In Yourself related to
+            that consultation and your onboarding, specifically appointment
+            confirmations, appointment reminders, and onboarding
+            notifications. Message frequency varies. Message and data rates
             may apply. <strong>Reply HELP for help or STOP to opt out</strong>{" "}
             at any time; after you reply STOP we will send a single
             confirmation and no further messages unless you re-subscribe.
