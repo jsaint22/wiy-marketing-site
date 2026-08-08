@@ -1,0 +1,59 @@
+name: CI (type-check + test)
+
+# Added 2026-08-08 (overnight audit finding F4-01).
+#
+# wiy-marketing-site had NO CI before this. The repo carries 11 vitest suites
+# (60 tests), including the two highest-stakes fee-canon suites —
+#   src/lib/fee-canon.test.ts
+#   src/lib/pdf/fee-math.test.ts
+# — and NONE of them ran anywhere. Vercel's build is `next build` with zero
+# vitest invocation, and main has no branch protection. This is the public
+# marketing site: /pricing, /vs-aum and the fee calculator all render from
+# src/lib/fee-canon.ts, so a typo in a rate constant would ship as confident,
+# authoritative fee math with no signal to anyone.
+#
+# NOTE ON `paths:` — deliberately omitted. The sibling wiy-client-portal
+# workflow filters on app/**, components/**, lib/**; this repo's code lives
+# under src/, so copying those filters verbatim would produce a workflow that
+# never fires on a real change — i.e. the audit finding, reintroduced. The
+# suite runs in ~2.5s, so it simply runs on everything.
+#
+# NOTE ON LINT — no lint job. `npm run lint` currently exits 1 with 6
+# pre-existing errors (react-hooks/set-state-in-effect in
+# src/lib/use-reduced-motion.ts, plus jsx-a11y/alt-text). Adding a lint gate
+# today would make CI red on arrival and train everyone to ignore it. Clear
+# those errors first, then add the job.
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  type-check:
+    name: tsc --noEmit
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: "22"
+          cache: npm
+      - run: npm ci
+      - run: npx tsc --noEmit --skipLibCheck
+
+  test:
+    name: vitest (incl. fee-canon + pdf/fee-math)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: "22"
+          cache: npm
+      - run: npm ci
+      - run: npx vitest run
