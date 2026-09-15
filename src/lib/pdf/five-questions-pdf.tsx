@@ -202,7 +202,7 @@ const QUESTIONS: Array<{
   {
     number: 1,
     question:
-      "How does my fee change as my net worth grows? Show me the math at $3M, $10M, and $20M — in dollars, not percentages.",
+      "How does my fee change as my net worth grows? Show me the math at $3M, $10M, and $20M, in dollars, not percentages.",
     goodAnswer:
       'A concrete dollar figure at each net worth tier, with the methodology explained. If they can\'t give you a number without "it depends," ask them to walk through their fee structure on the spot using your actual net worth.',
   },
@@ -211,28 +211,28 @@ const QUESTIONS: Array<{
     question:
       "What specifically do you do for me that I couldn't reasonably do myself with 4 hours per quarter and good software?",
     goodAnswer:
-      'A list of specific services that require professional judgment — entity structure design, multi-year tax modeling, estate document coordination, insurance strategy across vehicles. If the answer is "we manage your portfolio," ask what their portfolio management adds beyond what a low-cost diversified strategy would deliver — and listen for a specific answer.',
+      'A list of specific services that require professional judgment: entity structure design, multi-year tax modeling, estate document coordination, insurance strategy across vehicles. If the answer is "we manage your portfolio," ask what their portfolio management adds beyond what a low-cost diversified strategy would deliver, and listen for a specific answer.',
   },
   {
     number: 3,
     question:
       "When was the last time you proactively brought me a tax-savings opportunity I wasn't already aware of?",
     goodAnswer:
-      'A specific example with a date. "Last March I flagged that your Roth conversion ladder would push you over the ACA subsidy cliff" — that\'s proactive. "We always look for opportunities" — that\'s marketing language. Tax planning happens in October, not April.',
+      'A specific example with a date. "Last March I raised the timing of your Roth conversion before you asked" is proactive. "We always look for opportunities" is marketing language. Ask when in the year they do that work.',
   },
   {
     number: 4,
     question:
-      "If I died tomorrow, who would my spouse call first — and is that person on speed dial in your office?",
+      "If I died tomorrow, who would my spouse call first, and is that person on speed dial in your office?",
     goodAnswer:
       'A named person, a relationship that already exists, and a documented protocol. The answer should NOT be "we\'d help your spouse find an estate attorney." The estate attorney should already be in the workflow before the death happens.',
   },
   {
     number: 5,
     question:
-      "How do you coordinate with my CPA, estate attorney, and insurance broker — and who's responsible when that coordination fails?",
+      "How do you coordinate with my CPA, estate attorney, and insurance broker, and who's responsible when that coordination fails?",
     goodAnswer:
-      'A specific coordination cadence (quarterly tax reviews, annual estate reviews, etc.) and a clear answer about accountability. "Coordination" that means "we email them when needed" is not coordination — it\'s referral. Real coordination is one team working off one plan.',
+      'A specific coordination cadence (quarterly tax reviews, annual estate reviews, etc.) and a clear answer about accountability. If "coordination" means "we email them when needed," that\'s a referral. Real coordination is one team working off one plan.',
   },
 ];
 
@@ -244,7 +244,7 @@ function Footer({ page }: { page?: number }) {
   return (
     <>
       <Text style={s.footer}>
-        Wealth In Yourself LLC | Registered Investment Adviser — State of Nevada
+        Wealth In Yourself LLC | Registered Investment Adviser, State of Nevada
         | 195 Highway 50, Suite 205, Zephyr Cove, NV 89448 | (415) 915-5948 |
         josh@wealthinyourself.com{"\n"}This resource is educational and is not
         tax, legal, or investment advice. Discuss all items with your qualified
@@ -297,8 +297,8 @@ export default function FiveQuestionsPDF() {
           }}
         />
         <Text style={s.coverSubtitle}>
-          A single-page diagnostic. Use it before your next{"\n"}review meeting
-          — with us or with anyone.
+          A short diagnostic. Use it before your next{"\n"}review meeting,
+          with us or with anyone.
         </Text>
         <Text
           style={{
@@ -316,17 +316,17 @@ export default function FiveQuestionsPDF() {
       {/* Intro + first 2 questions */}
       <Page size="LETTER" style={s.page}>
         <Text style={s.intro}>
-          At $3M–$30M of net worth, the cost of an underperforming advisor
-          relationship isn&apos;t a few basis points — it&apos;s missed tax
-          strategy, uncoordinated estate planning, and decisions made in
-          isolation that should have been made as a team. The hard part is that
-          most underperforming relationships look fine from the outside. Polite
+          When a household&apos;s finances get complicated, an advisor
+          relationship that isn&apos;t working can show up as missed tax
+          planning, estate documents nobody coordinated, and decisions made
+          alone that should have been made as a team. The hard part is that a
+          relationship like that can look fine from the outside. Polite
           quarterly meetings. Reasonable returns. No obvious problems.
         </Text>
         <Text style={s.intro}>
           These five questions are designed to surface what&apos;s actually
           happening underneath. Every question is one your advisor should be
-          able to answer without preparation — and one we&apos;d expect to be
+          able to answer without preparation, and one we&apos;d expect to be
           asked ourselves. There&apos;s no gotcha here. Just five conversations
           a household at this net worth deserves to have.
         </Text>
@@ -367,16 +367,16 @@ export default function FiveQuestionsPDF() {
         <View style={s.ctaBox}>
           <Text style={s.ctaTitle}>How did your advisor do?</Text>
           <Text style={s.ctaBody}>
-            If five of five came back clean, you have a great advisor relationship
-            — keep it. If two or more came back unclear, the gap is worth
-            investigating. The diagnostic isn&apos;t about us — it&apos;s about
-            whether your current relationship matches the complexity of your
-            net worth.
+            If all five came back clear, that&apos;s a good sign. If two or
+            more came back unclear, the gap is worth looking into. What matters
+            is whether your current relationship fits how complicated your
+            finances are, whoever the advisor is.
           </Text>
           <Text style={s.ctaBody}>
-            If you&apos;d like to talk through what came up, book a complimentary
-            15-minute call. We&apos;ll walk through your answers together and
-            tell you honestly whether a change is worth the friction.
+            If you&apos;d like to talk through what came up, book a 15-minute
+            intro call. We&apos;ll go through your answers together. By the
+            end, I&apos;ll tell you whether it&apos;s worth going deeper in a
+            second conversation, or whether I&apos;m not the right fit.
           </Text>
           <Text
             style={{
@@ -386,11 +386,11 @@ export default function FiveQuestionsPDF() {
               marginBottom: 6,
             }}
           >
-            Josh St. Laurent, CFP®, CFT™, APFC®, ACC, MS — Founder, Wealth In
+            Josh St. Laurent, CFP®, CFT™, APFC®, ACC, MS | Founder, Wealth In
             Yourself
           </Text>
           <Link src={BOOKING_URL}>
-            <Text style={s.ctaLink}>Book a 15-minute intro call →</Text>
+            <Text style={s.ctaLink}>Schedule a 15-minute call</Text>
           </Link>
         </View>
 

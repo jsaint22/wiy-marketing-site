@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import LeadMagnetCapture from "@/components/LeadMagnetCapture";
 import CTASection from "@/components/CTASection";
+import { LEAD_MAGNET_CTA_SUBTEXT } from "@/lib/lead-magnet-page-copy";
 
 
 export const metadata: Metadata = {
@@ -13,7 +14,7 @@ const checklistItems = [
   {
     category: "1031 Exchanges",
     items: [
-      "Do you have a 1031 exchange strategy mapped for your next property sale — before you list?",
+      "Do you have a 1031 exchange strategy mapped for your next property sale, before you list?",
       "Have you evaluated a Reverse 1031 exchange to lock in your replacement property first?",
       "Do you have a Qualified Intermediary relationship established (not your title company)?",
     ],
@@ -21,21 +22,21 @@ const checklistItems = [
   {
     category: "Cost Segregation",
     items: [
-      "Have you run a cost segregation study on every property you own — including ones you bought years ago?",
-      "Are you tracking the current bonus depreciation phase-down and how it affects your next acquisition?",
+      "Have you run a cost segregation study on every property you own, including ones you bought years ago?",
+      "Do you know which bonus depreciation rules apply to your next acquisition?",
     ],
   },
   {
     category: "Entity Structure",
     items: [
       "Is each property held in the right entity for liability protection and tax efficiency?",
-      "Have you evaluated a holding company structure as your portfolio crosses 5+ doors?",
+      "Have you evaluated a holding company structure as your portfolio grows?",
     ],
   },
   {
     category: "STR Tax Strategies",
     items: [
-      "Are you leveraging the STR loophole for material participation — and do you qualify?",
+      "Are you leveraging the STR loophole for material participation, and do you qualify?",
       "Do you have contemporaneous documentation proving your material participation hours?",
     ],
   },
@@ -49,8 +50,8 @@ const checklistItems = [
   {
     category: "Advisory Team",
     items: [
-      "Do you have both a CPA and a financial planner — and are they talking to each other?",
-      "Is your CPA proactively suggesting strategies — or just filing what you hand them?",
+      "Do you have both a CPA and a financial planner, and are they talking to each other?",
+      "Is your CPA proactively suggesting strategies, or just filing what you hand them?",
     ],
   },
 ];
@@ -68,11 +69,9 @@ export default function REInvestorChecklist() {
             16 Tax Questions Your Advisory Team Should Be Answering Right Now
           </h1>
           <p className="mt-6 text-xl text-neutral-dark/80 leading-relaxed max-w-3xl">
-            Most RE investors have a CPA who files and an advisor who allocates.
-            Neither one is running the numbers on 1031 timing, cost segregation
-            studies, or depreciation recapture. This checklist is the gap
-            between &ldquo;good enough&rdquo; and keeping an extra $50K–$200K
-            on every transaction.
+            If your CPA files and your advisor allocates, who&apos;s running the
+            numbers on 1031 timing, cost segregation, or depreciation recapture?
+            This checklist gives you the 16 questions to put to your team.
           </p>
           <p className="mt-4 text-sm text-neutral-dark/70 font-medium">
             Built for investors with 3+ properties and $1M+ in real estate equity.
@@ -113,14 +112,14 @@ export default function REInvestorChecklist() {
       {/* Email capture */}
       <LeadMagnetCapture
         magnet="re-investor-checklist"
-        headline="Get the full checklist — free."
+        headline="Get the full checklist, free."
         subheadline="16 questions. Zero fluff. Built for investors who actually run the numbers."
-        description="Enter your name and email. You'll get the complete Tax Strategy Checklist in your inbox within 60 seconds. No spam, no sales pitch — just the checklist."
+        description="Enter your name and email. You'll get the complete Tax Strategy Checklist in your inbox within 60 seconds. No spam."
         buttonText="Send me the checklist"
         successMessage="Sent! Check your inbox for the Tax Strategy Checklist."
       />
 
-      <CTASection />
+      <CTASection subtext={LEAD_MAGNET_CTA_SUBTEXT} />
     </main>
   );
 }

@@ -2,11 +2,12 @@ import type { Metadata } from "next";
 import LeadMagnetCapture from "@/components/LeadMagnetCapture";
 import CTASection from "@/components/CTASection";
 import { CinematicHero } from "@/components/cinematic/CinematicHero";
+import { LEAD_MAGNET_CTA_SUBTEXT } from "@/lib/lead-magnet-page-copy";
 
 export const metadata: Metadata = {
   title: "5 Questions a $3M–$30M Household Should Ask Their Advisor",
   description:
-    "A free single-page diagnostic. Five substantive questions any household at $3M–$30M of net worth should be able to put to any advisor — including us. Use it before your next review meeting.",
+    "A free diagnostic PDF. Five substantive questions any household at $3M–$30M of net worth should be able to put to any advisor, including us. Use it before your next review meeting.",
 };
 
 // On-page we show only the questions themselves. The "what a good answer looks
@@ -16,7 +17,7 @@ const questions = [
   {
     number: 1,
     question:
-      "How does my fee change as my net worth grows? Show me the math at $3M, $10M, and $20M — in dollars, not percentages.",
+      "How does my fee change as my net worth grows? Show me the math at $3M, $10M, and $20M, in dollars, not percentages.",
   },
   {
     number: 2,
@@ -31,12 +32,12 @@ const questions = [
   {
     number: 4,
     question:
-      "If I died tomorrow, who would my spouse call first — and is that person on speed dial in your office?",
+      "If I died tomorrow, who would my spouse call first, and is that person on speed dial in your office?",
   },
   {
     number: 5,
     question:
-      "How do you coordinate with my CPA, estate attorney, and insurance broker — and who's responsible when that coordination fails?",
+      "How do you coordinate with my CPA, estate attorney, and insurance broker, and who's responsible when that coordination fails?",
   },
 ];
 
@@ -50,7 +51,7 @@ export default function FiveQuestionsPage() {
             5 Questions Every High-Net-Worth Household Should Be Asking Their Advisor
           </>
         }
-        subhead="Most households at three to thirty million in net worth can't answer these five questions about their current advisor relationship. We can. So can any advisor worth their fee. Use this list before your next review meeting — with us or with anyone."
+        subhead="Five questions to put to your current advisor, and to us. Any advisor worth their fee should be able to answer them. Use this list before your next review meeting, with us or with anyone."
         primaryCta={{
           label: "Get the PDF",
           href: "#get-the-pdf",
@@ -68,22 +69,22 @@ export default function FiveQuestionsPage() {
             Why these five questions
           </h2>
           <p className="text-lg text-neutral-dark/85 leading-relaxed mb-5">
-            At $3M–$30M of net worth, the cost of an underperforming advisor
-            relationship isn&apos;t a few basis points — it&apos;s missed tax
-            strategy, uncoordinated estate planning, and decisions made in
-            isolation that should have been made as a team. The hard part is
-            that most underperforming relationships look fine from the outside.
-            Polite quarterly meetings. Reasonable returns. No obvious problems.
+            When a household&apos;s finances get complicated, an advisor
+            relationship that isn&apos;t working can show up as missed tax
+            planning, estate documents nobody coordinated, and decisions made
+            alone that should have been made as a team. The hard part is that a
+            relationship like that can look fine from the outside. Polite
+            quarterly meetings. Reasonable returns. No obvious problems.
           </p>
           <p className="text-lg text-neutral-dark/85 leading-relaxed mb-5">
             These five questions are designed to surface what&apos;s actually
             happening underneath. Every question is one your advisor should be
-            able to answer without preparation — and one we&apos;d expect to be
+            able to answer without preparation, and one we&apos;d expect to be
             asked ourselves. There&apos;s no gotcha here. Just five
             conversations a household at this net worth deserves to have.
           </p>
           <p className="text-lg text-neutral-dark/85 leading-relaxed">
-            Use this list at your next review meeting — with us or with anyone.
+            Use this list at your next review meeting, with us or with anyone.
           </p>
         </div>
       </section>
@@ -108,10 +109,10 @@ export default function FiveQuestionsPage() {
           </div>
           <p className="mt-12 text-lg text-neutral-dark/85 leading-relaxed">
             Knowing the questions is the easy half. The harder half is knowing
-            what a strong answer to each one actually sounds like — so you can
+            what a strong answer to each one actually sounds like, so you can
             tell real substance from a polished deflection. That&apos;s in the
-            free one-page PDF below, along with a simple way to score where your
-            current advisor stands.
+            free PDF below, along with a simple way to score where your current
+            advisor stands.
           </p>
         </div>
       </section>
@@ -121,14 +122,14 @@ export default function FiveQuestionsPage() {
         <LeadMagnetCapture
           magnet="five-questions"
           headline="What does a good answer actually sound like?"
-          subheadline="The free one-page PDF gives you a strong-answer benchmark for all five questions — plus a quick way to score where your current advisor stands."
-          description="Enter your name and email and I'll send the single-page PDF to your inbox within 60 seconds. No spam. No sales pitch. Bring it to your next review."
+          subheadline="The free PDF gives you a strong-answer benchmark for all five questions, plus a quick way to score where your current advisor stands."
+          description="Enter your name and email and I'll send the PDF to your inbox within 60 seconds. No spam. Bring it to your next review."
           buttonText="Send me the PDF"
           successMessage="Sent! Check your inbox for the 5 Questions PDF."
         />
       </div>
 
-      <CTASection />
+      <CTASection subtext={LEAD_MAGNET_CTA_SUBTEXT} />
     </main>
   );
 }
