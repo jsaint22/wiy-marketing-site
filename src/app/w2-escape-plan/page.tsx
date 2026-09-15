@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import LeadMagnetCapture from "@/components/LeadMagnetCapture";
 import CTASection from "@/components/CTASection";
+import { LEAD_MAGNET_CTA_SUBTEXT } from "@/lib/lead-magnet-page-copy";
 
 
 export const metadata: Metadata = {
-  title: "Free: The W-2 Escape Plan — Financial Readiness Checklist",
+  title: "Free: The W-2 Escape Plan Financial Readiness Checklist",
   description:
     "Runway math, health insurance planning, entity setup, retirement account strategy, and income replacement planning. Free checklist for professionals going independent.",
 };
@@ -13,37 +14,37 @@ const checklistSections = [
   {
     category: "The Runway",
     items: [
-      "Do you know your actual monthly burn rate — not your guess, your real number?",
-      "Do you have 12-18 months of living expenses in liquid savings (not retirement accounts)?",
-      "Have you stress-tested your runway against a 6-month delayed revenue scenario?",
+      "Do you know your actual monthly burn rate, not your guess but your real number?",
+      "Have you decided how many months of living expenses you need in liquid savings (not retirement accounts)?",
+      "Have you stress-tested your runway against a slow start to revenue?",
     ],
   },
   {
     category: "Health Insurance",
     items: [
-      "Do you have a specific post-employment health insurance plan — COBRA, marketplace, or spouse's plan?",
-      "Have you factored the full annual cost ($12K-$30K+ for a family) into your runway math?",
+      "Do you have a specific post-employment health insurance plan: COBRA, marketplace, or a spouse's plan?",
+      "Have you priced the full annual cost of coverage into your runway math?",
     ],
   },
   {
     category: "Entity Setup & Tax Architecture",
     items: [
-      "Have you decided on your business entity — and do you know why LLC vs. S-Corp matters?",
-      "Do you understand how self-employment tax changes your effective rate by 7-15%?",
+      "Have you decided on your business entity, and do you know why LLC vs. S-Corp matters?",
+      "Do you understand how self-employment tax changes what you keep?",
       "Have you set up quarterly estimated tax payments before your first invoice?",
     ],
   },
   {
     category: "Retirement Accounts",
     items: [
-      "Do you have a plan for your employer 401(k) — rollover, leave, or Roth convert?",
-      "Have you evaluated a Solo 401(k) to shelter up to $72K per year from day one?",
+      "Do you have a plan for your employer 401(k): leave it, roll it to an IRA, or roll it to a new plan?",
+      "Have you compared a Solo 401(k) and a SEP-IRA for your self-employment income?",
     ],
   },
   {
     category: "Income Replacement",
     items: [
-      "Do you have your first client or revenue source identified — not hypothetical, signed?",
+      "Do you have your first client or revenue source identified, not hypothetical but signed?",
       "Have you calculated your personal break-even number (not your business break-even)?",
       "Have you reviewed your non-compete or non-solicitation agreement with an attorney?",
     ],
@@ -67,10 +68,10 @@ export default function W2EscapePlan() {
           </p>
           <p className="mt-6 text-xl text-neutral-dark/80 leading-relaxed max-w-3xl">
             You&apos;ve run the mental math a hundred times. You know you want
-            out. But &ldquo;I think I have enough saved&rdquo; isn&apos;t a
-            plan — it&apos;s a hope. This checklist turns the leap into a
-            calculated decision: your real runway, your real burn rate, and the
-            exact financial architecture you need before you give notice.
+            out. But &ldquo;I think I have enough saved&rdquo; is a hope, not a
+            plan. This checklist turns the leap into a calculated decision: your
+            real runway, your real burn rate, and the financial pieces you need
+            in place before you give notice.
           </p>
           <p className="mt-4 text-sm text-neutral-dark/70 font-medium">
             For W-2 professionals earning $150K+ who are 6-18 months from going independent.
@@ -112,14 +113,14 @@ export default function W2EscapePlan() {
       {/* Email capture */}
       <LeadMagnetCapture
         magnet="w2-escape-plan"
-        headline="Get the full escape plan — free."
-        subheadline="13 questions that separate a calculated leap from an expensive mistake."
+        headline="Get the full escape plan, free."
+        subheadline="17 questions that separate a calculated leap from an expensive mistake."
         description="Enter your name and email. You'll get the complete W-2 Escape Plan in your inbox within 60 seconds."
         buttonText="Send me the escape plan"
         successMessage="Sent! Check your inbox for the W-2 Escape Plan."
       />
 
-      <CTASection />
+      <CTASection subtext={LEAD_MAGNET_CTA_SUBTEXT} />
     </main>
   );
 }

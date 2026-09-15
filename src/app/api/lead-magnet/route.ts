@@ -9,6 +9,12 @@ import {
   emitLeadMagnetWebhook,
   type LeadMagnetSlug,
 } from "@/lib/lead-magnet-webhook";
+import {
+  DELIVERY_FROM,
+  DELIVERY_REPLY_TO,
+  renderDeliveryEmail,
+  type DeliveryMagnetSlug,
+} from "@/lib/lead-magnet-delivery-email";
 
 export const dynamic = "force-dynamic";
 
@@ -53,45 +59,37 @@ function getClientIp(request: NextRequest): string {
  */
 const PRIVACY_POLICY_CONSENT_VERSION = "2026-06-08";
 
+// Subject and body copy live in src/lib/lead-magnet-delivery-email.ts (the
+// Standing Rule 4 Category 1.b delivery email). This map only carries the
+// GHL tag and the static PDF filename for each magnet.
 const LEAD_MAGNETS: Record<
-  string,
+  DeliveryMagnetSlug,
   {
-    subject: string;
     tag: string;
-    description: string;
     filename: string;
   }
 > = {
   "re-investor-checklist": {
-    subject: "Your Real Estate Investor's Tax Strategy Checklist",
     tag: "re-investor-checklist-download",
-    description:
-      "The Real Estate Investor's Tax Strategy Checklist — 16 questions your advisory team should be answering about 1031 exchanges, cost segregation, entity structure, depreciation recapture, QBI, and more.",
     filename: "RE-Investor-Tax-Strategy-Checklist-WIY.pdf",
   },
   "business-owner-roadmap": {
-    subject: "Your Entrepreneur's Wealth Extraction Roadmap",
     tag: "business-owner-roadmap-download",
-    description:
-      "The Entrepreneur's Wealth Extraction Roadmap — covering valuation, entity structure, QSBS, cash flow modeling, succession planning, and the full advisory team you need before you exit.",
     filename: "Entrepreneurs-Wealth-Extraction-Roadmap-WIY.pdf",
   },
   "w2-escape-plan": {
-    subject: "Your W-2 Escape Plan Checklist",
     tag: "w2-escape-plan-download",
-    description:
-      "The W-2 Escape Plan — a financial readiness checklist covering runway math, health insurance, entity setup, retirement accounts, income replacement, and the timeline to go independent.",
     filename: "W2-Escape-Plan-Financial-Checklist-WIY.pdf",
   },
   "five-questions": {
-    subject:
-      "The 5 Questions a $3M–$30M Household Should Be Asking Their Advisor",
     tag: "five-questions-download",
-    description:
-      "Five substantive questions any household at $3M–$30M of net worth should be able to put to any advisor — including us. A single-page diagnostic to use before your next review meeting.",
     filename: "5-Questions-Your-Advisor-Should-Answer-WIY.pdf",
   },
 };
+
+function isDeliveryMagnetSlug(value: unknown): value is DeliveryMagnetSlug {
+  return typeof value === "string" && Object.hasOwn(LEAD_MAGNETS, value);
+}
 
 // RFC 5322 conformant-enough regex for catching the common abuse patterns
 // (`"@"`, leading/trailing dots, missing TLD). Not perfect — the real check
@@ -160,13 +158,13 @@ export async function POST(request: NextRequest) {
     // implicit-consent event for Books-and-Records discipline (Rule 204-2)
     // even though no checkbox gate is enforced.
 
-    const config = LEAD_MAGNETS[magnet];
-    if (!config) {
+    if (!isDeliveryMagnetSlug(magnet)) {
       return NextResponse.json(
         { error: "Unknown lead magnet." },
         { status: 400 }
       );
     }
+    const config = LEAD_MAGNETS[magnet];
 
     // Load pre-generated static PDF (verified by test suite, not generated at runtime)
     const pdfPath = join(process.cwd(), "public", "pdfs", config.filename);
@@ -186,36 +184,17 @@ export async function POST(request: NextRequest) {
       );
     } else {
       const resend = new Resend(resendKey);
+      // Standing Rule 4 Category 1.b delivery email (email 1 of the series).
+      // Sender is fixed to josh@ and replies go to josh@ so a "stop" reply
+      // reaches the inbox scan that ends the day 3/7/14 follow-ups.
+      const delivery = renderDeliveryEmail(magnet, firstName);
       const { error: emailError } = await resend.emails.send({
-        from: process.env.LEAD_MAGNET_FROM ?? "Josh at WIY <josh@wealthinyourself.com>",
+        from: DELIVERY_FROM,
+        replyTo: DELIVERY_REPLY_TO,
         to: email,
-        subject: config.subject,
-        text: `Hey ${firstName},
-
-Thanks for requesting ${config.description}
-
-The checklist is attached to this email. Take your time with it — these aren't quick wins, they're the conversations that separate good planning from great planning.
-
-If you want to talk about how any of these apply to your specific situation, here's my calendar: https://cal.com/jsaint/intro-call
-
-Josh
-Wealth In Yourself
-josh@wealthinyourself.com
-
----
-This is educational content and is not tax, legal, or investment advice. Discuss all items with your qualified advisory team before taking action.`,
-        // HTML version: CTA renders as a styled button, never a raw URL
-        // (Josh standing preference 2026-06-25). firstName is HTML-escaped.
-        html: `<div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;color:#1f2a2e;line-height:1.6;font-size:15px;">
-  <p>Hey ${firstName.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")},</p>
-  <p>Thanks for requesting ${config.description}</p>
-  <p>The checklist is attached to this email. Take your time with it — these aren't quick wins, they're the conversations that separate good planning from great planning.</p>
-  <p>If you want to talk about how any of these apply to your specific situation:</p>
-  <p><a href="https://cal.com/jsaint/intro-call" style="display:inline-block;background:#1a4d5c;color:#ffffff;text-decoration:none;padding:12px 22px;border-radius:6px;font-weight:600;">Book a 15-minute call →</a></p>
-  <p>Josh<br>Wealth In Yourself<br>josh@wealthinyourself.com</p>
-  <hr style="border:none;border-top:1px solid #dfe6e7;margin:18px 0;">
-  <p style="font-size:12px;color:#5d6b70;">This is educational content and is not tax, legal, or investment advice. Discuss all items with your qualified advisory team before taking action.</p>
-</div>`,
+        subject: delivery.subject,
+        text: delivery.text,
+        html: delivery.html,
         attachments: [
           {
             filename: config.filename,
