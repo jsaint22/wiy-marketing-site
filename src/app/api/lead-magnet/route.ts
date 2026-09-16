@@ -177,6 +177,15 @@ export async function POST(request: NextRequest) {
     // GHL contact creation, Inngest webhook fire) still run so the rest of
     // the flow can be exercised on preview. Production has the key set, so
     // this guard never fires there.
+    // Receipt for the delivery email, relayed to ops-portal below so IT can
+    // write the client_comms_log row. This site has no Supabase client and
+    // giving it a service-role key to write one row would be a new credential
+    // surface, so the receipt rides the HMAC-signed channel that already
+    // exists. Left undefined when the send is skipped or fails, which keeps
+    // ops-portal from logging an email that never went out.
+    let deliveryResendId: string | undefined;
+    let deliverySubject: string | undefined;
+
     const resendKey = process.env.RESEND_API_KEY;
     if (!resendKey) {
       console.error(
@@ -188,7 +197,7 @@ export async function POST(request: NextRequest) {
       // Sender is fixed to josh@ and replies go to josh@ so a "stop" reply
       // reaches the inbox scan that ends the day 3/7/14 follow-ups.
       const delivery = renderDeliveryEmail(magnet, firstName);
-      const { error: emailError } = await resend.emails.send({
+      const { data: emailResult, error: emailError } = await resend.emails.send({
         from: DELIVERY_FROM,
         replyTo: DELIVERY_REPLY_TO,
         to: email,
@@ -210,6 +219,9 @@ export async function POST(request: NextRequest) {
           { status: 500 }
         );
       }
+
+      deliveryResendId = emailResult?.id;
+      deliverySubject = delivery.subject;
     }
 
     // (Removed 2026-06-25: appendSubscriber wrote a local CSV under data/, which
@@ -260,6 +272,8 @@ export async function POST(request: NextRequest) {
       source_ip: sourceIp,
       source_user_agent: sourceUserAgent,
       external_request_id: externalRequestId,
+      delivery_resend_id: deliveryResendId,
+      delivery_subject: deliverySubject,
     });
     if (!emitResult.ok) {
       console.error(
