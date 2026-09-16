@@ -244,7 +244,7 @@ export default function ForRealEstateInvestorsPage() {
         Because 80% of your net worth in one asset class is a plan. It&rsquo;s just not a complete one.
       </EditorialPullQuote>
 
-      {/* Free Resource — mid-funnel soft offer */}
+      {/* Guide — mid-funnel soft offer */}
       <section className="bg-secondary/10 py-10 sm:py-14">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-xs font-semibold text-secondary uppercase tracking-wider mb-3">Not ready for a call? Start here</p>
@@ -253,14 +253,14 @@ export default function ForRealEstateInvestorsPage() {
           </h2>
           <p className="mt-4 text-neutral-dark/70 leading-relaxed max-w-xl mx-auto">
             16 questions your advisory team should be answering about 1031 exchanges,
-            cost segregation, entity structure, and depreciation. Free PDF — built for
+            cost segregation, entity structure, and depreciation. Built for
             investors with 3+ properties.
           </p>
           <Link
             href="/re-investor-checklist"
             className="inline-block mt-6 px-8 py-3.5 bg-primary text-white font-semibold rounded-lg hover:bg-primary/90 transition-colors"
           >
-            Get the free checklist
+            Get the checklist
           </Link>
         </div>
       </section>

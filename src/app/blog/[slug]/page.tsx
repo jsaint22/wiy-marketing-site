@@ -169,7 +169,7 @@ export default async function BlogPostPage({ params }: Props) {
               rel="noopener noreferrer"
               className="inline-block mt-4 px-8 py-3 bg-primary text-white font-semibold rounded-lg hover:bg-primary/90 transition-colors"
             >
-              Book your free intro call
+              Book your intro call
             </a>
           </div>
 

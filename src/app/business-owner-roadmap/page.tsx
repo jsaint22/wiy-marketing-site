@@ -5,9 +5,9 @@ import { LEAD_MAGNET_CTA_SUBTEXT } from "@/lib/lead-magnet-page-copy";
 
 
 export const metadata: Metadata = {
-  title: "Free: The Business Owner's Wealth Extraction Roadmap",
+  title: "The Business Owner's Wealth Extraction Roadmap",
   description:
-    "Business valuation, QSBS exclusion, entity structuring, cash flow optimization, and exit timing strategies. Free roadmap for entrepreneurs building real wealth from their business.",
+    "Business valuation, QSBS exclusion, entity structuring, cash flow optimization, and exit timing strategies. A roadmap for entrepreneurs building real wealth from their business.",
 };
 
 // "What's inside" preview. Every item below is a question in the PDF
@@ -59,7 +59,7 @@ export default function BusinessOwnerRoadmap() {
       <section className="bg-neutral-bg py-16 sm:py-24">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-secondary font-semibold text-sm tracking-wide uppercase">
-            Free Download
+            Roadmap
           </p>
           <h1 className="mt-2 text-4xl sm:text-5xl font-bold text-primary tracking-tight">
             The Business Owner&apos;s Wealth Extraction Roadmap
@@ -110,7 +110,7 @@ export default function BusinessOwnerRoadmap() {
       {/* Email capture */}
       <LeadMagnetCapture
         magnet="business-owner-roadmap"
-        headline="Get the full roadmap, free."
+        headline="Get the full roadmap."
         subheadline="The wealth extraction plan your advisor should have built on day one."
         description="Enter your name and email. You'll get the complete Wealth Extraction Roadmap in your inbox within 60 seconds."
         buttonText="Send me the roadmap"

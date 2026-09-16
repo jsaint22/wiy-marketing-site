@@ -76,7 +76,7 @@ const faqs = [
   {
     question: "How is a flat fee different from what most advisors charge?",
     answer:
-      "Most advisors charge a percentage of the assets they manage (AUM), typically around 1%. That means the more money you have, the more you pay \u2014 even if the work doesn\u2019t change. Our flat fee is based on the complexity of your financial life, not your portfolio balance.",
+      "Most advisors charge a percentage of the assets they manage (AUM), typically around 1%. That means the more money you have, the more you pay \u2014 even if the work doesn\u2019t change. Our flat fee is based on your net worth rather than the assets we manage, and the rate declines as your wealth grows.",
   },
   {
     question: "What types of clients do you typically work with?",
