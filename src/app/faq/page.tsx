@@ -95,7 +95,7 @@ const categories: FAQCategory[] = [
       {
         question: "What happens on the 15-minute intro call?",
         answer:
-          "We talk about your situation, what's on your mind, and whether there's a mutual fit. No pitch. No pressure. No awkward sales script. If it makes sense for both of us, we'll schedule a deeper Getting Acquainted meeting — also free. You get a full hour with us before you spend a dollar.",
+          "We talk about your situation, what's on your mind, and whether there's a mutual fit. No pitch. No pressure. No awkward sales script. If it makes sense for both of us, we'll schedule a deeper Getting Acquainted meeting. You get a full hour with us before you spend a dollar.",
       },
       {
         question: "What happens after the intro call if we're a fit?",
@@ -126,7 +126,7 @@ const categories: FAQCategory[] = [
       {
         question: "Do you manage my investments directly?",
         answer:
-          "Yes — investment management is fully included in your flat fee. No separate AUM charge, no performance fee, no trading commissions. Our custodian is Altruist, who I selected specifically because their fee structure and technology align with how we work. You always know where your money is and what's being done with it — our fee doesn't change whether you have $1M or $20M invested with us.",
+          "Yes — investment management is fully included in your flat fee. No separate AUM charge, no performance fee, no trading commissions. Our custodian is Altruist, who I selected specifically because their fee structure and technology align with how we work. You always know where your money is and what's being done with it. Your flat fee is based on your net worth, not on the assets we manage, so moving more of your portfolio to us doesn't change what you pay.",
       },
       {
         question: "Do you prepare my taxes?",

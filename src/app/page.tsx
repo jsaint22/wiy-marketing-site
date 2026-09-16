@@ -352,7 +352,7 @@ export default function HomePage() {
       <LeadMagnetCapture
         magnet="five-questions"
         headline="The 5 questions a $3M+ household should be asking their advisor."
-        subheadline="(Free PDF)"
+        subheadline="(PDF)"
         description="Most households at this net worth can't answer these five questions about their current advisor relationship. We can — so can any advisor worth their fee. Use this list before your next review meeting."
         buttonText="Send me the 5 questions"
         successMessage="Sent. Check your inbox for The 5 Questions."
@@ -419,13 +419,13 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Free Resources */}
+      {/* Resources */}
       <section className="bg-neutral-bg py-10 sm:py-14">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
-            eyebrow="Free Resources"
+            eyebrow="Guides"
             title="Not ready to book a call? Start here."
-            subtitle="Free guides built for the people we work with. No fluff. No email spam. Just the questions your advisory team should be answering."
+            subtitle="Guides built for the people we work with. No fluff. No email spam. Just the questions your advisory team should be answering."
           />
           <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
             <Link
@@ -440,7 +440,7 @@ export default function HomePage() {
                 16 questions about 1031 exchanges, cost segregation, entity structure, and depreciation.
               </p>
               <p className="mt-3 text-sm font-semibold text-primary group-hover:text-secondary transition-colors">
-                Get the free PDF &rarr;
+                Get the PDF &rarr;
               </p>
             </Link>
             <Link
@@ -455,7 +455,7 @@ export default function HomePage() {
                 Valuation, QSBS, entity structure, and the full team you need before you exit.
               </p>
               <p className="mt-3 text-sm font-semibold text-primary group-hover:text-secondary transition-colors">
-                Get the free PDF &rarr;
+                Get the PDF &rarr;
               </p>
             </Link>
             <Link
@@ -470,7 +470,7 @@ export default function HomePage() {
                 Runway math, health insurance, entity setup, and 13 questions before you make the leap.
               </p>
               <p className="mt-3 text-sm font-semibold text-primary group-hover:text-secondary transition-colors">
-                Get the free PDF &rarr;
+                Get the PDF &rarr;
               </p>
             </Link>
           </div>

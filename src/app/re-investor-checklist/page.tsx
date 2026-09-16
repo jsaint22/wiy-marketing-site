@@ -5,9 +5,9 @@ import { LEAD_MAGNET_CTA_SUBTEXT } from "@/lib/lead-magnet-page-copy";
 
 
 export const metadata: Metadata = {
-  title: "Free: The 16-Question Tax Strategy Checklist for RE Investors",
+  title: "The 16-Question Tax Strategy Checklist for RE Investors",
   description:
-    "16 questions your advisory team should be answering about 1031 exchanges, cost segregation, entity structure, depreciation recapture, and STR tax strategy. Free checklist for serious RE investors.",
+    "16 questions your advisory team should be answering about 1031 exchanges, cost segregation, entity structure, depreciation recapture, and STR tax strategy. A checklist for serious RE investors.",
 };
 
 const checklistItems = [
@@ -63,7 +63,7 @@ export default function REInvestorChecklist() {
       <section className="bg-neutral-bg py-16 sm:py-24">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-secondary font-semibold text-sm tracking-wide uppercase">
-            Free Download
+            Checklist
           </p>
           <h1 className="mt-2 text-4xl sm:text-5xl font-bold text-primary tracking-tight">
             16 Tax Questions Your Advisory Team Should Be Answering Right Now
@@ -112,7 +112,7 @@ export default function REInvestorChecklist() {
       {/* Email capture */}
       <LeadMagnetCapture
         magnet="re-investor-checklist"
-        headline="Get the full checklist, free."
+        headline="Get the full checklist."
         subheadline="16 questions. Zero fluff. Built for investors who actually run the numbers."
         description="Enter your name and email. You'll get the complete Tax Strategy Checklist in your inbox within 60 seconds. No spam."
         buttonText="Send me the checklist"

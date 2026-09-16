@@ -96,7 +96,7 @@ export default function LeadMagnetCapture({
                 rel="noopener noreferrer"
                 className="inline-block mt-3 px-6 py-2.5 bg-secondary text-primary text-sm font-semibold rounded-lg hover:bg-secondary/90 transition-colors"
               >
-                Book a free 15-min call
+                Book a 15-minute intro call
               </a>
             </div>
           </div>

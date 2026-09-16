@@ -5,9 +5,9 @@ import { LEAD_MAGNET_CTA_SUBTEXT } from "@/lib/lead-magnet-page-copy";
 
 
 export const metadata: Metadata = {
-  title: "Free: The W-2 Escape Plan Financial Readiness Checklist",
+  title: "The W-2 Escape Plan Financial Readiness Checklist",
   description:
-    "Runway math, health insurance planning, entity setup, retirement account strategy, and income replacement planning. Free checklist for professionals going independent.",
+    "Runway math, health insurance planning, entity setup, retirement account strategy, and income replacement planning. A checklist for professionals going independent.",
 };
 
 const checklistSections = [
@@ -58,7 +58,7 @@ export default function W2EscapePlan() {
       <section className="bg-neutral-bg py-16 sm:py-24">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-secondary font-semibold text-sm tracking-wide uppercase">
-            Free Download
+            Checklist
           </p>
           <h1 className="mt-2 text-4xl sm:text-5xl font-bold text-primary tracking-tight">
             The W-2 Escape Plan
@@ -113,7 +113,7 @@ export default function W2EscapePlan() {
       {/* Email capture */}
       <LeadMagnetCapture
         magnet="w2-escape-plan"
-        headline="Get the full escape plan, free."
+        headline="Get the full escape plan."
         subheadline="17 questions that separate a calculated leap from an expensive mistake."
         description="Enter your name and email. You'll get the complete W-2 Escape Plan in your inbox within 60 seconds."
         buttonText="Send me the escape plan"

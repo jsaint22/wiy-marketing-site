@@ -7,7 +7,7 @@ import { LEAD_MAGNET_CTA_SUBTEXT } from "@/lib/lead-magnet-page-copy";
 export const metadata: Metadata = {
   title: "5 Questions a $3M–$30M Household Should Ask Their Advisor",
   description:
-    "A free diagnostic PDF. Five substantive questions any household at $3M–$30M of net worth should be able to put to any advisor, including us. Use it before your next review meeting.",
+    "A diagnostic PDF. Five substantive questions any household at $3M–$30M of net worth should be able to put to any advisor, including us. Use it before your next review meeting.",
 };
 
 // On-page we show only the questions themselves. The "what a good answer looks
@@ -45,7 +45,7 @@ export default function FiveQuestionsPage() {
   return (
     <main>
       <CinematicHero
-        eyebrow="Free Resource"
+        eyebrow="Diagnostic"
         headline={
           <>
             5 Questions Every High-Net-Worth Household Should Be Asking Their Advisor
@@ -111,7 +111,7 @@ export default function FiveQuestionsPage() {
             Knowing the questions is the easy half. The harder half is knowing
             what a strong answer to each one actually sounds like, so you can
             tell real substance from a polished deflection. That&apos;s in the
-            free PDF below, along with a simple way to score where your current
+            PDF below, along with a simple way to score where your current
             advisor stands.
           </p>
         </div>
@@ -122,7 +122,7 @@ export default function FiveQuestionsPage() {
         <LeadMagnetCapture
           magnet="five-questions"
           headline="What does a good answer actually sound like?"
-          subheadline="The free PDF gives you a strong-answer benchmark for all five questions, plus a quick way to score where your current advisor stands."
+          subheadline="The PDF gives you a strong-answer benchmark for all five questions, plus a quick way to score where your current advisor stands."
           description="Enter your name and email and I'll send the PDF to your inbox within 60 seconds. No spam. Bring it to your next review."
           buttonText="Send me the PDF"
           successMessage="Sent! Check your inbox for the 5 Questions PDF."
