@@ -44,6 +44,18 @@ export interface LeadMagnetWebhookPayload {
   source_ip: string;
   source_user_agent: string;
   external_request_id: string;
+  /**
+   * Resend id of the Category 1.b delivery email, when it actually went out.
+   * The receiver writes the client_comms_log row from this so the SR4 1.b
+   * cross-sequence cap can count the delivery email. This site has no Supabase
+   * client on purpose, and adding a service-role key here to write one row
+   * would be a new credential surface, so the receipt rides the HMAC channel.
+   * Omitted when the send was skipped (no RESEND_API_KEY on preview) or failed,
+   * which is what stops ops-portal logging a send that never happened.
+   */
+  delivery_resend_id?: string;
+  /** Subject of that delivery email; stored on the comms row for the ledger. */
+  delivery_subject?: string;
 }
 
 export interface EmitResult {
