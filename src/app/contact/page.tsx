@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Talk to a Flat-Fee Financial Planner",
   description:
-    "Book a 15-minute intro call with Joshua St. Laurent, CFP®, CFT™, APFC®, ACC. Flat-fee fiduciary financial planning from Lake Tahoe, Nevada. No pitch, no pressure.",
+    "Book a 15-minute intro call with Joshua St. Laurent, CFP®, CFT™, APFC®, ACC. Flat-fee fiduciary financial planning from Lake Tahoe, Nevada.",
 };
 
 export default function ContactPage() {
@@ -14,7 +14,7 @@ export default function ContactPage() {
       <section className="bg-primary py-10 sm:py-14">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-3xl sm:text-5xl font-bold text-white">
-            15 minutes. No pitch. Just a real conversation.
+            15 minutes. By the end, you&rsquo;ll know whether it makes sense to keep talking.
           </h1>
           <p className="mt-4 text-lg sm:text-xl text-white/80">
             You&rsquo;ll talk with Josh directly. If we&rsquo;re not a fit,
@@ -124,7 +124,7 @@ export default function ContactPage() {
                   If we both decide it&rsquo;s a fit, the next step is our Getting Acquainted meeting &mdash; a deeper conversation about your full financial picture. No commitment until you&rsquo;re ready.
                 </p>
                 <p>
-                  If we&rsquo;re not the right firm for you, we&rsquo;ll tell you honestly and point you to someone who is. No pressure. No follow-up spam.
+                  If we&rsquo;re not the right firm for you, we&rsquo;ll tell you honestly and point you to someone who is.
                 </p>
               </div>
             </div>

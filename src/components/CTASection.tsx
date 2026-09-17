@@ -10,7 +10,7 @@ interface CTASectionProps {
 
 export default function CTASection({
   headline = "Ready to design the life this money is supposed to fund?",
-  subtext = "Book a 15-minute intro call. No pitch. No pressure. Just a conversation about what matters to you.",
+  subtext = "Book a 15-minute intro call. By the end, you'll know whether it makes sense to keep talking.",
   buttonText = "Book Your Intro Call",
   buttonHref = "https://cal.com/jsaint/intro-call",
   variant = "primary",

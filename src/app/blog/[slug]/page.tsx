@@ -161,7 +161,7 @@ export default async function BlogPostPage({ params }: Props) {
               Want to talk about how this applies to your situation?
             </p>
             <p className="mt-2 text-sm text-neutral-dark/70">
-              15 minutes. No pitch. Just a real conversation about what you&rsquo;re building.
+              15 minutes. By the end, you&rsquo;ll know whether it makes sense to keep talking.
             </p>
             <a
               href="https://cal.com/jsaint/intro-call"

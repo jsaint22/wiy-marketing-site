@@ -25,6 +25,10 @@ const FILES = [
   "src/app/pricing/page.tsx",
   "src/app/contact/page.tsx",
   "src/app/financial-planner-lake-tahoe/page.tsx",
+  "src/app/about/page.tsx",
+  "src/app/services/page.tsx",
+  "src/app/virtual-family-office/page.tsx",
+  "src/components/CTASection.tsx",
   "src/app/5-questions/page.tsx",
   "src/app/re-investor-checklist/page.tsx",
   "src/app/business-owner-roadmap/page.tsx",
@@ -45,6 +49,20 @@ const BANNED: Array<[string, RegExp]> = [
   ["'free' on the intro call", /free (\d+-min|15-minute|intro call)/i],
   ["intro call represented as free", /intro call is free/i],
   ["Getting Acquainted meeting represented as free", /meeting .{0,12}also free/i],
+
+  // Added 2026-09-17 (Josh's call). "No pitch. No pressure." was the third
+  // 2026-09-15 op-debt finding: it promises how an advisory interaction will
+  // feel, the same class as the "free" and personal-attention language already
+  // removed. Taking it out surfaced four more phrasings of the same promise,
+  // plus two that restated the "free" claim without using the word — which is
+  // why the sweep above missed them.
+  ["no-pitch / no-pressure promise", /no pitch|no pressure/i],
+  ["'no strings' / 'no hidden fees' absence claim", /no strings|no hidden fees/i],
+  ["intro call cost restated without the word 'free'", /doesn.t cost anything|neither does the getting acquainted/i],
+  ["'before you spend a dollar'", /before you spend a dollar/i],
+  // The SR4 1.b sequences send up to five automated emails, so this promise is
+  // no longer true as well as being a promise.
+  ["'no follow-up spam'", /no follow-?up spam/i],
 ];
 
 function withoutComments(source: string): string {

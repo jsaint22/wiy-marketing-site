@@ -261,7 +261,7 @@ export default function FinancialPlannerLakeTahoePage() {
       {/* CTA */}
       <CTASection
         headline="Ready to work with a local, flat-fee fiduciary?"
-        subtext="Book a 15-minute intro call. No pitch. No pressure. Just a conversation about what matters to you."
+        subtext="Book a 15-minute intro call. By the end, you'll know whether it makes sense to keep talking."
       />
     </>
   );
