@@ -91,7 +91,7 @@ const faqs = [
   {
     question: "How does the flat fee work?",
     answer:
-      "Your fee isn't tied to your portfolio's day-to-day performance. We set a flat annual fee based on your total net worth (excluding your primary residence) when we begin working together, and we reassess that fee on your anniversary date each year. This means you know exactly what you're paying — no percentage of assets, no commissions, no hidden fees.",
+      "Your fee isn't tied to your portfolio's day-to-day performance. We set a flat annual fee based on your total net worth (excluding your primary residence) when we begin working together, and we reassess that fee on your anniversary date each year. This means you know exactly what you're paying — no percentage of assets and no commissions.",
   },
   {
     question: "Can you help if I already have a financial plan?",
@@ -200,7 +200,7 @@ export default function ServicesPage() {
               {
                 step: "01",
                 title: "Intro call",
-                text: "15 minutes. No pitch. No slides. You tell us what's going on. We tell you how we work. If there's a fit, we move forward that week.",
+                text: "15 minutes. You tell us what's going on. We tell you how we work. If there's a fit, we move forward that week.",
               },
               {
                 step: "02",

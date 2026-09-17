@@ -169,8 +169,8 @@ export default function ForFireFollowersPage() {
             requires audit-defensible timing, the estate plan that needs to
             outlive your spreadsheet. Coordinated planning across tax,
             healthcare, withdrawal sequencing, and estate, charged as a flat
-            fee based on complexity. No AUM percentage. No pressure to hand
-            over the portfolio.
+            fee based on complexity. No AUM percentage, and moving the portfolio
+            to us is not a condition of the work.
           </p>
         </div>
       </section>

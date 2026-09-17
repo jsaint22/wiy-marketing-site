@@ -95,7 +95,7 @@ const categories: FAQCategory[] = [
       {
         question: "What happens on the 15-minute intro call?",
         answer:
-          "We talk about your situation, what's on your mind, and whether there's a mutual fit. No pitch. No pressure. No awkward sales script. If it makes sense for both of us, we'll schedule a deeper Getting Acquainted meeting. You get a full hour with us before you spend a dollar.",
+          "We talk about your situation, what's on your mind, and whether there's a mutual fit. If it makes sense for both of us, we'll schedule a longer Getting Acquainted meeting. If it doesn't, we'll say so.",
       },
       {
         question: "What happens after the intro call if we're a fit?",
@@ -345,7 +345,7 @@ export default function FAQPage() {
       {/* Bottom CTA */}
       <CTASection
         headline="Still have questions?"
-        subtext="Book a 15-minute intro call. No pitch. No pressure. Just a conversation about what matters to you."
+        subtext="Book a 15-minute intro call. By the end, you'll know whether it makes sense to keep talking."
         buttonText="Book Your Intro Call"
       />
     </>

@@ -168,7 +168,7 @@ export default function VirtualFamilyOfficePage() {
 
       <CTASection
         headline="Ready for an advisor who sees the whole picture?"
-        subtext="Book a 15-minute intro call. No pitch. No pressure. Just a conversation about what\u2019s working, what\u2019s not, and whether this model fits your life."
+        subtext="Book a 15-minute intro call. We\u2019ll talk about what\u2019s working, what\u2019s not, and whether this model fits your life."
       />
     </>
   );

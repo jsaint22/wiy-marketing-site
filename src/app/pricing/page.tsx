@@ -82,7 +82,7 @@ const faqs = [
   {
     question: "Do you charge for the intro call?",
     answer:
-      "No. The initial 15-minute intro call doesn\u2019t cost anything, and if we\u2019re a mutual fit, neither does the Getting Acquainted meeting that follows. You get over an hour with us to decide whether this is the right partnership \u2014 no pressure, no hidden fees, no strings.",
+      "No. The intro call, and the Getting Acquainted meeting that follows if we\u2019re a mutual fit, are both part of deciding whether to work together. Fees begin when you sign an advisory agreement, and the full schedule is on this page.",
   },
   {
     question: "What's included in the flat fee?",
