@@ -106,7 +106,7 @@ export default function RootLayout({
                   url: "https://ggu.edu/faculty/josh-st-laurent-adjunct-professor/",
                 },
                 hasCredential: [
-                  { "@type": "EducationalOccupationalCredential", name: "MS — Financial Life Planning, Golden Gate University" },
+                  { "@type": "EducationalOccupationalCredential", name: "MS, Advanced Financial Planning (concentration in Financial Life Planning), Golden Gate University" },
                   { "@type": "EducationalOccupationalCredential", name: "CFP®" },
                   { "@type": "EducationalOccupationalCredential", name: "CFT™" },
                   { "@type": "EducationalOccupationalCredential", name: "APFC®" },
