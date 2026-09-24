@@ -81,7 +81,7 @@ const faqs = [
   {
     question: "What types of clients do you typically work with?",
     answer:
-      "First-generation entrepreneurs, real estate investors, and people pursuing financial independence \u2014 typically with a net worth of $1M or more. If your financial life has outgrown basic advice and you need real planning, we\u2019re built for you.",
+      "First-generation entrepreneurs, real estate investors, and people pursuing financial independence, typically households with roughly $3 million to $30 million in net worth. If your financial life has outgrown basic advice and you need real planning, we\u2019re built for you.",
   },
 ];
 

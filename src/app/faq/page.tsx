@@ -67,9 +67,9 @@ const categories: FAQCategory[] = [
           "AUM fees create a structural conflict of interest. When your advisor's income grows as your account grows — regardless of whether they did anything — the incentives are misaligned. A flat fee means we get paid for the advice, not for holding your assets. Run the math on what you're actually paying your current advisor — the numbers usually speak for themselves.",
       },
       {
-        question: "What's the minimum net worth to work with you?",
+        question: "Is there a minimum net worth to work with you?",
         answer:
-          "Our minimum annual fee is $15,000, which typically makes sense for clients with a net worth of $1M or higher (excluding primary residence). Below that threshold, a flat-fee model likely isn't cost-effective for you yet — and we'd rather tell you that upfront than sign you up anyway.",
+          "Wealth In Yourself is built for households with roughly $3 million to $30 million in net worth, excluding your primary residence. That's where the complexity we're built for, across tax, entities, real estate, and estate coordination, actually shows up. The minimum annual fee is $15,000, and every engagement starts with a conversation about whether the fit is right. If we're not the right firm for you, we'll say so up front.",
       },
       {
         question: "What happens to my fee as my net worth grows?",

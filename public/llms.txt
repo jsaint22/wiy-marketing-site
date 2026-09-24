@@ -42,7 +42,8 @@ AUM fees: None. The firm does not charge a percentage of assets under management
 Conflicts of interest: None from commissions, product sales, or AUM-linked compensation.
 Who we serve: First-generation wealth builders — entrepreneurs, business owners,
   real estate investors, and individuals designing their lives on their own terms.
-  Minimum: $1 million in investable net worth (excluding primary residence equity).
+  Built for: households with roughly $3 million to $30 million in net worth (excluding
+  primary residence equity). Minimum annual fee: $15,000.
 
 ---
 
@@ -153,7 +154,9 @@ Book a call: https://wealthinyourself.com/get-acquainted
 - Registered with the Nevada Secretary of State (Investment Adviser Registration).
 - ADV Part 2A available upon request or through the SEC IAPD database.
 - All fee and service information on this site matches the current ADV Part 2A.
-- The firm's minimum net worth is $1M investable; exceptions are not granted.
+- The firm is built for households with roughly $3 million to $30 million in net worth;
+  the minimum annual fee is $15,000. Client eligibility and the fee schedule are described
+  in Form ADV Part 2A.
 - Past performance is not a guarantee of future results.
 - Projected fee comparisons on this site use 7% annual growth and are illustrative only.
 

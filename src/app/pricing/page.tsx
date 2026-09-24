@@ -102,7 +102,7 @@ const faqs = [
   {
     question: "Is there a minimum net worth requirement?",
     answer:
-      "Our minimum annual fee is $15,000, which typically makes sense for clients with a net worth of $1M or higher (excluding primary residence). We can work with clients starting at $500K in net worth, but at that level you'd pay the $15,000 annual flat fee. Below $500K, a flat-fee model likely isn't the most cost-effective option for you, and we'd rather be honest about that upfront.",
+      "Our minimum annual fee is $15,000, and the firm is built for households with roughly $3 million to $30 million in net worth, excluding your primary residence. At that level the flat fee covers everything on this page. If your situation is simpler than that, a flat fee this size probably isn't the right tool yet, and we'd rather tell you that up front.",
   },
   {
     question: "Can I cancel at any time?",
@@ -112,7 +112,7 @@ const faqs = [
   {
     question: "Why not just charge a flat dollar amount?",
     answer:
-      "Because a $500/month fee means something very different to someone with $500K versus $10M. Our tiered model scales with complexity — higher net worth typically means more accounts, entities, and tax considerations. The declining rate ensures you're never overpaying.",
+      "Because the same flat dollar amount means something very different to a household at $3M versus one at $30M. Our tiered model scales with complexity — higher net worth typically means more accounts, entities, and tax considerations. The declining rate ensures you're never overpaying.",
   },
   {
     question: "Do fees change if my net worth decreases?",

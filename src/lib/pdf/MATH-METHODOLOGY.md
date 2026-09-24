@@ -22,7 +22,7 @@ Verified via Python audit on April 18, 2026.
 | 4 | Above $10,000,000 | 0.10% |
 
 **Annual minimum:** $15,000
-**Below $500K:** Not eligible (fee = $0)
+**Minimum applies at every net worth:** there is no $0 tier (the prior "below $500K = $0" branch was removed 2026-06-30, Option 3, /compliance-cleared)
 
 Example at $5M:
 - First $1M × 1.00% = $10,000

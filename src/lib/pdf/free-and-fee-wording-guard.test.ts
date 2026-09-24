@@ -38,6 +38,10 @@ const FILES = [
   "src/app/for-real-estate-investors/page.tsx",
   "src/app/blog/[slug]/page.tsx",
   "src/components/LeadMagnetCapture.tsx",
+  // Added 2026-09-24 with the target-range sweep below.
+  "src/app/vs-aum/page.tsx",
+  "src/components/FeeCalculator.tsx",
+  "public/llms.txt",
 ];
 
 const BANNED: Array<[string, RegExp]> = [
@@ -63,6 +67,18 @@ const BANNED: Array<[string, RegExp]> = [
   // The SR4 1.b sequences send up to five automated emails, so this promise is
   // no longer true as well as being a promise.
   ["'no follow-up spam'", /no follow-?up spam/i],
+
+  // Added 2026-09-24 (Josh's call). The site said the firm works with households
+  // "starting at $500K" and "typically $1M or higher," and llms.txt said
+  // "exceptions are not granted." Josh's target is $3M to $30M households, and the
+  // filed ADV Part 2A Item 7 (2026-06-26) recommends $1,000,000, negotiable at the
+  // firm's discretion. Copy now states the range and the $15,000 minimum fee, and
+  // no net-worth floor below the range. Regexes are scoped to net-worth phrasing so
+  // the fee schedule ("First $1M") and lead-magnet audience lines stay legal.
+  ["sub-range net-worth floor ($1M or higher / or more / $1M+ net worth)", /\$1M(\+ in total net worth|\+ net worth| or higher| or more)/i],
+  ["'typically $1M+' fit statement", /typically \$1M\+/i],
+  ["$500K client-floor statement", /(starting at|from|with) \$500K in net worth|below \$500K/i],
+  ["'exceptions are not granted' (contradicts ADV Item 7 'negotiable')", /exceptions are not granted/i],
 ];
 
 function withoutComments(source: string): string {

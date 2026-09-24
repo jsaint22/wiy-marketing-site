@@ -158,10 +158,10 @@ export default function FeeCalculator({ standalone = false }: { standalone?: boo
                     Honest math: at {formatNetWorth(netWorth)}, a 1% AUM advisor costs less per year.
                   </p>
                   <p className="text-sm text-neutral-dark/70 mt-2 leading-relaxed">
-                    Our {formatUSD(annual)}/year minimum is designed for clients with
-                    $1M+ in net worth, where the flat fee saves you money every year
-                    — and the gap grows as your wealth grows. Below $1M, percentage-based
-                    pricing may be more cost-effective.
+                    Our {formatUSD(annual)}/year minimum is built for households with
+                    roughly $3 million to $30 million in net worth, where the flat fee
+                    saves you money every year, and the gap grows as your wealth grows.
+                    Below that range, percentage-based pricing may cost less.
                   </p>
                 </div>
               </div>

@@ -19,10 +19,12 @@ import { tieredAnnualFee } from "../fee-canon";
 
 /**
  * Net-worth threshold below which the public calculator shows a "Below our
- * minimum — let's talk" MESSAGE instead of a fee figure (FeeCalculator.tsx),
- * matching the published pricing FAQ ("Below $500K, a flat-fee model likely
- * isn't the most cost-effective option for you"). This is a DISPLAY/messaging
- * threshold ONLY — it is NOT a fee floor. The fee function below always returns
+ * minimum — let's talk" MESSAGE instead of a fee figure (FeeCalculator.tsx).
+ * The published FAQ no longer names a sub-$1M dollar threshold: as of
+ * 2026-09-24 the site says the firm is built for households with roughly
+ * $3M to $30M in net worth with a $15,000 minimum annual fee. The slider's
+ * floor is $1.5M, so this branch is a safety net, not a stated policy. This
+ * is a DISPLAY/messaging threshold ONLY — it is NOT a fee floor. The fee function below always returns
  * the canonical fee (>= the $15k minimum, which per canon applies at every net
  * worth); it never returns $0.
  *
