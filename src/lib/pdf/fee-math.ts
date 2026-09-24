@@ -45,6 +45,41 @@ export function calculateWiyAnnualFee(netWorth: number): number {
   return tieredAnnualFee(netWorth);
 }
 
+/**
+ * Net worths used for the published fee illustrations (home-page ladder,
+ * pricing milestones, llms.txt examples). Josh, 2026-09-24: every illustration
+ * starts inside the $3M–$30M target range; no row shows the $15k minimum
+ * binding at $1M. Pinned in fee-math.test.ts.
+ */
+export const ILLUSTRATION_NET_WORTHS = [
+  3_000_000, 5_000_000, 10_000_000, 20_000_000, 30_000_000,
+] as const;
+
+/** "$3M", "$30M", "$3.6M" — short net-worth label for illustration rows. */
+export function formatNetWorthM(value: number): string {
+  const m = value / 1_000_000;
+  if (Number.isInteger(m)) return `$${m}M`;
+  return `$${m.toFixed(2).replace(/0+$/, "").replace(/\.$/, "")}M`;
+}
+
+/**
+ * One fee-illustration row, entirely from canon: annual fee, rounded monthly
+ * figure, effective rate. The home page and pricing page render their example
+ * ladders from this so no illustrated figure is ever typed by hand.
+ */
+export function feeIllustration(netWorth: number) {
+  const annual = calculateWiyAnnualFee(netWorth);
+  const monthly = Math.round(annual / 12);
+  return {
+    netWorth,
+    label: formatNetWorthM(netWorth),
+    annual,
+    monthly,
+    monthlyLabel: `${formatUSD(monthly)}/mo`,
+    effectiveRate: `${((annual / netWorth) * 100).toFixed(2)}%`,
+  };
+}
+
 export function formatUSD(value: number): string {
   return new Intl.NumberFormat("en-US", {
     style: "currency",

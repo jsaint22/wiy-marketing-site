@@ -4,7 +4,12 @@ import SectionHeading from "@/components/SectionHeading";
 import FeeCalculator from "@/components/FeeCalculator";
 import FAQSection from "@/components/FAQSection";
 import CTASection from "@/components/CTASection";
-import { projectFees, formatUSD } from "@/lib/pdf/fee-math";
+import {
+  projectFees,
+  formatUSD,
+  feeIllustration,
+  ILLUSTRATION_NET_WORTHS,
+} from "@/lib/pdf/fee-math";
 import { CinematicHero } from "@/components/cinematic/CinematicHero";
 import { FeeTierReveal } from "@/components/cinematic/FeeTierReveal";
 
@@ -21,14 +26,10 @@ const tiers = [
   { range: "Above $10M", rate: "0.10%", note: "everything after" },
 ];
 
-const milestones = [
-  { nw: "$1M", fee: "$1,250/mo", effective: "1.50%" },
-  { nw: "$3M", fee: "$1,417/mo", effective: "0.57%" },
-  { nw: "$5M", fee: "$1,750/mo", effective: "0.42%" },
-  { nw: "$10M", fee: "$2,583/mo", effective: "0.31%" },
-  { nw: "$20M", fee: "$3,417/mo", effective: "0.21%" },
-  { nw: "$30M", fee: "$4,250/mo", effective: "0.17%" },
-];
+// Example milestones, computed from canon (src/lib/fee-canon.ts via fee-math.ts)
+// so no illustrated figure is typed by hand. The ladder starts inside the
+// $3M–$30M range (Josh, 2026-09-24); pinned in fee-math.test.ts.
+const milestones = ILLUSTRATION_NET_WORTHS.map(feeIllustration);
 
 const includedServices = [
   {
@@ -207,8 +208,8 @@ export default function PricingPage() {
             </p>
           </div>
 
-          {/* Example milestones — animated CountUp reveal. Values preserved verbatim
-              from the original milestones array (formula-derived, Compliance-attested). */}
+          {/* Example milestones — animated CountUp reveal. Values come from
+              feeIllustration() (canon), see `milestones` above. */}
           <div className="mt-12">
             <h3 className="text-center text-xl sm:text-2xl font-bold text-primary mb-6">
               What that looks like in practice
@@ -216,9 +217,9 @@ export default function PricingPage() {
             <div className="max-w-3xl mx-auto">
               <FeeTierReveal
                 tiers={milestones.map((m) => ({
-                  netWorth: m.nw,
-                  monthly: parseInt(m.fee.replace(/[^0-9]/g, ""), 10),
-                  effectiveRate: m.effective,
+                  netWorth: m.label,
+                  monthly: m.monthly,
+                  effectiveRate: m.effectiveRate,
                 }))}
               />
             </div>

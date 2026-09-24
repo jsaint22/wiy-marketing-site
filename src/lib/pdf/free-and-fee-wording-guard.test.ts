@@ -42,6 +42,8 @@ const FILES = [
   "src/app/vs-aum/page.tsx",
   "src/components/FeeCalculator.tsx",
   "public/llms.txt",
+  "src/app/page.tsx",
+  "src/app/case-studies/page.tsx",
 ];
 
 const BANNED: Array<[string, RegExp]> = [
@@ -79,6 +81,9 @@ const BANNED: Array<[string, RegExp]> = [
   ["'typically $1M+' fit statement", /typically \$1M\+/i],
   ["$500K client-floor statement", /(starting at|from|with) \$500K in net worth|below \$500K/i],
   ["'exceptions are not granted' (contradicts ADV Item 7 'negotiable')", /exceptions are not granted/i],
+  // Josh, 2026-09-24 (second decision): every fee illustration starts inside the
+  // $3M–$30M range. A "$1M net worth" row showed the minimum binding at $1M.
+  ["'$1M net worth' illustration row", /\$1M net worth/i],
 ];
 
 function withoutComments(source: string): string {

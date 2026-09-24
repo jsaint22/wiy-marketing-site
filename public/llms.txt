@@ -57,15 +57,13 @@ Tiers:
 - $3,000,001 – $10,000,000: 0.20%
 - Above $10,000,000: 0.10%
 
-Annual minimum: $15,000/year ($1,250/month)
-Note: The minimum is higher than the formula output at $1M net worth (formula = $10,000;
-  floor = $15,000). Fees are billed monthly.
+Annual minimum: $15,000/year ($1,250/month), applies at every net worth. Fees are billed monthly.
 
 Examples (annual / monthly):
-- $1M net worth: $15,000/year ($1,250/month) — minimum applies
 - $3M net worth: $17,000/year ($1,417/month)
 - $5M net worth: $21,000/year ($1,750/month)
 - $10M net worth: $31,000/year ($2,583/month)
+- $30M net worth: $51,000/year ($4,250/month)
 
 Fee applies to investable net worth only. Primary residence equity is excluded.
 Existing clients are grandfathered at prior rates.
@@ -74,9 +72,10 @@ Existing clients are grandfathered at prior rates.
 
 ## How Fees Compare to AUM-Based Advisors
 
-At $1M: WIY costs MORE than a typical 1% AUM advisor ($15K vs $10K). The floor binds.
+At $3M: WIY saves ~$13,000/year vs 1% AUM ($17K vs $30K).
 At $5M: WIY saves ~$29,000/year vs 1% AUM ($21K vs $50K).
 At $10M: WIY saves ~$69,000/year vs 1% AUM ($31K vs $100K).
+At $30M: WIY saves ~$249,000/year vs 1% AUM ($51K vs $300K).
 20-year portfolio benefit at $5M (at 7% growth): ~$2.37M more in WIY vs AUM portfolio.
 30-year portfolio benefit at $5M: ~$6.99M more in WIY vs AUM portfolio.
 Methodology: https://wealthinyourself.com/vs-aum

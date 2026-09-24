@@ -35,8 +35,12 @@ for on-page optimization alignment.
 | fiduciary financial advisor | `/fiduciary` | Page dedicated to topic |
 | fee-only vs fee-based advisor | `/faq`, `/fiduciary` | FAQ has answer |
 | is flat fee better than AUM | `/vs-aum` | Page answers question |
-| financial planning minimum net worth $1 million | `/pricing`, `/faq` | In FAQ + pricing |
+| flat-fee financial planner for $3M to $30M households | `/pricing`, `/faq` | In FAQ + pricing (retargeted 2026-09-24) |
 | $15,000 financial planning minimum fee | `/pricing`, `/faq` | In FAQ copy |
+
+> Retargeted 2026-09-24 (Josh): the site no longer states a $1 million minimum net worth.
+> Fit is stated as households with roughly $3M to $30M in net worth and a $15,000 minimum
+> annual fee. This file is a keyword target list, not live copy; targets follow the copy.
 
 ---
 
@@ -47,7 +51,7 @@ blog, and llms.txt.
 
 | Question | Coverage | Format |
 |----------|----------|--------|
-| What does a flat-fee financial planner charge at $1M net worth? | `/pricing`, `/calculator`, `llms.txt` | Table + calculator |
+| What does a flat-fee financial planner charge at $3M net worth? | `/pricing`, `/calculator`, `llms.txt` | Table + calculator |
 | Is 1% AUM fee worth it? | `/vs-aum` | Comparison page |
 | What is a fiduciary financial advisor? | `/fiduciary`, `/faq` | Definition + FAQ |
 | What is a virtual family office? | `/virtual-family-office`, `/faq` | Page + FAQ |
