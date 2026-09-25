@@ -74,7 +74,8 @@ export default function REInvestorChecklist() {
             This checklist gives you the 16 questions to put to your team.
           </p>
           <p className="mt-4 text-sm text-neutral-dark/70 font-medium">
-            Built for investors with 3+ properties and $1M+ in real estate equity.
+            Built for investors with 3+ properties and a household net worth of roughly
+            $3 million to $30 million.
           </p>
         </div>
       </section>

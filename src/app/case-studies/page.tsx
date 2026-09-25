@@ -53,21 +53,21 @@ const caseStudies = [
   },
   {
     label: "The FIRE Couple",
-    netWorth: "$2.8M",
+    netWorth: "$3.6M",
     highlight: "7 extra years of runway",
     highlightColor: "text-secondary",
     situation:
-      "Dual-income couple, both 48, combined $340K income. $2.8M net worth: $1.6M in traditional 401(k)s, $400K taxable brokerage, $200K Roth, $600K in home equity. Target: retire at 52.",
+      "Dual-income couple, both 48, combined $340K income. $3.6M net worth: $2M in traditional 401(k)s, $600K taxable brokerage, $400K Roth, $600K in home equity. Target: retire at 52.",
     challenge:
-      "No withdrawal sequencing plan. $1.6M in pre-tax accounts with no Roth conversion strategy — meaning a massive tax bomb at RMD age. Healthcare costs for 13 years of pre-Medicare coverage completely unmodeled. Original plan ran out of money at age 81.",
+      "No withdrawal sequencing plan. $2M in pre-tax accounts with no Roth conversion strategy — meaning a massive tax bomb at RMD age. Healthcare costs for 13 years of pre-Medicare coverage completely unmodeled. Original plan ran out of money at age 81.",
     approach: [
       "Built a 40-year withdrawal sequencing model across all account types with Monte Carlo stress testing",
-      "Designed an 8-year Roth conversion ladder targeting $200K/year in conversions during the low-income window between retirement and Social Security",
+      "Designed a 10-year Roth conversion ladder targeting up to $200K/year in conversions during the low-income window between retirement and Social Security, sized year by year against the healthcare bridge below",
       "Modeled geographic arbitrage: keep Tahoe primary residence, spend 4 months/year in Portugal at ~40% lower cost of living",
-      "Built healthcare bridge plan: ACA eligibility by managing MAGI below 400% FPL during conversion years, with expat insurance as backup",
+      "Built the healthcare bridge plan for the 13 pre-Medicare years: each year's conversion amount weighed against the marketplace premium credits it would cost, so some years convert less and keep the subsidy, with expat insurance as the backup",
     ],
     outcome:
-      "7 additional years of projected financial runway vs. their original plan (money lasts to 88, not 81), based on Monte Carlo analysis with historical return assumptions. $150K+ in projected lifetime tax savings from the Roth conversion ladder, dependent on future tax rates and conversion timing. Clear month-by-month retirement income plan they can actually follow. WIY annual fee: $15,000.",
+      "7 additional years of projected financial runway vs. their original plan (money lasts to 88, not 81), based on Monte Carlo analysis with historical return assumptions. $150K+ in projected lifetime tax savings from the Roth conversion ladder, dependent on future tax rates and conversion timing. Clear month-by-month retirement income plan they can actually follow. WIY annual fee: $17,000.",
     icon: "M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z",
     segment: "FIRE Followers",
     segmentHref: "/for-fire-followers",

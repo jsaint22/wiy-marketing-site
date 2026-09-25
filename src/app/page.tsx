@@ -6,6 +6,7 @@ import LeadMagnetCapture from "@/components/LeadMagnetCapture";
 import { CinematicHero } from "@/components/cinematic/CinematicHero";
 import { RevealOnScroll } from "@/components/cinematic/RevealOnScroll";
 import { getAllPosts } from "@/lib/blog";
+import { feeIllustration } from "@/lib/pdf/fee-math";
 
 const clientPaths = [
   {
@@ -370,12 +371,12 @@ export default function HomePage() {
                 centered={false}
               />
               <div className="mt-8 space-y-4">
-                {[
-                  ["$3M net worth", "~$1,417/mo", "0.57%"],
-                  ["$5M net worth", "~$1,750/mo", "0.42%"],
-                  ["$10M net worth", "~$2,583/mo", "0.31%"],
-                  ["$1M net worth", "~$1,250/mo", "1.50%"],
-                ].map(([nw, fee, rate]) => (
+                {/* Ladder rendered from canon (fee-canon.ts via feeIllustration);
+                    starts inside the $3M–$30M range per Josh, 2026-09-24. */}
+                {[3_000_000, 5_000_000, 10_000_000, 30_000_000]
+                  .map(feeIllustration)
+                  .map((r) => [`${r.label} net worth`, `~${r.monthlyLabel}`, r.effectiveRate])
+                  .map(([nw, fee, rate]) => (
                   <div
                     key={nw}
                     className="flex items-center justify-between bg-neutral-bg rounded-lg p-4 border border-neutral-bg"

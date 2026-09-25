@@ -22,7 +22,7 @@ Verified via Python audit on April 18, 2026.
 | 4 | Above $10,000,000 | 0.10% |
 
 **Annual minimum:** $15,000
-**Below $500K:** Not eligible (fee = $0)
+**Minimum applies at every net worth:** there is no $0 tier (the prior "below $500K = $0" branch was removed 2026-06-30, Option 3, /compliance-cleared)
 
 Example at $5M:
 - First $1M × 1.00% = $10,000
@@ -59,16 +59,17 @@ This captures both the direct fee savings AND the lost compounding on those fees
 | WIY ending portfolio | $18,194,419 | $35,146,187 |
 | **Portfolio benefit** | **$2,369,210** | **$6,992,247** |
 
-### $1M Starting Portfolio
+### $3M Starting Portfolio
 
-Note: WIY's $15K annual minimum is HIGHER than 1% AUM at $1M ($10K). WIY becomes
-cheaper only after the portfolio grows past ~$1.5M. Long-term the lower tiers win,
-but year-1 cost is higher for WIY at this level.
+Computed 2026-09-24 via `projectFees()` (the engine the tests verify against the April 2026
+Python audit at $5M / $10M / $25M). Replaces the former $1M section: published illustrations
+start inside the $3M–$30M target range and no row shows the minimum binding at $1M (Josh,
+2026-09-24). Year 1: AUM $30,000 vs WIY $17,000.
 
 | Metric | 20 Years | 30 Years |
 |--------|----------|----------|
-| Fee delta (AUM − WIY cumulative) | $82,993 | $324,164 |
-| Portfolio benefit | $81,314 | $478,253 |
+| Fee delta (AUM − WIY cumulative) | $702,622 | $1,671,001 |
+| Portfolio benefit | $1,218,556 | $3,684,578 |
 
 ### $10M Starting Portfolio
 

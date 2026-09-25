@@ -19,10 +19,12 @@ import { tieredAnnualFee } from "../fee-canon";
 
 /**
  * Net-worth threshold below which the public calculator shows a "Below our
- * minimum — let's talk" MESSAGE instead of a fee figure (FeeCalculator.tsx),
- * matching the published pricing FAQ ("Below $500K, a flat-fee model likely
- * isn't the most cost-effective option for you"). This is a DISPLAY/messaging
- * threshold ONLY — it is NOT a fee floor. The fee function below always returns
+ * minimum — let's talk" MESSAGE instead of a fee figure (FeeCalculator.tsx).
+ * The published FAQ no longer names a sub-$1M dollar threshold: as of
+ * 2026-09-24 the site says the firm is built for households with roughly
+ * $3M to $30M in net worth with a $15,000 minimum annual fee. The slider's
+ * floor is $1.5M, so this branch is a safety net, not a stated policy. This
+ * is a DISPLAY/messaging threshold ONLY — it is NOT a fee floor. The fee function below always returns
  * the canonical fee (>= the $15k minimum, which per canon applies at every net
  * worth); it never returns $0.
  *
@@ -41,6 +43,41 @@ export function calculateWiyAnnualFee(netWorth: number): number {
   // $0 fee) is a display-layer concern in FeeCalculator.tsx, gated on
   // DISPLAY_FLOOR_NET_WORTH above.
   return tieredAnnualFee(netWorth);
+}
+
+/**
+ * Net worths used for the published fee illustrations (home-page ladder,
+ * pricing milestones, llms.txt examples). Josh, 2026-09-24: every illustration
+ * starts inside the $3M–$30M target range; no row shows the $15k minimum
+ * binding at $1M. Pinned in fee-math.test.ts.
+ */
+export const ILLUSTRATION_NET_WORTHS = [
+  3_000_000, 5_000_000, 10_000_000, 20_000_000, 30_000_000,
+] as const;
+
+/** "$3M", "$30M", "$3.6M" — short net-worth label for illustration rows. */
+export function formatNetWorthM(value: number): string {
+  const m = value / 1_000_000;
+  if (Number.isInteger(m)) return `$${m}M`;
+  return `$${m.toFixed(2).replace(/0+$/, "").replace(/\.$/, "")}M`;
+}
+
+/**
+ * One fee-illustration row, entirely from canon: annual fee, rounded monthly
+ * figure, effective rate. The home page and pricing page render their example
+ * ladders from this so no illustrated figure is ever typed by hand.
+ */
+export function feeIllustration(netWorth: number) {
+  const annual = calculateWiyAnnualFee(netWorth);
+  const monthly = Math.round(annual / 12);
+  return {
+    netWorth,
+    label: formatNetWorthM(netWorth),
+    annual,
+    monthly,
+    monthlyLabel: `${formatUSD(monthly)}/mo`,
+    effectiveRate: `${((annual / netWorth) * 100).toFixed(2)}%`,
+  };
 }
 
 export function formatUSD(value: number): string {

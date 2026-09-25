@@ -17,7 +17,7 @@ const comparisonRows = [
   {
     label: "Minimum",
     aum: "Usually $1M\u2013$5M AUM",
-    wiy: "$15K/year minimum (typically $1M+ net worth)",
+    wiy: "$15K/year minimum; built for households with roughly $3M to $30M in net worth",
   },
   {
     label: "Scope of services",

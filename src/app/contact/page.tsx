@@ -106,7 +106,7 @@ export default function ContactPage() {
                 </li>
                 <li className="flex gap-3">
                   <span className="text-secondary flex-shrink-0 mt-0.5">&bull;</span>
-                  <span>Individuals or households with $1M+ in total net worth</span>
+                  <span>Households with roughly $3 million to $30 million in net worth</span>
                 </li>
                 <li className="flex gap-3">
                   <span className="text-secondary flex-shrink-0 mt-0.5">&bull;</span>

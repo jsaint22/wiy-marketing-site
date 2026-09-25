@@ -11,7 +11,13 @@
  */
 
 import { describe, test, expect } from "vitest";
-import { calculateWiyAnnualFee, projectFees, formatUSD } from "./fee-math";
+import {
+  calculateWiyAnnualFee,
+  projectFees,
+  formatUSD,
+  feeIllustration,
+  ILLUSTRATION_NET_WORTHS,
+} from "./fee-math";
 
 // Helper: allow $1 rounding tolerance
 function expectWithinDollar(actual: number, expected: number) {
@@ -64,30 +70,42 @@ describe("WIY Fee Formula", () => {
   });
 });
 
-describe("Monthly Fee (Pricing Page Verification)", () => {
-  const cases: [number, string, string][] = [
-    [1_000_000, "$1,250", "1.50%"],
-    [3_000_000, "$1,417", "0.57%"],
-    [5_000_000, "$1,750", "0.42%"],
-    [10_000_000, "$2,583", "0.31%"],
-    [20_000_000, "$3,417", "0.21%"],
-    [30_000_000, "$4,250", "0.17%"],
+describe("Monthly Fee (Pricing Page + Home Page Verification)", () => {
+  // The pricing milestones and the home-page ladder render from feeIllustration();
+  // these pins make a canon change fail loudly. The ladder starts at $3M and the
+  // $1M row is gone (Josh, 2026-09-24: illustrations live inside the $3M–$30M
+  // target range; no row shows the minimum binding at $1M).
+  const cases: [number, string, string, string][] = [
+    [3_000_000, "$3M", "$1,417", "0.57%"],
+    [5_000_000, "$5M", "$1,750", "0.42%"],
+    [10_000_000, "$10M", "$2,583", "0.31%"],
+    [20_000_000, "$20M", "$3,417", "0.21%"],
+    [30_000_000, "$30M", "$4,250", "0.17%"],
   ];
 
-  test.each(cases)("$%d NW → %s/mo (%s effective)", (nw, expectedMonthly, expectedRate) => {
-    const annual = calculateWiyAnnualFee(nw);
-    const monthly = Math.round(annual / 12);
-    const monthlyFormatted = formatUSD(monthly);
-    const effectiveRate = ((annual / nw) * 100).toFixed(2) + "%";
-    expect(monthlyFormatted).toBe(expectedMonthly);
-    expect(effectiveRate).toBe(expectedRate);
+  test.each(cases)("$%d NW → %s: %s/mo (%s effective)", (nw, label, expectedMonthly, expectedRate) => {
+    const row = feeIllustration(nw);
+    expect(row.label).toBe(label);
+    expect(row.annual).toBe(calculateWiyAnnualFee(nw));
+    expect(formatUSD(row.monthly)).toBe(expectedMonthly);
+    expect(row.monthlyLabel).toBe(`${expectedMonthly}/mo`);
+    expect(row.effectiveRate).toBe(expectedRate);
+  });
+
+  test("published illustration ladder starts at $3M, stays within $3M–$30M, never shows the minimum binding", () => {
+    expect(ILLUSTRATION_NET_WORTHS[0]).toBe(3_000_000);
+    for (const nw of ILLUSTRATION_NET_WORTHS) {
+      expect(nw).toBeGreaterThanOrEqual(3_000_000);
+      expect(nw).toBeLessThanOrEqual(30_000_000);
+      expect(calculateWiyAnnualFee(nw)).toBeGreaterThan(15_000);
+    }
   });
 });
 
-describe("Year 1 Fee Comparison (AUM Math PDF Page 4)", () => {
-  test("$1M: AUM=$10,000, WIY=$15,000 (floor bites — WIY costs MORE here; advantage flips as portfolio grows)", () => {
-    expect(1_000_000 * 0.01).toBe(10_000);
-    expect(calculateWiyAnnualFee(1_000_000)).toBe(15_000);
+describe("Year 1 Fee Comparison (/vs-aum page, llms.txt; there is no dedicated AUM Math PDF)", () => {
+  test("$3M: AUM=$30,000, WIY=$17,000, Save=$13,000", () => {
+    expect(3_000_000 * 0.01).toBe(30_000);
+    expect(calculateWiyAnnualFee(3_000_000)).toBe(17_000);
   });
 
   test("$5M: AUM=$50,000, WIY=$21,000, Save=$29,000", () => {
@@ -103,6 +121,11 @@ describe("Year 1 Fee Comparison (AUM Math PDF Page 4)", () => {
   test("$25M: AUM=$250,000, WIY=$46,000, Save=$204,000", () => {
     expect(25_000_000 * 0.01).toBe(250_000);
     expect(calculateWiyAnnualFee(25_000_000)).toBe(46_000);
+  });
+
+  test("$30M: AUM=$300,000, WIY=$51,000, Save=$249,000", () => {
+    expect(30_000_000 * 0.01).toBe(300_000);
+    expect(calculateWiyAnnualFee(30_000_000)).toBe(51_000);
   });
 });
 
@@ -163,16 +186,18 @@ describe("30-Year Projections (AUM Math PDF Page 6)", () => {
 });
 
 describe("All Wealth Levels — Portfolio Benefit (Cross-reference)", () => {
-  // These numbers are from MATH-METHODOLOGY.md, verified by Python
+  // These numbers are from MATH-METHODOLOGY.md. $5M/$10M/$25M were verified by the
+  // April 2026 Python audit; $3M was computed 2026-09-24 via projectFees() when the
+  // $1M illustration was retired (Josh: illustrations start inside $3M–$30M).
   const expected: Record<string, { yr20: number; yr30: number }> = {
-    "1M": { yr20: 81_314, yr30: 478_253 },
+    "3M": { yr20: 1_218_556, yr30: 3_684_578 },
     "5M": { yr20: 2_369_210, yr30: 6_992_247 },
     "10M": { yr20: 5_428_885, yr30: 15_617_906 },
     "25M": { yr20: 14_848_583, yr30: 41_963_608 },
   };
 
   const levels = [
-    [1_000_000, "1M"],
+    [3_000_000, "3M"],
     [5_000_000, "5M"],
     [10_000_000, "10M"],
     [25_000_000, "25M"],
