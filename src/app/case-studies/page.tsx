@@ -62,9 +62,9 @@ const caseStudies = [
       "No withdrawal sequencing plan. $2M in pre-tax accounts with no Roth conversion strategy — meaning a massive tax bomb at RMD age. Healthcare costs for 13 years of pre-Medicare coverage completely unmodeled. Original plan ran out of money at age 81.",
     approach: [
       "Built a 40-year withdrawal sequencing model across all account types with Monte Carlo stress testing",
-      "Designed a 10-year Roth conversion ladder targeting $200K/year in conversions during the low-income window between retirement and Social Security",
+      "Designed a 10-year Roth conversion ladder targeting up to $200K/year in conversions during the low-income window between retirement and Social Security, sized year by year against the healthcare bridge below",
       "Modeled geographic arbitrage: keep Tahoe primary residence, spend 4 months/year in Portugal at ~40% lower cost of living",
-      "Built healthcare bridge plan: ACA eligibility by managing MAGI below 400% FPL during conversion years, with expat insurance as backup",
+      "Built the healthcare bridge plan for the 13 pre-Medicare years: each year's conversion amount weighed against the marketplace premium credits it would cost, so some years convert less and keep the subsidy, with expat insurance as the backup",
     ],
     outcome:
       "7 additional years of projected financial runway vs. their original plan (money lasts to 88, not 81), based on Monte Carlo analysis with historical return assumptions. $150K+ in projected lifetime tax savings from the Roth conversion ladder, dependent on future tax rates and conversion timing. Clear month-by-month retirement income plan they can actually follow. WIY annual fee: $17,000.",
